@@ -1,0 +1,307 @@
+{
+  "conformance_vectors": 1,
+  "client_version": "1.0.8",
+  "client_contract_version": 2,
+  "spec_as_of": "2026-10-13",
+  "about": "Language-neutral checks for a WhiteBooks client (client-contract.md, section 12). Replay every case against your client's function of the same job; all must match. Values are exact except backoff, which is a range.",
+  "error_parsing": {
+    "about": "parse_failure(http_status, body): the typed error, or no error. session_expired is is_session_expired of that error.",
+    "cases": [
+      {
+        "name": "gateway error WB_ERR keeps its code",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"WB_ERR_9101 : Missing mandatory parameters : otp\"}",
+        "expect": {
+          "source": "whitebooks",
+          "code": "WB_ERR_9101",
+          "unknown": false,
+          "message": "WB_ERR_9101 : Missing mandatory parameters : otp"
+        },
+        "session_expired": false
+      },
+      {
+        "name": "WB_ERR_9000 is an unknown outcome",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"WB_ERR_9000 : Unexpected error\"}",
+        "expect": {
+          "source": "whitebooks",
+          "code": "WB_ERR_9000",
+          "unknown": true
+        },
+        "session_expired": false
+      },
+      {
+        "name": "a WB_ERR at HTTP 500 is unknown",
+        "http_status": 500,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"WB_ERR_9101 : Missing mandatory parameters : otp\"}",
+        "expect": {
+          "source": "whitebooks",
+          "code": "WB_ERR_9101",
+          "unknown": true
+        },
+        "session_expired": false
+      },
+      {
+        "name": "GSTN rejection keeps error_cd and its message",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"Failure\",\"error\":{\"message\":\"Invalid OTP\",\"error_cd\":\"AUTH4033\"}}",
+        "expect": {
+          "source": "gstn",
+          "code": "AUTH4033",
+          "unknown": false,
+          "message": "Invalid OTP"
+        },
+        "session_expired": false
+      },
+      {
+        "name": "NIC rejection keeps ErrorCode and ErrorMessage",
+        "http_status": 200,
+        "body": "{\"Status\":\"0\",\"ErrorDetails\":[{\"ErrorCode\":\"2150\",\"ErrorMessage\":\"Duplicate IRN\"}]}",
+        "expect": {
+          "source": "nic",
+          "code": "2150",
+          "unknown": false,
+          "message": "Duplicate IRN"
+        },
+        "session_expired": false
+      },
+      {
+        "name": "NIC messages are joined with a semicolon and a space",
+        "http_status": 200,
+        "body": "{\"Status\":\"0\",\"ErrorDetails\":[{\"ErrorCode\":\"2150\",\"ErrorMessage\":\"Duplicate IRN\"},{\"ErrorCode\":\"2151\",\"ErrorMessage\":\"Second problem\"}]}",
+        "expect": {
+          "source": "nic",
+          "code": "2150",
+          "unknown": false,
+          "message": "Duplicate IRN; Second problem"
+        },
+        "session_expired": false
+      },
+      {
+        "name": "NIC code 1005 means the session expired",
+        "http_status": 200,
+        "body": "{\"Status\":\"0\",\"ErrorDetails\":[{\"ErrorCode\":\"1005\",\"ErrorMessage\":\"Invalid Token\"}]}",
+        "expect": {
+          "source": "nic",
+          "code": "1005",
+          "unknown": false,
+          "message": "Invalid Token"
+        },
+        "session_expired": true
+      },
+      {
+        "name": "an expired-session message counts as expired",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"Session expired\"}",
+        "expect": {
+          "source": "upstream",
+          "code": "UPSTREAM_ERROR",
+          "unknown": false,
+          "message": "Session expired"
+        },
+        "session_expired": true
+      },
+      {
+        "name": "a success body is not an error",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"1\",\"status_desc\":\"Success\",\"data\":{}}",
+        "expect": null,
+        "session_expired": false
+      },
+      {
+        "name": "status_cd 0 with no known shape is an upstream error",
+        "http_status": 200,
+        "body": "{\"status_cd\":\"0\",\"status_desc\":\"Failed\"}",
+        "expect": {
+          "source": "upstream",
+          "code": "UPSTREAM_ERROR",
+          "unknown": false,
+          "message": "Failed"
+        },
+        "session_expired": false
+      },
+      {
+        "name": "a numeric status_cd 0 counts too",
+        "http_status": 200,
+        "body": "{\"status_cd\":0}",
+        "expect": {
+          "source": "upstream",
+          "code": "UPSTREAM_ERROR",
+          "unknown": false
+        },
+        "session_expired": false
+      },
+      {
+        "name": "JSON at HTTP 400 with no known shape is an upstream HTTP error",
+        "http_status": 400,
+        "body": "{\"detail\":\"bad\"}",
+        "expect": {
+          "source": "upstream",
+          "code": "HTTP_400",
+          "unknown": false
+        },
+        "session_expired": false
+      },
+      {
+        "name": "JSON at HTTP 503 with no known shape is unknown",
+        "http_status": 503,
+        "body": "{\"detail\":\"down\"}",
+        "expect": {
+          "source": "upstream",
+          "code": "HTTP_503",
+          "unknown": true
+        },
+        "session_expired": false
+      },
+      {
+        "name": "a WB_ERR inside a data wrapper is still found",
+        "http_status": 200,
+        "body": "{\"data\":{\"status_cd\":\"0\",\"status_desc\":\"WB_ERR_9102 : Invalid GSTIN\"}}",
+        "expect": {
+          "source": "whitebooks",
+          "code": "WB_ERR_9102",
+          "unknown": false
+        },
+        "session_expired": false
+      },
+      {
+        "name": "HTML at HTTP 502 is an unknown HTTP failure",
+        "http_status": 502,
+        "body": "<html><body>502 Bad Gateway</body></html>",
+        "expect": {
+          "source": "http",
+          "code": "HTTP_502",
+          "unknown": true
+        },
+        "session_expired": false
+      },
+      {
+        "name": "HTML at HTTP 404 is a known HTTP failure",
+        "http_status": 404,
+        "body": "<html><body>Not Found</body></html>",
+        "expect": {
+          "source": "http",
+          "code": "HTTP_404",
+          "unknown": false
+        },
+        "session_expired": false
+      },
+      {
+        "name": "non-JSON on a 2xx is BAD_RESPONSE and unknown",
+        "http_status": 200,
+        "body": "OK",
+        "expect": {
+          "source": "client",
+          "code": "BAD_RESPONSE",
+          "unknown": true
+        },
+        "session_expired": false
+      }
+    ]
+  },
+  "mask_gstin": {
+    "about": "A GSTIN in a log line: the state code, asterisks, the last character; under four characters, three asterisks.",
+    "cases": [
+      {
+        "name": "a 15-character GSTIN keeps the state code and the last character",
+        "input": "27AAAAA0000A1Z5",
+        "expect": "27************5"
+      },
+      {
+        "name": "a short value is fully masked",
+        "input": "abc",
+        "expect": "***"
+      },
+      {
+        "name": "four characters keep two and one",
+        "input": "abcd",
+        "expect": "ab*d"
+      }
+    ]
+  },
+  "return_processed": {
+    "about": "Whether a GSTN return-status reply says the return was processed: status_cd P or PE, read from data first, then the top level.",
+    "cases": [
+      {
+        "name": "data.status_cd P is processed",
+        "response": {
+          "data": {
+            "status_cd": "P"
+          }
+        },
+        "expect": true
+      },
+      {
+        "name": "data.status_cd PE is processed",
+        "response": {
+          "data": {
+            "status_cd": "PE"
+          }
+        },
+        "expect": true
+      },
+      {
+        "name": "data.status_cd ER is not processed",
+        "response": {
+          "data": {
+            "status_cd": "ER"
+          }
+        },
+        "expect": false
+      },
+      {
+        "name": "data.status_cd IP is not processed",
+        "response": {
+          "data": {
+            "status_cd": "IP"
+          }
+        },
+        "expect": false
+      },
+      {
+        "name": "a top-level status_cd P is read when there is no data",
+        "response": {
+          "status_cd": "P"
+        },
+        "expect": true
+      },
+      {
+        "name": "no status is not processed",
+        "response": {
+          "data": {}
+        },
+        "expect": false
+      }
+    ]
+  },
+  "backoff_ms": {
+    "about": "Delay before retry number `attempt`: between min_ms and max_ms inclusive, half of it random; never above max_ms. Sample at least 50 times per attempt.",
+    "cases": [
+      {
+        "attempt": 1,
+        "min_ms": 250,
+        "max_ms": 500
+      },
+      {
+        "attempt": 2,
+        "min_ms": 500,
+        "max_ms": 1000
+      },
+      {
+        "attempt": 3,
+        "min_ms": 1000,
+        "max_ms": 2000
+      },
+      {
+        "attempt": 4,
+        "min_ms": 2000,
+        "max_ms": 4000
+      },
+      {
+        "attempt": 5,
+        "min_ms": 2000,
+        "max_ms": 4000
+      }
+    ]
+  }
+}

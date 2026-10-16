@@ -1,0 +1,1696 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: ALL",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group ALL, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "ALL"
+    }
+  ],
+  "paths": {
+    "/all/docdwld": {
+      "get": {
+        "operationId": "gst-all-docdwld-get",
+        "summary": "Document Download",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "description": "ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/filedet": {
+      "get": {
+        "operationId": "gst-all-filedet-get",
+        "summary": "Get File Details",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "returnperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "description": "Transaction ID",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/getmasters": {
+      "get": {
+        "operationId": "gst-all-getmasters-get",
+        "summary": "Get User Masters",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/getpref": {
+      "get": {
+        "operationId": "gst-all-getpref-get",
+        "summary": "Get Preference",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fy",
+            "in": "query",
+            "required": true,
+            "description": "Financial Year (YYYY-YY)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/largefile": {
+      "get": {
+        "operationId": "gst-all-largefile-get",
+        "summary": "Get Large File Details",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "description": "Large file url",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ek",
+            "in": "query",
+            "required": true,
+            "description": "Encryption key from file details response",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "returnperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/latefee": {
+      "get": {
+        "operationId": "gst-all-latefee-get",
+        "summary": "Late Fee",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": true,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/latefeebreakup": {
+      "get": {
+        "operationId": "gst-all-latefeebreakup-get",
+        "summary": "Get additional late fee breakup",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": true,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/newproceedfile": {
+      "get": {
+        "operationId": "gst-all-newproceedfile-get",
+        "summary": "New Proceed To File(GSTR1,GSTR5,GSTR6)",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "description": "Return Type Sample Value(GSTR1)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "isNil",
+            "in": "query",
+            "required": false,
+            "description": "Nil Filing flag",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/newretstatus": {
+      "get": {
+        "operationId": "gst-all-newretstatus-get",
+        "summary": "Get Return Status",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "returnperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "refid",
+            "in": "query",
+            "required": true,
+            "description": "Reference Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": true,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/proceedfile": {
+      "get": {
+        "operationId": "gst-all-proceedfile-get",
+        "summary": "Proceed To File",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "description": "Return Type Sample Value(ITC04)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/docupld": {
+      "post": {
+        "operationId": "gst-all-docupld-post",
+        "summary": "Document Upload",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ct": {
+                    "type": "string",
+                    "desc": "Content Type"
+                  },
+                  "data": {
+                    "type": "string",
+                    "desc": "Document data in Base64 format"
+                  },
+                  "doc_nam": {
+                    "type": "string",
+                    "desc": "Document Name"
+                  }
+                }
+              },
+              "example": {
+                "ct": "application/pdf",
+                "data": "Base64 encoded document",
+                "doc_nam": "Document.pdf"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/savemasters": {
+      "post": {
+        "operationId": "gst-all-savemasters-post",
+        "summary": "Save User Masters",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userGstin": {
+                    "type": "string",
+                    "description": "User GSTIN"
+                  },
+                  "productsMasters": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "productName": {
+                          "type": "string",
+                          "description": "Product Name given by user"
+                        },
+                        "hsn": {
+                          "type": "string",
+                          "description": "HSN code"
+                        },
+                        "igst": {
+                          "type": "number",
+                          "description": "Integrated Tax (₹)"
+                        },
+                        "uqc": {
+                          "type": "string",
+                          "description": "Unit of the product"
+                        },
+                        "actionFlag": {
+                          "type": "string",
+                          "description": "Flag to denote Action : I for Addition , D for Deletion & U for Update"
+                        }
+                      }
+                    }
+                  },
+                  "supplierRecipientMasters": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "gstin": {
+                          "type": "string",
+                          "description": "Supplier/Recipient GSTIN"
+                        },
+                        "supplierRecipientName": {
+                          "type": "string",
+                          "description": "Vendor Name given by the user"
+                        },
+                        "supplierRecipientFlag": {
+                          "type": "string",
+                          "description": "Flag to denote how the added gstin is related to the user  : S for Supplier , R for Recipient , SR for Supplier & Recipient"
+                        },
+                        "actionFlag": {
+                          "type": "string",
+                          "description": "Flag to denote Action : I for Addition , D for Deletion & U for Update"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "userGstin": "16SSATR0031A1ZV",
+                "productsMasters": [
+                  {
+                    "productName": "Test01",
+                    "hsn": "0604",
+                    "igst": 5,
+                    "uqc": "BAG",
+                    "actionFlag": "I"
+                  }
+                ],
+                "supplierRecipientMasters": [
+                  {
+                    "gstin": "27AAGCB1286Q7ZY",
+                    "supplierRecipientName": "Charles",
+                    "supplierRecipientFlag": "S",
+                    "actionFlag": "I"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/all/savepref": {
+      "put": {
+        "operationId": "gst-all-savepref-put",
+        "summary": "Save Preference",
+        "tags": [
+          "ALL"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "description": "GSTIN",
+                    "type": "string"
+                  },
+                  "fy": {
+                    "type": "string",
+                    "title": "The financial year for profile selection"
+                  },
+                  "quarter": {
+                    "type": "string",
+                    "description": "quarter value"
+                  },
+                  "preference": {
+                    "type": "string",
+                    "description": "Preference value"
+                  }
+                }
+              },
+              "example": {
+                "gstin": "02SUPHP0001A1ZI",
+                "fy": "2019-20",
+                "quarter": "Q1",
+                "preference": "Q"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    }
+  }
+}

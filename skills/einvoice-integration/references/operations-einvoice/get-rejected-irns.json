@@ -1,0 +1,82 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "tag": "Get Rejected IRNs",
+  "count": 1,
+  "operations": [
+    {
+      "id": "einvoice:GET:/einvoice/type/GETREJECTEDIRNS/version/V1_03",
+      "slug": "einvoice-einvoice-type-getrejectedirns-version-v1-03-get",
+      "api": "einvoice",
+      "method": "GET",
+      "path": "/einvoice/type/GETREJECTEDIRNS/version/V1_03",
+      "tag": "Get Rejected IRNs",
+      "summary": "Get Rejected IRNs",
+      "params": [
+        {
+          "name": "param1",
+          "in": "query",
+          "required": true,
+          "meaning": "Date(dd/mm/yyyy)"
+        },
+        {
+          "name": "supplier_gstn",
+          "in": "query",
+          "required": false,
+          "meaning": "Supplier GSTIN, only in case E Comm. operator is getting IRN details"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "auth-token",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC session token from authenticate"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "einvoice_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    }
+  ]
+}

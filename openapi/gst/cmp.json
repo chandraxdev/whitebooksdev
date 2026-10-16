@@ -1,0 +1,1621 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: CMP",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group CMP, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "CMP"
+    }
+  ],
+  "paths": {
+    "/cmp/getcmp": {
+      "get": {
+        "operationId": "gst-cmp-getcmp-get",
+        "summary": "Get CMP",
+        "tags": [
+          "CMP"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/cmp/validateturnover": {
+      "get": {
+        "operationId": "gst-cmp-validateturnover-get",
+        "summary": "Get validate turnover for CMP",
+        "tags": [
+          "CMP"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/cmp/retevcfile": {
+      "post": {
+        "operationId": "gst-cmp-retevcfile-post",
+        "summary": "File CMP data",
+        "tags": [
+          "CMP"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evcotp",
+            "in": "query",
+            "required": true,
+            "description": "OTP for EVC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GST Number"
+                  },
+                  "ret_period": {
+                    "type": "string",
+                    "description": "Return Period"
+                  },
+                  "isnil": {
+                    "type": "string",
+                    "description": "Is Nil Return"
+                  },
+                  "table3": {
+                    "type": "object",
+                    "properties": {
+                      "out_sup": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          }
+                        }
+                      },
+                      "in_sup": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "intr_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "tax_pay": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table4": {
+                    "type": "object",
+                    "properties": {
+                      "rchrg": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "otr_rchrg": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "neg_liab": {
+                        "type": "object",
+                        "properties": {
+                          "rchrg": {
+                            "type": "object",
+                            "properties": {
+                              "iamt": {
+                                "type": "number",
+                                "description": "IGST payable"
+                              },
+                              "camt": {
+                                "type": "number",
+                                "description": "CGST payable"
+                              },
+                              "samt": {
+                                "type": "number",
+                                "description": "SGST payable"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "CESS payable"
+                              }
+                            }
+                          },
+                          "otr_rchrg": {
+                            "type": "object",
+                            "properties": {
+                              "iamt": {
+                                "type": "number",
+                                "description": "IGST payable"
+                              },
+                              "camt": {
+                                "type": "number",
+                                "description": "CGST payable"
+                              },
+                              "samt": {
+                                "type": "number",
+                                "description": "SGST payable"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "CESS payable"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "intr_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "tax_pay": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "offset": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "01AAAAB1726H1ZI",
+                "ret_period": "032018",
+                "isnil": "N",
+                "table3": {
+                  "out_sup": {
+                    "tax_val": 40,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "in_sup": {
+                    "tax_val": 40,
+                    "iamt": 10,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 10
+                  },
+                  "intr_pay": {
+                    "iamt": 10,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 10
+                  },
+                  "tax_pay": {
+                    "tax_val": 1000,
+                    "iamt": 20,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 5
+                  }
+                },
+                "table4": {
+                  "rchrg": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  },
+                  "otr_rchrg": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  },
+                  "neg_liab": {
+                    "rchrg": {
+                      "iamt": 10,
+                      "camt": 10,
+                      "samt": 10,
+                      "csamt": 10
+                    },
+                    "otr_rchrg": {
+                      "iamt": 10,
+                      "camt": 10,
+                      "samt": 10,
+                      "csamt": 10
+                    }
+                  },
+                  "intr_pay": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/cmp/retfile": {
+      "post": {
+        "operationId": "gst-cmp-retfile-post",
+        "summary": "File CMP data",
+        "tags": [
+          "CMP"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GST Number"
+                  },
+                  "ret_period": {
+                    "type": "string",
+                    "description": "Return Period"
+                  },
+                  "isnil": {
+                    "type": "string",
+                    "description": "Is Nil Return"
+                  },
+                  "table3": {
+                    "type": "object",
+                    "properties": {
+                      "out_sup": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          }
+                        }
+                      },
+                      "in_sup": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "intr_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "tax_pay": {
+                        "type": "object",
+                        "properties": {
+                          "tax_val": {
+                            "type": "number",
+                            "description": "Value of goods"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table4": {
+                    "type": "object",
+                    "properties": {
+                      "rchrg": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "otr_rchrg": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      },
+                      "neg_liab": {
+                        "type": "object",
+                        "properties": {
+                          "rchrg": {
+                            "type": "object",
+                            "properties": {
+                              "iamt": {
+                                "type": "number",
+                                "description": "IGST payable"
+                              },
+                              "camt": {
+                                "type": "number",
+                                "description": "CGST payable"
+                              },
+                              "samt": {
+                                "type": "number",
+                                "description": "SGST payable"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "CESS payable"
+                              }
+                            }
+                          },
+                          "otr_rchrg": {
+                            "type": "object",
+                            "properties": {
+                              "iamt": {
+                                "type": "number",
+                                "description": "IGST payable"
+                              },
+                              "camt": {
+                                "type": "number",
+                                "description": "CGST payable"
+                              },
+                              "samt": {
+                                "type": "number",
+                                "description": "SGST payable"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "CESS payable"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "intr_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST payable"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST payable"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST payable"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "CESS payable"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "tax_pay": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "igst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "cgst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "sgst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "cess": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "trancd": {
+                          "type": "integer",
+                          "description": "tran code"
+                        }
+                      }
+                    }
+                  },
+                  "offset": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "tran_cd": {
+                          "type": "integer",
+                          "description": "tran code"
+                        },
+                        "sgst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "cgst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "igst": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "cess": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "01AAAAB1726H1ZI",
+                "ret_period": "032018",
+                "isnil": "N",
+                "table3": {
+                  "out_sup": {
+                    "tax_val": 40,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "in_sup": {
+                    "tax_val": 40,
+                    "iamt": 10,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 10
+                  },
+                  "intr_pay": {
+                    "iamt": 10,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 10
+                  },
+                  "tax_pay": {
+                    "tax_val": 1000,
+                    "iamt": 20,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 5
+                  }
+                },
+                "table4": {
+                  "rchrg": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  },
+                  "otr_rchrg": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  },
+                  "neg_liab": {
+                    "rchrg": {
+                      "iamt": 10,
+                      "camt": 10,
+                      "samt": 10,
+                      "csamt": 10
+                    },
+                    "otr_rchrg": {
+                      "iamt": 10,
+                      "camt": 10,
+                      "samt": 10,
+                      "csamt": 10
+                    }
+                  },
+                  "intr_pay": {
+                    "iamt": 10,
+                    "camt": 10,
+                    "samt": 10,
+                    "csamt": 10
+                  }
+                },
+                "tax_pay": [
+                  {
+                    "igst": {
+                      "intr": 0.4,
+                      "oth": 0,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60,
+                      "pen": 0
+                    },
+                    "cgst": {
+                      "intr": 0.4,
+                      "oth": 0,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60,
+                      "pen": 0
+                    },
+                    "sgst": {
+                      "intr": 0.4,
+                      "oth": 0,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60,
+                      "pen": 0
+                    },
+                    "cess": {
+                      "intr": 0.4,
+                      "oth": 0,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60,
+                      "pen": 0
+                    },
+                    "trancd": 30003
+                  }
+                ],
+                "offset": [
+                  {
+                    "tran_cd": 30003,
+                    "sgst": {
+                      "intr": 0.4,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60
+                    },
+                    "cgst": {
+                      "intr": 0.4,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60
+                    },
+                    "igst": {
+                      "intr": 0.4,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60
+                    },
+                    "cess": {
+                      "intr": 0.4,
+                      "tx": 60,
+                      "fee": 0,
+                      "tot": 60
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/cmp/savecmp": {
+      "post": {
+        "operationId": "gst-cmp-savecmp-post",
+        "summary": "Save CMP",
+        "tags": [
+          "CMP"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "ret_period": {
+                    "description": "return period",
+                    "type": "string"
+                  },
+                  "isnil": {
+                    "type": "string",
+                    "description": "Isnil action"
+                  },
+                  "table3": {
+                    "type": "object",
+                    "properties": {
+                      "out_sup": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable Value"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "Cgst Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          }
+                        }
+                      },
+                      "in_sup": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable Value"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "Igst Amount"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "Cgst Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          }
+                        }
+                      },
+                      "intr_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "Igst Amount"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "Cgst Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "12AVVVH1234HA1X",
+                "ret_period": "032019",
+                "isnil": "Y",
+                "table3": {
+                  "out_sup": {
+                    "txval": 10000,
+                    "camt": 500,
+                    "samt": 900
+                  },
+                  "in_sup": {
+                    "txval": 10000,
+                    "iamt": 0,
+                    "camt": 500,
+                    "samt": 900,
+                    "csamt": 500
+                  },
+                  "intr_pay": {
+                    "iamt": 0,
+                    "camt": 500,
+                    "samt": 900,
+                    "csamt": 500
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session",
+        "x-whitebooks-async": {
+          "returns": "reference_id",
+          "statusOperationId": "gst:GET:/gstr/retstatus"
+        }
+      }
+    }
+  }
+}

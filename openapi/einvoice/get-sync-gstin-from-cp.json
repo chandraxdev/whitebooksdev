@@ -1,0 +1,126 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Invoice: Get Sync GSTIN From CP",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Invoice API in the group Get Sync GSTIN From CP, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Get Sync GSTIN From CP"
+    }
+  ],
+  "paths": {
+    "/einvoice/type/SYNC_GSTIN_FROMCP/version/V1_03": {
+      "get": {
+        "operationId": "einvoice-einvoice-type-sync-gstin-fromcp-version-v1-03-get",
+        "summary": "Get Sync GSTIN From CP",
+        "tags": [
+          "Get Sync GSTIN From CP"
+        ],
+        "parameters": [
+          {
+            "name": "param1",
+            "in": "query",
+            "required": true,
+            "description": "GSTN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "description": "NIC session token from authenticate",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "einvoice_session"
+      }
+    }
+  }
+}

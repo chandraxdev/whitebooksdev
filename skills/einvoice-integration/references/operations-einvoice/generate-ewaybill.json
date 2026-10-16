@@ -1,0 +1,196 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "tag": "Generate Ewaybill",
+  "count": 1,
+  "operations": [
+    {
+      "id": "einvoice:POST:/einvoice/type/GENERATE_EWAYBILL/version/V1_03",
+      "slug": "einvoice-einvoice-type-generate-ewaybill-version-v1-03-post",
+      "api": "einvoice",
+      "method": "POST",
+      "path": "/einvoice/type/GENERATE_EWAYBILL/version/V1_03",
+      "tag": "Generate Ewaybill",
+      "summary": "Generate Ewaybill",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-Invoice Server Type(NIC1/NIC2),given at the time of e-Invoice generation"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "auth-token",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC session token from authenticate"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "Irn": {
+            "type": "string",
+            "description": "Irn number"
+          },
+          "Distance": {
+            "type": "number",
+            "description": "Distance"
+          },
+          "TransMode": {
+            "type": "string",
+            "description": "Transaction Mode"
+          },
+          "TransId": {
+            "type": "string",
+            "description": "Transaction Id"
+          },
+          "TransName": {
+            "type": "string",
+            "description": "Transaction Name"
+          },
+          "TransDocDt": {
+            "type": "string",
+            "description": "Transaction Date"
+          },
+          "TransDocNo": {
+            "type": "string",
+            "description": "Transaction Documnet number"
+          },
+          "VehNo": {
+            "type": "string",
+            "description": "Vehical Number"
+          },
+          "VehType": {
+            "type": "string",
+            "description": "Vehical Type"
+          },
+          "ExpShipDtls": {
+            "type": "object",
+            "properties": {
+              "Addr1": {
+                "type": "string",
+                "description": "Address1"
+              },
+              "Addr2": {
+                "type": "string",
+                "description": "Address2"
+              },
+              "Loc": {
+                "type": "string",
+                "description": "Location Name"
+              },
+              "Pin": {
+                "type": "number",
+                "description": "Pincode Number"
+              },
+              "Stcd": {
+                "type": "string",
+                "description": "State Name"
+              }
+            }
+          },
+          "DispDtls": {
+            "type": "object",
+            "properties": {
+              "Nm": {
+                "type": "string",
+                "description": "Name"
+              },
+              "Addr1": {
+                "type": "string",
+                "description": "Address1"
+              },
+              "Addr2": {
+                "type": "string",
+                "description": "Address2"
+              },
+              "Loc": {
+                "type": "string",
+                "description": "Location Name"
+              },
+              "Pin": {
+                "type": "number",
+                "description": "Pincode Number"
+              },
+              "Stcd": {
+                "type": "string",
+                "description": "State Name"
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "einvoice_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "Irn": "47d7ba1814b6ca6123c780ad289b0a24e30c1baed59a7417d29a54e7b00a6bdf",
+        "Distance": 100,
+        "TransMode": "1",
+        "TransId": "12AWGPV7107B1Z1",
+        "TransName": "trans name",
+        "TransDocDt": "01/08/2020",
+        "TransDocNo": "TRAN/DOC/11",
+        "VehNo": "KA12ER1234",
+        "VehType": "R",
+        "ExpShipDtls": {
+          "Addr1": "7th block, kuvempu layout",
+          "Addr2": "kuvempu layout",
+          "Loc": "Banagalore",
+          "Pin": 562160,
+          "Stcd": "29"
+        },
+        "DispDtls": {
+          "Nm": "ABC company pvt ltd",
+          "Addr1": "7th block, kuvempu layout",
+          "Addr2": "kuvempu layout",
+          "Loc": "Banagalore",
+          "Pin": 562160,
+          "Stcd": "29"
+        }
+      }
+    }
+  ]
+}

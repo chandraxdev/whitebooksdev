@@ -1,0 +1,2415 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: IMS",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group IMS, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "IMS"
+    }
+  ],
+  "paths": {
+    "/ims/getfile": {
+      "get": {
+        "operationId": "gst-ims-getfile-get",
+        "summary": "Get IMS data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "description": "Token",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/invoices": {
+      "get": {
+        "operationId": "gst-ims-invoices-get",
+        "summary": "Get IMS data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "section",
+            "in": "query",
+            "required": true,
+            "description": "Section Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "description": "Accept/Reject/Pending status",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/invoicescount": {
+      "get": {
+        "operationId": "gst-ims-invoicescount-get",
+        "summary": "Get IMS Count data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "goodsType",
+            "in": "query",
+            "required": true,
+            "description": "Type of goods",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/rejectedInvoices": {
+      "get": {
+        "operationId": "gst-ims-rejectedinvoices-get",
+        "summary": "Get Added Back Liability Records",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "section",
+            "in": "query",
+            "required": false,
+            "description": "Section Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/status": {
+      "get": {
+        "operationId": "gst-ims-status-get",
+        "summary": "Get IMS Status",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "int_tran_id",
+            "in": "query",
+            "required": true,
+            "description": "Reference ID received in the response of IMS Save and Reset API",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/supplierInvoices": {
+      "get": {
+        "operationId": "gst-ims-supplierinvoices-get",
+        "summary": "Get Supplier IMS Invoices data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "section",
+            "in": "query",
+            "required": true,
+            "description": "Section Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rtnTyp",
+            "in": "query",
+            "required": true,
+            "description": "GSTR1/GSTR1A",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/reset": {
+      "put": {
+        "operationId": "gst-ims-reset-put",
+        "summary": "Reset IMS Data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "rtin": {
+                    "type": "string",
+                    "description": "Receipient GSTIN"
+                  },
+                  "reqtyp": {
+                    "type": "string",
+                    "description": "Reset Flag"
+                  },
+                  "invdata": {
+                    "type": "object",
+                    "properties": {
+                      "b2b": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Invoice Number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Invoice Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Invoice Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2ba": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Invoice Number"
+                            },
+                            "oinum": {
+                              "type": "string",
+                              "description": "original invoice number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Invoice Date"
+                            },
+                            "oidt": {
+                              "type": "string",
+                              "description": "original invoice date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Invoice Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bdn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bdna": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "ont_num": {
+                              "type": "string",
+                              "description": "old note number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "ont_dt": {
+                              "type": "string",
+                              "description": "old note date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bcn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bcna": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "ont_num": {
+                              "type": "string",
+                              "description": "old note number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "ont_dt": {
+                              "type": "string",
+                              "description": "old note date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "ecom": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Document Number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Document Date"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "ecoma": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Document Number"
+                            },
+                            "oinum": {
+                              "type": "string",
+                              "description": "old document number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Document Date"
+                            },
+                            "oidt": {
+                              "type": "string",
+                              "description": "old document date"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "rtin": "20MAYAS0100J1ZX",
+                "reqtyp": "RESET",
+                "invdata": {
+                  "b2b": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "b1",
+                      "idt": "23-01-2023",
+                      "inv_typ": "R",
+                      "pos": "24",
+                      "val": 1000,
+                      "txval": 100,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2ba": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "dn3",
+                      "oinum": "dn2",
+                      "idt": "24-02-2023",
+                      "oidt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bdn": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "nt_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bdna": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "ont_num": "ca2",
+                      "nt_dt": "24-02-2023",
+                      "ont_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bcn": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "nt_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bcna": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "ont_num": "ca2",
+                      "nt_dt": "24-02-2023",
+                      "ont_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "ecom": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "sd3",
+                      "idt": "24-02-2023",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ],
+                  "ecoma": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "sd3",
+                      "oinum": "get5",
+                      "idt": "24-02-2023",
+                      "oidt": "24-02-2023",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "prev_status": "A"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/ims/save": {
+      "put": {
+        "operationId": "gst-ims-save-put",
+        "summary": "Save IMS Data",
+        "tags": [
+          "IMS"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "rtin": {
+                    "type": "string",
+                    "description": "Receipient GSTIN"
+                  },
+                  "reqtyp": {
+                    "type": "string",
+                    "description": "Reset Flag"
+                  },
+                  "invdata": {
+                    "type": "object",
+                    "properties": {
+                      "b2b": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Invoice Number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Invoice Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Invoice Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2ba": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Invoice Number"
+                            },
+                            "oinum": {
+                              "type": "string",
+                              "description": "original invoice number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Invoice Date"
+                            },
+                            "oidt": {
+                              "type": "string",
+                              "description": "original invoice date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Invoice Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bdn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bdna": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "ont_num": {
+                              "type": "string",
+                              "description": "old note number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "ont_dt": {
+                              "type": "string",
+                              "description": "old note date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bcn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "b2bcna": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "nt_num": {
+                              "type": "string",
+                              "description": "Note Number"
+                            },
+                            "ont_num": {
+                              "type": "string",
+                              "description": "old note number"
+                            },
+                            "nt_dt": {
+                              "type": "string",
+                              "description": "Note Date"
+                            },
+                            "ont_dt": {
+                              "type": "string",
+                              "description": "old note date"
+                            },
+                            "inv_typ": {
+                              "type": "string",
+                              "description": "Note Type"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "ecom": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Document Number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Document Date"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      },
+                      "ecoma": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "stin": {
+                              "type": "string",
+                              "description": "GSTIN of supplier"
+                            },
+                            "rtnprd": {
+                              "type": "string",
+                              "description": "Return period of invoice"
+                            },
+                            "srcform": {
+                              "type": "string",
+                              "description": "Invoice source form"
+                            },
+                            "inum": {
+                              "type": "string",
+                              "description": "Document Number"
+                            },
+                            "oinum": {
+                              "type": "string",
+                              "description": "old document number"
+                            },
+                            "idt": {
+                              "type": "string",
+                              "description": "Document Date"
+                            },
+                            "oidt": {
+                              "type": "string",
+                              "description": "old document date"
+                            },
+                            "pos": {
+                              "type": "string",
+                              "description": "Place of Supply"
+                            },
+                            "val": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "iamt"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "camt"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "samt"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "cess"
+                            },
+                            "action": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            },
+                            "prev_status": {
+                              "type": "string",
+                              "description": "Recipient action on invoice"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "rtin": "20MAYAS0100J1ZX",
+                "reqtyp": "SAVE",
+                "invdata": {
+                  "b2b": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "b1",
+                      "idt": "23-01-2023",
+                      "inv_typ": "R",
+                      "pos": "24",
+                      "val": 1000,
+                      "txval": 100,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2ba": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "dn3",
+                      "oinum": "dn2",
+                      "idt": "24-02-2023",
+                      "oidt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bdn": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "nt_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bdna": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "ont_num": "ca2",
+                      "nt_dt": "24-02-2023",
+                      "ont_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bcn": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "nt_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "b2bcna": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "nt_num": "dn2",
+                      "ont_num": "ca2",
+                      "nt_dt": "24-02-2023",
+                      "ont_dt": "24-02-2023",
+                      "inv_typ": "R",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "ecom": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "sd3",
+                      "idt": "24-02-2023",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ],
+                  "ecoma": [
+                    {
+                      "stin": "24MAYAS0100J1JD",
+                      "rtnprd": "012023",
+                      "srcform": "R1",
+                      "inum": "sd3",
+                      "oinum": "get5",
+                      "idt": "24-02-2023",
+                      "oidt": "24-02-2023",
+                      "pos": "07",
+                      "val": 1000.1,
+                      "txval": 1000.1,
+                      "iamt": 20,
+                      "camt": 20,
+                      "samt": 20,
+                      "cess": 0,
+                      "action": "A",
+                      "prev_status": "A"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    }
+  }
+}

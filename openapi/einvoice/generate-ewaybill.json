@@ -1,0 +1,254 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Invoice: Generate Ewaybill",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Invoice API in the group Generate Ewaybill, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Generate Ewaybill"
+    }
+  ],
+  "paths": {
+    "/einvoice/type/GENERATE_EWAYBILL/version/V1_03": {
+      "post": {
+        "operationId": "einvoice-einvoice-type-generate-ewaybill-version-v1-03-post",
+        "summary": "Generate Ewaybill",
+        "tags": [
+          "Generate Ewaybill"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "irp",
+            "in": "query",
+            "required": false,
+            "description": "e-Invoice Server Type(NIC1/NIC2),given at the time of e-Invoice generation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "description": "NIC session token from authenticate",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Irn": {
+                    "type": "string",
+                    "description": "Irn number"
+                  },
+                  "Distance": {
+                    "type": "number",
+                    "description": "Distance"
+                  },
+                  "TransMode": {
+                    "type": "string",
+                    "description": "Transaction Mode"
+                  },
+                  "TransId": {
+                    "type": "string",
+                    "description": "Transaction Id"
+                  },
+                  "TransName": {
+                    "type": "string",
+                    "description": "Transaction Name"
+                  },
+                  "TransDocDt": {
+                    "type": "string",
+                    "description": "Transaction Date"
+                  },
+                  "TransDocNo": {
+                    "type": "string",
+                    "description": "Transaction Documnet number"
+                  },
+                  "VehNo": {
+                    "type": "string",
+                    "description": "Vehical Number"
+                  },
+                  "VehType": {
+                    "type": "string",
+                    "description": "Vehical Type"
+                  },
+                  "ExpShipDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  },
+                  "DispDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Nm": {
+                        "type": "string",
+                        "description": "Name"
+                      },
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "Irn": "47d7ba1814b6ca6123c780ad289b0a24e30c1baed59a7417d29a54e7b00a6bdf",
+                "Distance": 100,
+                "TransMode": "1",
+                "TransId": "12AWGPV7107B1Z1",
+                "TransName": "trans name",
+                "TransDocDt": "01/08/2020",
+                "TransDocNo": "TRAN/DOC/11",
+                "VehNo": "KA12ER1234",
+                "VehType": "R",
+                "ExpShipDtls": {
+                  "Addr1": "7th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "Banagalore",
+                  "Pin": 562160,
+                  "Stcd": "29"
+                },
+                "DispDtls": {
+                  "Nm": "ABC company pvt ltd",
+                  "Addr1": "7th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "Banagalore",
+                  "Pin": 562160,
+                  "Stcd": "29"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "einvoice_session"
+      }
+    }
+  }
+}

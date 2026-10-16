@@ -1,0 +1,4579 @@
+{
+  "area": "gst",
+  "spec_as_of": "2026-10-13",
+  "tag": "GSTR9C",
+  "count": 7,
+  "operations": [
+    {
+      "id": "gst:GET:/gstr9c/getrecds",
+      "slug": "gst-gstr9c-getrecds-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr9c/getrecds",
+      "tag": "GSTR9C",
+      "summary": "Get 9 Records for GSTR9C",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr9c/retsum",
+      "slug": "gst-gstr9c-retsum-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr9c/retsum",
+      "tag": "GSTR9C",
+      "summary": "Get GSTR9C Summary",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr9c/retevcfile",
+      "slug": "gst-gstr9c-retevcfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr9c/retevcfile",
+      "tag": "GSTR9C",
+      "summary": "File GSTR9C data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "evcotp",
+          "in": "query",
+          "required": true,
+          "meaning": "OTP for EVC"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "string"
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9c/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr9c/retfile",
+      "slug": "gst-gstr9c-retfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr9c/retfile",
+      "tag": "GSTR9C",
+      "summary": "File GSTR9C",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstr9cdata": {
+            "type": "object",
+            "properties": {
+              "audited_data": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "fp": {
+                    "type": "string",
+                    "description": "Fp Type"
+                  },
+                  "lgl_name": {
+                    "description": "Legal Name",
+                    "type": "string"
+                  },
+                  "trd_name": {
+                    "description": "Trade Name",
+                    "type": "string"
+                  },
+                  "act_name": {
+                    "type": "string",
+                    "description": "Act Name"
+                  },
+                  "table5": {
+                    "type": "object",
+                    "properties": {
+                      "turnovr": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_beg": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_end": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "dmd_sup": {
+                        "type": "number",
+                        "description": "DMD"
+                      },
+                      "crd_nts_issued": {
+                        "type": "number",
+                        "description": "Card not Issued"
+                      },
+                      "trd_dis": {
+                        "type": "number",
+                        "description": "Trade"
+                      },
+                      "turnovr_apr_jun": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_end": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_beg": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "crd_note_acc": {
+                        "type": "number",
+                        "description": "Card Note"
+                      },
+                      "adj_dta": {
+                        "type": "number",
+                        "description": "Data"
+                      },
+                      "turnovr_comp": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_sec": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_fef": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_othrsn": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "annul_turn_decl": {
+                        "type": "number",
+                        "description": "Annual Turnover Decline"
+                      },
+                      "unrec_turnovr": {
+                        "type": "number",
+                        "description": "Unrecord Turnover"
+                      }
+                    }
+                  },
+                  "table6": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table7": {
+                    "type": "object",
+                    "properties": {
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "othr_turnovr": {
+                        "type": "number",
+                        "description": "Other Turnover"
+                      },
+                      "zero_sup": {
+                        "type": "number",
+                        "description": "Zero Supply"
+                      },
+                      "rev_sup": {
+                        "type": "number",
+                        "description": "Reverse Supply"
+                      },
+                      "tax_turn_annul": {
+                        "type": "number",
+                        "description": "Tax Turn Yearly"
+                      },
+                      "tax_turn_adj": {
+                        "type": "number",
+                        "description": "Tax Turn"
+                      },
+                      "unrec_tax_turn": {
+                        "type": "number",
+                        "description": "Unrecord Tax Turn"
+                      }
+                    }
+                  },
+                  "table8": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table9": {
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_payable": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_paid": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "unrec_amt": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table10": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table11": {
+                    "type": "object",
+                    "description": "Additional amount payable but not paid",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "sgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "igst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "CESS"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table12": {
+                    "type": "object",
+                    "properties": {
+                      "itc_avail": {
+                        "type": "number",
+                        "description": "ITC Avail"
+                      },
+                      "itc_book_earl": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_book_curr": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_avail_audited": {
+                        "type": "number",
+                        "description": "ITC Audited"
+                      },
+                      "itc_claim": {
+                        "type": "number",
+                        "description": "ITC Claim"
+                      },
+                      "unrec_itc": {
+                        "type": "number",
+                        "description": "ITC Unrecord"
+                      }
+                    }
+                  },
+                  "table13": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table14": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Description"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "itc_amt": {
+                              "description": "Amount of Total ITC",
+                              "type": "number"
+                            },
+                            "itc_avail": {
+                              "description": "Amount of eligible ITC availed",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "tot_elig_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "description": "Amount of eligible ITC availed",
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "itc_claim": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "description": "Amount of eligible ITC availed",
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "unrec_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "description": "Amount of eligible ITC availed",
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table15": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table16": {
+                    "type": "object",
+                    "properties": {
+                      "cgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "sgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "igst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "cess": {
+                        "type": "number",
+                        "description": "CESS"
+                      },
+                      "inter": {
+                        "description": "Interest",
+                        "type": "number"
+                      },
+                      "pen": {
+                        "description": "Penalty",
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "add_liab": {
+                    "type": "object",
+                    "properties": {
+                      "tax_pay": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Descriptions"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "dcupdtls": {
+            "type": "object",
+            "properties": {
+              "balance_sheet": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "profitloss": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "otherdoc1": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "otherdoc2": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9c/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstr9cdata": {
+          "audited_data": {
+            "gstin": "12AVVVH1234HA1X",
+            "fp": "032019",
+            "lgl_name": "Inf PVt LIMITED",
+            "trd_name": "Infrastucture Facility",
+            "act_name": "Trade Unions Act, 1926 ",
+            "table5": {
+              "turnovr": 9999999999999.99,
+              "unbil_rev_beg": 9999999999999.99,
+              "unadj_adv_end": 9999999999999.99,
+              "dmd_sup": 9999999999999.99,
+              "crd_nts_issued": 9999999999999.99,
+              "trd_dis": 9999999999999.99,
+              "turnovr_apr_jun": -9999999999999.99,
+              "unbil_rev_end": 9999999999999.99,
+              "unadj_adv_beg": 9999999999999.99,
+              "crd_note_acc": 9999999999999.99,
+              "adj_dta": 9999999999999.99,
+              "turnovr_comp": 9999999999999.99,
+              "adj_turn_sec": -9999999999999.99,
+              "adj_turn_fef": -9999999999999.99,
+              "adj_turn_othrsn": -9999999999999.99,
+              "annul_turn_adj": -1000000000000000,
+              "annul_turn_decl": -1000000000000000,
+              "unrec_turnovr": -1000000000000000
+            },
+            "table6": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table7": {
+              "annul_turn_adj": -1000000000000000,
+              "othr_turnovr": -9999999999999.99,
+              "zero_sup": -9999999999999.99,
+              "rev_sup": -9999999999999.99,
+              "tax_turn_annul": -1000000000000000,
+              "tax_turn_adj": -1000000000000000,
+              "unrec_tax_turn": -1000000000000000
+            },
+            "table8": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table9": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "tot_amt_payable": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "tot_amt_paid": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "unrec_amt": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              }
+            },
+            "table10": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table11": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              }
+            },
+            "table12": {
+              "itc_avail": 9999999999999.99,
+              "itc_book_earl": 9999999999999.99,
+              "itc_book_curr": 9999999999999.99,
+              "itc_avail_audited": 1000000000000000,
+              "itc_claim": -1000000000000000,
+              "unrec_itc": -1000000000000000
+            },
+            "table13": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table14": {
+              "items": [
+                {
+                  "desc": "PURCHS",
+                  "val": 9999999999999.99,
+                  "itc_amt": 9999999999999.99,
+                  "itc_avail": 9999999999999.99
+                }
+              ],
+              "tot_elig_itc": {
+                "itc_avail": 1000000000000000
+              },
+              "itc_claim": {
+                "itc_avail": 1000000000000000
+              },
+              "unrec_itc": {
+                "itc_avail": 1000000000000000
+              }
+            },
+            "table15": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table16": {
+              "cgst": 9999999999999.99,
+              "sgst": 9999999999999.99,
+              "igst": 9999999999999.99,
+              "cess": 9999999999999.99,
+              "inter": 9999999999999.99,
+              "pen": 9999999999999.99
+            },
+            "add_liab": {
+              "tax_pay": [
+                {
+                  "desc": "12",
+                  "val": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr9c/gencert",
+      "slug": "gst-gstr9c-gencert-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr9c/gencert",
+      "tag": "GSTR9C",
+      "summary": "Generate Certificate",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "GSTIN number"
+          },
+          "fp": {
+            "type": "string",
+            "description": "Fp Type"
+          },
+          "isauditor": {
+            "description": "Is Auditor",
+            "type": "string"
+          },
+          "cert_data": {
+            "type": "object",
+            "properties": {
+              "pronoun": {
+                "type": "string",
+                "description": "pronoun"
+              },
+              "bal_sheet_date": {
+                "type": "string",
+                "description": "balance sheet date"
+              },
+              "acc_typ": {
+                "type": "string",
+                "description": "account type"
+              },
+              "beg_date": {
+                "type": "string",
+                "description": "begin date"
+              },
+              "end_date": {
+                "type": "string",
+                "description": "end date"
+              },
+              "cash_from_date": {
+                "type": "string",
+                "description": "cash from date"
+              },
+              "cash_to_date": {
+                "type": "string",
+                "description": "cash to date"
+              },
+              "taxpayer_name": {
+                "type": "string",
+                "description": "taxpayer name"
+              },
+              "addr": {
+                "type": "object",
+                "properties": {
+                  "bno": {
+                    "type": "string",
+                    "description": "number"
+                  },
+                  "fno": {
+                    "type": "string",
+                    "description": "number"
+                  },
+                  "building": {
+                    "type": "string",
+                    "description": "building name"
+                  },
+                  "road": {
+                    "type": "string",
+                    "description": "road name"
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "city"
+                  },
+                  "district": {
+                    "type": "string",
+                    "description": "district"
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "state"
+                  },
+                  "pin_code": {
+                    "type": "number",
+                    "description": "pin code"
+                  }
+                }
+              },
+              "doc_stat": {
+                "type": "string",
+                "description": "Document Status"
+              },
+              "place": {
+                "type": "string",
+                "description": "place"
+              },
+              "signatory": {
+                "type": "string",
+                "description": "signatory"
+              },
+              "mem_no": {
+                "type": "string",
+                "description": "number"
+              },
+              "date": {
+                "type": "string",
+                "description": "Date"
+              },
+              "audit_addr": {
+                "type": "object",
+                "properties": {
+                  "bno": {
+                    "type": "string",
+                    "description": "number"
+                  },
+                  "fno": {
+                    "type": "string",
+                    "description": "number"
+                  },
+                  "building": {
+                    "type": "string",
+                    "description": "building name"
+                  },
+                  "road": {
+                    "type": "string",
+                    "description": "road name"
+                  },
+                  "city": {
+                    "type": "string",
+                    "description": "city"
+                  },
+                  "district": {
+                    "type": "string",
+                    "description": "district"
+                  },
+                  "state": {
+                    "type": "string",
+                    "description": "state"
+                  },
+                  "pin_code": {
+                    "type": "number",
+                    "description": "pin code"
+                  }
+                }
+              },
+              "cert_textpartb1": {
+                "type": "object",
+                "properties": {
+                  "qualifications": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "qual_type": {
+                          "type": "string",
+                          "description": "Qualification Type"
+                        },
+                        "value": {
+                          "type": "string",
+                          "description": "Qualification Value"
+                        }
+                      }
+                    }
+                  },
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "principal_addr": {
+                    "type": "object",
+                    "properties": {
+                      "bno": {
+                        "type": "string",
+                        "description": "number"
+                      },
+                      "fno": {
+                        "type": "string",
+                        "description": "number"
+                      },
+                      "building": {
+                        "type": "string",
+                        "description": "building name"
+                      },
+                      "road": {
+                        "type": "string",
+                        "description": "road name"
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": "city"
+                      },
+                      "district": {
+                        "type": "string",
+                        "description": "district"
+                      },
+                      "state": {
+                        "type": "string",
+                        "description": "state"
+                      },
+                      "pin_code": {
+                        "type": "number",
+                        "description": "pin code"
+                      }
+                    }
+                  },
+                  "add_addr": {
+                    "type": "object",
+                    "properties": {
+                      "bno": {
+                        "type": "string",
+                        "description": "number"
+                      },
+                      "fno": {
+                        "type": "string",
+                        "description": "number"
+                      },
+                      "building": {
+                        "type": "string",
+                        "description": "building name"
+                      },
+                      "road": {
+                        "type": "string",
+                        "description": "road name"
+                      },
+                      "city": {
+                        "type": "string",
+                        "description": "city"
+                      },
+                      "district": {
+                        "type": "string",
+                        "description": "district"
+                      },
+                      "state": {
+                        "type": "string",
+                        "description": "state"
+                      },
+                      "pin_code": {
+                        "type": "number",
+                        "description": "pin code"
+                      }
+                    }
+                  },
+                  "ishave": {
+                    "type": "string",
+                    "description": "have"
+                  },
+                  "isagree": {
+                    "type": "string",
+                    "description": "agreed"
+                  },
+                  "info_stat": {
+                    "type": "string",
+                    "description": "information"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "12AVVVH1234HA1X",
+        "fp": "032019",
+        "isauditor": "Y",
+        "cert_data": {
+          "pronoun": "We",
+          "bal_sheet_date": "21/12/2121",
+          "acc_typ": "profit and loss account",
+          "beg_date": "21/12/2121",
+          "end_date": "21/12/2121",
+          "cash_from_date": "21/12/2121",
+          "cash_to_date": "21/12/2121",
+          "taxpayer_name": "anil kumar",
+          "addr": {
+            "bno": "121",
+            "fno": "dfgs1545",
+            "building": "121",
+            "road": "neeladri",
+            "city": "Bangalore",
+            "district": "Bangalore",
+            "state": "Karnataka",
+            "pin_code": 560100
+          },
+          "doc_stat": "has maintained the books of accounts, records and documents",
+          "place": "Bangalore",
+          "signatory": "Ankit Arora",
+          "mem_no": "12345678",
+          "date": "21/12/2121",
+          "audit_addr": {
+            "bno": "121",
+            "fno": "dfgs1545",
+            "building": "121",
+            "road": "neeladri",
+            "city": "Bangalore",
+            "district": "Bangalore",
+            "state": "Karnataka",
+            "pin_code": 560100
+          },
+          "cert_textpartb1": {
+            "qualifications": [
+              {
+                "qual_type": "2",
+                "value": "1000"
+              }
+            ],
+            "gstin": "12AVVVH1234HA1X",
+            "principal_addr": {
+              "bno": "121",
+              "fno": "dfgs1545",
+              "building": "121",
+              "road": "neeladri",
+              "city": "Bangalore",
+              "district": "Bangalore",
+              "state": "Karnataka",
+              "pin_code": 560100
+            },
+            "add_addr": {
+              "bno": "121",
+              "fno": "dfgs1545",
+              "building": "121",
+              "road": "neeladri",
+              "city": "Bangalore",
+              "district": "Bangalore",
+              "state": "Karnataka",
+              "pin_code": 560100
+            },
+            "ishave": "have been",
+            "isagree": "in agreement",
+            "info_stat": "was partially provided"
+          }
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr9c/genhash",
+      "slug": "gst-gstr9c-genhash-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr9c/genhash",
+      "tag": "GSTR9C",
+      "summary": "Hash Generator",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstr9cdata": {
+            "type": "object",
+            "properties": {
+              "audited_data": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "fp": {
+                    "type": "string",
+                    "description": "Fp Type"
+                  },
+                  "act_name": {
+                    "type": "string",
+                    "description": "Act Name"
+                  },
+                  "isauditor": {
+                    "type": "string",
+                    "description": "Auditor"
+                  },
+                  "table5": {
+                    "type": "object",
+                    "properties": {
+                      "turnovr": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_beg": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_end": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "dmd_sup": {
+                        "type": "number",
+                        "description": "DMD"
+                      },
+                      "crd_nts_issued": {
+                        "type": "number",
+                        "description": "Card not Issued"
+                      },
+                      "trd_dis": {
+                        "type": "number",
+                        "description": "Trade"
+                      },
+                      "turnovr_apr_jun": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_end": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_beg": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "crd_note_acc": {
+                        "type": "number",
+                        "description": "Card Note"
+                      },
+                      "adj_dta": {
+                        "type": "number",
+                        "description": "Data"
+                      },
+                      "turnovr_comp": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_sec": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_fef": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_othrsn": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "annul_turn_decl": {
+                        "type": "number",
+                        "description": "Annual Turnover Decline"
+                      },
+                      "unrec_turnovr": {
+                        "type": "number",
+                        "description": "Unrecord Turnover"
+                      }
+                    }
+                  },
+                  "table6": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table7": {
+                    "type": "object",
+                    "properties": {
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "othr_turnovr": {
+                        "type": "number",
+                        "description": "Other Turnover"
+                      },
+                      "zero_sup": {
+                        "type": "number",
+                        "description": "Zero Supply"
+                      },
+                      "rev_sup": {
+                        "type": "number",
+                        "description": "Reverse Supply"
+                      },
+                      "tax_turn_annul": {
+                        "type": "number",
+                        "description": "Tax Turn Yearly"
+                      },
+                      "tax_turn_adj": {
+                        "type": "number",
+                        "description": "Tax Turn"
+                      },
+                      "unrec_tax_turn": {
+                        "type": "number",
+                        "description": "Unrecord Tax Turn"
+                      }
+                    }
+                  },
+                  "table8": {
+                    "type": "object",
+                    "properties": {
+                      "number": {
+                        "type": "string",
+                        "maxLength": 5,
+                        "description": "Reason Number"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Reason Description"
+                      }
+                    }
+                  },
+                  "table9": {
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_payable": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "unrec_amt": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_paid": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table10": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table11": {
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "sgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "igst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "CESS"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table12": {
+                    "type": "object",
+                    "properties": {
+                      "itc_avail": {
+                        "type": "number",
+                        "description": "ITC Avail"
+                      },
+                      "itc_book_earl": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_book_curr": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_avail_audited": {
+                        "type": "number",
+                        "description": "ITC Audited"
+                      },
+                      "itc_claim": {
+                        "type": "number",
+                        "description": "ITC Claim"
+                      },
+                      "unrec_itc": {
+                        "type": "number",
+                        "description": "ITC Unrecord"
+                      }
+                    }
+                  },
+                  "table13": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table14": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Description"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "itc_amt": {
+                              "description": "Amount of Total ITC",
+                              "type": "number"
+                            },
+                            "itc_avail": {
+                              "description": "Amount of eligible ITC availed",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "tot_elig_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      },
+                      "itc_claim": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      },
+                      "unrec_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table15": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table16": {
+                    "type": "object",
+                    "properties": {
+                      "cgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "sgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "igst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "cess": {
+                        "type": "number",
+                        "description": "CESS"
+                      },
+                      "inter": {
+                        "type": "number",
+                        "description": "INTER"
+                      },
+                      "pen": {
+                        "type": "number",
+                        "description": "PEN"
+                      }
+                    }
+                  },
+                  "add_liab": {
+                    "type": "object",
+                    "properties": {
+                      "tax_pay": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Descriptions"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "place": {
+                        "type": "string",
+                        "description": "Description"
+                      },
+                      "signatory": {
+                        "type": "string",
+                        "description": "Description"
+                      },
+                      "mem_no": {
+                        "type": "string",
+                        "description": "Description"
+                      },
+                      "date": {
+                        "type": "string",
+                        "description": "Description"
+                      },
+                      "audit_addr": {
+                        "type": "object",
+                        "properties": {
+                          "bno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "fno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "building": {
+                            "type": "string",
+                            "description": "building name"
+                          },
+                          "road": {
+                            "type": "string",
+                            "description": "road name"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "district": {
+                            "type": "string",
+                            "description": "district"
+                          },
+                          "state": {
+                            "type": "string",
+                            "description": "state"
+                          },
+                          "pin_code": {
+                            "type": "number",
+                            "description": "pin code"
+                          }
+                        }
+                      },
+                      "pan_no": {
+                        "type": "string",
+                        "description": "pan number"
+                      }
+                    }
+                  }
+                }
+              },
+              "certificate": {
+                "type": "object",
+                "properties": {
+                  "cert_data": {
+                    "type": "object",
+                    "properties": {
+                      "pronoun": {
+                        "type": "string",
+                        "description": "pronoun"
+                      },
+                      "bal_sheet_date": {
+                        "type": "string",
+                        "description": "balance sheet date"
+                      },
+                      "acc_typ": {
+                        "type": "string",
+                        "description": "account type"
+                      },
+                      "beg_date": {
+                        "type": "string",
+                        "description": "begin date"
+                      },
+                      "end_date": {
+                        "type": "string",
+                        "description": "end date"
+                      },
+                      "cash_from_date": {
+                        "type": "string",
+                        "description": "cash from date"
+                      },
+                      "cash_to_date": {
+                        "type": "string",
+                        "description": "cash to date"
+                      },
+                      "taxpayer_name": {
+                        "type": "string",
+                        "description": "taxpayer name"
+                      },
+                      "addr": {
+                        "type": "object",
+                        "properties": {
+                          "bno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "fno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "building": {
+                            "type": "string",
+                            "description": "building name"
+                          },
+                          "road": {
+                            "type": "string",
+                            "description": "road name"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "district": {
+                            "type": "string",
+                            "description": "district"
+                          },
+                          "state": {
+                            "type": "string",
+                            "description": "state"
+                          },
+                          "pin_code": {
+                            "type": "number",
+                            "description": "pin code"
+                          }
+                        }
+                      },
+                      "doc_stat": {
+                        "type": "string",
+                        "description": "Document Status"
+                      },
+                      "place": {
+                        "type": "string",
+                        "description": "place"
+                      },
+                      "signatory": {
+                        "type": "string",
+                        "description": "signatory"
+                      },
+                      "mem_no": {
+                        "type": "string",
+                        "description": "number"
+                      },
+                      "date": {
+                        "type": "string",
+                        "description": "Date"
+                      },
+                      "audit_addr": {
+                        "type": "object",
+                        "properties": {
+                          "bno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "fno": {
+                            "type": "string",
+                            "description": "number"
+                          },
+                          "building": {
+                            "type": "string",
+                            "description": "building name"
+                          },
+                          "road": {
+                            "type": "string",
+                            "description": "road name"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "district": {
+                            "type": "string",
+                            "description": "district"
+                          },
+                          "state": {
+                            "type": "string",
+                            "description": "state"
+                          },
+                          "pin_code": {
+                            "type": "number",
+                            "description": "pin code"
+                          }
+                        }
+                      },
+                      "cert_textpartb1": {
+                        "type": "object",
+                        "properties": {
+                          "qualifications": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "qual_type": {
+                                  "type": "string",
+                                  "description": "Qualification Type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "Qualification Value"
+                                }
+                              }
+                            }
+                          },
+                          "gstin": {
+                            "type": "string",
+                            "description": "GSTIN number"
+                          },
+                          "principal_addr": {
+                            "type": "object",
+                            "properties": {
+                              "bno": {
+                                "type": "string",
+                                "description": "number"
+                              },
+                              "fno": {
+                                "type": "string",
+                                "description": "number"
+                              },
+                              "building": {
+                                "type": "string",
+                                "description": "building name"
+                              },
+                              "road": {
+                                "type": "string",
+                                "description": "road name"
+                              },
+                              "city": {
+                                "type": "string",
+                                "description": "city"
+                              },
+                              "district": {
+                                "type": "string",
+                                "description": "district"
+                              },
+                              "state": {
+                                "type": "string",
+                                "description": "state"
+                              },
+                              "pin_code": {
+                                "type": "number",
+                                "description": "pin code"
+                              }
+                            }
+                          },
+                          "add_addr": {
+                            "type": "object",
+                            "properties": {
+                              "bno": {
+                                "type": "string",
+                                "description": "number"
+                              },
+                              "fno": {
+                                "type": "string",
+                                "description": "number"
+                              },
+                              "building": {
+                                "type": "string",
+                                "description": "building name"
+                              },
+                              "road": {
+                                "type": "string",
+                                "description": "road name"
+                              },
+                              "city": {
+                                "type": "string",
+                                "description": "city"
+                              },
+                              "district": {
+                                "type": "string",
+                                "description": "district"
+                              },
+                              "state": {
+                                "type": "string",
+                                "description": "state"
+                              },
+                              "pin_code": {
+                                "type": "number",
+                                "description": "pin code"
+                              }
+                            }
+                          },
+                          "ishave": {
+                            "type": "string",
+                            "description": "have"
+                          },
+                          "isagree": {
+                            "type": "string",
+                            "description": "agreed"
+                          },
+                          "info_stat": {
+                            "type": "string",
+                            "description": "information"
+                          }
+                        }
+                      },
+                      "cert_textpartb2": {
+                        "type": "object",
+                        "properties": {
+                          "qualifications": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "qual_type": {
+                                  "type": "string",
+                                  "description": "Qualification Type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "Qualification Value"
+                                }
+                              }
+                            }
+                          },
+                          "audit_typ": {
+                            "type": "string",
+                            "description": "Audit Type"
+                          },
+                          "audit_date": {
+                            "type": "string",
+                            "description": "Audit Date"
+                          },
+                          "member_no": {
+                            "type": "string",
+                            "description": "Member number"
+                          },
+                          "conducted_by": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              },
+                              "addr": {
+                                "type": "object",
+                                "properties": {
+                                  "bno": {
+                                    "type": "string",
+                                    "description": "number"
+                                  },
+                                  "fno": {
+                                    "type": "string",
+                                    "description": "number"
+                                  },
+                                  "building": {
+                                    "type": "string",
+                                    "description": "building name"
+                                  },
+                                  "road": {
+                                    "type": "string",
+                                    "description": "road name"
+                                  },
+                                  "city": {
+                                    "type": "string",
+                                    "description": "city"
+                                  },
+                                  "district": {
+                                    "type": "string",
+                                    "description": "district"
+                                  },
+                                  "state": {
+                                    "type": "string",
+                                    "description": "state"
+                                  },
+                                  "pin_code": {
+                                    "type": "number",
+                                    "description": "pin code"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cert_text": {
+                    "type": "object",
+                    "properties": {
+                      "cert_text_partb1": {
+                        "type": "object",
+                        "properties": {
+                          "section1": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line1": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line2": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line3": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section2": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line1": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section3": {
+                            "type": "object",
+                            "properties": {
+                              "sec_3a": {
+                                "type": "object",
+                                "properties": {
+                                  "line0": {
+                                    "type": "string",
+                                    "description": "line"
+                                  }
+                                }
+                              },
+                              "sec_3b": {
+                                "type": "object",
+                                "properties": {
+                                  "line0": {
+                                    "type": "string",
+                                    "description": "line"
+                                  },
+                                  "line1": {
+                                    "type": "string",
+                                    "description": "line"
+                                  },
+                                  "line2": {
+                                    "type": "string",
+                                    "description": "line"
+                                  },
+                                  "line3": {
+                                    "type": "string",
+                                    "description": "line"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "section4": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section5": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "qualifications": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "qual_type": {
+                                  "type": "string",
+                                  "description": "Qualification Type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "Qualification Value"
+                                }
+                              }
+                            }
+                          },
+                          "signature": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "place": {
+                                "type": "string",
+                                "description": "Place"
+                              },
+                              "nameOfTheSignatory": {
+                                "type": "string",
+                                "description": "Name Of The Signatory"
+                              },
+                              "membershipNo": {
+                                "type": "string",
+                                "description": "Membership No"
+                              },
+                              "date": {
+                                "type": "string",
+                                "description": "Date"
+                              },
+                              "fullAddress": {
+                                "type": "string",
+                                "description": "Full Address"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "cert_text_partb2": {
+                        "type": "object",
+                        "properties": {
+                          "section1": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line1": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line2": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line3": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line4": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section2": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "line1": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section3": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "section4": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              }
+                            }
+                          },
+                          "qualifications": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "qual_type": {
+                                  "type": "string",
+                                  "description": "Qualification Type"
+                                },
+                                "value": {
+                                  "type": "string",
+                                  "description": "Qualification Value"
+                                }
+                              }
+                            }
+                          },
+                          "signature": {
+                            "type": "object",
+                            "properties": {
+                              "line0": {
+                                "type": "string",
+                                "description": "line"
+                              },
+                              "place": {
+                                "type": "string",
+                                "description": "Place"
+                              },
+                              "nameOfTheSignatory": {
+                                "type": "string",
+                                "description": "Name Of The Signatory"
+                              },
+                              "membershipNo": {
+                                "type": "string",
+                                "description": "Membership No"
+                              },
+                              "date": {
+                                "type": "string",
+                                "description": "Date"
+                              },
+                              "fullAddress": {
+                                "type": "string",
+                                "description": "Full Address"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstr9cdata": {
+          "audited_data": {
+            "gstin": "12AVVVH1234HA1X",
+            "fp": "032019",
+            "act_name": "Trade Unions Act, 1926 ",
+            "isauditor": "Y",
+            "table5": {
+              "turnovr": 9999999999999.99,
+              "unbil_rev_beg": 9999999999999.99,
+              "unadj_adv_end": 9999999999999.99,
+              "dmd_sup": 9999999999999.99,
+              "crd_nts_issued": 9999999999999.99,
+              "trd_dis": 9999999999999.99,
+              "turnovr_apr_jun": -9999999999999.99,
+              "unbil_rev_end": 9999999999999.99,
+              "unadj_adv_beg": 9999999999999.99,
+              "crd_note_acc": 9999999999999.99,
+              "adj_dta": 9999999999999.99,
+              "turnovr_comp": 9999999999999.99,
+              "adj_turn_sec": -9999999999999.99,
+              "adj_turn_fef": -9999999999999.99,
+              "adj_turn_othrsn": -9999999999999.99,
+              "annul_turn_adj": -1000000000000000,
+              "annul_turn_decl": -1000000000000000,
+              "unrec_turnovr": -1000000000000000
+            },
+            "table6": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table7": {
+              "annul_turn_adj": -1000000000000000,
+              "othr_turnovr": -9999999999999.99,
+              "zero_sup": -9999999999999.99,
+              "rev_sup": -9999999999999.99,
+              "tax_turn_annul": -1000000000000000,
+              "tax_turn_adj": -1000000000000000,
+              "unrec_tax_turn": -1000000000000000
+            },
+            "table8": {
+              "number": "RSN1",
+              "desc": "Trade updates delay"
+            },
+            "table9": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "tot_amt_payable": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              },
+              "unrec_amt": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              },
+              "tot_amt_paid": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              }
+            },
+            "table10": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table11": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              }
+            },
+            "table12": {
+              "itc_avail": 9999999999999.99,
+              "itc_book_earl": 9999999999999.99,
+              "itc_book_curr": 9999999999999.99,
+              "itc_avail_audited": 1000000000000000,
+              "itc_claim": -1000000000000000,
+              "unrec_itc": -1000000000000000
+            },
+            "table13": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table14": {
+              "items": [
+                {
+                  "desc": "PURCHS",
+                  "val": 9999999999999.99,
+                  "itc_amt": 9999999999999.99,
+                  "itc_avail": 9999999999999.99
+                }
+              ],
+              "tot_elig_itc": {
+                "itc_avail": 1000000000000000
+              },
+              "itc_claim": {
+                "itc_avail": 1000000000000000
+              },
+              "unrec_itc": {
+                "itc_avail": -1000000000000000
+              }
+            },
+            "table15": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table16": {
+              "cgst": 9999999999999.99,
+              "sgst": 9999999999999.99,
+              "igst": 9999999999999.99,
+              "cess": 9999999999999.99,
+              "inter": 9999999999999.99,
+              "pen": 9999999999999.99
+            },
+            "add_liab": {
+              "tax_pay": [
+                {
+                  "desc": "12",
+                  "val": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "place": "Bangalore",
+              "signatory": "Akhil kumar",
+              "mem_no": "12345678",
+              "date": "21/12/2121",
+              "audit_addr": {
+                "bno": "121",
+                "fno": "45455",
+                "building": "dream paradise",
+                "road": "basapura",
+                "city": "Bangalore",
+                "district": "Bangalore",
+                "state": "karnataka",
+                "pin_code": 560100
+              },
+              "pan_no": "DMGPT7813B"
+            }
+          },
+          "certificate": {
+            "cert_data": {
+              "pronoun": "We",
+              "bal_sheet_date": "21/12/2121",
+              "acc_typ": "profit and loss account",
+              "beg_date": "21/12/2121",
+              "end_date": "21/12/2121",
+              "cash_from_date": "21/12/2121",
+              "cash_to_date": "21/12/2121",
+              "taxpayer_name": "anil kumar",
+              "addr": {
+                "bno": "121",
+                "fno": "dfgs1545",
+                "building": "121",
+                "road": "neeladri",
+                "city": "Bangalore",
+                "district": "Bangalore",
+                "state": "Karnataka",
+                "pin_code": 560100
+              },
+              "doc_stat": "has maintained the books of accounts, records and documents",
+              "place": "Bangalore",
+              "signatory": "Ankit Arora",
+              "mem_no": "12345678",
+              "date": "21/12/2121",
+              "audit_addr": {
+                "bno": "121",
+                "fno": "dfgs1545",
+                "building": "121",
+                "road": "neeladri",
+                "city": "Bangalore",
+                "district": "Bangalore",
+                "state": "Karnataka",
+                "pin_code": 560100
+              },
+              "cert_textpartb1": {
+                "qualifications": [
+                  {
+                    "qual_type": "2",
+                    "value": "1000"
+                  }
+                ],
+                "gstin": "12AVVVH1234HA1X",
+                "principal_addr": {
+                  "bno": "121",
+                  "fno": "dfgs1545",
+                  "building": "121",
+                  "road": "neeladri",
+                  "city": "Bangalore",
+                  "district": "Bangalore",
+                  "state": "Karnataka",
+                  "pin_code": 560100
+                },
+                "add_addr": {
+                  "bno": "121",
+                  "fno": "dfgs1545",
+                  "building": "121",
+                  "road": "neeladri",
+                  "city": "Bangalore",
+                  "district": "Bangalore",
+                  "state": "Karnataka",
+                  "pin_code": 560100
+                },
+                "ishave": "have been",
+                "isagree": "in agreement",
+                "info_stat": "was partially provided"
+              },
+              "cert_textpartb2": {
+                "qualifications": [
+                  {
+                    "qual_type": "2",
+                    "value": "1000"
+                  }
+                ],
+                "audit_typ": "Institute of Chartered Accountants of India",
+                "audit_date": "21/12/2121",
+                "member_no": "456784",
+                "conducted_by": {
+                  "name": "Krishna devan",
+                  "addr": {
+                    "bno": "121",
+                    "fno": "dfgs1545",
+                    "building": "building",
+                    "road": "neeladri",
+                    "city": "Bangalore",
+                    "district": "Bangalore",
+                    "state": "Karnataka",
+                    "pin_code": 560100
+                  }
+                }
+              }
+            },
+            "cert_text": {
+              "cert_text_partb1": {
+                "section1": {
+                  "line0": "1. I have examined the-",
+                  "line1": "(a) balance sheet as on 10/01/2019",
+                  "line2": "(b) the profit and loss account for the period beginning from 01/01/2019 to ending on 07/01/2019 and",
+                  "line3": "(c) the cash flow statement for the period beginning: from 01/01/2019 to ending on 07/01/2019,attached herewith, of M/s. Rachel (Name), A101, 1st, Royal Apartments, Electronics city phase1, Bengaluru, Bengaluru, Karnataka, 560100 (Address), 09SSAUP0014A1ZR (GSTIN)."
+                },
+                "section2": {
+                  "line0": "2. Based on our audit I report that the said registered person-",
+                  "line1": "has not maintained books of accounts/records/documents specified below as required by the IGST/CGST/<<>>GST Act, 2017 and the rules/notifications made/issued thereunder:"
+                },
+                "section3": {
+                  "sec_3a": {
+                    "line0": "3.(a) I report the following observations/ comments / discrepancies /inconsistencies; if any:"
+                  },
+                  "sec_3b": {
+                    "line0": "3.(b) I further report that-,",
+                    "line1": "(A) I have obtained all the information and explanations which, to the best of my knowledge and belief, were necessary for the purpose of the audit/ information and explanations which, to the best of my knowledge and belief, were necessary for the purpose of the audit were not provided/partially provided to us.",
+                    "line2": "(B) In my opinion, proper books of account have not been kept by the registered person so far as appears from my examination of the books.",
+                    "line3": "(C) I certify that the balance sheet, the profit and loss account and the cash flow Statement are in agreement with the books of account maintained at the Principal place of business at B52, 1st, Salarpuria, Electronics city phase1, Bengaluru, Bengaluru, Karnataka, 560100 and B30, 1st, Infosys, Electronics city phase1, Bengaluru, Bengaluru, Karnataka, 560100 additional place of business within the State."
+                  }
+                },
+                "section4": {
+                  "line0": "4. The documents required to be furnished under section 35 (5) of the CGST Act and Reconciliation Statement required to be furnished under section 44(2) of the CGST Act is annexed herewith in Form No. GSTR-9C"
+                },
+                "section5": {
+                  "line0": "5. In my opinion and to the best of my information and according to explanations given to me, the particulars given in the said Form No.GSTR-9C are true and correct subject to following observations/qualifications, if any:"
+                },
+                "qualifications": [
+                  {
+                    "qual_type": "2",
+                    "value": "1000"
+                  }
+                ],
+                "signature": {
+                  "line0": "(Signature and stamp/Seal of the Auditor)",
+                  "place": "Bengaluru",
+                  "nameOfTheSignatory": "Mr. Ashok",
+                  "membershipNo": "12345678",
+                  "date": "10/01/2019",
+                  "fullAddress": "B30, 1st, Infosys, Electronics city phase1, Bengaluru, Bengaluru, Karnataka, 560100"
+                }
+              },
+              "cert_text_partb2": {
+                "section1": {
+                  "line0": "I report that the audit of the books of accounts and the financial statements of M/s. Rachel (Name), A101, 1st, Royal Apartments, Electronics city phase1, Bengaluru, Bengaluru, Karnataka, 560100 (Name and address of the assessee with GSTIN) was conducted by M/s. Monica (Name), A101, 1st, Paradise Apartments, Electronics city phase2, Bengaluru, Bengaluru, Karnataka, 560100 (full name and address of auditor along with status), bearing membership number in pursuance of the provisions of the Institute of Chartered Accountants of India Act, and I annex hereto a copy of their audit report dated 10/01/2018 along with a copy of each of :-",
+                  "line1": "(a) balance sheet as on 10/01/2019",
+                  "line2": "(b) the profit and loss account for the period beginning from 01/01/2019 to ending on 07/01/2019",
+                  "line3": "(c) the cash flow statement for the period beginning from 01/01/2019 to ending on 07/01/2019 and",
+                  "line4": "(d) documents declared by the said Act to be part of, or annexed to, the %23$s and balance sheet."
+                },
+                "section2": {
+                  "line0": "2. I report that the said registered person",
+                  "line1": "has not maintained books of accounts/records/documents specified below as required by the IGST/CGST/<<>>GST Act, 2017 and the rules/notifications made/issued thereunder"
+                },
+                "section3": {
+                  "line0": "3. The documents required to be furnished under section 35 (5) of the CGST Act and Reconciliation Statement required to be furnished under section 44(2) of the CGST Act is annexed herewith in Form No.GSTR-9C."
+                },
+                "section4": {
+                  "line0": "4. In my opinion and to the best of my information and according to examination of books of account including other relevant documents and explanations given to me, the particulars given in the said Form No.9C are true and correct subject to the following observations/qualifications, if any:"
+                },
+                "qualifications": [
+                  {
+                    "qual_type": "2",
+                    "value": "1000"
+                  }
+                ],
+                "signature": {
+                  "line0": "(Signature and stamp/Seal of the Auditor)",
+                  "place": "Bengaluru",
+                  "nameOfTheSignatory": "Mr.Ashok",
+                  "membershipNo": "12345678",
+                  "date": "10/01/2019",
+                  "fullAddress": "B44, 1st, SJR Equinox, Electronics city phase2, Bengaluru, Bengaluru, Karnataka, 560100"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr9c/retsave",
+      "slug": "gst-gstr9c-retsave-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr9c/retsave",
+      "tag": "GSTR9C",
+      "summary": "Save GSTR9C",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstr9cdata": {
+            "type": "object",
+            "properties": {
+              "audited_data": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "fp": {
+                    "type": "string",
+                    "description": "Fp Type"
+                  },
+                  "act_name": {
+                    "type": "string",
+                    "description": "Act Name"
+                  },
+                  "isauditor": {
+                    "type": "string",
+                    "description": "Auditor"
+                  },
+                  "table5": {
+                    "type": "object",
+                    "properties": {
+                      "turnovr": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_beg": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_end": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "dmd_sup": {
+                        "type": "number",
+                        "description": "DMD"
+                      },
+                      "crd_nts_issued": {
+                        "type": "number",
+                        "description": "Card not Issued"
+                      },
+                      "trd_dis": {
+                        "type": "number",
+                        "description": "Trade"
+                      },
+                      "turnovr_apr_jun": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "unbil_rev_end": {
+                        "type": "number",
+                        "description": "UNBIL"
+                      },
+                      "unadj_adv_beg": {
+                        "type": "number",
+                        "description": "UNADJ"
+                      },
+                      "crd_note_acc": {
+                        "type": "number",
+                        "description": "Card Note"
+                      },
+                      "adj_dta": {
+                        "type": "number",
+                        "description": "Data"
+                      },
+                      "turnovr_comp": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_sec": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_fef": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "adj_turn_othrsn": {
+                        "type": "number",
+                        "description": "Turnover"
+                      },
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "annul_turn_decl": {
+                        "type": "number",
+                        "description": "Annual Turnover Decline"
+                      },
+                      "unrec_turnovr": {
+                        "type": "number",
+                        "description": "Unrecord Turnover"
+                      }
+                    }
+                  },
+                  "table6": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table7": {
+                    "type": "object",
+                    "properties": {
+                      "annul_turn_adj": {
+                        "type": "number",
+                        "description": "Annual Turnover"
+                      },
+                      "othr_turnovr": {
+                        "type": "number",
+                        "description": "Other Turnover"
+                      },
+                      "zero_sup": {
+                        "type": "number",
+                        "description": "Zero Supply"
+                      },
+                      "rev_sup": {
+                        "type": "number",
+                        "description": "Reverse Supply"
+                      },
+                      "tax_turn_annul": {
+                        "type": "number",
+                        "description": "Tax Turn Yearly"
+                      },
+                      "tax_turn_adj": {
+                        "type": "number",
+                        "description": "Tax Turn"
+                      },
+                      "unrec_tax_turn": {
+                        "type": "number",
+                        "description": "Unrecord Tax Turn"
+                      }
+                    }
+                  },
+                  "table8": {
+                    "type": "object",
+                    "properties": {
+                      "number": {
+                        "type": "string",
+                        "maxLength": 5,
+                        "description": "Reason Number"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Reason Description"
+                      }
+                    }
+                  },
+                  "table9": {
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_payable": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "unrec_amt": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "tot_amt_paid": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table10": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table11": {
+                    "type": "object",
+                    "properties": {
+                      "rate": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Rate Description"
+                            },
+                            "tax_val": {
+                              "description": "Taxable Value",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "sgst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "igst": {
+                              "type": "number",
+                              "description": "Taxable Amount"
+                            },
+                            "cess": {
+                              "type": "number",
+                              "description": "CESS"
+                            }
+                          }
+                        }
+                      },
+                      "inter": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "late_fee": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "pen": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      },
+                      "oth": {
+                        "type": "object",
+                        "properties": {
+                          "cgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "sgst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "igst": {
+                            "type": "number",
+                            "description": "Taxable Amount"
+                          },
+                          "cess": {
+                            "type": "number",
+                            "description": "CESS"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table12": {
+                    "type": "object",
+                    "properties": {
+                      "itc_avail": {
+                        "type": "number",
+                        "description": "ITC Avail"
+                      },
+                      "itc_book_earl": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_book_curr": {
+                        "type": "number",
+                        "description": "ITC Book"
+                      },
+                      "itc_avail_audited": {
+                        "type": "number",
+                        "description": "ITC Audited"
+                      },
+                      "itc_claim": {
+                        "type": "number",
+                        "description": "ITC Claim"
+                      },
+                      "unrec_itc": {
+                        "type": "number",
+                        "description": "ITC Unrecord"
+                      }
+                    }
+                  },
+                  "table13": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table14": {
+                    "type": "object",
+                    "properties": {
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Description"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "itc_amt": {
+                              "description": "Amount of Total ITC",
+                              "type": "number"
+                            },
+                            "itc_avail": {
+                              "description": "Amount of eligible ITC availed",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "tot_elig_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      },
+                      "itc_claim": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      },
+                      "unrec_itc": {
+                        "type": "object",
+                        "properties": {
+                          "itc_avail": {
+                            "type": "number",
+                            "description": "ITC Avail"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table15": {
+                    "type": "object",
+                    "properties": {
+                      "rsn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "number": {
+                              "type": "string",
+                              "maxLength": 5,
+                              "description": "Reason Number"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Reason Description"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table16": {
+                    "type": "object",
+                    "properties": {
+                      "cgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "sgst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "igst": {
+                        "type": "number",
+                        "description": "Taxable Amount"
+                      },
+                      "cess": {
+                        "type": "number",
+                        "description": "CESS"
+                      },
+                      "inter": {
+                        "type": "number",
+                        "description": "INTER"
+                      },
+                      "pen": {
+                        "type": "number",
+                        "description": "PEN"
+                      }
+                    }
+                  },
+                  "add_liab": {
+                    "type": "object",
+                    "properties": {
+                      "tax_pay": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "desc": {
+                              "type": "string",
+                              "description": "Descriptions"
+                            },
+                            "val": {
+                              "description": "Value",
+                              "type": "number"
+                            },
+                            "igst": {
+                              "description": "Integrated Tax",
+                              "type": "number"
+                            },
+                            "cgst": {
+                              "description": "Central Tax",
+                              "type": "number"
+                            },
+                            "sgst": {
+                              "description": "State/UT Tax",
+                              "type": "number"
+                            },
+                            "cess": {
+                              "description": "Cess",
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "dcupdtls": {
+            "type": "object",
+            "properties": {
+              "balance_sheet": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "profitloss": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "otherdoc1": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              },
+              "otherdoc2": {
+                "type": "array",
+                "items": {
+                  "properties": {
+                    "doc_nam": {
+                      "type": "string",
+                      "description": "Name of the uploaded document"
+                    },
+                    "doc_id": {
+                      "type": "string",
+                      "description": "Doc id of uploaded document"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr9c/retfile",
+        "gst:POST:/gstr9c/retevcfile"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstr9cdata": {
+          "audited_data": {
+            "gstin": "12AVVVH1234HA1X",
+            "fp": "032019",
+            "act_name": "Trade Unions Act, 1926 ",
+            "isauditor": "Y",
+            "table5": {
+              "turnovr": 9999999999999.99,
+              "unbil_rev_beg": 9999999999999.99,
+              "unadj_adv_end": 9999999999999.99,
+              "dmd_sup": 9999999999999.99,
+              "crd_nts_issued": 9999999999999.99,
+              "trd_dis": 9999999999999.99,
+              "turnovr_apr_jun": -9999999999999.99,
+              "unbil_rev_end": 9999999999999.99,
+              "unadj_adv_beg": 9999999999999.99,
+              "crd_note_acc": 9999999999999.99,
+              "adj_dta": 9999999999999.99,
+              "turnovr_comp": 9999999999999.99,
+              "adj_turn_sec": -9999999999999.99,
+              "adj_turn_fef": -9999999999999.99,
+              "adj_turn_othrsn": -9999999999999.99,
+              "annul_turn_adj": -1000000000000000,
+              "annul_turn_decl": -1000000000000000,
+              "unrec_turnovr": -1000000000000000
+            },
+            "table6": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table7": {
+              "annul_turn_adj": -1000000000000000,
+              "othr_turnovr": -9999999999999.99,
+              "zero_sup": -9999999999999.99,
+              "rev_sup": -9999999999999.99,
+              "tax_turn_annul": -1000000000000000,
+              "tax_turn_adj": -1000000000000000,
+              "unrec_tax_turn": -1000000000000000
+            },
+            "table8": {
+              "number": "RSN1",
+              "desc": "Trade updates delay"
+            },
+            "table9": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "tot_amt_payable": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              },
+              "unrec_amt": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              },
+              "tot_amt_paid": {
+                "cgst": 1000000000000000,
+                "sgst": 1000000000000000,
+                "igst": 1000000000000000,
+                "cess": 1000000000000000
+              }
+            },
+            "table10": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table11": {
+              "rate": [
+                {
+                  "desc": "5",
+                  "tax_val": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ],
+              "inter": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "late_fee": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "pen": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              },
+              "oth": {
+                "cgst": 9999999999999.99,
+                "sgst": 9999999999999.99,
+                "igst": 9999999999999.99,
+                "cess": 9999999999999.99
+              }
+            },
+            "table12": {
+              "itc_avail": 9999999999999.99,
+              "itc_book_earl": 9999999999999.99,
+              "itc_book_curr": 9999999999999.99,
+              "itc_avail_audited": 1000000000000000,
+              "itc_claim": -1000000000000000,
+              "unrec_itc": -1000000000000000
+            },
+            "table13": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table14": {
+              "items": [
+                {
+                  "desc": "PURCHS",
+                  "val": 9999999999999.99,
+                  "itc_amt": 9999999999999.99,
+                  "itc_avail": 9999999999999.99
+                }
+              ],
+              "tot_elig_itc": {
+                "itc_avail": 1000000000000000
+              },
+              "itc_claim": {
+                "itc_avail": 1000000000000000
+              },
+              "unrec_itc": {
+                "itc_avail": -1000000000000000
+              }
+            },
+            "table15": {
+              "rsn": [
+                {
+                  "number": "RSN1",
+                  "desc": "Trade updates delay"
+                }
+              ]
+            },
+            "table16": {
+              "cgst": 9999999999999.99,
+              "sgst": 9999999999999.99,
+              "igst": 9999999999999.99,
+              "cess": 9999999999999.99,
+              "inter": 9999999999999.99,
+              "pen": 9999999999999.99
+            },
+            "add_liab": {
+              "tax_pay": [
+                {
+                  "desc": "12",
+                  "val": 9999999999999.99,
+                  "igst": 9999999999999.99,
+                  "cgst": 9999999999999.99,
+                  "sgst": 9999999999999.99,
+                  "cess": 9999999999999.99
+                }
+              ]
+            }
+          }
+        }
+      },
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      }
+    }
+  ]
+}

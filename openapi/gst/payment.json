@@ -1,0 +1,862 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: Payment",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group Payment, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Payment"
+    }
+  ],
+  "paths": {
+    "/payment/chllnlst": {
+      "get": {
+        "operationId": "gst-payment-chllnlst-get",
+        "summary": "Get Challan History",
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromdate",
+            "in": "query",
+            "required": true,
+            "description": "From Date  (DD-MM-YYYY,20-12-2016)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "todate",
+            "in": "query",
+            "required": true,
+            "description": "To Date  (DD-MM-YYYY,20-12-2016)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/payment/chllnsum": {
+      "get": {
+        "operationId": "gst-payment-chllnsum-get",
+        "summary": "Get Challan Summary",
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cpin",
+            "in": "query",
+            "required": true,
+            "description": "CPIN",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/payment/generateChallan": {
+      "post": {
+        "operationId": "gst-payment-generatechallan-post",
+        "summary": "Generate Challan",
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "email_id": {
+                    "type": "string",
+                    "description": "email"
+                  },
+                  "mobile_num": {
+                    "type": "string",
+                    "description": "Mobile Number"
+                  },
+                  "tp_name": {
+                    "type": "string",
+                    "description": "Tax payer name"
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "Address"
+                  },
+                  "payment_mod": {
+                    "type": "string",
+                    "description": "Payment mode"
+                  },
+                  "bank_cd": {
+                    "type": "string",
+                    "description": "Bank Code"
+                  },
+                  "sub_pay_mod": {
+                    "type": "string",
+                    "description": "Sub Payment mode"
+                  },
+                  "ipAddr": {
+                    "type": "string",
+                    "description": "Ip address"
+                  },
+                  "cgst_tax_amt": {
+                    "type": "number",
+                    "description": "Cgst tax amount"
+                  },
+                  "cgst_int_amt": {
+                    "type": "number",
+                    "description": "Cgst interest amount"
+                  },
+                  "cgst_fee_amt": {
+                    "type": "number",
+                    "description": "Cgst fee amount"
+                  },
+                  "cgst_oth_amt": {
+                    "type": "number",
+                    "description": "Cgst other amount"
+                  },
+                  "cgst_pen_amt": {
+                    "type": "number",
+                    "description": "Cgst penalty amount"
+                  },
+                  "igst_tax_amt": {
+                    "type": "number",
+                    "description": "Igst tax amount"
+                  },
+                  "igst_int_amt": {
+                    "type": "number",
+                    "description": "Igst interest amount"
+                  },
+                  "igst_fee_amt": {
+                    "type": "number",
+                    "description": "Igst fee amount"
+                  },
+                  "igst_oth_amt": {
+                    "type": "number",
+                    "description": "Igst other amount"
+                  },
+                  "igst_pen_amt": {
+                    "type": "number",
+                    "description": "Igst penalty amount"
+                  },
+                  "sgst_tax_amt": {
+                    "type": "number",
+                    "description": "Sgst tax amount"
+                  },
+                  "sgst_int_amt": {
+                    "type": "number",
+                    "description": "Sgst interest amount"
+                  },
+                  "sgst_fee_amt": {
+                    "type": "number",
+                    "description": "Sgst fee amount"
+                  },
+                  "sgst_oth_amt": {
+                    "type": "number",
+                    "description": "Sgst other amount"
+                  },
+                  "sgst_pen_amt": {
+                    "type": "number",
+                    "description": "Sgst penalty amount"
+                  },
+                  "cess_tax_amt": {
+                    "type": "number",
+                    "description": "Cess tax amount"
+                  },
+                  "cess_int_amt": {
+                    "type": "number",
+                    "description": "Cess interest amount"
+                  },
+                  "cess_fee_amt": {
+                    "type": "number",
+                    "description": "Cess fee amount"
+                  },
+                  "cess_oth_amt": {
+                    "type": "number",
+                    "description": "Cess other amount"
+                  },
+                  "cess_pen_amt": {
+                    "type": "number",
+                    "description": "Cess penalty amount"
+                  },
+                  "cgst_tot_amt": {
+                    "type": "number",
+                    "description": "Cgst Total amount"
+                  },
+                  "igst_tot_amt": {
+                    "type": "number",
+                    "description": "Igst Total amount"
+                  },
+                  "sgst_tot_amt": {
+                    "type": "number",
+                    "description": "Sgst Total amount"
+                  },
+                  "cess_tot_amt": {
+                    "type": "number",
+                    "description": "Cess Total amount"
+                  },
+                  "total_amt": {
+                    "type": "number",
+                    "description": "Total amount"
+                  },
+                  "chln_rsn": {
+                    "type": "string",
+                    "description": "Challan reason"
+                  },
+                  "chln_prd": {
+                    "type": "string",
+                    "description": "Challan reason period"
+                  }
+                }
+              },
+              "example": {
+                "gstin": "27AHQPA7588L1ZJ",
+                "email_id": "abc@gmail.com",
+                "mobile_num": "9889898999",
+                "tp_name": "NEELAM NAIDU",
+                "address": "1234,KamalaNagar,Delhi",
+                "payment_mod": "OTC",
+                "bank_cd": "ICIC",
+                "sub_pay_mod": "CQ",
+                "ipAddr": "12.8.91.80",
+                "cgst_tax_amt": 42848,
+                "cgst_int_amt": 0,
+                "cgst_fee_amt": 0,
+                "cgst_oth_amt": 0,
+                "cgst_pen_amt": 0,
+                "igst_tax_amt": 43202,
+                "igst_int_amt": 0,
+                "igst_fee_amt": 0,
+                "igst_oth_amt": 0,
+                "igst_pen_amt": 0,
+                "sgst_tax_amt": 42848,
+                "sgst_int_amt": 0,
+                "sgst_fee_amt": 0,
+                "sgst_oth_amt": 0,
+                "sgst_pen_amt": 0,
+                "cess_tax_amt": 46738,
+                "cess_int_amt": 0,
+                "cess_fee_amt": 0,
+                "cess_oth_amt": 0,
+                "cess_pen_amt": 0,
+                "cgst_tot_amt": 42848,
+                "igst_tot_amt": 43202,
+                "sgst_tot_amt": 42848,
+                "cess_tot_amt": 46738,
+                "total_amt": 175636,
+                "chln_rsn": "QRMP35",
+                "chln_prd": "112020"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/payment/validatechlnrsn": {
+      "post": {
+        "operationId": "gst-payment-validatechlnrsn-post",
+        "summary": "Validate Challan Reason",
+        "tags": [
+          "Payment"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "email_id": {
+                    "type": "string",
+                    "description": "email"
+                  },
+                  "mobile_num": {
+                    "type": "string",
+                    "description": "Mobile Number"
+                  },
+                  "tp_name": {
+                    "type": "string",
+                    "description": "Tax payer name"
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "Address"
+                  },
+                  "payment_mod": {
+                    "type": "string",
+                    "description": "Payment mode"
+                  },
+                  "bank_cd": {
+                    "type": "string",
+                    "description": "Bank Code"
+                  },
+                  "sub_pay_mod": {
+                    "type": "string",
+                    "description": "Sub Payment mode"
+                  },
+                  "ipAddr": {
+                    "type": "string",
+                    "description": "Ip address"
+                  },
+                  "cgst_tax_amt": {
+                    "type": "number",
+                    "description": "Cgst tax amount"
+                  },
+                  "cgst_int_amt": {
+                    "type": "number",
+                    "description": "Cgst interest amount"
+                  },
+                  "cgst_fee_amt": {
+                    "type": "number",
+                    "description": "Cgst fee amount"
+                  },
+                  "cgst_oth_amt": {
+                    "type": "number",
+                    "description": "Cgst other amount"
+                  },
+                  "cgst_pen_amt": {
+                    "type": "number",
+                    "description": "Cgst penalty amount"
+                  },
+                  "igst_tax_amt": {
+                    "type": "number",
+                    "description": "Igst tax amount"
+                  },
+                  "igst_int_amt": {
+                    "type": "number",
+                    "description": "Igst interest amount"
+                  },
+                  "igst_fee_amt": {
+                    "type": "number",
+                    "description": "Igst fee amount"
+                  },
+                  "igst_oth_amt": {
+                    "type": "number",
+                    "description": "Igst other amount"
+                  },
+                  "igst_pen_amt": {
+                    "type": "number",
+                    "description": "Igst penalty amount"
+                  },
+                  "sgst_tax_amt": {
+                    "type": "number",
+                    "description": "Sgst tax amount"
+                  },
+                  "sgst_int_amt": {
+                    "type": "number",
+                    "description": "Sgst interest amount"
+                  },
+                  "sgst_fee_amt": {
+                    "type": "number",
+                    "description": "Sgst fee amount"
+                  },
+                  "sgst_oth_amt": {
+                    "type": "number",
+                    "description": "Sgst other amount"
+                  },
+                  "sgst_pen_amt": {
+                    "type": "number",
+                    "description": "Sgst penalty amount"
+                  },
+                  "cess_tax_amt": {
+                    "type": "number",
+                    "description": "Cess tax amount"
+                  },
+                  "cess_int_amt": {
+                    "type": "number",
+                    "description": "Cess interest amount"
+                  },
+                  "cess_fee_amt": {
+                    "type": "number",
+                    "description": "Cess fee amount"
+                  },
+                  "cess_oth_amt": {
+                    "type": "number",
+                    "description": "Cess other amount"
+                  },
+                  "cess_pen_amt": {
+                    "type": "number",
+                    "description": "Cess penalty amount"
+                  },
+                  "cgst_tot_amt": {
+                    "type": "number",
+                    "description": "Cgst Total amount"
+                  },
+                  "igst_tot_amt": {
+                    "type": "number",
+                    "description": "Igst Total amount"
+                  },
+                  "sgst_tot_amt": {
+                    "type": "number",
+                    "description": "Sgst Total amount"
+                  },
+                  "cess_tot_amt": {
+                    "type": "number",
+                    "description": "Cess Total amount"
+                  },
+                  "total_amt": {
+                    "type": "number",
+                    "description": "Total amount"
+                  },
+                  "chln_rsn": {
+                    "type": "string",
+                    "description": "Challan reason"
+                  },
+                  "chln_prd": {
+                    "type": "string",
+                    "description": "Challan reason period"
+                  }
+                }
+              },
+              "example": {
+                "gstin": "27AHQPA7588L1ZJ",
+                "email_id": "abc@gmail.com",
+                "mobile_num": "9889898999",
+                "tp_name": "NEELAM NAIDU",
+                "address": "1234,KamalaNagar,Delhi",
+                "payment_mod": "OTC",
+                "bank_cd": "ICIC",
+                "sub_pay_mod": "CQ",
+                "ipAddr": "12.8.91.80",
+                "cgst_tax_amt": 42848,
+                "cgst_int_amt": 0,
+                "cgst_fee_amt": 0,
+                "cgst_oth_amt": 0,
+                "cgst_pen_amt": 0,
+                "igst_tax_amt": 43202,
+                "igst_int_amt": 0,
+                "igst_fee_amt": 0,
+                "igst_oth_amt": 0,
+                "igst_pen_amt": 0,
+                "sgst_tax_amt": 42848,
+                "sgst_int_amt": 0,
+                "sgst_fee_amt": 0,
+                "sgst_oth_amt": 0,
+                "sgst_pen_amt": 0,
+                "cess_tax_amt": 46738,
+                "cess_int_amt": 0,
+                "cess_fee_amt": 0,
+                "cess_oth_amt": 0,
+                "cess_pen_amt": 0,
+                "cgst_tot_amt": 42848,
+                "igst_tot_amt": 43202,
+                "sgst_tot_amt": 42848,
+                "cess_tot_amt": 46738,
+                "total_amt": 175636,
+                "chln_rsn": "QRMP35",
+                "chln_prd": "112020"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    }
+  }
+}

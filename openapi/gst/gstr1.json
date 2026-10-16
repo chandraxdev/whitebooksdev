@@ -1,0 +1,5509 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: GSTR1",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group GSTR1, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "GSTR1"
+    }
+  ],
+  "paths": {
+    "/gstr1/at": {
+      "get": {
+        "operationId": "gst-gstr1-at-get",
+        "summary": "Get AT",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/ata": {
+      "get": {
+        "operationId": "gst-gstr1-ata-get",
+        "summary": "Get ATA",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2b": {
+      "get": {
+        "operationId": "gst-gstr1-b2b-get",
+        "summary": "Get B2B Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionrequired",
+            "in": "query",
+            "required": false,
+            "description": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ctin",
+            "in": "query",
+            "required": false,
+            "description": "CTIN of the taxpayer",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2ba": {
+      "get": {
+        "operationId": "gst-gstr1-b2ba-get",
+        "summary": "Get B2BA Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionrequired",
+            "in": "query",
+            "required": false,
+            "description": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ctin",
+            "in": "query",
+            "required": false,
+            "description": "CTIN of the taxpayer",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2cl": {
+      "get": {
+        "operationId": "gst-gstr1-b2cl-get",
+        "summary": "Get B2CL Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "statecd",
+            "in": "query",
+            "required": false,
+            "description": "State code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2cla": {
+      "get": {
+        "operationId": "gst-gstr1-b2cla-get",
+        "summary": "Get B2CLA Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "statecd",
+            "in": "query",
+            "required": false,
+            "description": "State code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2cs": {
+      "get": {
+        "operationId": "gst-gstr1-b2cs-get",
+        "summary": "Get B2CS Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/b2csa": {
+      "get": {
+        "operationId": "gst-gstr1-b2csa-get",
+        "summary": "Get B2CSA Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/cdnr": {
+      "get": {
+        "operationId": "gst-gstr1-cdnr-get",
+        "summary": "Get CDNR Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actionrequired",
+            "in": "query",
+            "required": false,
+            "description": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/cdnra": {
+      "get": {
+        "operationId": "gst-gstr1-cdnra-get",
+        "summary": "Get CDNRA Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "actionrequired",
+            "in": "query",
+            "required": false,
+            "description": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/cdnur": {
+      "get": {
+        "operationId": "gst-gstr1-cdnur-get",
+        "summary": "API call for getting all Credit/ Debit Notes issued to un-registered persons for a return period.",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/cdnura": {
+      "get": {
+        "operationId": "gst-gstr1-cdnura-get",
+        "summary": "API call for getting all amended Credit/ Debit Notes issued to un-registered persons for a return period.",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/dociss": {
+      "get": {
+        "operationId": "gst-gstr1-dociss-get",
+        "summary": "Get GSTR1 Document Issued",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/ecom": {
+      "get": {
+        "operationId": "gst-gstr1-ecom-get",
+        "summary": "Get ECOM Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rtin",
+            "in": "query",
+            "required": false,
+            "description": "Recepient of the GSTIN",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subsection",
+            "in": "query",
+            "required": false,
+            "description": "Sub Section(ECOM_B2B/ECOM_B2C/ECOM_URP2B/ECOM_URP2C)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/ecoma": {
+      "get": {
+        "operationId": "gst-gstr1-ecoma-get",
+        "summary": "Get ECOMA Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rtin",
+            "in": "query",
+            "required": false,
+            "description": "Recepient of the GSTIN",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subsection",
+            "in": "query",
+            "required": false,
+            "description": "Sub Section(ECOM_B2BA/ECOM_B2CA/ECOM_URP2BA/ECOM_URP2CA)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/einvoice": {
+      "get": {
+        "operationId": "gst-gstr1-einvoice-get",
+        "summary": "Get E-Invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sec",
+            "in": "query",
+            "required": true,
+            "description": "Sec of the Table Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/exp": {
+      "get": {
+        "operationId": "gst-gstr1-exp-get",
+        "summary": "Get EXP",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/expa": {
+      "get": {
+        "operationId": "gst-gstr1-expa-get",
+        "summary": "Get EXPA",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/hsnsum": {
+      "get": {
+        "operationId": "gst-gstr1-hsnsum-get",
+        "summary": "Get HSN Summary details",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/nil": {
+      "get": {
+        "operationId": "gst-gstr1-nil-get",
+        "summary": "Get Nil Rated Supplies",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/retsum": {
+      "get": {
+        "operationId": "gst-gstr1-retsum-get",
+        "summary": "Get GSTR1 Summary",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "smrytyp",
+            "in": "query",
+            "required": false,
+            "description": "Default Summary is Short Summary,If long summary is required, smrytyp parameter should be passed along with value L",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/supeco": {
+      "get": {
+        "operationId": "gst-gstr1-supeco-get",
+        "summary": "Get Supplier ECO invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subsection",
+            "in": "query",
+            "required": false,
+            "description": "Sub Section(clttx/paytx)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/supecoa": {
+      "get": {
+        "operationId": "gst-gstr1-supecoa-get",
+        "summary": "Get Supplier ECOA invoices",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subsection",
+            "in": "query",
+            "required": false,
+            "description": "Sub Section(clttx/paytx)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY,20-12-2016",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/txp": {
+      "get": {
+        "operationId": "gst-gstr1-txp-get",
+        "summary": "Get TXP",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/txpa": {
+      "get": {
+        "operationId": "gst-gstr1-txpa-get",
+        "summary": "Get TXPA",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/validatehsnsum": {
+      "get": {
+        "operationId": "gst-gstr1-validatehsnsum-get",
+        "summary": "Validate the HSN Summary details",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/reset": {
+      "post": {
+        "operationId": "gst-gstr1-reset-post",
+        "summary": "Reset GSTR1 Data",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "ret_period": {
+                    "type": "string",
+                    "description": "Return Period"
+                  }
+                }
+              },
+              "example": {
+                "gstin": "27AHQPA7588L1ZJ",
+                "ret_period": "072017"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/retevcfile": {
+      "post": {
+        "operationId": "gst-gstr1-retevcfile-post",
+        "summary": "File GSTR1 data",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evcotp",
+            "in": "query",
+            "required": true,
+            "description": "OTP for EVC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/retfile": {
+      "post": {
+        "operationId": "gst-gstr1-retfile-post",
+        "summary": "File GSTR1 data",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "description": "GSTIN of the Taxpayer",
+                    "type": "string"
+                  },
+                  "ret_period": {
+                    "description": "Return period",
+                    "type": "string"
+                  },
+                  "chksum": {
+                    "description": "Invoice Check sum value",
+                    "type": "string"
+                  },
+                  "newSumFlag": {
+                    "description": "Is the summary in new or old format",
+                    "type": "boolean"
+                  },
+                  "sec_sum": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sec_nm": {
+                          "description": "Return Section",
+                          "type": "string"
+                        },
+                        "chksum": {
+                          "description": "Invoice Check sum value",
+                          "type": "string"
+                        },
+                        "ttl_rec": {
+                          "type": "integer",
+                          "description": "total number of Records"
+                        },
+                        "ttl_val": {
+                          "type": "number",
+                          "description": "total records value"
+                        },
+                        "ttl_igst": {
+                          "type": "number",
+                          "description": "total IGST amount"
+                        },
+                        "ttl_sgst": {
+                          "type": "number",
+                          "description": "total SGST amount"
+                        },
+                        "ttl_cgst": {
+                          "type": "number",
+                          "description": "total CGST amount"
+                        },
+                        "ttl_cess": {
+                          "type": "number",
+                          "description": "total cess amount"
+                        },
+                        "ttl_tax": {
+                          "type": "number",
+                          "description": " total taxable value of records"
+                        },
+                        "act_tax": {
+                          "type": "number",
+                          "description": "actual taxable value of records"
+                        },
+                        "act_igst": {
+                          "type": "number",
+                          "description": "actual IGST amount"
+                        },
+                        "act_sgst": {
+                          "type": "number",
+                          "description": "actual SGST amount"
+                        },
+                        "act_cgst": {
+                          "type": "number",
+                          "description": "actual CGST amount"
+                        },
+                        "act_val": {
+                          "type": "number",
+                          "description": "actual records value"
+                        },
+                        "act_cess": {
+                          "type": "number",
+                          "description": "actual cess amount"
+                        },
+                        "sub_sections": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "sec_nm": {
+                                "description": "Return Section",
+                                "type": "string"
+                              },
+                              "chksum": {
+                                "description": "Invoice Check sum value",
+                                "type": "string"
+                              },
+                              "ttl_rec": {
+                                "type": "integer",
+                                "description": "total number of Records"
+                              },
+                              "ttl_val": {
+                                "type": "number",
+                                "description": "total records value"
+                              },
+                              "ttl_igst": {
+                                "type": "number",
+                                "description": "total IGST amount"
+                              },
+                              "ttl_sgst": {
+                                "type": "number",
+                                "description": "total SGST amount"
+                              },
+                              "ttl_cgst": {
+                                "type": "number",
+                                "description": "total CGST amount"
+                              },
+                              "ttl_cess": {
+                                "type": "number",
+                                "description": "total cess amount"
+                              },
+                              "ttl_tax": {
+                                "type": "number",
+                                "description": " total taxable value of records"
+                              },
+                              "act_tax": {
+                                "type": "number",
+                                "description": "actual taxable value of records"
+                              },
+                              "act_igst": {
+                                "type": "number",
+                                "description": "actual IGST amount"
+                              },
+                              "act_sgst": {
+                                "type": "number",
+                                "description": "actual SGST amount"
+                              },
+                              "act_cgst": {
+                                "type": "number",
+                                "description": "actual CGST amount"
+                              },
+                              "act_val": {
+                                "type": "number",
+                                "description": "actual records value"
+                              },
+                              "act_cess": {
+                                "type": "number",
+                                "description": "actual cess amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "05AVHPB7348G1ZP",
+                "ret_period": "042024",
+                "chksum": "0b194f5f9cfeb178a4d1440103641b81eb17728b9afd6691a3661aa9c3dd0f8d",
+                "newSumFlag": true,
+                "sec_sum": [
+                  {
+                    "sec_nm": "CDNRA",
+                    "chksum": "da88731791fdf49c66735228563c4bc798f0af67ba0d1a7089c94762e9f724a6",
+                    "ttl_rec": 8,
+                    "ttl_val": 122222153821.52,
+                    "ttl_igst": -0.86,
+                    "ttl_sgst": 11111111036.02,
+                    "ttl_cgst": 11111111036.02,
+                    "ttl_cess": 55555510860.78,
+                    "ttl_tax": -74530,
+                    "act_tax": -196528,
+                    "act_igst": -13371.73,
+                    "act_sgst": -37044.2,
+                    "act_cgst": -37044.2,
+                    "act_val": -108419,
+                    "act_cess": -71148,
+                    "sub_sections": [
+                      {
+                        "sec_nm": "CDNRA_4A",
+                        "chksum": "568b1d868a64fb0f22079968624ccf6b46e93579b092c2390ded564015099ede",
+                        "ttl_rec": 2,
+                        "ttl_val": -111111,
+                        "ttl_igst": 5740.73,
+                        "ttl_sgst": -212.93,
+                        "ttl_cgst": -212.93,
+                        "ttl_cess": -51111,
+                        "ttl_tax": 70865,
+                        "act_tax": 12340,
+                        "act_igst": 2340,
+                        "act_sgst": 340,
+                        "act_cgst": 234230,
+                        "act_val": 343430,
+                        "act_cess": 355550
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr1/retsave": {
+      "put": {
+        "operationId": "gst-gstr1-retsave-put",
+        "summary": "Save GSTR1 data",
+        "tags": [
+          "GSTR1"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN number"
+                  },
+                  "fp": {
+                    "type": "string",
+                    "description": "Fp Type"
+                  },
+                  "gt": {
+                    "type": "number",
+                    "description": "gt Type"
+                  },
+                  "cur_gt": {
+                    "type": "number",
+                    "description": "Document Number (Alphanumeric with / and - are allowed)"
+                  },
+                  "b2b": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ctin": {
+                          "type": "string",
+                          "description": "Challan Temporary Identification Number"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "pos": {
+                                "type": "string",
+                                "description": "Place of Supply"
+                              },
+                              "rchrg": {
+                                "type": "string",
+                                "description": "Reverse Charge"
+                              },
+                              "etin": {
+                                "type": "string",
+                                "description": "etin Number"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "item Rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "description": "Taxable Value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "igst Amount"
+                                        },
+                                        "csamt": {
+                                          "type": "number",
+                                          "description": "Cess Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "b2ba": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ctin": {
+                          "type": "string",
+                          "description": "Challan Temporary Identification Number"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "oinum": {
+                                "type": "string",
+                                "description": "Original Invoice Number"
+                              },
+                              "oidt": {
+                                "type": "string",
+                                "description": "Original Invoice Date"
+                              },
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Amount"
+                              },
+                              "pos": {
+                                "type": "string",
+                                "description": "Place Of Supply"
+                              },
+                              "rchrg": {
+                                "type": "string",
+                                "description": "Reverse Charge"
+                              },
+                              "etin": {
+                                "type": "string",
+                                "description": "etin number"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "item Rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "description": "Taxable Value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "Igst Amount"
+                                        },
+                                        "camt": {
+                                          "type": "number",
+                                          "description": "CGST Amount"
+                                        },
+                                        "samt": {
+                                          "type": "number",
+                                          "description": "SGST Amount"
+                                        },
+                                        "csamt": {
+                                          "type": "number",
+                                          "description": "Cess Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "b2cl": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "etin": {
+                                "type": "string",
+                                "description": "etin"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "item number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "description": "Taxable Value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "Igst Amount"
+                                        },
+                                        "csamt": {
+                                          "type": "number",
+                                          "description": "Cess Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "b2cla": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "pos": {
+                          "type": "string",
+                          "description": "Place of Supply"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "oinum": {
+                                "type": "string",
+                                "description": "Original Invoice Number"
+                              },
+                              "oidt": {
+                                "type": "string",
+                                "description": "Original Invoice Date"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial percentage"
+                              },
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "etin": {
+                                "type": "string",
+                                "description": "etin number"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "Number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "item rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "description": "Taxable Value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "Igst Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cdnr": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ctin": {
+                          "type": "string",
+                          "description": "ctin Number"
+                        },
+                        "nt": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ntty": {
+                                "type": "string",
+                                "description": "Note Type"
+                              },
+                              "nt_num": {
+                                "type": "string",
+                                "description": "Note Number"
+                              },
+                              "nt_dt": {
+                                "type": "string",
+                                "description": "Note Date"
+                              },
+                              "p_gst": {
+                                "type": "string",
+                                "description": "Pre GST"
+                              },
+                              "pos": {
+                                "type": "string",
+                                "description": "Place of Supply"
+                              },
+                              "rchrg": {
+                                "type": "string",
+                                "description": "Reverse Charge"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "item Number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "item Rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "maxLength": 100,
+                                          "description": "Taxable Value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "Igst Amount"
+                                        },
+                                        "csamt": {
+                                          "type": "number",
+                                          "description": "Cess Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cdnra": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ctin": {
+                          "type": "string",
+                          "description": "ctin number"
+                        },
+                        "nt": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "ntty": {
+                                "type": "string",
+                                "description": "Note Type"
+                              },
+                              "ont_num": {
+                                "type": "string",
+                                "description": "Original Note Number"
+                              },
+                              "ont_dt": {
+                                "type": "string",
+                                "description": "Original Note Date"
+                              },
+                              "nt_num": {
+                                "type": "string",
+                                "description": "Note Number"
+                              },
+                              "nt_dt": {
+                                "type": "string",
+                                "description": "Note Date"
+                              },
+                              "p_gst": {
+                                "type": "string",
+                                "description": "Pre GST"
+                              },
+                              "pos": {
+                                "type": "string",
+                                "description": "Place of Supply"
+                              },
+                              "rchrg": {
+                                "type": "string",
+                                "description": "Reverse Charge"
+                              },
+                              "inv_typ": {
+                                "type": "string",
+                                "description": "Invoice Type"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "num": {
+                                      "type": "number",
+                                      "description": "number"
+                                    },
+                                    "itm_det": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rt": {
+                                          "type": "number",
+                                          "description": "Item rate"
+                                        },
+                                        "txval": {
+                                          "type": "number",
+                                          "maxLength": 100,
+                                          "description": "Taxable value"
+                                        },
+                                        "iamt": {
+                                          "type": "number",
+                                          "description": "Igst Amount"
+                                        },
+                                        "camt": {
+                                          "type": "number",
+                                          "description": "CGST Amount"
+                                        },
+                                        "samt": {
+                                          "type": "number",
+                                          "description": "sgst Amount"
+                                        },
+                                        "csamt": {
+                                          "type": "number",
+                                          "description": "cess Amount"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "b2cs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "rt": {
+                          "type": "number",
+                          "maxLength": 100,
+                          "description": "Rate"
+                        },
+                        "typ": {
+                          "type": "string",
+                          "description": "Type"
+                        },
+                        "etin": {
+                          "type": "string",
+                          "description": "etin"
+                        },
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "txval": {
+                          "type": "number",
+                          "description": "Taxable Value"
+                        },
+                        "iamt": {
+                          "type": "number",
+                          "description": "igst Amount"
+                        },
+                        "csamt": {
+                          "type": "number",
+                          "description": "Cess Amount"
+                        }
+                      }
+                    }
+                  },
+                  "b2csa": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "omon": {
+                          "type": "string",
+                          "description": "Original Month Of Invoice"
+                        },
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "typ": {
+                          "type": "string",
+                          "description": "Type"
+                        },
+                        "etin": {
+                          "type": "string",
+                          "description": "etin number"
+                        },
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "type": "number",
+                                "description": "Product / Item Rate"
+                              },
+                              "txval": {
+                                "type": "number",
+                                "description": "Taxable Value"
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "description": "Igst Amount"
+                              },
+                              "camt": {
+                                "type": "number",
+                                "description": "CGST Amount"
+                              },
+                              "samt": {
+                                "type": "number",
+                                "description": "SGST Amount"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "Cess Amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "exp": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "exp_typ": {
+                          "type": "string",
+                          "description": "Export Type"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "sbpcode": {
+                                "type": "string",
+                                "description": "prort Code"
+                              },
+                              "sbnum": {
+                                "type": "string",
+                                "description": "Shipping Bill Number"
+                              },
+                              "sbdt": {
+                                "type": "string",
+                                "description": "Shipping Bill Date"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "txval": {
+                                      "type": "number",
+                                      "description": "Taxable Value"
+                                    },
+                                    "rt": {
+                                      "type": "number",
+                                      "description": "Product / Item Rate"
+                                    },
+                                    "iamt": {
+                                      "type": "number",
+                                      "description": "Igst Amount"
+                                    },
+                                    "csamt": {
+                                      "type": "number",
+                                      "description": "Cess Amount"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "expa": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "exp_typ": {
+                          "type": "string",
+                          "description": "Export Type"
+                        },
+                        "inv": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "oinum": {
+                                "type": "string",
+                                "description": "Original Invoice Number"
+                              },
+                              "oidt": {
+                                "type": "string",
+                                "description": "Original Invoice Date"
+                              },
+                              "inum": {
+                                "type": "string",
+                                "description": "Invoice Number"
+                              },
+                              "idt": {
+                                "type": "string",
+                                "description": "Invoice Date"
+                              },
+                              "diff_percent": {
+                                "type": "number",
+                                "description": "Differencial Percentage"
+                              },
+                              "val": {
+                                "type": "number",
+                                "description": "Invoice Value"
+                              },
+                              "sbpcode": {
+                                "type": "string",
+                                "description": "prort Code"
+                              },
+                              "sbnum": {
+                                "type": "string",
+                                "description": "Shipping Bill Number"
+                              },
+                              "sbdt": {
+                                "type": "string",
+                                "description": "Shipping Bill Date"
+                              },
+                              "itms": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "txval": {
+                                      "type": "number",
+                                      "description": "Taxable Value"
+                                    },
+                                    "rt": {
+                                      "type": "number",
+                                      "description": "Product / Item Rate"
+                                    },
+                                    "iamt": {
+                                      "type": "number",
+                                      "description": "Igst Amount"
+                                    },
+                                    "csamt": {
+                                      "type": "number",
+                                      "description": "Cess Amount"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "hsn": {
+                    "type": "object",
+                    "properties": {
+                      "data": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "num": {
+                              "type": "number",
+                              "description": "Product / Item number"
+                            },
+                            "hsn_sc": {
+                              "type": "string",
+                              "description": "HSN/SAC CODE"
+                            },
+                            "desc": {
+                              "type": "string",
+                              "description": "Goods Description"
+                            },
+                            "uqc": {
+                              "type": "string",
+                              "description": "uqc"
+                            },
+                            "qty": {
+                              "type": "number",
+                              "description": "Quantity"
+                            },
+                            "rt": {
+                              "type": "number",
+                              "description": "Invoice Value"
+                            },
+                            "txval": {
+                              "type": "number",
+                              "description": "Taxable Value"
+                            },
+                            "iamt": {
+                              "type": "number",
+                              "description": "Igst Amount"
+                            },
+                            "csamt": {
+                              "type": "number",
+                              "description": "Cess Amount"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "nil": {
+                    "type": "object",
+                    "properties": {
+                      "inv": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "sply_ty": {
+                              "type": "string",
+                              "description": "Supply Type"
+                            },
+                            "expt_amt": {
+                              "type": "number",
+                              "description": "Exempted Amount"
+                            },
+                            "nil_amt": {
+                              "type": "number",
+                              "description": "Total Nil rated outward supplies"
+                            },
+                            "ngsup_amt": {
+                              "type": "number",
+                              "description": "Total Non GST outward supplies"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "txpd": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "type": "number",
+                                "description": "Product / Item Rate"
+                              },
+                              "ad_amt": {
+                                "type": "number",
+                                "description": "Advance to be adjusted"
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "description": "Igst Amount"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "Cess Amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "txpda": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "omon": {
+                          "type": "string",
+                          "description": "Original Month"
+                        },
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "type": "number",
+                                "description": "Product / Item Rate"
+                              },
+                              "ad_amt": {
+                                "type": "number",
+                                "description": "Advance to be adjusted"
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "description": "Igst Amount"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "Cess Amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "at": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "type": "number",
+                                "description": "Product / Item Rate"
+                              },
+                              "ad_amt": {
+                                "type": "number",
+                                "description": "Advance to be adjusted"
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "description": "Igst Amount"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "Cess Amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ata": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "omon": {
+                          "type": "string",
+                          "description": "Original Month"
+                        },
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "sply_ty": {
+                          "type": "string",
+                          "description": "Supply Type"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "rt": {
+                                "type": "number",
+                                "description": "Product / Item Rate"
+                              },
+                              "ad_amt": {
+                                "type": "number",
+                                "description": "Advance to be adjusted"
+                              },
+                              "iamt": {
+                                "type": "number",
+                                "description": "Igst Amount"
+                              },
+                              "csamt": {
+                                "type": "number",
+                                "description": "Cess Amount"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "doc_issue": {
+                    "type": "object",
+                    "properties": {
+                      "doc_det": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "doc_num": {
+                              "type": "number",
+                              "description": "Document Number"
+                            },
+                            "docs": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "num": {
+                                    "type": "number",
+                                    "description": "Serial Number"
+                                  },
+                                  "from": {
+                                    "type": "string",
+                                    "description": "from Serial Number"
+                                  },
+                                  "to": {
+                                    "type": "string",
+                                    "description": "to Serial Number"
+                                  },
+                                  "totnum": {
+                                    "type": "number",
+                                    "description": "Total Number"
+                                  },
+                                  "cancel": {
+                                    "type": "number",
+                                    "description": "Cancelled"
+                                  },
+                                  "net_issue": {
+                                    "type": "number",
+                                    "description": "Net issued"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cdnur": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "typ": {
+                          "type": "string",
+                          "description": "EXPWP/ EXPWOP/ B2CL"
+                        },
+                        "ntty": {
+                          "type": "string",
+                          "description": "Credit/debit note type/ Refund Voucher"
+                        },
+                        "nt_num": {
+                          "type": "string",
+                          "description": "Credit note/debit note /  Refund Voucher Number"
+                        },
+                        "nt_dt": {
+                          "type": "string",
+                          "description": "Credit Note/Debit Note/  Refund Voucher date"
+                        },
+                        "p_gst": {
+                          "type": "string",
+                          "description": "Pre GST Regime Dr./ Cr. Notes"
+                        },
+                        "pos": {
+                          "type": "string",
+                          "description": "Place Of Supply"
+                        },
+                        "val": {
+                          "type": "number",
+                          "description": "Invoice Value"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "num": {
+                                "type": "number",
+                                "description": "Product / Item number"
+                              },
+                              "itm_det": {
+                                "type": "object",
+                                "properties": {
+                                  "rt": {
+                                    "type": "number",
+                                    "description": "Product / Item Rate"
+                                  },
+                                  "txval": {
+                                    "type": "number",
+                                    "description": "Taxable Value"
+                                  },
+                                  "iamt": {
+                                    "type": "number",
+                                    "description": "Product / Item Name"
+                                  },
+                                  "csamt": {
+                                    "type": "number",
+                                    "description": "Cess Amount"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cdnura": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ont_num": {
+                          "type": "string",
+                          "description": "Original Credit note/debit note /  Refund Voucher Number"
+                        },
+                        "ont_dt": {
+                          "type": "string",
+                          "description": "Original Credit Note/Debit Note/  Refund Voucher date"
+                        },
+                        "nt_num": {
+                          "type": "string",
+                          "description": "Credit note/debit note /  Refund Voucher Number"
+                        },
+                        "nt_dt": {
+                          "type": "string",
+                          "description": "Credit Note/Debit Note/  Refund Voucher date"
+                        },
+                        "ntty": {
+                          "type": "string",
+                          "description": "Credit/debit note type/ Refund Voucher"
+                        },
+                        "typ": {
+                          "type": "string",
+                          "description": "EXPWP/ EXPWOP/ B2CL"
+                        },
+                        "p_gst": {
+                          "type": "string",
+                          "description": "Pre GST Regime Dr./ Cr. Notes"
+                        },
+                        "inum": {
+                          "type": "string",
+                          "description": "Invoice Number"
+                        },
+                        "val": {
+                          "type": "number",
+                          "description": "Invoice Value"
+                        },
+                        "idt": {
+                          "type": "string",
+                          "description": "Invoice Date"
+                        },
+                        "diff_percent": {
+                          "type": "number",
+                          "description": "Differencial Percentage"
+                        },
+                        "itms": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "num": {
+                                "type": "number",
+                                "description": "Product / Item number"
+                              },
+                              "itm_det": {
+                                "type": "object",
+                                "properties": {
+                                  "rt": {
+                                    "type": "number",
+                                    "description": "Product / Item Rate"
+                                  },
+                                  "txval": {
+                                    "type": "number",
+                                    "description": "Taxable Value"
+                                  },
+                                  "iamt": {
+                                    "type": "number",
+                                    "description": "Product / Item Name"
+                                  },
+                                  "csamt": {
+                                    "type": "number",
+                                    "description": "Cess Amount"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "27AHQPA7588L1ZJ",
+                "fp": "122016",
+                "gt": 3782969.01,
+                "cur_gt": 3782969.01,
+                "b2b": [
+                  {
+                    "ctin": "01AABCE2207R1Z5",
+                    "inv": [
+                      {
+                        "inum": "S008400",
+                        "idt": "24-11-2016",
+                        "val": 729248.16,
+                        "pos": "06",
+                        "rchrg": "N",
+                        "etin": "01AABCE5507R1C4",
+                        "inv_typ": "R",
+                        "diff_percent": 0.65,
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 5,
+                              "txval": 10000,
+                              "iamt": 325,
+                              "csamt": 500
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "b2ba": [
+                  {
+                    "ctin": "01AABCE2207R1Z5",
+                    "inv": [
+                      {
+                        "oinum": "S008400",
+                        "oidt": "24-11-2016",
+                        "inum": "S008400",
+                        "idt": "24-11-2016",
+                        "val": 729248.16,
+                        "pos": "06",
+                        "rchrg": "N",
+                        "etin": "01AABCE5507R1C4",
+                        "inv_typ": "R",
+                        "diff_percent": 0.65,
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 5,
+                              "txval": 10000,
+                              "iamt": 325,
+                              "camt": 0,
+                              "samt": 0,
+                              "csamt": 500
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "b2cl": [
+                  {
+                    "pos": "05",
+                    "inv": [
+                      {
+                        "inum": "92661",
+                        "idt": "10-01-2016",
+                        "val": 784586.33,
+                        "inv_typ": "CBW",
+                        "etin": "27AHQPA8875L1CU",
+                        "diff_percent": 0.65,
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 5,
+                              "txval": 10000,
+                              "iamt": 325,
+                              "csamt": 500
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "b2cla": [
+                  {
+                    "pos": "06",
+                    "inv": [
+                      {
+                        "oinum": "9266",
+                        "oidt": "10-02-2016",
+                        "inv_typ": "CBW",
+                        "diff_percent": 0.65,
+                        "inum": "92661",
+                        "idt": "10-01-2016",
+                        "val": 784586.33,
+                        "etin": "01AABCE5507R1C4",
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 5,
+                              "txval": 10000,
+                              "iamt": 833.33
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "cdnr": [
+                  {
+                    "ctin": "01AAAAP1208Q1ZS",
+                    "nt": [
+                      {
+                        "ntty": "C",
+                        "nt_num": "533515",
+                        "nt_dt": "23-09-2016",
+                        "p_gst": "N",
+                        "pos": "01",
+                        "rchrg": "N",
+                        "inv_typ": "R",
+                        "val": 123123,
+                        "diff_percent": 0.65,
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 10,
+                              "txval": 5225.28,
+                              "iamt": 339.64,
+                              "csamt": 789.52
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "cdnra": [
+                  {
+                    "ctin": "01AAAAP1208Q1ZS",
+                    "nt": [
+                      {
+                        "ntty": "C",
+                        "ont_num": "533515",
+                        "ont_dt": "23-09-2016",
+                        "nt_num": "533515",
+                        "nt_dt": "23-09-2016",
+                        "p_gst": "N",
+                        "pos": "01",
+                        "rchrg": "N",
+                        "inv_typ": "R",
+                        "diff_percent": 0.65,
+                        "val": 123123,
+                        "itms": [
+                          {
+                            "num": 1,
+                            "itm_det": {
+                              "rt": 10,
+                              "txval": 5225.28,
+                              "iamt": 845.22,
+                              "camt": 0,
+                              "samt": 0,
+                              "csamt": 789.52
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "b2cs": [
+                  {
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "rt": 5,
+                    "typ": "E",
+                    "etin": "01AABCE5507R1C4",
+                    "pos": "05",
+                    "txval": 110,
+                    "iamt": 10,
+                    "csamt": 10
+                  }
+                ],
+                "b2csa": [
+                  {
+                    "omon": "122016",
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "typ": "E",
+                    "etin": "01AABCE5507R1C4",
+                    "pos": "05",
+                    "itms": [
+                      {
+                        "rt": 5,
+                        "txval": 110,
+                        "iamt": 10,
+                        "camt": 0,
+                        "samt": 0,
+                        "csamt": 10
+                      }
+                    ]
+                  }
+                ],
+                "exp": [
+                  {
+                    "exp_typ": "WPAY",
+                    "inv": [
+                      {
+                        "inum": "81542",
+                        "idt": "12-02-2016",
+                        "val": 995048.36,
+                        "diff_percent": 0.65,
+                        "sbpcode": "ASB991",
+                        "sbnum": "7896542",
+                        "sbdt": "04-10-2016",
+                        "itms": [
+                          {
+                            "txval": 10000,
+                            "rt": 5,
+                            "iamt": 833.33,
+                            "csamt": 100
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "expa": [
+                  {
+                    "exp_typ": "WPAY",
+                    "inv": [
+                      {
+                        "oinum": "81542",
+                        "oidt": "12-02-2016",
+                        "inum": "81542",
+                        "idt": "12-02-2016",
+                        "diff_percent": 0.65,
+                        "val": 995048.36,
+                        "sbpcode": "ASB995",
+                        "sbnum": "1234567",
+                        "sbdt": "04-10-2016",
+                        "itms": [
+                          {
+                            "txval": 10000,
+                            "rt": 5,
+                            "iamt": 833.33,
+                            "csamt": 100
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "hsn": {
+                  "data": [
+                    {
+                      "num": 1,
+                      "hsn_sc": "1009",
+                      "desc": "Goods Description",
+                      "uqc": "kg",
+                      "qty": 2.05,
+                      "rt": 0.1,
+                      "txval": 10.23,
+                      "iamt": 14.52,
+                      "csamt": 500
+                    }
+                  ]
+                },
+                "nil": {
+                  "inv": [
+                    {
+                      "sply_ty": "INTRB2B",
+                      "expt_amt": 123.45,
+                      "nil_amt": 1470.85,
+                      "ngsup_amt": 1258.5
+                    }
+                  ]
+                },
+                "txpd": [
+                  {
+                    "pos": "05",
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "rt": 5,
+                        "ad_amt": 100,
+                        "iamt": 9400,
+                        "csamt": 500
+                      }
+                    ]
+                  }
+                ],
+                "txpda": [
+                  {
+                    "omon": "122016",
+                    "pos": "05",
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "rt": 5,
+                        "ad_amt": 100,
+                        "iamt": 9400,
+                        "csamt": 500
+                      }
+                    ]
+                  }
+                ],
+                "at": [
+                  {
+                    "pos": "05",
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "rt": 5,
+                        "ad_amt": 100,
+                        "iamt": 9400,
+                        "csamt": 500
+                      }
+                    ]
+                  }
+                ],
+                "ata": [
+                  {
+                    "omon": "022017",
+                    "pos": "05",
+                    "sply_ty": "INTER",
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "rt": 5,
+                        "ad_amt": 100,
+                        "iamt": 9400,
+                        "csamt": 500
+                      }
+                    ]
+                  }
+                ],
+                "doc_issue": {
+                  "doc_det": [
+                    {
+                      "doc_num": 1,
+                      "docs": [
+                        {
+                          "num": 1,
+                          "from": "20",
+                          "to": "29",
+                          "totnum": 20,
+                          "cancel": 3,
+                          "net_issue": 17
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "cdnur": [
+                  {
+                    "typ": "B2CL",
+                    "ntty": "C",
+                    "nt_num": "533515",
+                    "nt_dt": "23-09-2016",
+                    "p_gst": "N",
+                    "pos": "05",
+                    "val": 64646,
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "num": 1,
+                        "itm_det": {
+                          "rt": 10,
+                          "txval": 5225.28,
+                          "iamt": 339.64,
+                          "csamt": 789.52
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "cdnura": [
+                  {
+                    "ont_num": "533515",
+                    "ont_dt": "23-09-2016",
+                    "nt_num": "533515",
+                    "nt_dt": "23-09-2016",
+                    "ntty": "C",
+                    "typ": "B2CL",
+                    "p_gst": "N",
+                    "inum": "915914",
+                    "val": 123123,
+                    "idt": "23-09-2016",
+                    "diff_percent": 0.65,
+                    "itms": [
+                      {
+                        "num": 1,
+                        "itm_det": {
+                          "rt": 10,
+                          "txval": 5225.28,
+                          "iamt": 845.22,
+                          "csamt": 789.52
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session",
+        "x-whitebooks-async": {
+          "returns": "reference_id",
+          "statusOperationId": "gst:GET:/gstr/retstatus"
+        }
+      }
+    }
+  }
+}

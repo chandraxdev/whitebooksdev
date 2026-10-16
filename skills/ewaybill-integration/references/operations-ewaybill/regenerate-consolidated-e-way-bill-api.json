@@ -1,0 +1,130 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Regenerate Consolidated E-Way Bill - Api",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/regentripsheet",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-regentripsheet-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/regentripsheet",
+      "tag": "Regenerate Consolidated E-Way Bill - Api",
+      "summary": "Regenerate Consolidated E-Way Bill - Api",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "fromPlace",
+          "fromState",
+          "reasonCode",
+          "reasonRem",
+          "transMode",
+          "tripSheetNo"
+        ],
+        "type": "object",
+        "properties": {
+          "tripSheetNo": {
+            "type": "number",
+            "description": "TripSheetNo Number"
+          },
+          "vehicleNo": {
+            "type": "string",
+            "description": "Vehicle Number"
+          },
+          "fromPlace": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "From Place"
+          },
+          "fromState": {
+            "maximum": 99,
+            "type": "integer",
+            "description": "From State"
+          },
+          "reasonCode": {
+            "maxLength": 1,
+            "minLength": 1,
+            "type": "string",
+            "description": "Reason Code"
+          },
+          "reasonRem": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Remarks"
+          },
+          "transDocNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "Transport Document Number"
+          },
+          "transDocDate": {
+            "pattern": "[0-3][0-9]/[0-1][0-9]/[2][0][1-2][0-9]",
+            "type": "string",
+            "description": "Transport Document Date"
+          },
+          "transMode": {
+            "type": "string",
+            "description": "Transport Mode"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "tripSheetNo": 3010009432,
+        "vehicleNo": "ABC1234",
+        "fromPlace": "FRAZER TOWN",
+        "fromState": 5,
+        "reasonCode": "1",
+        "reasonRem": "Natural Calamity",
+        "transDocNo": "12",
+        "transDocDate": "20/02/2024",
+        "transMode": "1"
+      }
+    }
+  ]
+}

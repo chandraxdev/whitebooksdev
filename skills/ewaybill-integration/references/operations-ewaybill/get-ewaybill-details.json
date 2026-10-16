@@ -1,0 +1,70 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Get EwayBill Details",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybill",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-getewaybill-get",
+      "api": "ewaybill",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybill",
+      "tag": "Get EwayBill Details",
+      "summary": "Get EwayBill Details",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ewbNo",
+          "in": "query",
+          "required": true,
+          "meaning": "ewbNo"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "ewb_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    }
+  ]
+}

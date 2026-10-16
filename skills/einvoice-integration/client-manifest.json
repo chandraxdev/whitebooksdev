@@ -1,0 +1,291 @@
+{
+  "skill": "einvoice-integration",
+  "client_version": "1.0.8",
+  "spec_as_of": "2026-10-13",
+  "dependencies": [
+    {
+      "language": "java",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.22.3",
+      "ecosystem": "maven"
+    },
+    {
+      "language": "python",
+      "name": "requests",
+      "version": "2.32.5",
+      "ecosystem": "pip"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "75bac93a79c5fa239b33df95b7b6dcf9501aa2972a02fec91e466bbed9b93ee0",
+      "bytes": 150
+    },
+    {
+      "path": "assets/client/java/test/whitebooks/EinvoiceSmokeTest.java",
+      "sha256": "94b87dc19bcf2bebd74bd0d7af7ac95da177ce50f78eef43f0cfc6e99c623e93",
+      "bytes": 1302
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceCancelIrn.java",
+      "sha256": "f5f68102602ddb2c8dca98edbf266d5e61cab1b0dbc77e823a7bfbec7d804a91",
+      "bytes": 3449
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceCancelRequest.java",
+      "sha256": "e0b21b45b902fddac1413f1f324df31dc7b50c8bc8dcc0c55bc86c63c1675104",
+      "bytes": 2094
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGenerateEwaybill.java",
+      "sha256": "5243909fddcc45441db1846318aeda652aa7c95ab3e8fc00cb967ad5fc9a6743",
+      "bytes": 3100
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGenerateIrn.java",
+      "sha256": "2e206b3612d7ee60adff1959fbd9f712f184019abfeb98933ee53ec43743fc5c",
+      "bytes": 2741
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGenerateRequest.java",
+      "sha256": "cac959c7d588280ed27adde1a2e4b55aac2012370296f00a49d749acddaef5d4",
+      "bytes": 9649
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetB2cQrCodeDetails.java",
+      "sha256": "c1f6fadfab5c92fe3bbade93fd4696635f1f1d4e3a71b6976b18f66a00287df9",
+      "bytes": 2547
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetEinvoiceDetails.java",
+      "sha256": "71f11bbed97586c8ca6f62cfb210ba974ff99520699092ee91c0b04573a715ca",
+      "bytes": 2039
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetEwaybillDetailsByIrn.java",
+      "sha256": "1a8af328eb842da14ac71366579f66d45ba617e40020eabac809bc2664640b15",
+      "bytes": 2111
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetGstnDetails.java",
+      "sha256": "6319f7e78afcdd15d61b932e8a3a40baa38543dba6421fb9531240625b463a83",
+      "bytes": 1931
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetIrnDetailsByDocDetails.java",
+      "sha256": "19e4af707fe4bcc5ad9cfa8162ba6f54a18f9511333d44da63af77977bad8529",
+      "bytes": 2260
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetRejectedIrns.java",
+      "sha256": "e6bd175cdd2768ddef4c4f3c8c49c6cd3eed922083d3b6c17e14963228a27d0c",
+      "bytes": 2034
+    },
+    {
+      "path": "assets/client/java/whitebooks/EinvoiceGetSyncGstinFromCp.java",
+      "sha256": "30fb491d7785789d7baee0acd50779c78ced73cd40f0039667c61d5db271c277",
+      "bytes": 1981
+    },
+    {
+      "path": "assets/client/python/tests/test_smoke_einvoice.py",
+      "sha256": "c2c9320e9c83d677bc9e3c5ea18cb196b10db6c7fb4f48d87a0c824e7ae65dff",
+      "bytes": 1021
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/__init__.py",
+      "sha256": "b1d54d9addaf2efab1d97745c8c064c2a15e1daa27d66fc1c9e07336b67c74bb",
+      "bytes": 449
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/cancel_irn.py",
+      "sha256": "4275d7d9813f08b7162632dc2e51f7d302f2b476ec1af9926dd88a9714b344d3",
+      "bytes": 2790
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/generate_ewaybill.py",
+      "sha256": "121a4f0e2b82717dc2351a7dc01ab87279520dfa7561d4795c8d46eeb492290d",
+      "bytes": 2489
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/generate_irn.py",
+      "sha256": "1b6c22392d18f6d45beb57db75d6b3db02e1a1802e9e70ca9eb19b99f35de2e1",
+      "bytes": 2152
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_b2c_qr_code_details.py",
+      "sha256": "370a66df13d48cb4a39b55519a92bb036f04c2c49c797e43471e17b53831adaa",
+      "bytes": 2503
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_einvoice_details.py",
+      "sha256": "e12f36377068bd765efaba03274aee94e2b9aceb8a3ea7fc7283bdc4202209b3",
+      "bytes": 1816
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_ewaybill_details_by_irn.py",
+      "sha256": "501eb14a10ee3999aea2d90a899fa6c3de35ca894986325a0651dfaf1954f97d",
+      "bytes": 1871
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_gstn_details.py",
+      "sha256": "209ebc6ec63538e7a3ccb1377cb0465bbaed708053a0f905912ba85c68f6ea9b",
+      "bytes": 1640
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_irn_details_by_doc_details.py",
+      "sha256": "903a06093ac2925f9b4a39381014979a9cd9b21c1bd2d672a00e504124721f37",
+      "bytes": 2046
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_rejected_irns.py",
+      "sha256": "7d03dd8f6708cd158d74eef484d0a2b4a712574c728761589d50c4ee4ab82b13",
+      "bytes": 1791
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/get_sync_gstin_from_cp.py",
+      "sha256": "76038cd171c61f13ec9794d3eca31b2029609136e06f08aeb3287ab0a1b3ad07",
+      "bytes": 1678
+    },
+    {
+      "path": "assets/client/python/whitebooks/einvoice/models.py",
+      "sha256": "a14ec3c5196b55142b9d1e9d0a160a4d9e967f645a509f2d5921ccb155e84e53",
+      "bytes": 6947
+    },
+    {
+      "path": "assets/client/typescript/test/smoke.einvoice.test.ts",
+      "sha256": "8c61d3d78a353a444e06187a1262fb17b627ae079edaf407d6554f24602a94e3",
+      "bytes": 997
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/cancel_irn.ts",
+      "sha256": "593ba6a8a16cec4abd6a890caf417823d7f04161805bb9190ba5a9f4fb31d70f",
+      "bytes": 2483
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/generate_ewaybill.ts",
+      "sha256": "1802d5b49313e222e687301bf920e381edb109e322ebe989e10a4ed046ca195e",
+      "bytes": 2215
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/generate_irn.ts",
+      "sha256": "16ab4bc16a3e1a0c56c0d6bd556f1726cac2ae191ac690d73a66f801a6b3fcec",
+      "bytes": 2008
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_b2c_qr_code_details.ts",
+      "sha256": "3a843ed3b19e6cef697a0751fcb4c6e27fa3ab284ac63179fc83c9e0f7e3d528",
+      "bytes": 2239
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_einvoice_details.ts",
+      "sha256": "fc837c276bca39c5b69c29ed8b0578e333c906ef1e561cfdb55f6366abca3d8e",
+      "bytes": 1530
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_ewaybill_details_by_irn.ts",
+      "sha256": "db3213325f5f805b73ec910b15c72cbab51f265b443ca5072b6d09993c925a07",
+      "bytes": 1577
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_gstn_details.ts",
+      "sha256": "cd4e58276270876d656216a0f815c9b5705800c432837612762ed170bc87511e",
+      "bytes": 1375
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_irn_details_by_doc_details.ts",
+      "sha256": "1f3283eeb70108f7a4081785726627ff63265ec168d2dbeafd076510994496b5",
+      "bytes": 1746
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_rejected_irns.ts",
+      "sha256": "0006e29cd317eed5f4ad798b6b5a1db3dbfb9f7080e5f023e2f1106270dd25b9",
+      "bytes": 1503
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/get_sync_gstin_from_cp.ts",
+      "sha256": "9c2a4e605f316dc8d2b5a5462c244b4effa7561f6f4c4f5c2f7a2d3e6a1047e0",
+      "bytes": 1405
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/index.ts",
+      "sha256": "1a659b369ab44e2b28a0a85bf94378a6dccca2d15eec58bca7a416abafdca9e3",
+      "bytes": 865
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/einvoice/models.ts",
+      "sha256": "24720d70c3bbfa1fbcf2a697d269d515b276e44be4eaed0f35669c04cfa1c43b",
+      "bytes": 7725
+    },
+    {
+      "path": "references/discrepancies.md",
+      "sha256": "e93f35f80aa2706f7e6aadfd2f21849a7bd822a43995ed6c33578200d3cb19fe",
+      "bytes": 1294
+    },
+    {
+      "path": "references/operations-einvoice.json",
+      "sha256": "e20c2672d71f289b9b5457fe4a449bca889fc9ca7b5fe160dce804ba76857815",
+      "bytes": 5316
+    },
+    {
+      "path": "references/operations-einvoice/authentication.json",
+      "sha256": "1c1aacef5e75af0703e8bd3c3b4ab4651d12f5b6a78144fbeae56279953f4b47",
+      "bytes": 1900
+    },
+    {
+      "path": "references/operations-einvoice/cancel-irn.json",
+      "sha256": "6710159f666ab56f0d759819dc1ba557a2a43f4952291bd8dbb5532d92e5437a",
+      "bytes": 2702
+    },
+    {
+      "path": "references/operations-einvoice/generate-ewaybill.json",
+      "sha256": "5a5a971595b735096e60a1dd32e64c986bfd16150d3dbd3fffdfed2924f8fd5b",
+      "bytes": 5554
+    },
+    {
+      "path": "references/operations-einvoice/generate-irn.json",
+      "sha256": "329b2928bcd8196b962dfcd9605bf528116a1b66c44ee21cdeecb0644c0a70e2",
+      "bytes": 25971
+    },
+    {
+      "path": "references/operations-einvoice/get-b2c-qr-code-details.json",
+      "sha256": "cc13c86023cfa8784bb24cc723e919bf4ea3cb5ab04c722bdce434d53f89e059",
+      "bytes": 3287
+    },
+    {
+      "path": "references/operations-einvoice/get-einvoice-details.json",
+      "sha256": "6074016adb743960e36fd2e8bd08a6b9ae719c0b1dbe62547a1d1f7ad4d2caf3",
+      "bytes": 2463
+    },
+    {
+      "path": "references/operations-einvoice/get-ewaybill-details-by-irn.json",
+      "sha256": "282b2d8fd8b267a96fa053e1dce3c3217ba855d031c7d126ecb58367722ad0fd",
+      "bytes": 2453
+    },
+    {
+      "path": "references/operations-einvoice/get-gstn-details.json",
+      "sha256": "d01012d90e8af3a5a8a429cc1b0a04436e300789d52362432fa60ec888335752",
+      "bytes": 2074
+    },
+    {
+      "path": "references/operations-einvoice/get-irn-details-by-doc-details.json",
+      "sha256": "0fc498e6343fbe3e74be2a74c71fb6e6185934d53ea38f5ddc608f866f1ae349",
+      "bytes": 2835
+    },
+    {
+      "path": "references/operations-einvoice/get-rejected-irns.json",
+      "sha256": "b4a05947bf265e3cf4ed5d21c29e083b7742e0a441f68093788ddd48ef7fc3cb",
+      "bytes": 2296
+    },
+    {
+      "path": "references/operations-einvoice/get-sync-gstin-from-cp.json",
+      "sha256": "5dcc12cd419f688a08fee2d58d9acc27674a9f9f6643f14818bbcdda9827f8d4",
+      "bytes": 2110
+    }
+  ]
+}

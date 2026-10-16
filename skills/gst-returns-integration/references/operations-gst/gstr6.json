@@ -1,0 +1,2686 @@
+{
+  "area": "gst",
+  "spec_as_of": "2026-10-13",
+  "tag": "GSTR6",
+  "count": 16,
+  "operations": [
+    {
+      "id": "gst:GET:/gstr6/b2b",
+      "slug": "gst-gstr6-b2b-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/b2b",
+      "tag": "GSTR6",
+      "summary": "Get B2B Invoices",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "actionrequired",
+          "in": "query",
+          "required": false,
+          "meaning": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter."
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "ctin",
+          "in": "query",
+          "required": false,
+          "meaning": "CTIN of the taxpayer"
+        },
+        {
+          "name": "fromtime",
+          "in": "query",
+          "required": false,
+          "meaning": "From time format DD-MM-YYYY,20-12-2016"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/b2ba",
+      "slug": "gst-gstr6-b2ba-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/b2ba",
+      "tag": "GSTR6",
+      "summary": "Get B2BA Invoices",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "actionrequired",
+          "in": "query",
+          "required": false,
+          "meaning": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter."
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "ctin",
+          "in": "query",
+          "required": false,
+          "meaning": "CTIN of the taxpayer"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/cdn",
+      "slug": "gst-gstr6-cdn-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/cdn",
+      "tag": "GSTR6",
+      "summary": "Get CDNR Invoices",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "actionrequired",
+          "in": "query",
+          "required": false,
+          "meaning": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter."
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "ctin",
+          "in": "query",
+          "required": false,
+          "meaning": "CTIN of the taxpayer"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/cdna",
+      "slug": "gst-gstr6-cdna-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/cdna",
+      "tag": "GSTR6",
+      "summary": "Get CDNRA Invoices",
+      "params": [
+        {
+          "name": "actionrequired",
+          "in": "query",
+          "required": false,
+          "meaning": "Status filter for filtering the invoices. Action_required = Y, fetches the invoices where tax payer need to take action (Accept/Reject). Already accepted or uploaded invoices can be fetched by using action_required=N filter."
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ctin",
+          "in": "query",
+          "required": false,
+          "meaning": "CTIN of the taxpayer"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/isd",
+      "slug": "gst-gstr6-isd-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/isd",
+      "tag": "GSTR6",
+      "summary": "Get ISD Details",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/isda",
+      "slug": "gst-gstr6-isda-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/isda",
+      "tag": "GSTR6",
+      "summary": "Get Amendment ISD Details",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "ctin",
+          "in": "query",
+          "required": false,
+          "meaning": "CTIN of the taxpayer"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/itc",
+      "slug": "gst-gstr6-itc-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/itc",
+      "tag": "GSTR6",
+      "summary": "Get ITC Details",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/latefee",
+      "slug": "gst-gstr6-latefee-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/latefee",
+      "tag": "GSTR6",
+      "summary": "Get Late Fee",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr6/retsum",
+      "slug": "gst-gstr6-retsum-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr6/retsum",
+      "tag": "GSTR6",
+      "summary": "Get GSTR6 Summary",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "fnl",
+          "in": "query",
+          "required": true,
+          "meaning": "flag to indicate that a FINAL get call before filing of return.This will be set to Y when GSTR6 is submitted"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr6/retcal",
+      "slug": "gst-gstr6-retcal-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr6/retcal",
+      "tag": "GSTR6",
+      "summary": "GSTR6 Calculate R6",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "gstin",
+          "ret_period"
+        ],
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "GSTIN number"
+          },
+          "ret_period": {
+            "type": "string",
+            "description": "Return period"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "05AFVPB9858F1ZZ",
+        "ret_period": "072017"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr6/retevcfile",
+      "slug": "gst-gstr6-retevcfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr6/retevcfile",
+      "tag": "GSTR6",
+      "summary": "File GSTR6 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "evcotp",
+          "in": "query",
+          "required": true,
+          "meaning": "OTP for EVC"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "string"
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr6/retfile",
+      "slug": "gst-gstr6-retfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr6/retfile",
+      "tag": "GSTR6",
+      "summary": "File GSTR6 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "Supplier GSTIN"
+          },
+          "ret_period": {
+            "description": "Return Period",
+            "type": "string"
+          },
+          "chksum": {
+            "type": "string",
+            "description": "Checksum Value"
+          },
+          "itcDetails": {
+            "type": "object",
+            "properties": {
+              "ret_period": {
+                "description": "Return Period",
+                "type": "string"
+              },
+              "gstin": {
+                "type": "string",
+                "description": "Supplier GSTIN"
+              },
+              "totalItc": {
+                "type": "object",
+                "properties": {
+                  "iamt": {
+                    "type": "number",
+                    "description": "IGST Amount as per invoice"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "CGST Amount as per invoice"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "SGST Amount as per invoice"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Amount as per invoice"
+                  }
+                }
+              },
+              "inelgitc": {
+                "type": "object",
+                "properties": {
+                  "iamt": {
+                    "type": "number",
+                    "description": "IGST Amount as per invoice"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "CGST Amount as per invoice"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "SGST Amount as per invoice"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Amount as per invoice"
+                  }
+                }
+              },
+              "elgitc": {
+                "type": "object",
+                "properties": {
+                  "iamt": {
+                    "type": "number",
+                    "description": "IGST Amount as per invoice"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "CGST Amount as per invoice"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "SGST Amount as per invoice"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Amount as per invoice"
+                  }
+                }
+              },
+              "isdItcCross": {
+                "type": "object",
+                "properties": {
+                  "iamti": {
+                    "description": "Integrated to Integrated tax Value",
+                    "type": "number"
+                  },
+                  "iamts": {
+                    "description": "Integrated to state tax value ",
+                    "type": "number"
+                  },
+                  "iamtc": {
+                    "description": "Integrated to Central tax value",
+                    "type": "number"
+                  },
+                  "samts": {
+                    "description": "State to state tax value ",
+                    "type": "number"
+                  },
+                  "samti": {
+                    "description": "State to Integrated tax value",
+                    "type": "number"
+                  },
+                  "camti": {
+                    "description": "Central to Integrated tax value",
+                    "type": "number"
+                  },
+                  "camtc": {
+                    "description": "Central to State tax value",
+                    "type": "number"
+                  },
+                  "cess": {
+                    "description": "Cess Value",
+                    "type": "number"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "IGST Amount as per invoice"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "CGST Amount as per invoice"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "SGST Amount as per invoice"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Amount as per invoice"
+                  }
+                }
+              }
+            }
+          },
+          "lateFeemain": {
+            "type": "object",
+            "properties": {
+              "latefee": {
+                "type": "object",
+                "properties": {
+                  "debitId": {
+                    "type": "string",
+                    "description": "Cess Amount"
+                  },
+                  "cLamt": {
+                    "type": "number",
+                    "description": "Cess Amount"
+                  },
+                  "sLamt": {
+                    "type": "number",
+                    "description": "Cess Amount"
+                  }
+                }
+              }
+            }
+          },
+          "section_summary": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sec_nm": {
+                  "description": "Return Section",
+                  "type": "string"
+                },
+                "chksum": {
+                  "description": "Invoice Check Sum value",
+                  "type": "string"
+                },
+                "rc": {
+                  "description": "Record Count",
+                  "type": "number"
+                },
+                "ttl_txpd_cess": {
+                  "description": "Total Tax Paid CESS",
+                  "type": "number"
+                },
+                "ttl_txpd_cgst": {
+                  "description": "Total Tax Paid CGST",
+                  "type": "number"
+                },
+                "ttl_txpd_igst": {
+                  "description": "Total Tax Paid IGST",
+                  "type": "number"
+                },
+                "ttl_txpd_sgst": {
+                  "description": "Total Tax Paid SGST",
+                  "type": "number"
+                },
+                "ttl_val": {
+                  "description": "Total Invoice Value",
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "offset": {
+            "type": "object",
+            "properties": {
+              "cLamt": {
+                "description": "CESS Late Fee Amount",
+                "type": "number"
+              },
+              "sLamt": {
+                "description": "CESS Late Fee Amount",
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "27AHQPA7588L1ZJ",
+        "ret_period": "022024",
+        "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5",
+        "itcDetails": {
+          "ret_period": "022024",
+          "gstin": "27AHQPA7588L1ZJ",
+          "totalItc": {
+            "iamt": 325,
+            "camt": 0,
+            "samt": 0,
+            "csamt": 500
+          },
+          "inelgitc": {
+            "iamt": 325,
+            "camt": 0,
+            "samt": 0,
+            "csamt": 500
+          },
+          "elgitc": {
+            "iamt": 325,
+            "camt": 0,
+            "samt": 0,
+            "csamt": 500
+          },
+          "isdItcCross": {
+            "iamti": 700,
+            "iamts": 0,
+            "iamtc": 0,
+            "samts": 0,
+            "samti": 0,
+            "camti": 700,
+            "camtc": 0,
+            "cess": 200,
+            "iamt": 325,
+            "camt": 0,
+            "samt": 0,
+            "csamt": 500
+          }
+        },
+        "lateFeemain": {
+          "latefee": {
+            "debitId": "DC0901200000004",
+            "cLamt": 500,
+            "sLamt": 500
+          }
+        },
+        "section_summary": [
+          {
+            "sec_nm": "B2B",
+            "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5",
+            "rc": 10,
+            "ttl_txpd_cess": 10,
+            "ttl_txpd_cgst": 124.99,
+            "ttl_txpd_igst": 124.99,
+            "ttl_txpd_sgst": 124.99,
+            "ttl_val": 12345
+          }
+        ],
+        "offset": {
+          "cLamt": 5000,
+          "sLamt": 5000
+        }
+      }
+    },
+    {
+      "id": "gst:POST:/gstr6/retsubmit",
+      "slug": "gst-gstr6-retsubmit-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr6/retsubmit",
+      "tag": "GSTR6",
+      "summary": "Submit GSTR6 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "Supplier GSTIN"
+          },
+          "ret_period": {
+            "description": "Return Period",
+            "type": "string"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "27AHQPA7588L1ZJ",
+        "ret_period": "022024"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr6/savecrossitcdetails",
+      "slug": "gst-gstr6-savecrossitcdetails-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr6/savecrossitcdetails",
+      "tag": "GSTR6",
+      "summary": "Save GSTR6 Cross ITC details",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "fp",
+          "gstin",
+          "isdItcCross"
+        ],
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "GSTIN number"
+          },
+          "fp": {
+            "type": "string",
+            "description": "Financial period"
+          },
+          "isdItcCross": {
+            "type": "object",
+            "properties": {
+              "iamti": {
+                "description": "Integrated to Integrated tax Value",
+                "type": "number"
+              },
+              "iamts": {
+                "description": "Integrated to state tax value ",
+                "type": "number"
+              },
+              "iamtc": {
+                "description": "Integrated to Central tax value",
+                "type": "number"
+              },
+              "samts": {
+                "description": "State to state tax value ",
+                "type": "number"
+              },
+              "samti": {
+                "description": "State to Integrated tax value",
+                "type": "number"
+              },
+              "camti": {
+                "description": "Central to Integrated tax value",
+                "type": "number"
+              },
+              "camtc": {
+                "description": "Central to State tax value",
+                "type": "number"
+              },
+              "cess": {
+                "description": "Cess Value",
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "09AISDA1572E3ZY",
+        "fp": "072017",
+        "isdItcCross": {
+          "iamti": 700,
+          "iamts": 0,
+          "iamtc": 0,
+          "samts": 0,
+          "samti": 0,
+          "camti": 700,
+          "camtc": 0,
+          "cess": 200
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr6/retoffsetlatefee",
+      "slug": "gst-gstr6-retoffsetlatefee-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr6/retoffsetlatefee",
+      "tag": "GSTR6",
+      "summary": "Offset Liability GSTR6 Late fee",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "cgstfee",
+          "gstin",
+          "liab_id",
+          "ret_period",
+          "ret_type",
+          "sgstfee",
+          "tran_cd"
+        ],
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "Supplier GSTIN"
+          },
+          "ret_type": {
+            "type": "string",
+            "description": "Return type"
+          },
+          "ret_period": {
+            "type": "string",
+            "description": "Return period"
+          },
+          "liab_id": {
+            "type": "number",
+            "description": "Liability Id"
+          },
+          "tran_cd": {
+            "type": "number",
+            "description": "Transaction code"
+          },
+          "cgstfee": {
+            "type": "number",
+            "description": "CGST Latefee Amount"
+          },
+          "sgstfee": {
+            "type": "number",
+            "description": "SGST Latefee Amount"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "12cdfsdfsd",
+        "ret_type": "R6",
+        "ret_period": "032020",
+        "liab_id": 20,
+        "tran_cd": 20,
+        "cgstfee": 200,
+        "sgstfee": 300
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr6/retsave",
+      "slug": "gst-gstr6-retsave-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr6/retsave",
+      "tag": "GSTR6",
+      "summary": "Save GSTR6 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "Supplier GSTIN"
+          },
+          "fp": {
+            "description": "Financial Period",
+            "type": "string"
+          },
+          "gt": {
+            "description": "Gross Turnover of the taxpayer in the previous FY",
+            "type": "number"
+          },
+          "b2b": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "GSTIN/UID of the Receiver taxpayer/UN,Govt Bodies"
+                },
+                "inv": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Taxpayer action"
+                      },
+                      "inum": {
+                        "type": "string",
+                        "description": "Supplier Invoice Number"
+                      },
+                      "idt": {
+                        "type": "string",
+                        "description": "Supplier Invoice Date"
+                      },
+                      "val": {
+                        "type": "number",
+                        "description": "Supplier Invoice Value"
+                      },
+                      "pos": {
+                        "type": "string",
+                        "description": "Maintained in GST System common database POS as provided in law / actual provision of service."
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "checksum value"
+                      },
+                      "itms": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "num": {
+                              "description": "Serial no",
+                              "type": "number"
+                            },
+                            "itm_det": {
+                              "type": "object",
+                              "properties": {
+                                "txval": {
+                                  "type": "number",
+                                  "description": "Taxable value of Goods or Service as per invoice"
+                                },
+                                "rt": {
+                                  "description": "rate",
+                                  "type": "number"
+                                },
+                                "iamt": {
+                                  "type": "number",
+                                  "description": "IGST Amount as per invoice"
+                                },
+                                "camt": {
+                                  "type": "number",
+                                  "description": "CGST Amount as per invoice"
+                                },
+                                "samt": {
+                                  "type": "number",
+                                  "description": "SGST Amount as per invoice"
+                                },
+                                "csamt": {
+                                  "type": "number",
+                                  "description": "Cess Amount as per invoice"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "b2ba": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "GSTIN/UID of the Receiver taxpayer/UN,Govt Bodies"
+                },
+                "inv": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Taxpayer action"
+                      },
+                      "inum": {
+                        "type": "string",
+                        "description": "Supplier Invoice Number"
+                      },
+                      "idt": {
+                        "type": "string",
+                        "description": "Supplier Invoice Date"
+                      },
+                      "val": {
+                        "type": "number",
+                        "description": "Supplier Invoice Value"
+                      },
+                      "pos": {
+                        "type": "string",
+                        "description": "Maintained in GST System common database POS as provided in law / actual provision of service."
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "checksum value"
+                      },
+                      "oinum": {
+                        "description": "Original invoice number",
+                        "type": "string"
+                      },
+                      "oidt": {
+                        "description": "Original invoice date",
+                        "type": "string"
+                      },
+                      "itms": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "num": {
+                              "description": "Serial no",
+                              "type": "number"
+                            },
+                            "itm_det": {
+                              "type": "object",
+                              "description": "details of the items of invoice",
+                              "properties": {
+                                "txval": {
+                                  "type": "number",
+                                  "description": "Taxable value of Goods or Service as per invoice"
+                                },
+                                "rt": {
+                                  "description": "rate",
+                                  "type": "number"
+                                },
+                                "iamt": {
+                                  "type": "number",
+                                  "description": "IGST Amount as per invoice"
+                                },
+                                "camt": {
+                                  "type": "number",
+                                  "description": "CGST Amount as per invoice"
+                                },
+                                "samt": {
+                                  "type": "number",
+                                  "description": "SGST Amount as per invoice"
+                                },
+                                "csamt": {
+                                  "type": "number",
+                                  "description": "Cess Amount as per invoice"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          },
+          "isd": {
+            "properties": {
+              "inelglst": {
+                "items": {
+                  "properties": {
+                    "doclst": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "chksum": {
+                            "type": "string",
+                            "description": "checksum value"
+                          },
+                          "isd_docty": {
+                            "type": "string",
+                            "description": "ISD Doc Type"
+                          },
+                          "docnum": {
+                            "type": "string",
+                            "description": "Document Num"
+                          },
+                          "docdt": {
+                            "type": "string",
+                            "description": "Document Date"
+                          },
+                          "iamti": {
+                            "description": "Integrated to Integrated tax Value",
+                            "type": "number"
+                          },
+                          "iamts": {
+                            "description": "Integrated to state tax value ",
+                            "type": "number"
+                          },
+                          "iamtc": {
+                            "description": "Integrated to Central tax value",
+                            "type": "number"
+                          },
+                          "samts": {
+                            "description": "State to state tax value ",
+                            "type": "number"
+                          },
+                          "samti": {
+                            "description": "State to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camti": {
+                            "description": "Central to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camtc": {
+                            "description": "Central to State tax value",
+                            "type": "number"
+                          },
+                          "csamt": {
+                            "description": "Cess Value",
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "cpty": {
+                      "type": "string",
+                      "description": "Counter Party"
+                    },
+                    "typ": {
+                      "type": "string",
+                      "description": "Document Type"
+                    },
+                    "statecd": {
+                      "type": "string",
+                      "description": "State Code"
+                    }
+                  }
+                },
+                "type": "array"
+              },
+              "elglst": {
+                "items": {
+                  "properties": {
+                    "doclst": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "chksum": {
+                            "type": "string",
+                            "description": "checksum value"
+                          },
+                          "isd_docty": {
+                            "type": "string",
+                            "description": "ISD Doc Type"
+                          },
+                          "docnum": {
+                            "type": "string",
+                            "description": "Document Num"
+                          },
+                          "docdt": {
+                            "type": "string",
+                            "description": "Document Date"
+                          },
+                          "iamti": {
+                            "description": "Integrated to Integrated tax Value",
+                            "type": "number"
+                          },
+                          "iamts": {
+                            "description": "Integrated to state tax value ",
+                            "type": "number"
+                          },
+                          "iamtc": {
+                            "description": "Integrated to Central tax value",
+                            "type": "number"
+                          },
+                          "samts": {
+                            "description": "State to state tax value ",
+                            "type": "number"
+                          },
+                          "samti": {
+                            "description": "State to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camti": {
+                            "description": "Central to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camtc": {
+                            "description": "Central to State tax value",
+                            "type": "number"
+                          },
+                          "csamt": {
+                            "description": "Cess Value",
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "cpty": {
+                      "type": "string",
+                      "description": "Counter Party"
+                    },
+                    "typ": {
+                      "type": "string",
+                      "description": "Document Type"
+                    },
+                    "statecd": {
+                      "type": "string",
+                      "description": "State Code"
+                    }
+                  }
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "isda": {
+            "properties": {
+              "inelglst": {
+                "items": {
+                  "properties": {
+                    "doclst": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "cpty": {
+                            "type": "string",
+                            "description": "Counter Party"
+                          },
+                          "rcrddt": {
+                            "type": "string",
+                            "description": "Credit Date"
+                          },
+                          "chksum": {
+                            "type": "string",
+                            "description": "checksum value"
+                          },
+                          "isd_docty": {
+                            "type": "string",
+                            "description": "ISD Doc Type"
+                          },
+                          "docnum": {
+                            "type": "string",
+                            "description": "Document Num"
+                          },
+                          "docdt": {
+                            "type": "string",
+                            "description": "Document Date"
+                          },
+                          "rdocnum": {
+                            "type": "string",
+                            "description": "revised Document Num"
+                          },
+                          "rdocdt": {
+                            "type": "string",
+                            "description": "revised Document Date"
+                          },
+                          "odocnum": {
+                            "type": "string",
+                            "description": "Original Document Num"
+                          },
+                          "odocdt": {
+                            "type": "string",
+                            "description": "Original Document Date"
+                          },
+                          "iamti": {
+                            "description": "Integrated to Integrated tax Value",
+                            "type": "number"
+                          },
+                          "iamts": {
+                            "description": "Integrated to state tax value ",
+                            "type": "number"
+                          },
+                          "iamtc": {
+                            "description": "Integrated to Central tax value",
+                            "type": "number"
+                          },
+                          "samts": {
+                            "description": "State to state tax value ",
+                            "type": "number"
+                          },
+                          "samti": {
+                            "description": "State to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camti": {
+                            "description": "Central to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camtc": {
+                            "description": "Central to State tax value",
+                            "type": "number"
+                          },
+                          "csamt": {
+                            "description": "Cess Value",
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "cpty": {
+                      "type": "string",
+                      "description": "Counter Party"
+                    },
+                    "typ": {
+                      "type": "string",
+                      "description": "Document Type"
+                    },
+                    "statecd": {
+                      "type": "string",
+                      "description": "State Code"
+                    },
+                    "rcpty": {
+                      "type": "string",
+                      "description": "revised Counter Party"
+                    },
+                    "rstatecd": {
+                      "type": "string",
+                      "description": "revised State Code"
+                    }
+                  }
+                },
+                "type": "array"
+              },
+              "elglst": {
+                "items": {
+                  "properties": {
+                    "doclst": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "cpty": {
+                            "type": "string",
+                            "description": "Counter Party"
+                          },
+                          "rcrddt": {
+                            "type": "string",
+                            "description": "Credit Date"
+                          },
+                          "chksum": {
+                            "type": "string",
+                            "description": "checksum value"
+                          },
+                          "isd_docty": {
+                            "type": "string",
+                            "description": "ISD Doc Type"
+                          },
+                          "docnum": {
+                            "type": "string",
+                            "description": "Document Num"
+                          },
+                          "docdt": {
+                            "type": "string",
+                            "description": "Document Date"
+                          },
+                          "rdocnum": {
+                            "type": "string",
+                            "description": "revised Document Num"
+                          },
+                          "rdocdt": {
+                            "type": "string",
+                            "description": "revised Document Date"
+                          },
+                          "odocnum": {
+                            "type": "string",
+                            "description": "Original Document Num"
+                          },
+                          "odocdt": {
+                            "type": "string",
+                            "description": "Original Document Date"
+                          },
+                          "iamti": {
+                            "description": "Integrated to Integrated tax Value",
+                            "type": "number"
+                          },
+                          "iamts": {
+                            "description": "Integrated to state tax value ",
+                            "type": "number"
+                          },
+                          "iamtc": {
+                            "description": "Integrated to Central tax value",
+                            "type": "number"
+                          },
+                          "samts": {
+                            "description": "State to state tax value ",
+                            "type": "number"
+                          },
+                          "samti": {
+                            "description": "State to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camti": {
+                            "description": "Central to Integrated tax value",
+                            "type": "number"
+                          },
+                          "camtc": {
+                            "description": "Central to State tax value",
+                            "type": "number"
+                          },
+                          "csamt": {
+                            "description": "Cess Value",
+                            "type": "number"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "cpty": {
+                      "type": "string",
+                      "description": "Counter Party"
+                    },
+                    "typ": {
+                      "type": "string",
+                      "description": "Document Type"
+                    },
+                    "statecd": {
+                      "type": "string",
+                      "description": "State Code"
+                    },
+                    "rcpty": {
+                      "type": "string",
+                      "description": "revised Counter Party"
+                    },
+                    "rstatecd": {
+                      "type": "string",
+                      "description": "revised State Code"
+                    }
+                  }
+                },
+                "type": "array"
+              }
+            },
+            "type": "object"
+          },
+          "cdn": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "GSTIN/UID of the Receiver taxpayer/UN,Govt Bodies"
+                },
+                "nt": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "nt_dt": {
+                        "description": "Credit/debit note date",
+                        "type": "string"
+                      },
+                      "nt_num": {
+                        "description": "Credit/debit note number",
+                        "type": "string"
+                      },
+                      "ntty": {
+                        "description": "Credit/debit note type ",
+                        "type": "string"
+                      },
+                      "val": {
+                        "type": "number",
+                        "description": "Supplier Invoice Value"
+                      },
+                      "pos": {
+                        "type": "string",
+                        "description": "Maintained in GST System common database POS as provided in law / actual provision of service."
+                      },
+                      "itms": {
+                        "items": {
+                          "properties": {
+                            "itm_det": {
+                              "type": "object",
+                              "properties": {
+                                "txval": {
+                                  "type": "number",
+                                  "description": "Taxable value of Goods or Service as per invoice"
+                                },
+                                "rt": {
+                                  "description": "rate",
+                                  "type": "number"
+                                },
+                                "iamt": {
+                                  "type": "number",
+                                  "description": "IGST Amount as per invoice"
+                                },
+                                "csamt": {
+                                  "type": "number",
+                                  "description": "Cess Amount as per invoice"
+                                }
+                              }
+                            },
+                            "num": {
+                              "type": "number",
+                              "description": "Serial Number"
+                            }
+                          }
+                        },
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "cdna": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "nt": {
+                  "items": {
+                    "properties": {
+                      "ont_dt": {
+                        "description": "Original Credit/debit note date",
+                        "type": "string"
+                      },
+                      "ont_num": {
+                        "description": "Original Credit/debit note number",
+                        "type": "string"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum Value"
+                      },
+                      "nt_dt": {
+                        "description": "Credit/debit note date",
+                        "type": "string"
+                      },
+                      "nt_num": {
+                        "description": "Credit/debit note number",
+                        "type": "string"
+                      },
+                      "ntty": {
+                        "description": "Credit/debit note type ",
+                        "type": "string"
+                      },
+                      "val": {
+                        "type": "number",
+                        "description": "Supplier Invoice Value"
+                      },
+                      "pos": {
+                        "type": "string",
+                        "description": "Maintained in GST System common database POS as provided in law / actual provision of service."
+                      },
+                      "itms": {
+                        "items": {
+                          "properties": {
+                            "itm_det": {
+                              "type": "object",
+                              "properties": {
+                                "txval": {
+                                  "type": "number",
+                                  "description": "Taxable value of Goods or Service as per invoice"
+                                },
+                                "rt": {
+                                  "description": "rate",
+                                  "type": "number"
+                                },
+                                "iamt": {
+                                  "type": "number",
+                                  "description": "IGST Amount as per invoice"
+                                },
+                                "camt": {
+                                  "type": "number",
+                                  "description": "CGST Amount as per invoice"
+                                },
+                                "samt": {
+                                  "type": "number",
+                                  "description": "SGST Amount as per invoice"
+                                },
+                                "csamt": {
+                                  "type": "number",
+                                  "description": "Cess Amount as per invoice"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "type": "array"
+                      }
+                    },
+                    "type": "object"
+                  },
+                  "type": "array"
+                },
+                "ctin": {
+                  "type": "string",
+                  "description": "GSTIN/UID of the Receiver taxpayer/UN,Govt Bodies"
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr6/retsubmit",
+        "gst:POST:/gstr6/retfile",
+        "gst:POST:/gstr6/retevcfile"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "27AHQPA7588L1ZJ",
+        "fp": "022024",
+        "b2b": [
+          {
+            "ctin": "01AABCE2207R1Z5",
+            "inv": [
+              {
+                "flag": "R",
+                "inum": "S008400",
+                "idt": "24-01-2024",
+                "val": 729248.16,
+                "pos": "06",
+                "chksum": "AflJufPlFStqKBZ",
+                "itms": [
+                  {
+                    "itm_det": {
+                      "txval": 10000,
+                      "rt": 5,
+                      "iamt": 325,
+                      "camt": 0,
+                      "samt": 0,
+                      "csamt": 500
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "b2ba": [
+          {
+            "ctin": "01AABCE2207R1Z5",
+            "inv": [
+              {
+                "flag": "R",
+                "inum": "S008400",
+                "idt": "24-01-2024",
+                "val": 729248.16,
+                "pos": "06",
+                "chksum": "AflJufPlFStqKBZ",
+                "oinum": "S008400",
+                "oidt": "24-01-2024",
+                "itms": [
+                  {
+                    "itm_det": {
+                      "txval": 10000,
+                      "rt": 5,
+                      "iamt": 325,
+                      "camt": 0,
+                      "samt": 0,
+                      "csamt": 500
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "isd": {
+          "inelglst": [
+            {
+              "doclst": [
+                {
+                  "chksum": "AflJufPlFStqKBZ",
+                  "isd_docty": "ISD",
+                  "docnum": "1016",
+                  "docdt": "09-05-2024",
+                  "iamti": 700,
+                  "iamts": 0,
+                  "iamtc": 0,
+                  "samts": 0,
+                  "samti": 0,
+                  "camti": 700,
+                  "camtc": 0,
+                  "csamt": 200
+                }
+              ],
+              "cpty": "05BJKPK5619P1ZN",
+              "typ": "R",
+              "statecd": "05"
+            }
+          ],
+          "elglst": [
+            {
+              "doclst": [
+                {
+                  "chksum": "AflJufPlFStqKBZ",
+                  "isd_docty": "ISD",
+                  "docnum": "1016",
+                  "docdt": "09-05-2024",
+                  "iamti": 700,
+                  "iamts": 0,
+                  "iamtc": 0,
+                  "samts": 0,
+                  "samti": 0,
+                  "camti": 700,
+                  "camtc": 0,
+                  "csamt": 200
+                }
+              ],
+              "cpty": "05BJKPK5619P1ZN",
+              "typ": "R",
+              "statecd": "05"
+            }
+          ]
+        },
+        "isda": {
+          "inelglst": [
+            {
+              "doclst": [
+                {
+                  "cpty": "05BJKPK5619P1ZN",
+                  "chksum": "AflJufPlFStqKBZ",
+                  "isd_docty": "ISD",
+                  "docnum": "1016",
+                  "docdt": "09-05-2024",
+                  "rdocnum": "1016",
+                  "rdocdt": "09-05-2024",
+                  "odocnum": "1016",
+                  "odocdt": "09-05-2024",
+                  "iamti": 700,
+                  "iamts": 0,
+                  "iamtc": 0,
+                  "samts": 0,
+                  "samti": 0,
+                  "camti": 700,
+                  "camtc": 0,
+                  "csamt": 200
+                }
+              ],
+              "cpty": "05BJKPK5619P1ZN",
+              "typ": "R",
+              "statecd": "05",
+              "rcpty": "05BJKPK5619P1ZN",
+              "rstatecd": "05"
+            }
+          ],
+          "elglst": [
+            {
+              "doclst": [
+                {
+                  "cpty": "05BJKPK5619P1ZN",
+                  "chksum": "AflJufPlFStqKBZ",
+                  "isd_docty": "ISDA",
+                  "docnum": "1016",
+                  "docdt": "09-05-2024",
+                  "rdocnum": "1016",
+                  "rdocdt": "09-05-2024",
+                  "odocnum": "1016",
+                  "odocdt": "09-05-2024",
+                  "iamti": 700,
+                  "iamts": 0,
+                  "iamtc": 0,
+                  "samts": 0,
+                  "samti": 0,
+                  "camti": 700,
+                  "camtc": 0,
+                  "csamt": 200
+                }
+              ],
+              "cpty": "05BJKPK5619P1ZN",
+              "typ": "R",
+              "statecd": "05",
+              "rcpty": "05BJKPK5619P1ZN",
+              "rstatecd": "05"
+            }
+          ]
+        },
+        "cdn": [
+          {
+            "ctin": "01AABCE2207R1Z5",
+            "nt": [
+              {
+                "nt_dt": "16-03-2024",
+                "nt_num": "cdn001",
+                "ntty": "C",
+                "val": 729248.16,
+                "pos": "06",
+                "itms": [
+                  {
+                    "itm_det": {
+                      "txval": 10000,
+                      "rt": 5,
+                      "iamt": 325,
+                      "csamt": 500
+                    },
+                    "num": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cdna": [
+          {
+            "nt": [
+              {
+                "ont_dt": "16-03-2024",
+                "ont_num": "cdn001",
+                "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5",
+                "nt_dt": "16-03-2024",
+                "nt_num": "cdn001",
+                "ntty": "C",
+                "val": 729248.16,
+                "pos": "06",
+                "itms": [
+                  {
+                    "itm_det": {
+                      "txval": 10000,
+                      "rt": 5,
+                      "iamt": 325,
+                      "camt": 0,
+                      "samt": 0,
+                      "csamt": 500
+                    }
+                  }
+                ]
+              }
+            ],
+            "ctin": "01AABCE2207R1Z5"
+          }
+        ]
+      },
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      }
+    }
+  ]
+}

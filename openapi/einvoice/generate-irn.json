@@ -1,0 +1,938 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Invoice: Generate IRN",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Invoice API in the group Generate IRN, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Generate IRN"
+    }
+  ],
+  "paths": {
+    "/einvoice/type/GENERATE/version/V1_03": {
+      "post": {
+        "operationId": "einvoice-einvoice-type-generate-version-v1-03-post",
+        "summary": "Generate IRN",
+        "tags": [
+          "Generate IRN"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "description": "NIC session token from authenticate",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Version": {
+                    "type": "string",
+                    "description": "Version Type"
+                  },
+                  "TranDtls": {
+                    "type": "object",
+                    "properties": {
+                      "TaxSch": {
+                        "type": "string",
+                        "description": "Tax type"
+                      },
+                      "SupTyp": {
+                        "type": "string",
+                        "description": "Supply Type"
+                      },
+                      "RegRev": {
+                        "type": "string",
+                        "description": "Reg Rev"
+                      },
+                      "EcmGstin": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Ecom GSTIN"
+                      },
+                      "IgstOnIntra": {
+                        "type": "string",
+                        "description": "IGST On Intra"
+                      }
+                    }
+                  },
+                  "DocDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Typ": {
+                        "type": "string",
+                        "description": "Type"
+                      },
+                      "No": {
+                        "type": "string",
+                        "description": "Invoice Number"
+                      },
+                      "Dt": {
+                        "type": "string",
+                        "description": "Invoice Date"
+                      }
+                    }
+                  },
+                  "SellerDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Gstin": {
+                        "type": "string",
+                        "description": "GST Number"
+                      },
+                      "LglNm": {
+                        "type": "string",
+                        "description": "Legal Name"
+                      },
+                      "TrdNm": {
+                        "type": "string",
+                        "description": "Trade Name"
+                      },
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Code"
+                      },
+                      "Ph": {
+                        "type": "string",
+                        "description": "Phone Number"
+                      },
+                      "Em": {
+                        "type": "string",
+                        "description": "Email Id"
+                      }
+                    }
+                  },
+                  "BuyerDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Gstin": {
+                        "type": "string",
+                        "description": "GST Number"
+                      },
+                      "LglNm": {
+                        "type": "string",
+                        "description": "Legal Name"
+                      },
+                      "TrdNm": {
+                        "type": "string",
+                        "description": "Trade Name"
+                      },
+                      "Pos": {
+                        "type": "string",
+                        "description": "Place of Supply"
+                      },
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Code"
+                      },
+                      "Ph": {
+                        "type": "string",
+                        "description": "Phone Number"
+                      },
+                      "Em": {
+                        "type": "string",
+                        "description": "Email Id"
+                      }
+                    }
+                  },
+                  "DispDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Nm": {
+                        "type": "string",
+                        "description": "Name"
+                      },
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  },
+                  "ShipDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Gstin": {
+                        "type": "string",
+                        "description": "GST Number"
+                      },
+                      "LglNm": {
+                        "type": "string",
+                        "description": "Legal Name"
+                      },
+                      "TrdNm": {
+                        "type": "string",
+                        "description": "Trade Name"
+                      },
+                      "Addr1": {
+                        "type": "string",
+                        "description": "Address1"
+                      },
+                      "Addr2": {
+                        "type": "string",
+                        "description": "Address2"
+                      },
+                      "Loc": {
+                        "type": "string",
+                        "description": "Location Name"
+                      },
+                      "Pin": {
+                        "type": "number",
+                        "description": "Pincode Number"
+                      },
+                      "Stcd": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  },
+                  "ItemList": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "SlNo": {
+                          "type": "string",
+                          "description": "Serial Number"
+                        },
+                        "IsServc": {
+                          "type": "string",
+                          "description": "Service"
+                        },
+                        "PrdDesc": {
+                          "type": "string",
+                          "description": "Product Description"
+                        },
+                        "HsnCd": {
+                          "type": "string",
+                          "description": "HSN Code"
+                        },
+                        "Barcde": {
+                          "type": "string",
+                          "description": "Bar Code"
+                        },
+                        "BchDtls": {
+                          "type": "object",
+                          "properties": {
+                            "Nm": {
+                              "type": "string",
+                              "description": "Tax type"
+                            },
+                            "Expdt": {
+                              "type": "string",
+                              "description": "Tax type"
+                            },
+                            "wrDt": {
+                              "type": "string",
+                              "description": "Tax type"
+                            }
+                          }
+                        },
+                        "Qty": {
+                          "type": "number",
+                          "description": "Quntity"
+                        },
+                        "FreeQty": {
+                          "type": "number",
+                          "description": "Free Quntity"
+                        },
+                        "Unit": {
+                          "type": "string",
+                          "description": "Units Of Measurment"
+                        },
+                        "UnitPrice": {
+                          "type": "number",
+                          "description": "Unit Price"
+                        },
+                        "TotAmt": {
+                          "type": "number",
+                          "description": "Total Amount"
+                        },
+                        "Discount": {
+                          "type": "number",
+                          "description": "Discount"
+                        },
+                        "PreTaxVal": {
+                          "type": "number",
+                          "description": "Discount"
+                        },
+                        "AssAmt": {
+                          "type": "number",
+                          "description": "Assesment Amount"
+                        },
+                        "GstRt": {
+                          "type": [
+                            "number",
+                            "null"
+                          ],
+                          "description": "gst Rate"
+                        },
+                        "SgstAmt": {
+                          "type": "number",
+                          "description": "Sgst Rate"
+                        },
+                        "IgstAmt": {
+                          "type": "number",
+                          "description": "Igst Rate"
+                        },
+                        "CgstAmt": {
+                          "type": "number",
+                          "description": "Cgst Rate"
+                        },
+                        "CesRt": {
+                          "type": "number",
+                          "description": "Cess Rate"
+                        },
+                        "CesAmt": {
+                          "type": "number",
+                          "description": "Cess Amount"
+                        },
+                        "CesNonAdvlAmt": {
+                          "type": "number",
+                          "description": "CesNonAd value"
+                        },
+                        "StateCesRt": {
+                          "type": "number",
+                          "description": "State Cess Rate"
+                        },
+                        "StateCesAmt": {
+                          "type": "number",
+                          "description": "State Cess Amount"
+                        },
+                        "StateCesNonAdvlAmt": {
+                          "type": "number",
+                          "description": "State Cess none advance Amount"
+                        },
+                        "OthChrg": {
+                          "type": "number",
+                          "description": "Other Charges"
+                        },
+                        "TotItemVal": {
+                          "type": "number",
+                          "description": "Total Item Value"
+                        },
+                        "OrdLineRef": {
+                          "type": "string",
+                          "description": "Total Item Value"
+                        },
+                        "OrgCntry": {
+                          "type": "string",
+                          "description": "Total Item Value"
+                        },
+                        "PrdSlNo": {
+                          "type": "string",
+                          "description": "Total Item Value"
+                        },
+                        "AttribDtls": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "Nm": {
+                                "type": "string",
+                                "description": "Tax type"
+                              },
+                              "Val": {
+                                "type": "string",
+                                "description": "Tax type"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ValDtls": {
+                    "type": "object",
+                    "properties": {
+                      "AssVal": {
+                        "type": "number",
+                        "description": "Assestment Val"
+                      },
+                      "CgstVal": {
+                        "type": "number",
+                        "description": "Cgst Value"
+                      },
+                      "SgstVal": {
+                        "type": "number",
+                        "description": "Sgst Value"
+                      },
+                      "IgstVal": {
+                        "type": "number",
+                        "description": "Igst Value"
+                      },
+                      "CesVal": {
+                        "type": "number",
+                        "description": "Cess Value"
+                      },
+                      "StCesVal": {
+                        "type": "number",
+                        "description": "StCess Value"
+                      },
+                      "Discount": {
+                        "type": "number",
+                        "description": "StCess Value"
+                      },
+                      "OthChrg": {
+                        "type": "number",
+                        "description": "StCess Value"
+                      },
+                      "RndOffAmt": {
+                        "type": "number",
+                        "description": "Round off"
+                      },
+                      "TotInvVal": {
+                        "type": "number",
+                        "description": "Total Invoice Value"
+                      },
+                      "TotInvValFc": {
+                        "type": "number",
+                        "description": "StCess Value"
+                      }
+                    }
+                  },
+                  "PayDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Nm": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Accdet": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Mode": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Fininsbr": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Payterm": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Payinstr": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Crtrn": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Dirdr": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Crday": {
+                        "type": "number",
+                        "description": "State Name"
+                      },
+                      "Paidamt": {
+                        "type": "number",
+                        "description": "State Name"
+                      },
+                      "Paymtdue": {
+                        "type": "number",
+                        "description": "State Name"
+                      }
+                    }
+                  },
+                  "RefDtls": {
+                    "type": "object",
+                    "properties": {
+                      "InvRm": {
+                        "type": "string",
+                        "description": "GST Number"
+                      },
+                      "DocPerdDtls": {
+                        "type": "object",
+                        "properties": {
+                          "InvStDt": {
+                            "type": "string",
+                            "description": "State Name"
+                          },
+                          "InvEndDt": {
+                            "type": "string",
+                            "description": "State Name"
+                          }
+                        }
+                      },
+                      "PrecDocDtls": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "InvNo": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "InvDt": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "OthRefNo": {
+                              "type": "string",
+                              "description": "State Name"
+                            }
+                          }
+                        }
+                      },
+                      "ContrDtls": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "RecAdvRefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "RecAdvDt": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "Tendrefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "Contrrefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "Extrefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "Projrefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "Porefr": {
+                              "type": "string",
+                              "description": "State Name"
+                            },
+                            "PoRefDt": {
+                              "type": "string",
+                              "description": "State Name"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "AddlDocDtls": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Url": {
+                          "type": "string",
+                          "description": "State Name"
+                        },
+                        "Docs": {
+                          "type": "string",
+                          "description": "State Name"
+                        },
+                        "Info": {
+                          "type": "string",
+                          "description": "State Name"
+                        }
+                      }
+                    }
+                  },
+                  "ExpDtls": {
+                    "type": "object",
+                    "properties": {
+                      "ShipBNo": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "ShipBDt": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Port": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "RefClm": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "ForCur": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "CntCode": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  },
+                  "EwbDtls": {
+                    "type": "object",
+                    "properties": {
+                      "Transid": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Transname": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Distance": {
+                        "type": "number",
+                        "description": "State Name"
+                      },
+                      "Transdocno": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "TransdocDt": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Vehno": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "Vehtype": {
+                        "type": "string",
+                        "description": "State Name"
+                      },
+                      "TransMode": {
+                        "type": "string",
+                        "description": "State Name"
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "Version": "1.1",
+                "TranDtls": {
+                  "TaxSch": "GST",
+                  "SupTyp": "B2B",
+                  "RegRev": "N",
+                  "EcmGstin": null,
+                  "IgstOnIntra": "N"
+                },
+                "DocDtls": {
+                  "Typ": "INV",
+                  "No": "MAHI/10",
+                  "Dt": "08/08/2020"
+                },
+                "SellerDtls": {
+                  "Gstin": "29AAGCB1286Q000",
+                  "LglNm": "ABC company pvt ltd",
+                  "TrdNm": "NIC Industries",
+                  "Addr1": "5th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "GANDHINAGAR",
+                  "Pin": 560001,
+                  "Stcd": "29",
+                  "Ph": "9000000000",
+                  "Em": "abc@gmail.com"
+                },
+                "BuyerDtls": {
+                  "Gstin": "29AWGPV7107B1Z1",
+                  "LglNm": "XYZ company pvt ltd",
+                  "TrdNm": "XYZ Industries",
+                  "Pos": "37",
+                  "Addr1": "7th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "GANDHINAGAR",
+                  "Pin": 560004,
+                  "Stcd": "29",
+                  "Ph": "9000000000",
+                  "Em": "abc@gmail.com"
+                },
+                "DispDtls": {
+                  "Nm": "ABC company pvt ltd",
+                  "Addr1": "7th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "Banagalore",
+                  "Pin": 518360,
+                  "Stcd": "37"
+                },
+                "ShipDtls": {
+                  "Gstin": "29AWGPV7107B1Z1",
+                  "LglNm": "CBE company pvt ltd",
+                  "TrdNm": "kuvempu layout",
+                  "Addr1": "7th block, kuvempu layout",
+                  "Addr2": "kuvempu layout",
+                  "Loc": "Banagalore",
+                  "Pin": 518360,
+                  "Stcd": "37"
+                },
+                "ItemList": [
+                  {
+                    "SlNo": "1",
+                    "IsServc": "N",
+                    "PrdDesc": "Rice",
+                    "HsnCd": "1001",
+                    "Barcde": "123456",
+                    "BchDtls": {
+                      "Nm": "123456",
+                      "Expdt": "01/08/2020",
+                      "wrDt": "01/09/2020"
+                    },
+                    "Qty": 100.345,
+                    "FreeQty": 10,
+                    "Unit": "NOS",
+                    "UnitPrice": 99.545,
+                    "TotAmt": 9988.84,
+                    "Discount": 10,
+                    "PreTaxVal": 1,
+                    "AssAmt": 9978.84,
+                    "GstRt": 12,
+                    "SgstAmt": 0,
+                    "IgstAmt": 1197.46,
+                    "CgstAmt": 0,
+                    "CesRt": 5,
+                    "CesAmt": 498.94,
+                    "CesNonAdvlAmt": 10,
+                    "StateCesRt": 12,
+                    "StateCesAmt": 1197.46,
+                    "StateCesNonAdvlAmt": 5,
+                    "OthChrg": 10,
+                    "TotItemVal": 12897.7,
+                    "OrdLineRef": "3256",
+                    "OrgCntry": "AG",
+                    "PrdSlNo": "12345",
+                    "AttribDtls": [
+                      {
+                        "Nm": "Rice",
+                        "Val": "10000"
+                      }
+                    ]
+                  }
+                ],
+                "ValDtls": {
+                  "AssVal": 9978.84,
+                  "CgstVal": 0,
+                  "SgstVal": 0,
+                  "IgstVal": 1197.46,
+                  "CesVal": 508.94,
+                  "StCesVal": 1202.46,
+                  "Discount": 10,
+                  "OthChrg": 20,
+                  "RndOffAmt": 0.3,
+                  "TotInvVal": 12908,
+                  "TotInvValFc": 12897.7
+                },
+                "PayDtls": {
+                  "Nm": "ABCDE",
+                  "Accdet": "5697389713210",
+                  "Mode": "Cash",
+                  "Fininsbr": "SBIN11000",
+                  "Payterm": "100",
+                  "Payinstr": "Gift",
+                  "Crtrn": "test",
+                  "Dirdr": "test",
+                  "Crday": 100,
+                  "Paidamt": 10000,
+                  "Paymtdue": 5000
+                },
+                "RefDtls": {
+                  "InvRm": "TEST",
+                  "DocPerdDtls": {
+                    "InvStDt": "01/08/2020",
+                    "InvEndDt": "01/09/2020"
+                  },
+                  "PrecDocDtls": [
+                    {
+                      "InvNo": "DOC/002",
+                      "InvDt": "01/08/2020",
+                      "OthRefNo": "123456"
+                    }
+                  ],
+                  "ContrDtls": [
+                    {
+                      "RecAdvRefr": "DOC/002",
+                      "RecAdvDt": "01/08/2020",
+                      "Tendrefr": "Abc001",
+                      "Contrrefr": "Co123",
+                      "Extrefr": "Yo456",
+                      "Projrefr": "Doc-456",
+                      "Porefr": "Doc-789",
+                      "PoRefDt": "01/08/2020"
+                    }
+                  ]
+                },
+                "AddlDocDtls": [
+                  {
+                    "Url": "https://einv-apisandbox.nic.in",
+                    "Docs": "Test Doc",
+                    "Info": "Document Test"
+                  }
+                ],
+                "ExpDtls": {
+                  "ShipBNo": "A-248",
+                  "ShipBDt": "01/08/2020",
+                  "Port": "INABG1",
+                  "RefClm": "N",
+                  "ForCur": "AED",
+                  "CntCode": "AE"
+                },
+                "EwbDtls": {
+                  "Transid": "12AWGPV7107B1Z1",
+                  "Transname": "XYZ EXPORTS",
+                  "Distance": 100,
+                  "Transdocno": "DOC01",
+                  "TransdocDt": "01/08/2020",
+                  "Vehno": "ka123456",
+                  "Vehtype": "R",
+                  "TransMode": "1"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "einvoice_session"
+      }
+    }
+  }
+}

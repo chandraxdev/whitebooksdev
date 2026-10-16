@@ -1,0 +1,78 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Authentication",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/authenticate",
+      "slug": "ewaybill-ewaybillapi-v1-03-authenticate-get",
+      "api": "ewaybill",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/authenticate",
+      "tag": "Authentication",
+      "summary": "Authentication Request",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "username",
+          "in": "query",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "password",
+          "in": "query",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-WayBill Server Type(NIC1/NIC2)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "ewb_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [
+        "DISC-1"
+      ],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    }
+  ]
+}

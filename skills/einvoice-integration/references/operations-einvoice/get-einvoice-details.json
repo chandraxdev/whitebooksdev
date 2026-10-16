@@ -1,0 +1,88 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "tag": "Get EInvoice Details",
+  "count": 1,
+  "operations": [
+    {
+      "id": "einvoice:GET:/einvoice/type/GETIRN/version/V1_03",
+      "slug": "einvoice-einvoice-type-getirn-version-v1-03-get",
+      "api": "einvoice",
+      "method": "GET",
+      "path": "/einvoice/type/GETIRN/version/V1_03",
+      "tag": "Get EInvoice Details",
+      "summary": "Get EInvoice Details",
+      "params": [
+        {
+          "name": "param1",
+          "in": "query",
+          "required": true,
+          "meaning": "IRN"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "supplier_gstn",
+          "in": "query",
+          "required": false,
+          "meaning": "Supplier GSTIN, only in case E Comm. operator is getting IRN details"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-Invoice Server Type(NIC1/NIC2),given at the time of e-Invoice generation"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "auth-token",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC session token from authenticate"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "einvoice_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    }
+  ]
+}

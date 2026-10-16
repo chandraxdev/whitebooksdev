@@ -1,0 +1,91 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Closure e-Way Bill",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/clsewb",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-clsewb-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/clsewb",
+      "tag": "Closure e-Way Bill",
+      "summary": "Closure e-Way Bill",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "ewbNo",
+          "closureDate",
+          "remarks"
+        ],
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "Ewaybill Number"
+          },
+          "closureDate": {
+            "type": "string",
+            "description": "Closure Date"
+          },
+          "remarks": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "remarks"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "closureDate": "21/05/2026",
+        "remarks": "Closed the order"
+      }
+    }
+  ]
+}

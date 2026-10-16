@@ -1,0 +1,3167 @@
+{
+  "area": "gst",
+  "spec_as_of": "2026-10-13",
+  "tag": "GSTR3B",
+  "count": 15,
+  "operations": [
+    {
+      "id": "gst:GET:/gstr3b/autoliab",
+      "slug": "gst-gstr3b-autoliab-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/autoliab",
+      "tag": "GSTR3B",
+      "summary": "Get GSTR1 auto calculated liability details",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/closingbal",
+      "slug": "gst-gstr3b-closingbal-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/closingbal",
+      "tag": "GSTR3B",
+      "summary": "Get ITC Reversal Balance",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/openingbal",
+      "slug": "gst-gstr3b-openingbal-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/openingbal",
+      "tag": "GSTR3B",
+      "summary": "Get Opening Balance For Credit Reversal and Re-claimed Details",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/rcmclosingbal",
+      "slug": "gst-gstr3b-rcmclosingbal-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/rcmclosingbal",
+      "tag": "GSTR3B",
+      "summary": "Get latest closing balance",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/rcmopeningbal",
+      "slug": "gst-gstr3b-rcmopeningbal-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/rcmopeningbal",
+      "tag": "GSTR3B",
+      "summary": "Get RCM opening balance",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/retsum",
+      "slug": "gst-gstr3b-retsum-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/retsum",
+      "tag": "GSTR3B",
+      "summary": "Get GSTR3B Summary",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/gstr3b/syscalcintrst",
+      "slug": "gst-gstr3b-syscalcintrst-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/gstr3b/syscalcintrst",
+      "tag": "GSTR3B",
+      "summary": "Get system calculated interest",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr3b/cmpint",
+      "slug": "gst-gstr3b-cmpint-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr3b/cmpint",
+      "tag": "GSTR3B",
+      "summary": "Recompute System Calulated Interest",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "description": "GSTIN",
+            "type": "string"
+          },
+          "ret_period": {
+            "description": "Return period",
+            "type": "string"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "05AVHPB7348G1ZP",
+        "ret_period": "042024"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr3b/retevcfile",
+      "slug": "gst-gstr3b-retevcfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr3b/retevcfile",
+      "tag": "GSTR3B",
+      "summary": "File GSTR3B data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "evcotp",
+          "in": "query",
+          "required": true,
+          "meaning": "OTP for EVC"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "string"
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr3b/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr3b/retfile",
+      "slug": "gst-gstr3b-retfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr3b/retfile",
+      "tag": "GSTR3B",
+      "summary": "File GSTR3B data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "properties": {
+          "gstin": {
+            "description": "Supplier GSTIN",
+            "type": "string"
+          },
+          "ret_period": {
+            "description": "Return period",
+            "type": "string"
+          },
+          "sup_details": {
+            "properties": {
+              "osup_det": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_zero": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nil_exmp": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              },
+              "isup_rev": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nongst": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "inter_sup": {
+            "properties": {
+              "unreg_details": {
+                "items": {
+                  "properties": {
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    },
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    }
+                  }
+                }
+              },
+              "comp_details": {
+                "items": {
+                  "properties": {
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    },
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    }
+                  }
+                }
+              },
+              "uin_details": {
+                "items": {
+                  "properties": {
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    },
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "eco_dtls": {
+            "properties": {
+              "eco_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "eco_reg_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "itc_elg": {
+            "properties": {
+              "itc_avl": {
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "CGST Amount as per invoice"
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "SGST Amount as per invoice"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "cess amount available in the current month"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "integrated Taxamount available in the current month"
+                    }
+                  }
+                }
+              },
+              "itc_rev": {
+                "items": {
+                  "properties": {
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "Amount of CTC reversal of IGST "
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Amount of cess reversal of IGST "
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Amount of ITC reversal of IGST "
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Amount of STC reversal of IGST "
+                    }
+                  }
+                }
+              },
+              "itc_net": {
+                "properties": {
+                  "camt": {
+                    "type": "number",
+                    "description": "Amount of CTC reversal of IGST "
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Amount of cess reversal of IGST "
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "Amount of ITC reversal of IGST "
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "Amount of STC reversal of IGST "
+                  }
+                }
+              },
+              "itc_inelg": {
+                "items": {
+                  "properties": {
+                    "ty": {
+                      "type": "string",
+                      "description": "Type"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "Amount of CTC reversal of IGST "
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Amount of cess reversal of IGST "
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Amount of ITC reversal of IGST "
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Amount of STC reversal of IGST "
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "inward_sup": {
+            "properties": {
+              "isup_details": {
+                "items": {
+                  "properties": {
+                    "inter": {
+                      "type": "number",
+                      "description": "Inter State supplies"
+                    },
+                    "intra": {
+                      "type": "number",
+                      "description": "Intra State supplies"
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "tx_pmt": {
+            "properties": {
+              "tx_py": {
+                "items": {
+                  "properties": {
+                    "trans_typ": {
+                      "description": "Transaction Type",
+                      "type": "number"
+                    },
+                    "trans_desc": {
+                      "description": "Transaction description",
+                      "type": "string"
+                    },
+                    "liab_ldg_id": {
+                      "description": "Liability ledger Id",
+                      "type": "number"
+                    },
+                    "cgst": {
+                      "properties": {
+                        "intr": {
+                          "description": "CGST INTEREST Payable",
+                          "type": "number"
+                        },
+                        "tx": {
+                          "description": "CGST Tax Payable",
+                          "type": "number"
+                        },
+                        "fee": {
+                          "description": "CGST LateFee Payable",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "sgst": {
+                      "properties": {
+                        "intr": {
+                          "description": "SGST INTEREST Payable",
+                          "type": "number"
+                        },
+                        "tx": {
+                          "description": "SGST Tax Payable",
+                          "type": "number"
+                        },
+                        "fee": {
+                          "description": "SGST LateFee Payable",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "cess": {
+                      "properties": {
+                        "intr": {
+                          "description": "CESS INTEREST Payable",
+                          "type": "number"
+                        },
+                        "tx": {
+                          "description": "CESS Tax Payable",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "igst": {
+                      "properties": {
+                        "intr": {
+                          "description": "IGST INTEREST Payable",
+                          "type": "number"
+                        },
+                        "tx": {
+                          "description": "IGST Tax Payable",
+                          "type": "number"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "pdcash": {
+                "description": "Paid Cash",
+                "items": {
+                  "properties": {
+                    "liab_ldg_id": {
+                      "description": "Liability Id",
+                      "type": "number"
+                    },
+                    "trans_typ": {
+                      "description": "Transaction Type",
+                      "type": "number"
+                    },
+                    "ipd": {
+                      "description": "IGST Paid",
+                      "type": "number"
+                    },
+                    "cpd": {
+                      "description": "CGST Paid",
+                      "type": "number"
+                    },
+                    "spd": {
+                      "description": "SGST Paid",
+                      "type": "number"
+                    },
+                    "cspd": {
+                      "description": "CESS Paid",
+                      "type": "number"
+                    },
+                    "i_intrpd": {
+                      "description": "IGST INTEREST Paid",
+                      "type": "number"
+                    },
+                    "c_intrpd": {
+                      "description": "CGST INTEREST Paid",
+                      "type": "number"
+                    },
+                    "s_intrpd": {
+                      "description": "SGST INTEREST Paid",
+                      "type": "number"
+                    },
+                    "cs_intrpd": {
+                      "description": "CESS INTEREST Paid",
+                      "type": "number"
+                    },
+                    "c_lfeepd": {
+                      "description": "CGST LateFee Paid",
+                      "type": "number"
+                    },
+                    "s_lfeepd": {
+                      "description": "SGST LateFee Paid",
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "pditc": {
+                "description": "Paid ITC",
+                "properties": {
+                  "liab_ldg_id": {
+                    "description": "Liability Id",
+                    "type": "number"
+                  },
+                  "trans_typ": {
+                    "description": "Transaction Id",
+                    "type": "number"
+                  },
+                  "i_pdi": {
+                    "description": "IGST Paid as IGST",
+                    "type": "number"
+                  },
+                  "i_pdc": {
+                    "description": "IGST Paid as CGST",
+                    "type": "number"
+                  },
+                  "i_pds": {
+                    "description": "IGST Paid as SGST",
+                    "type": "number"
+                  },
+                  "c_pdi": {
+                    "description": "CGST Paid as IGST",
+                    "type": "number"
+                  },
+                  "c_pdc": {
+                    "description": "CGST Paid as CGST",
+                    "type": "number"
+                  },
+                  "s_pdi": {
+                    "description": "SGST Paid as IGST",
+                    "type": "number"
+                  },
+                  "s_pds": {
+                    "description": "SGST Paid as SGST",
+                    "type": "number"
+                  },
+                  "cs_pdcs": {
+                    "description": "CESS Paid as CESS",
+                    "type": "number"
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "intr_ltfee": {
+              "description": "Interest and LateFee",
+              "properties": {
+                "intr_details": {
+                  "description": "Interest",
+                  "properties": {
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "Cgst amount"
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Sgst amount"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Cess amount"
+                    }
+                  },
+                  "type": "object"
+                },
+                "ltfee_details": {
+                  "description": "Latefee",
+                  "properties": {
+                    "camt": {
+                      "description": "CGST amount",
+                      "type": "number"
+                    },
+                    "samt": {
+                      "description": "SGST amount",
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            },
+            "liab_breakup": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ret_period": {
+                    "description": "Return period of breakup ",
+                    "type": "string"
+                  },
+                  "liability": {
+                    "type": "object",
+                    "properties": {
+                      "iamt": {
+                        "description": "Declared IGST liability",
+                        "type": "number"
+                      },
+                      "camt": {
+                        "description": "Declared CGST liability",
+                        "type": "number"
+                      },
+                      "samt": {
+                        "description": "Declared SGST liability",
+                        "type": "number"
+                      },
+                      "csamt": {
+                        "description": "Declared Cess liability ",
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr3b/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "05AVHPB7348G1ZP",
+        "ret_period": "042024",
+        "sup_details": {
+          "osup_det": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_zero": {
+            "txval": 250,
+            "iamt": 100,
+            "csamt": 400
+          },
+          "osup_nil_exmp": {
+            "txval": 250
+          },
+          "isup_rev": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_nongst": {
+            "txval": 250
+          }
+        },
+        "inter_sup": {
+          "unreg_details": [
+            {
+              "pos": "07",
+              "txval": 250,
+              "iamt": 100
+            }
+          ],
+          "comp_details": [
+            {
+              "pos": "07",
+              "txval": 250,
+              "iamt": 100
+            }
+          ],
+          "uin_details": [
+            {
+              "pos": "07",
+              "txval": 250,
+              "iamt": 100
+            }
+          ]
+        },
+        "eco_dtls": {
+          "eco_sup": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "eco_reg_sup": {
+            "txval": 250
+          }
+        },
+        "itc_elg": {
+          "itc_avl": [
+            {
+              "ty": "OTH",
+              "camt": 274,
+              "samt": 162.99,
+              "csamt": 103,
+              "iamt": 100
+            }
+          ],
+          "itc_rev": [
+            {
+              "ty": "OTH",
+              "camt": 274,
+              "csamt": 103,
+              "iamt": 136.53,
+              "samt": 162.99
+            }
+          ],
+          "itc_net": {
+            "camt": 274,
+            "csamt": 103,
+            "iamt": 136.53,
+            "samt": 162.99
+          },
+          "itc_inelg": [
+            {
+              "ty": "OTH",
+              "camt": 274,
+              "csamt": 103,
+              "iamt": 136.53,
+              "samt": 162.99
+            }
+          ]
+        },
+        "inward_sup": {
+          "isup_details": [
+            {
+              "inter": 100,
+              "intra": 200,
+              "ty": "GST"
+            }
+          ]
+        },
+        "tx_pmt": {
+          "tx_py": [
+            {
+              "trans_typ": 30002,
+              "trans_desc": "Other than reverse charge",
+              "liab_ldg_id": 11191,
+              "cgst": {
+                "intr": 100,
+                "tx": 100,
+                "fee": 100
+              },
+              "sgst": {
+                "intr": 100,
+                "tx": 100,
+                "fee": 100
+              },
+              "cess": {
+                "intr": 100,
+                "tx": 100
+              },
+              "igst": {
+                "intr": 100,
+                "tx": 100
+              }
+            }
+          ],
+          "pdcash": [
+            {
+              "liab_ldg_id": 1233,
+              "trans_typ": 30002,
+              "ipd": 3517817,
+              "cpd": 3517817,
+              "spd": 3517817,
+              "cspd": 3517817,
+              "i_intrpd": 20,
+              "c_intrpd": 30,
+              "s_intrpd": 10,
+              "cs_intrpd": 15,
+              "c_lfeepd": 13,
+              "s_lfeepd": 13
+            }
+          ],
+          "pditc": {
+            "liab_ldg_id": 12321,
+            "trans_typ": 30002,
+            "i_pdi": 3517817,
+            "i_pdc": 2290459,
+            "i_pds": 2290459,
+            "c_pdi": 3517817,
+            "c_pdc": 2290459,
+            "s_pdi": 3517817,
+            "s_pds": 2290459,
+            "cs_pdcs": 2290459
+          }
+        }
+      }
+    },
+    {
+      "id": "gst:POST:/gstr3b/savercmopnbal",
+      "slug": "gst-gstr3b-savercmopnbal-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr3b/savercmopnbal",
+      "tag": "GSTR3B",
+      "summary": "Submit RCM opening balance",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "gstin"
+          },
+          "opnbal": {
+            "type": "object",
+            "properties": {
+              "igst": {
+                "type": "number",
+                "description": "IGST Amount"
+              },
+              "cgst": {
+                "type": "number",
+                "description": "CGST Amount"
+              },
+              "sgst": {
+                "type": "number",
+                "description": "SGST Amount"
+              },
+              "cess": {
+                "type": "number",
+                "description": "CESS Amount"
+              }
+            }
+          },
+          "action": {
+            "type": "number",
+            "description": "It differentiate between declare and amendment of opening balance"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "24MAYAS0100E9Z9",
+        "opnbal": {
+          "igst": 0,
+          "cgst": 100,
+          "sgst": 100,
+          "cess": 100
+        },
+        "action": "S"
+      }
+    },
+    {
+      "id": "gst:POST:/gstr3b/validateautocalculatedata",
+      "slug": "gst-gstr3b-validateautocalculatedata-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/gstr3b/validateautocalculatedata",
+      "tag": "GSTR3B",
+      "summary": "validate GSTR3B against auto calculated values",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "properties": {
+          "gstin": {
+            "description": "Supplier GSTIN",
+            "type": "string"
+          },
+          "ret_period": {
+            "description": "Return period",
+            "type": "string"
+          },
+          "sup_details": {
+            "type": "object",
+            "properties": {
+              "osup_det": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_zero": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nil_exmp": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              },
+              "isup_rev": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nongst": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "inter_sup": {
+            "type": "object",
+            "properties": {
+              "comp_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "uin_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "unreg_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "eco_dtls": {
+            "properties": {
+              "eco_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "eco_reg_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "itc_elg": {
+            "type": "object",
+            "properties": {
+              "itc_avl": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "camt": {
+                      "type": "number",
+                      "description": "CGST Amount as per invoice"
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "SGST Amount as per invoice"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "cess amount available in the current month"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "integrated Taxamount available in the current month"
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "itc_rev": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "camt": {
+                      "type": "number",
+                      "description": "Amount of CTC reversal of IGST "
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Amount of cess reversal of IGST "
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Amount of ITC reversal of IGST "
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Amount of STC reversal of IGST "
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "itc_net": {
+                "type": "object",
+                "properties": {
+                  "camt": {
+                    "type": "number",
+                    "description": "Amount of CTC reversal of IGST "
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Amount of cess reversal of IGST "
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "Amount of ITC reversal of IGST "
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "Amount of STC reversal of IGST "
+                  }
+                }
+              },
+              "itc_inelg": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "ty": {
+                      "type": "string",
+                      "description": "Type"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "Amount of CTC reversal of IGST "
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Amount of cess reversal of IGST "
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Amount of ITC reversal of IGST "
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Amount of STC reversal of IGST "
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "inward_sup": {
+            "type": "object",
+            "properties": {
+              "isup_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "inter": {
+                      "type": "number",
+                      "description": "Inter State supplies"
+                    },
+                    "intra": {
+                      "type": "number",
+                      "description": "Intra State supplies"
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "intr_ltfee": {
+            "type": "object",
+            "properties": {
+              "intr_details": {
+                "type": "object",
+                "properties": {
+                  "camt": {
+                    "type": "number",
+                    "description": "Cgst amount"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess amount"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "Igst amount"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "Sgst amount"
+                  }
+                }
+              }
+            }
+          },
+          "tx_pmt": {
+            "type": "object",
+            "properties": {
+              "pdcash": {
+                "items": {
+                  "properties": {
+                    "trans_typ": {
+                      "description": "Transaction code",
+                      "type": "number"
+                    },
+                    "ipd": {
+                      "description": "Igst Tax paid through cash",
+                      "type": "number"
+                    },
+                    "cpd": {
+                      "description": "Cgst Tax paid through cash",
+                      "type": "number"
+                    },
+                    "spd": {
+                      "description": "Sgst Tax paid through cash",
+                      "type": "number"
+                    },
+                    "cspd": {
+                      "description": "Cgst Tax paid through cash",
+                      "type": "number"
+                    },
+                    "c_intrpd": {
+                      "description": "Cgst Interest paid through cash",
+                      "type": "number"
+                    },
+                    "c_lfeepd": {
+                      "description": "Cgst Late Fee paid through cash",
+                      "type": "number"
+                    },
+                    "cs_intrpd": {
+                      "description": "Cess Interest paid through cash",
+                      "type": "number"
+                    },
+                    "i_intrpd": {
+                      "description": "Igst Interest paid through cash",
+                      "type": "number"
+                    },
+                    "s_intrpd": {
+                      "description": "Sgst Interest paid through cash",
+                      "type": "number"
+                    },
+                    "s_lfeepd": {
+                      "description": "Sgst Late fee paid through cash",
+                      "type": "number"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "05AVHPB7348G1ZP",
+        "ret_period": "042024",
+        "sup_details": {
+          "osup_det": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_zero": {
+            "txval": 250,
+            "iamt": 100,
+            "csamt": 400
+          },
+          "osup_nil_exmp": {
+            "txval": 250
+          },
+          "isup_rev": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_nongst": {
+            "txval": 250
+          }
+        },
+        "inter_sup": {
+          "comp_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ],
+          "uin_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ],
+          "unreg_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ]
+        },
+        "eco_dtls": {
+          "eco_sup": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "eco_reg_sup": {
+            "txval": 250
+          }
+        },
+        "itc_elg": {
+          "itc_avl": [
+            {
+              "camt": 274,
+              "samt": 162.99,
+              "csamt": 103,
+              "iamt": 100,
+              "ty": "OTH"
+            }
+          ],
+          "itc_rev": [
+            {
+              "camt": 274,
+              "csamt": 103,
+              "iamt": 136.53,
+              "samt": 162.99,
+              "ty": "OTH"
+            }
+          ],
+          "itc_net": {
+            "camt": 274,
+            "csamt": 103,
+            "iamt": 136.53,
+            "samt": 162.99
+          },
+          "itc_inelg": [
+            {
+              "ty": "OTH",
+              "camt": 274,
+              "csamt": 103,
+              "iamt": 136.53,
+              "samt": 162.99
+            }
+          ]
+        },
+        "inward_sup": {
+          "isup_details": [
+            {
+              "inter": 100,
+              "intra": 200,
+              "ty": "GST"
+            }
+          ]
+        },
+        "intr_ltfee": {
+          "intr_details": {
+            "camt": 20,
+            "csamt": 40,
+            "iamt": 10,
+            "samt": 30
+          }
+        },
+        "tx_pmt": {
+          "pdcash": [
+            {
+              "trans_typ": 30002,
+              "ipd": 3517817,
+              "cpd": 3517817,
+              "spd": 3517817,
+              "cspd": 3517817,
+              "c_intrpd": 30,
+              "c_lfeepd": 13,
+              "cs_intrpd": 15,
+              "i_intrpd": 20,
+              "s_intrpd": 10,
+              "s_lfeepd": 13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr3b/liabilitybreakup",
+      "slug": "gst-gstr3b-liabilitybreakup-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr3b/liabilitybreakup",
+      "tag": "GSTR3B",
+      "summary": "Save past liability breakup GSTR3B Data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "gstin"
+          },
+          "ret_period": {
+            "type": "string",
+            "description": "Return period"
+          },
+          "breakup": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "ret_period": {
+                  "type": "string",
+                  "description": "Return prd"
+                },
+                "liability": {
+                  "type": "object",
+                  "properties": {
+                    "iamt": {
+                      "type": "number",
+                      "description": "IGST Amount declared"
+                    },
+                    "camt": {
+                      "type": "number",
+                      "description": "CGST Amount declared"
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "SGST Amount declared"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Cess Amount declared"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "24XHYDR3274D6ZV",
+        "ret_period": "032024",
+        "breakup": [
+          {
+            "ret_period": "032024",
+            "liability": {
+              "iamt": 1000,
+              "camt": 150,
+              "samt": 200,
+              "csamt": 300
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr3b/retoffset",
+      "slug": "gst-gstr3b-retoffset-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr3b/retoffset",
+      "tag": "GSTR3B",
+      "summary": "Offset Liability GSTR3B Data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "pdcash": {
+            "items": {
+              "properties": {
+                "liab_ldg_id": {
+                  "description": "Liability id",
+                  "type": "number"
+                },
+                "trans_typ": {
+                  "description": "Transaction code",
+                  "type": "number"
+                },
+                "ipd": {
+                  "description": "Igst Tax paid through cash",
+                  "type": "number"
+                },
+                "cpd": {
+                  "description": "Cgst Tax paid through cash",
+                  "type": "number"
+                },
+                "spd": {
+                  "description": "Sgst Tax paid through cash",
+                  "type": "number"
+                },
+                "cspd": {
+                  "description": "Cgst Tax paid through cash",
+                  "type": "number"
+                },
+                "c_intrpd": {
+                  "description": "Cgst Interest paid through cash",
+                  "type": "number"
+                },
+                "c_lfeepd": {
+                  "description": "Cgst Late Fee paid through cash",
+                  "type": "number"
+                },
+                "cs_intrpd": {
+                  "description": "Cess Interest paid through cash",
+                  "type": "number"
+                },
+                "i_intrpd": {
+                  "description": "Igst Interest paid through cash",
+                  "type": "number"
+                },
+                "s_intrpd": {
+                  "description": "Sgst Interest paid through cash",
+                  "type": "number"
+                },
+                "s_lfeepd": {
+                  "description": "Sgst Late fee paid through cash",
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "pditc": {
+            "properties": {
+              "liab_ldg_id": {
+                "description": "Liability Id ",
+                "type": "number"
+              },
+              "trans_typ": {
+                "description": "Transaction code",
+                "type": "number"
+              },
+              "i_pdi": {
+                "description": "Igst Tax paid through Igst ITC ",
+                "type": "number"
+              },
+              "i_pdc": {
+                "description": "Igst Tax paid through Cgst ITC ",
+                "type": "number"
+              },
+              "i_pds": {
+                "description": "Igst Tax paid through Sgst ITC ",
+                "type": "number"
+              },
+              "c_pdc": {
+                "description": "Cgst Tax paid through Cgst ITC ",
+                "type": "number"
+              },
+              "c_pdi": {
+                "description": "Cgst Tax paid through Igst ITC ",
+                "type": "number"
+              },
+              "s_pdi": {
+                "description": "Sgst Tax paid through Igst ITC ",
+                "type": "number"
+              },
+              "s_pds": {
+                "description": "Sgst Tax paid through Sgst ITC ",
+                "type": "number"
+              },
+              "cs_pdcs": {
+                "description": "Cess Tax paid through Cess ITC ",
+                "type": "number"
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "pdcash": [
+          {
+            "liab_ldg_id": 1233,
+            "trans_typ": 30002,
+            "ipd": 3517817,
+            "cpd": 3517817,
+            "spd": 3517817,
+            "cspd": 3517817,
+            "c_intrpd": 30,
+            "c_lfeepd": 13,
+            "cs_intrpd": 15,
+            "i_intrpd": 20,
+            "s_intrpd": 10,
+            "s_lfeepd": 13
+          }
+        ],
+        "pditc": {
+          "liab_ldg_id": 12321,
+          "trans_typ": 30002,
+          "i_pdi": 3517817,
+          "i_pdc": 2290459,
+          "i_pds": 2290459,
+          "c_pdc": 2290459,
+          "c_pdi": 3517817,
+          "s_pdi": 3517817,
+          "s_pds": 2290459,
+          "cs_pdcs": 2290459
+        }
+      }
+    },
+    {
+      "id": "gst:PUT:/gstr3b/retsave",
+      "slug": "gst-gstr3b-retsave-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/gstr3b/retsave",
+      "tag": "GSTR3B",
+      "summary": "Save GSTR3B data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "properties": {
+          "gstin": {
+            "description": "Supplier GSTIN",
+            "type": "string"
+          },
+          "ret_period": {
+            "description": "Return period",
+            "type": "string"
+          },
+          "sup_details": {
+            "type": "object",
+            "properties": {
+              "osup_det": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_zero": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nil_exmp": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              },
+              "isup_rev": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "osup_nongst": {
+                "type": "object",
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "inter_sup": {
+            "type": "object",
+            "properties": {
+              "comp_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "uin_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "unreg_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "txval": {
+                      "type": "number",
+                      "description": "Taxable Value"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Igst amount"
+                    },
+                    "pos": {
+                      "description": "POS",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "eco_dtls": {
+            "properties": {
+              "eco_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "integrated Taxamount available in the current month"
+                  },
+                  "camt": {
+                    "type": "number",
+                    "description": "central tax amount available in the current month"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "State Tax amount available in the current month"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess Tax amount available in the current month"
+                  }
+                }
+              },
+              "eco_reg_sup": {
+                "properties": {
+                  "txval": {
+                    "type": "number",
+                    "description": "Taxable Value"
+                  }
+                }
+              }
+            }
+          },
+          "itc_elg": {
+            "type": "object",
+            "properties": {
+              "itc_avl": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "camt": {
+                      "type": "number",
+                      "description": "CGST Amount as per invoice"
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "SGST Amount as per invoice"
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "cess amount available in the current month"
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "integrated Taxamount available in the current month"
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "itc_rev": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "camt": {
+                      "type": "number",
+                      "description": "Amount of CTC reversal of IGST "
+                    },
+                    "csamt": {
+                      "type": "number",
+                      "description": "Amount of cess reversal of IGST "
+                    },
+                    "iamt": {
+                      "type": "number",
+                      "description": "Amount of ITC reversal of IGST "
+                    },
+                    "samt": {
+                      "type": "number",
+                      "description": "Amount of STC reversal of IGST "
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "itc_net": {
+                "type": "object",
+                "properties": {
+                  "camt": {
+                    "type": "number",
+                    "description": "Amount of CTC reversal of IGST "
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Amount of cess reversal of IGST "
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "Amount of ITC reversal of IGST "
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "Amount of STC reversal of IGST "
+                  }
+                }
+              },
+              "itc_inelg": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "ty": {
+                          "type": "string",
+                          "description": "Type"
+                        },
+                        "camt": {
+                          "type": "number",
+                          "description": "Amount of CTC reversal of IGST "
+                        },
+                        "csamt": {
+                          "type": "number",
+                          "description": "Amount of cess reversal of IGST "
+                        },
+                        "iamt": {
+                          "type": "number",
+                          "description": "Amount of ITC reversal of IGST "
+                        },
+                        "samt": {
+                          "type": "number",
+                          "description": "Amount of STC reversal of IGST "
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "inward_sup": {
+            "type": "object",
+            "properties": {
+              "isup_details": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "inter": {
+                      "type": "number",
+                      "description": "Inter State supplies"
+                    },
+                    "intra": {
+                      "type": "number",
+                      "description": "Intra State supplies"
+                    },
+                    "ty": {
+                      "description": "Identifer if Goods or Services",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "intr_ltfee": {
+            "type": "object",
+            "properties": {
+              "intr_details": {
+                "type": "object",
+                "properties": {
+                  "camt": {
+                    "type": "number",
+                    "description": "Cgst amount"
+                  },
+                  "csamt": {
+                    "type": "number",
+                    "description": "Cess amount"
+                  },
+                  "iamt": {
+                    "type": "number",
+                    "description": "Igst amount"
+                  },
+                  "samt": {
+                    "type": "number",
+                    "description": "Sgst amount"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr3b/retfile",
+        "gst:POST:/gstr3b/retevcfile"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "05AVHPB7348G1ZP",
+        "ret_period": "042024",
+        "sup_details": {
+          "osup_det": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_zero": {
+            "txval": 250,
+            "iamt": 100,
+            "csamt": 400
+          },
+          "osup_nil_exmp": {
+            "txval": 250
+          },
+          "isup_rev": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "osup_nongst": {
+            "txval": 250
+          }
+        },
+        "inter_sup": {
+          "comp_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ],
+          "uin_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ],
+          "unreg_details": [
+            {
+              "txval": 250,
+              "iamt": 100,
+              "pos": "07"
+            }
+          ]
+        },
+        "eco_dtls": {
+          "eco_sup": {
+            "txval": 250,
+            "iamt": 100,
+            "camt": 200,
+            "samt": 300,
+            "csamt": 400
+          },
+          "eco_reg_sup": {
+            "txval": 250
+          }
+        },
+        "itc_elg": {
+          "itc_avl": [
+            {
+              "camt": 274,
+              "samt": 162.99,
+              "csamt": 103,
+              "iamt": 100,
+              "ty": "OTH"
+            }
+          ],
+          "itc_rev": [
+            {
+              "camt": 274,
+              "csamt": 103,
+              "iamt": 136.53,
+              "samt": 162.99,
+              "ty": "OTH"
+            }
+          ],
+          "itc_net": {
+            "camt": 274,
+            "csamt": 103,
+            "iamt": 136.53,
+            "samt": 162.99
+          }
+        },
+        "inward_sup": {
+          "isup_details": [
+            {
+              "inter": 100,
+              "intra": 200,
+              "ty": "GST"
+            }
+          ]
+        },
+        "intr_ltfee": {
+          "intr_details": {
+            "camt": 20,
+            "csamt": 40,
+            "iamt": 10,
+            "samt": 30
+          }
+        }
+      },
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      }
+    }
+  ]
+}

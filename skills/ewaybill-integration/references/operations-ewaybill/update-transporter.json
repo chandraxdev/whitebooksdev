@@ -1,0 +1,86 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Update Transporter",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/updatetransporter",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-updatetransporter-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/updatetransporter",
+      "tag": "Update Transporter",
+      "summary": "Update Transporter",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-WayBill Server Type(NIC1/NIC2)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "EwayBill Number"
+          },
+          "transporterId": {
+            "type": "string",
+            "description": "15 Digit Transporter GSTIN/TRANSIN"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "write",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "transporterId": "05AAACG0904A1ZL"
+      }
+    }
+  ]
+}

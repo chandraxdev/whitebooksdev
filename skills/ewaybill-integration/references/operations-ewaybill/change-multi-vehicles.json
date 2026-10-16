@@ -1,0 +1,141 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Change Multi Vehicles",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/updtmulti",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-updtmulti-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/updtmulti",
+      "tag": "Change Multi Vehicles",
+      "summary": "Change Multi Vehicles",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "ewbNo",
+          "fromPlace",
+          "fromState",
+          "groupNo",
+          "newTranNo",
+          "newVehicleNo",
+          "oldTranNo",
+          "oldvehicleNo",
+          "reasonCode",
+          "reasonRem"
+        ],
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "Ewaybill Number"
+          },
+          "groupNo": {
+            "type": "number",
+            "description": "Group Number"
+          },
+          "oldvehicleNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "Old Vehicle Number"
+          },
+          "newVehicleNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "New Vehicle Number"
+          },
+          "oldTranNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "Old Tran Number"
+          },
+          "newTranNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "New Tran Number"
+          },
+          "fromPlace": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Place of Consignor"
+          },
+          "fromState": {
+            "maximum": 2,
+            "type": "integer",
+            "description": "State of Consignor"
+          },
+          "reasonCode": {
+            "maxLength": 1,
+            "minLength": 1,
+            "type": "string",
+            "description": "Reason Code"
+          },
+          "reasonRem": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Remarks"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "groupNo": 1,
+        "oldvehicleNo": "ABC1234",
+        "newVehicleNo": "ABC4321",
+        "oldTranNo": "sumitra/06/2020",
+        "newTranNo": "sumitra/06/2021",
+        "fromPlace": "FRAZER TOWN",
+        "fromState": 29,
+        "reasonCode": "1",
+        "reasonRem": "Due to Break Down"
+      }
+    }
+  ]
+}

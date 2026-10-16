@@ -1,0 +1,681 @@
+{
+  "skill": "gst-returns-integration",
+  "client_version": "1.0.8",
+  "spec_as_of": "2026-10-13",
+  "dependencies": [
+    {
+      "language": "java",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.22.3",
+      "ecosystem": "maven"
+    },
+    {
+      "language": "python",
+      "name": "requests",
+      "version": "2.32.5",
+      "ecosystem": "pip"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "75bac93a79c5fa239b33df95b7b6dcf9501aa2972a02fec91e466bbed9b93ee0",
+      "bytes": 150
+    },
+    {
+      "path": "assets/client/java/test/whitebooks/GstSmokeTest.java",
+      "sha256": "9de585cedbcf98763093f58d852f5fc0d02a2a14be6580231f49c91bdbd85be8",
+      "bytes": 1875
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstAll.java",
+      "sha256": "4ef527ff3d19f1b86cd74e35562bd8e38de522df82b7949883314dd390ba9a8a",
+      "bytes": 17766
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstAuthentication.java",
+      "sha256": "9d285d8a184601e3a7f865e631d9e896ffa4cfd5ce7cb0f44eae2a3cb9b3c768",
+      "bytes": 1987
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstCmp.java",
+      "sha256": "a204e97da5b38208de651420a61c07101aa53be7798afadc5284d5d99f2d6228",
+      "bytes": 10225
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstEInvoice.java",
+      "sha256": "effd640b6b8e98022dbc23757187aaa57513b463e0c537de9df5aec6b9678238",
+      "bytes": 6428
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr.java",
+      "sha256": "29a51740e2979032512a98e1352cc36661570034c696e43855d137f71a52dabe",
+      "bytes": 3007
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr1.java",
+      "sha256": "09b7570499d28d6e0647b93936531da0f068dde04e0dea7997ca3d84174a06f0",
+      "bytes": 38223
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr1a.java",
+      "sha256": "b500ed5125ba883e4f98b02b9e3fdff23eb720b90187031bd54e21012a59b28f",
+      "bytes": 37190
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr2a.java",
+      "sha256": "f77928f7a363426ae946be28e54245e6ec7751d667d433011e567ecf646f2f29",
+      "bytes": 13867
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr2b.java",
+      "sha256": "9a05745f89fc43146e4e451a36635876cf38956d5a9bb4cd43dc1f8e8ee03ee6",
+      "bytes": 5128
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr2x.java",
+      "sha256": "b8658b4c126c6c2b836e6343e9a2905e4cf3937de3c9ba09744f68499e8b22aa",
+      "bytes": 9391
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr3b.java",
+      "sha256": "84633cf7bf6921d92479e9bc769d2a1c0ce374a114d4a4029852aac6e6b79f0f",
+      "bytes": 25574
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr4.java",
+      "sha256": "04493e9e97829ec08d21bb5333857d6779075af59a9590a83f117a497a2292a7",
+      "bytes": 32086
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr4a.java",
+      "sha256": "72d9a284ddbfb4f00fd9743c45de6b36c4836db6bdb33225130c501a50980502",
+      "bytes": 6145
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr4annual.java",
+      "sha256": "10f095684f1c5f66375b1860532a2bb07dbd6fec7ba5dc1fc081c1ac41633670",
+      "bytes": 15057
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr5.java",
+      "sha256": "cc56482f9949ca0777715229fc708c2cef04161b3d323ca51d3a1fa36e8aab10",
+      "bytes": 29726
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr6.java",
+      "sha256": "38799438c2ecc7e0d47113919d368e69a2939ab1b8a25dea49a3c2202f55d29d",
+      "bytes": 26224
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr6a.java",
+      "sha256": "85926b96dd61454354b86f42faaa7babd27b4b9dda2c7dd434914d10b0d8c876",
+      "bytes": 5467
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr7.java",
+      "sha256": "de4579915cd97460d675f754f31c20a527e30e0268baa73e5c88edb5444c4ab1",
+      "bytes": 11483
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr8.java",
+      "sha256": "a5b8b38fee658a40b59a199ed22c764a4a62629e03ccd734821936a6b8a2aef3",
+      "bytes": 12685
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr9.java",
+      "sha256": "ff3c67ad88ea8996235060aa0e1f49e5d99ce61013287899cb8aed799a4f11d6",
+      "bytes": 14649
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr9a.java",
+      "sha256": "d375bc6c5058ecfff123b5921e23a77e3658a3ffe95b179c5d440b5ad61d1f4f",
+      "bytes": 10297
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstGstr9c.java",
+      "sha256": "aeb40f018e611f50d9eb9fd0c26065809cf063a5d2769d50b19285c0cc2f0058",
+      "bytes": 14291
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstIms.java",
+      "sha256": "890118f70c55b2b7d25136579df910e29fc92999c6b24fbae08e0e55247e7fab",
+      "bytes": 11434
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstItc03.java",
+      "sha256": "3af3489bfcd62afffcc3a449453c32caede303c6b59be7d895ede2e97c1c2256",
+      "bytes": 14135
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstItc04.java",
+      "sha256": "38114a6c04732dd6193f516a693beb2a505e57ca41f7994141b49335207b08db",
+      "bytes": 11361
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstLedger.java",
+      "sha256": "d6a73958ad94ed65bf834779ed8e3bab6354d24a9c1fc5d8bf292252ecb63566",
+      "bytes": 15737
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstNotices.java",
+      "sha256": "93ba79c7a3f7d203e30a64f10f644fb72d7cb39c35082336130de3825b1e9ef7",
+      "bytes": 2938
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstPayment.java",
+      "sha256": "be117959715ba6e6fe1e857a273798eeb3053adb54dc9be20ae308800f752ccd",
+      "bytes": 6973
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstPublic.java",
+      "sha256": "66374a19995908066c025e2b806eb6113b9961affb779420f1d1fe23e70aea7a",
+      "bytes": 5607
+    },
+    {
+      "path": "assets/client/java/whitebooks/GstSpike.java",
+      "sha256": "949ea2a2ae85dcab2705898c7223e6e41fb14e3e7d5f3b926bf4ebe292fd31de",
+      "bytes": 8032
+    },
+    {
+      "path": "assets/client/java/whitebooks/Gstr1SaveRequest.java",
+      "sha256": "7a868b06f2006720e7e33fde132b423fdc14863b27744255bc0b79e77dd5450c",
+      "bytes": 17330
+    },
+    {
+      "path": "assets/client/python/tests/test_smoke_gst.py",
+      "sha256": "3fc8d3b97b72e7cc807db5c580ee95979b3718f6d00077eceeb251f6a794bcf8",
+      "bytes": 1580
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/__init__.py",
+      "sha256": "989b1357b71c97db09d5ef056c92409e8cba3a97b9e030bd5ece16b2a98722f6",
+      "bytes": 439
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/all.py",
+      "sha256": "30c1a1417da633250703c8746163ad1403c1728be4d994fa0adef6b7f6a0af6a",
+      "bytes": 16494
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/authentication.py",
+      "sha256": "76d095c92f1ba31d0ce2a83c7e4ff258bb0ea31392a1e12ff1e34863cc8c86ad",
+      "bytes": 1763
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/cmp.py",
+      "sha256": "6516b726cf5cb01f279d8ee3963991c222c69b4da8a462e58e35a8daed212b90",
+      "bytes": 9093
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/e_invoice.py",
+      "sha256": "08017a7fdc71d9ef7f43188a24747a3b55bcd0a12554402c5968d481a8f7aa30",
+      "bytes": 6104
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr.py",
+      "sha256": "21d4ce614960188e43d8b940df5c6d3af4e8fcb5403468a8021500fb777d2a84",
+      "bytes": 2804
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr1.py",
+      "sha256": "00cd7c9a522b4ba6c5bfe720e2b45c1a553555c19bacb79e387c226f1ffe0544",
+      "bytes": 36254
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr1a.py",
+      "sha256": "d0f50ce08004df59808dffdf2a4b0d6c90c0cedccbac37bfb32c64586170224e",
+      "bytes": 35189
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr2a.py",
+      "sha256": "309d0799b6fa0def862adc9929fa350f00f515f5fa1e0fe69e01620fc5e95558",
+      "bytes": 13487
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr2b.py",
+      "sha256": "6923a554ce582fdc842f4eaa4291b679c11e3124057fe3c63eeaf17509e0917b",
+      "bytes": 4562
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr2x.py",
+      "sha256": "743e75ccc21f5c23be730bb56f10506a7ba9e5db817dad7732a6a8eee0a53aab",
+      "bytes": 8311
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr3b.py",
+      "sha256": "4e128f87e854405f47b51fbe5f0de53072b231415ab3af8f98de112f08281030",
+      "bytes": 23046
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr4.py",
+      "sha256": "d940a7f6505896d8705c2b48fddb47851f749bb8641e6d102c093b91072d1fcb",
+      "bytes": 29772
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr4a.py",
+      "sha256": "b678325386e1d0c151d3d677957710bf31dcbb236ba7f94b4ab17a1da9866652",
+      "bytes": 5871
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr4annual.py",
+      "sha256": "f34735422c113006ec62654c7b319db29fae247b67169cf83fae53496ab25f99",
+      "bytes": 13609
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr5.py",
+      "sha256": "2ecfab5d32840be37d62b992ede7e38ff0d19fae66ba7193db3fb57b69c859ab",
+      "bytes": 27478
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr6.py",
+      "sha256": "b2e48091894230a2ef6f19dd22378de26ea332059f2909198b2aef4e03cfbc6d",
+      "bytes": 24146
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr6a.py",
+      "sha256": "f4aba21db6ed0ca05c411f48773b84a13b376c4092944b49a2d9e90341faeb87",
+      "bytes": 5412
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr7.py",
+      "sha256": "e4b2f5895a307c9e0d671f78c846f84bf0eba3b3959705198db820ee2c3aef54",
+      "bytes": 10326
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr8.py",
+      "sha256": "0bd27a261da155913870921019963448f734b57fa5ad46c9b437a9c8bbec22cc",
+      "bytes": 11632
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr9.py",
+      "sha256": "7bffd7ff01c8dd547f914a7696c4a2ec1b163d97f4b405afbf28f61c2286b831",
+      "bytes": 13190
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr9a.py",
+      "sha256": "1aa5f3b2a826ea48bac9136e78883b46efe6df5cb7b76f74e910b2391807d2ca",
+      "bytes": 9117
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/gstr9c.py",
+      "sha256": "f22811e3261c87cae938b7d68f39e50d92e76ae8b79fe1205d5bd8fd08f5fe6e",
+      "bytes": 12657
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/ims.py",
+      "sha256": "e5c7c71cb7558cd2bead406dc676b8047b18298caf553a270919b1a1d06d43c9",
+      "bytes": 10521
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/itc03.py",
+      "sha256": "d4729abcc82cca0128b671bbf9e545846f09a786b64cf2ea55cec822f394d573",
+      "bytes": 12752
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/itc04.py",
+      "sha256": "3fa81f73123664d3f5bd85e83e0947c381eeffdd53b33903c150f4823704d8fa",
+      "bytes": 10150
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/ledger.py",
+      "sha256": "4e44f3bc0f3225474e2bee24c509c6652b3377d6399abf311fcb336fb3e702aa",
+      "bytes": 14454
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/models.py",
+      "sha256": "d7de01a2262506fc015ab4aab45fb684f48b0f490288ad648470835e87dc48ce",
+      "bytes": 13673
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/notices.py",
+      "sha256": "b6afe0437e20aef50c0d82d4904a4fbb4d0a4e5f7c6825ed4ae3a034ce72d39f",
+      "bytes": 2659
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/payment.py",
+      "sha256": "56007bf57bbcb9397e5d372618d4fc501753fefef83a1328db22aae02618d9e5",
+      "bytes": 6210
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/public.py",
+      "sha256": "d211d1e28d155439d9f1ee142760b7e496c30ed0abb0539cd145f6906cbdce28",
+      "bytes": 5219
+    },
+    {
+      "path": "assets/client/python/whitebooks/gst/spike.py",
+      "sha256": "cc359f2749e31c17e293ee0d60665faa6dc6bb4f76efa9997714064ebf7baa32",
+      "bytes": 7202
+    },
+    {
+      "path": "assets/client/typescript/test/smoke.gst.test.ts",
+      "sha256": "d03648fe38ede5aacf9f24284ebbf6a8c031ab0594ad1506d1515a02a62bf3fe",
+      "bytes": 1545
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/all.ts",
+      "sha256": "4ad496c63875589118801ac8ff3189e7448eab17363d8561166fb9ab88c5bce3",
+      "bytes": 14493
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/authentication.ts",
+      "sha256": "461efea97d57f0ab24c06e6cf7fd328762f89883ae7e1ee339228f6aefa97c8f",
+      "bytes": 1540
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/cmp.ts",
+      "sha256": "f3970372c04eac6fff2389529b54964247fab103f191d3281cc00d5e2e26a059",
+      "bytes": 8015
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/e_invoice.ts",
+      "sha256": "4646f0b39a1e2f92499e2910f4cdbf03e8036c7bda158bdb5a2b34009160718a",
+      "bytes": 5287
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr.ts",
+      "sha256": "beaf8a882b048153b9a17f2178396fa5560c5ffd5afd6f3b940d492bae29cd79",
+      "bytes": 2436
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr1.ts",
+      "sha256": "2d14070b0ec36ad175f525c4dd47f6e9ca81d3e82b1828739fd18ac669bc3caa",
+      "bytes": 31525
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr1a.ts",
+      "sha256": "1b8857d8cb39ffd9bc959789a76390cc7d78f77f5495d9957a2f8a197bb59f17",
+      "bytes": 30565
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr2a.ts",
+      "sha256": "8516bf2e59aac5d9bf5db5299cf74c27f5f2cc506627f15ac00074e2247d138d",
+      "bytes": 11683
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr2b.ts",
+      "sha256": "1da2deeef5e29e805e6b55ce1e7c12d21f93e2367a98ae6ff232e7f8adb772e9",
+      "bytes": 4009
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr2x.ts",
+      "sha256": "f122817a31f92619d669132900875dbd1203fb353ffc1daaabc4c014651ea0dd",
+      "bytes": 7387
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr3b.ts",
+      "sha256": "1137c614e64da6ac65bc288e6a99cb4bc5922e80e6306e03db70259b414ce472",
+      "bytes": 20036
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr4.ts",
+      "sha256": "7b5bef8ab63477aaf91b3096afcaa1984bf1beb5c138698d1b70fff4607e49a7",
+      "bytes": 25892
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr4a.ts",
+      "sha256": "a32cf2ca3c54174f15e100535e17c74f532098f93fc5abf815c2abfa8de4296c",
+      "bytes": 5058
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr4annual.ts",
+      "sha256": "4f0cfb46354db4eee03aea8eec2e924a96afe967c090662af79737ff4df89a5c",
+      "bytes": 11901
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr5.ts",
+      "sha256": "a9ec5660329904612f0c74efe79d3e877327642dadd1f5836e03f334adaa10a4",
+      "bytes": 23861
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr6.ts",
+      "sha256": "606242ce90d953f5ff2687b948c58023d5ecabe8bda2ff70f16191911a8aed5e",
+      "bytes": 21078
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr6a.ts",
+      "sha256": "9c89e0ff5bfbc53f119e08abff12a520bd0b11521afc56007da91bd9fa3fb1c9",
+      "bytes": 4710
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr7.ts",
+      "sha256": "c716011196cf57bb24c008255085767288f45d4dbd8eb7716f5bbcaadf4e4a8d",
+      "bytes": 9135
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr8.ts",
+      "sha256": "9de0b3e34361f56eb811d7b401120a514e6b87c3dfac57e19dd1eda5be2264c9",
+      "bytes": 10248
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr9.ts",
+      "sha256": "f7e06b85038fb8a3392ee81dd293918c159576c5083ed38f74eba0dac3696a23",
+      "bytes": 11602
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr9a.ts",
+      "sha256": "458c12518eb8345f00a7f735e0883056d7c2b4c34d968ff8fcef8105701ae65d",
+      "bytes": 8022
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/gstr9c.ts",
+      "sha256": "4634718e815aa0bf39ca066977bcac67b4bed432cf130fb5e679eafabf9062f1",
+      "bytes": 11124
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/ims.ts",
+      "sha256": "9335228efa21b978a3f384ca1343f8a0a578edf1fa15c6c045b0da2fa4bb5f1d",
+      "bytes": 9188
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/index.ts",
+      "sha256": "c172c4aff50d93ae8de5b744746eadbc894eda320246c7abeb1b636b63c60260",
+      "bytes": 1303
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/itc03.ts",
+      "sha256": "03132a9e967d461c0a6522efc912ceabf237f750cf16183628f367de1426010c",
+      "bytes": 11333
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/itc04.ts",
+      "sha256": "c09ece039d8772b010f2cc94e522523f77fa1287def981dfba0905ea8e193650",
+      "bytes": 8924
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/ledger.ts",
+      "sha256": "3c4f012827bf6666bf90351fa877cf75e0643f93a32f75be529b2c1779116de8",
+      "bytes": 12638
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/models.ts",
+      "sha256": "73891ff0bb1e8737e5ac1811fdc2aaf6a295d091ab9a6051f666de1daa683fb8",
+      "bytes": 14637
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/notices.ts",
+      "sha256": "d06f9432d671fd4b0db58dc6851a1f13bc62505f48b94c6e388bbebb7cb6b168",
+      "bytes": 2285
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/payment.ts",
+      "sha256": "6f91911508d5245456d9ecb12f804bbd43b48f0e8ba83826094d17151ee72ac0",
+      "bytes": 5404
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/public.ts",
+      "sha256": "90add86ee8864e9353a4a724bcc90ecbe6819c1cbe52441945489692332b7302",
+      "bytes": 4466
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/gst/spike.ts",
+      "sha256": "0afa9be2404fccfc00e10a03927a42f6ac5781b875928f2e0e19bcfe1701347a",
+      "bytes": 6394
+    },
+    {
+      "path": "references/discrepancies.md",
+      "sha256": "50b2ee52467705851a61ea0734aa61d58541e988774d1a288ba532b14ca59d03",
+      "bytes": 1141
+    },
+    {
+      "path": "references/operations-gst.json",
+      "sha256": "9559bc2084ff37c4912dba8827b7c8643565c301e03437095bc9cca426cc603a",
+      "bytes": 84075
+    },
+    {
+      "path": "references/operations-gst/all.json",
+      "sha256": "48f6bfa18f0d72a3593406fe80bb5cd8ee0ecc54e71ecd26c293b49fb33c3dfe",
+      "bytes": 31667
+    },
+    {
+      "path": "references/operations-gst/authentication.json",
+      "sha256": "a18c3369356c5a3fc1ab2323dc02a69bbf2f8fe5e38660b1f2666358af6697f8",
+      "bytes": 9571
+    },
+    {
+      "path": "references/operations-gst/cmp.json",
+      "sha256": "115114795908e897d4bfe3e90dde6f6df9bd9a4d9262db0b152d18b02c2f36b7",
+      "bytes": 40470
+    },
+    {
+      "path": "references/operations-gst/e-invoice.json",
+      "sha256": "dcd5767d006afb90de14bccec4b32b1ba5a914c3fddb26e5dbf439fd964a46f9",
+      "bytes": 11183
+    },
+    {
+      "path": "references/operations-gst/gstr.json",
+      "sha256": "d8f12a479bbc6174f42e949ccebc130de5ca2300299a4efde2f1f92c92907a16",
+      "bytes": 4457
+    },
+    {
+      "path": "references/operations-gst/gstr1.json",
+      "sha256": "a6d5509d51ae592b6b58111ffc81c87445e7b459277f0077271da0f41b907c6b",
+      "bytes": 130375
+    },
+    {
+      "path": "references/operations-gst/gstr1a.json",
+      "sha256": "05e8283b966c995a7a5f4ee2a7710e061cd0587a17b7f2408672f32e9fcd7102",
+      "bytes": 127856
+    },
+    {
+      "path": "references/operations-gst/gstr2a.json",
+      "sha256": "30d66762e12471a43a5e968796fdef401459b040c14a5aa54941c6b975524619",
+      "bytes": 26745
+    },
+    {
+      "path": "references/operations-gst/gstr2b.json",
+      "sha256": "22dc5930ca3bd7ae3db7c2f68719b6ffec6e444e5717b7210908830a0a231308",
+      "bytes": 6335
+    },
+    {
+      "path": "references/operations-gst/gstr2x.json",
+      "sha256": "1beb1abac325be37b43fab3e5af7d2378244c159be573fbcb1821345011a1e3f",
+      "bytes": 22594
+    },
+    {
+      "path": "references/operations-gst/gstr3b.json",
+      "sha256": "c72726958ea1006b53796767303fe4b8878932abfc55349b21694ac43270c652",
+      "bytes": 95110
+    },
+    {
+      "path": "references/operations-gst/gstr4.json",
+      "sha256": "09d8481e05a8be2168e01b476458b51350471b2cd16684381c9748e558f2f464",
+      "bytes": 129542
+    },
+    {
+      "path": "references/operations-gst/gstr4a.json",
+      "sha256": "7b8961c1faba18c6fce1848bd3f1fad808179327b8ff4123329f2d3ce3c5be55",
+      "bytes": 10986
+    },
+    {
+      "path": "references/operations-gst/gstr4annual.json",
+      "sha256": "bf6c5f116b520087ca63f66249e1fc942fe2cf14c8380a2ed04bce0e033862eb",
+      "bytes": 50600
+    },
+    {
+      "path": "references/operations-gst/gstr5.json",
+      "sha256": "172feed961be8640242952cb9b5d8619722cf9f20efd51c4002bf0b81f815b92",
+      "bytes": 117700
+    },
+    {
+      "path": "references/operations-gst/gstr6.json",
+      "sha256": "931f5f65c27a8fd3c53ad4d8471953530c3135d35678a87ff20b427337fe64b6",
+      "bytes": 84673
+    },
+    {
+      "path": "references/operations-gst/gstr6a.json",
+      "sha256": "23a3607a81aaaff8256dc8bb1c663e32c932da944a85baec680aa6a8f82ad48c",
+      "bytes": 10422
+    },
+    {
+      "path": "references/operations-gst/gstr7.json",
+      "sha256": "5d4551fa344a9c7f149be9cf11172fe6e637435999274dd360dd4ebff846c807",
+      "bytes": 27486
+    },
+    {
+      "path": "references/operations-gst/gstr8.json",
+      "sha256": "e9d03278645d16c136fb291b3ad58d38c52310e0a893f6d3cb58e4efb5386080",
+      "bytes": 35729
+    },
+    {
+      "path": "references/operations-gst/gstr9.json",
+      "sha256": "5a57063438e5dc69a390ceff1261cde83b5995942dd4a488cc0c9f169e064c88",
+      "bytes": 162827
+    },
+    {
+      "path": "references/operations-gst/gstr9a.json",
+      "sha256": "1e326d192125d01cbe12bc05bc2956355daa6ce7830b585b4fd924c29387f7d6",
+      "bytes": 74585
+    },
+    {
+      "path": "references/operations-gst/gstr9c.json",
+      "sha256": "43d65e3b2fa7716c1db62300abdab29c8acd690c683671f3da22931ab2ef4606",
+      "bytes": 169514
+    },
+    {
+      "path": "references/operations-gst/ims.json",
+      "sha256": "79eaa8fc1de73c3f90a3bde617f181c39cdd26acaf9c4eaadc923ed791b3bbff",
+      "bytes": 65770
+    },
+    {
+      "path": "references/operations-gst/itc03.json",
+      "sha256": "6ae198ea46d258a9d6e25caf050425ab2134f4209944c740f7b65c9c6f8b4d56",
+      "bytes": 51596
+    },
+    {
+      "path": "references/operations-gst/itc04.json",
+      "sha256": "6ef80642b899379a7e1404b947a846ab747e7ac29872ebb3ef87a1a225d60593",
+      "bytes": 26754
+    },
+    {
+      "path": "references/operations-gst/ledger.json",
+      "sha256": "e8c65eacfb2b3b54798883f8e9d466a1753f7a3d6c347fd1a017301f85d90aef",
+      "bytes": 23913
+    },
+    {
+      "path": "references/operations-gst/notices.json",
+      "sha256": "36c0b3994058b40644429abd615cb099205d58376e0db08b928fe2a157a8e271",
+      "bytes": 4210
+    },
+    {
+      "path": "references/operations-gst/payment.json",
+      "sha256": "387288daec68d25ab5c5ff3ffe0acee9b9d46f6ea0e9ef11f558d1ff9e2e371e",
+      "bytes": 19137
+    },
+    {
+      "path": "references/operations-gst/public.json",
+      "sha256": "d387c03d43e79dfd1103454615d2eb6bad6bfb8115af975102618035cf2ad560",
+      "bytes": 7821
+    },
+    {
+      "path": "references/operations-gst/spike.json",
+      "sha256": "493b84e85136eda7d14708d5df99106738ae9066cf3908cd287f786ba0778d81",
+      "bytes": 12320
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "count": 27,
+  "tags": [
+    {
+      "tag": "Add Multi Vehicles",
+      "file": "operations-ewaybill/add-multi-vehicles.json",
+      "count": 1
+    },
+    {
+      "tag": "Authentication",
+      "file": "operations-ewaybill/authentication.json",
+      "count": 1
+    },
+    {
+      "tag": "Cancel E-Way bill",
+      "file": "operations-ewaybill/cancel-e-way-bill.json",
+      "count": 1
+    },
+    {
+      "tag": "Change Multi Vehicles",
+      "file": "operations-ewaybill/change-multi-vehicles.json",
+      "count": 1
+    },
+    {
+      "tag": "Closure e-Way Bill",
+      "file": "operations-ewaybill/closure-e-way-bill.json",
+      "count": 1
+    },
+    {
+      "tag": "Extend Validity of E-Way Bill",
+      "file": "operations-ewaybill/extend-validity-of-e-way-bill.json",
+      "count": 1
+    },
+    {
+      "tag": "GET HSN details",
+      "file": "operations-ewaybill/get-hsn-details.json",
+      "count": 1
+    },
+    {
+      "tag": "GET Transin details",
+      "file": "operations-ewaybill/get-transin-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Generate Consolidated Ewaybill",
+      "file": "operations-ewaybill/generate-consolidated-ewaybill.json",
+      "count": 1
+    },
+    {
+      "tag": "Generate Eway Bill",
+      "file": "operations-ewaybill/generate-eway-bill.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EWay bill for transporter by Date",
+      "file": "operations-ewaybill/get-eway-bill-for-transporter-by-date.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Error List",
+      "file": "operations-ewaybill/get-error-list.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Eway Bills By Date",
+      "file": "operations-ewaybill/get-eway-bills-by-date.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Eway Bills Rejected By Others",
+      "file": "operations-ewaybill/get-eway-bills-rejected-by-others.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Eway bills by parties",
+      "file": "operations-ewaybill/get-eway-bills-by-parties.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EwayBill Details",
+      "file": "operations-ewaybill/get-ewaybill-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EwayBill Report By Transporter assigned Date",
+      "file": "operations-ewaybill/get-ewaybill-report-by-transporter-assigned-date.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EwayBill by Consigner",
+      "file": "operations-ewaybill/get-ewaybill-by-consigner.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EwayBills For Transporter By Gstin",
+      "file": "operations-ewaybill/get-ewaybills-for-transporter-by-gstin.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EwayBills For Transporter By State",
+      "file": "operations-ewaybill/get-ewaybills-for-transporter-by-state.json",
+      "count": 1
+    },
+    {
+      "tag": "Get GSTIN details",
+      "file": "operations-ewaybill/get-gstin-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get consolidated e-way bill",
+      "file": "operations-ewaybill/get-consolidated-e-way-bill.json",
+      "count": 1
+    },
+    {
+      "tag": "Initiate Multi Vehicle Movement",
+      "file": "operations-ewaybill/initiate-multi-vehicle-movement.json",
+      "count": 1
+    },
+    {
+      "tag": "Regenerate Consolidated E-Way Bill - Api",
+      "file": "operations-ewaybill/regenerate-consolidated-e-way-bill-api.json",
+      "count": 1
+    },
+    {
+      "tag": "Reject EwayBill",
+      "file": "operations-ewaybill/reject-ewaybill.json",
+      "count": 1
+    },
+    {
+      "tag": "Update PART-B/Vehicle Number",
+      "file": "operations-ewaybill/update-part-b-vehicle-number.json",
+      "count": 1
+    },
+    {
+      "tag": "Update Transporter",
+      "file": "operations-ewaybill/update-transporter.json",
+      "count": 1
+    }
+  ],
+  "operations": [
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/authenticate",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/authenticate",
+      "tag": "Authentication",
+      "summary": "Authentication Request",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/authentication.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/geterrorlist",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/geterrorlist",
+      "tag": "Get Error List",
+      "summary": "Get Error List",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-error-list.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybill",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybill",
+      "tag": "Get EwayBill Details",
+      "summary": "Get EwayBill Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-ewaybill-details.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillgeneratedbyconsigner",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillgeneratedbyconsigner",
+      "tag": "Get EwayBill by Consigner",
+      "summary": "Get e-way bill details for a Document Type and Document number.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-ewaybill-by-consigner.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillreportbytransporterassigneddate",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillreportbytransporterassigneddate",
+      "tag": "Get EwayBill Report By Transporter assigned Date",
+      "summary": "Get eway bill assigned to you (requesting GSTIN) for a transportation - Particular Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-ewaybill-report-by-transporter-assigned-date.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsbydate",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsbydate",
+      "tag": "Get Eway Bills By Date",
+      "summary": "Get eway bills assigned to you (requesting GSTIN) for a Particular Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-eway-bills-by-date.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporter",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporter",
+      "tag": "Get EWay bill for transporter by Date",
+      "summary": "Get eway bill assigned to you (requesting GSTIN) for a transportation – Particular Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-eway-bill-for-transporter-by-date.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporterbygstin",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporterbygstin",
+      "tag": "Get EwayBills For Transporter By Gstin",
+      "summary": "Get eway bill assigned to you (requesting GSTIN) for transportation – Particular GSTIN and Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-ewaybills-for-transporter-by-gstin.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporterbystate",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsfortransporterbystate",
+      "tag": "Get EwayBills For Transporter By State",
+      "summary": "Get eway bill assigned to you (requesting GSTIN) for transportation – Particular State and Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-ewaybills-for-transporter-by-state.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsofotherparty",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsofotherparty",
+      "tag": "Get Eway bills by parties",
+      "summary": "Get e-way bills generated on you (requesting GSTIN) by other parties",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-eway-bills-by-parties.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getewaybillsrejectedbyothers",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getewaybillsrejectedbyothers",
+      "tag": "Get Eway Bills Rejected By Others",
+      "summary": "Get eway bills rejected by others for a Particular Date",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-eway-bills-rejected-by-others.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/getgstindetails",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/getgstindetails",
+      "tag": "Get GSTIN details",
+      "summary": "Get GSTIN details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-gstin-details.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/gethsndetailsbyhsncode",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/gethsndetailsbyhsncode",
+      "tag": "GET HSN details",
+      "summary": "GET HSN details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-hsn-details.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/gettransporterdetails",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/gettransporterdetails",
+      "tag": "GET Transin details",
+      "summary": "GET Transin details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-transin-details.json"
+    },
+    {
+      "id": "ewaybill:GET:/ewaybillapi/v1.03/ewayapi/gettripsheet",
+      "method": "GET",
+      "path": "/ewaybillapi/v1.03/ewayapi/gettripsheet",
+      "tag": "Get consolidated e-way bill",
+      "summary": "Get consolidated e-way bill",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-ewaybill/get-consolidated-e-way-bill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/addmulti",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/addmulti",
+      "tag": "Add Multi Vehicles",
+      "summary": "Add Multi Vehicles",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/add-multi-vehicles.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/canewb",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/canewb",
+      "tag": "Cancel E-Way bill",
+      "summary": "Cancel E-Way bill",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/cancel-e-way-bill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/clsewb",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/clsewb",
+      "tag": "Closure e-Way Bill",
+      "summary": "Closure e-Way Bill",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/closure-e-way-bill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/extendvalidity",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/extendvalidity",
+      "tag": "Extend Validity of E-Way Bill",
+      "summary": "Extend Validity of E-Way Bill",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/extend-validity-of-e-way-bill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/gencewb",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/gencewb",
+      "tag": "Generate Consolidated Ewaybill",
+      "summary": "Generate Consolidated Ewaybill",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/generate-consolidated-ewaybill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/genewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/genewaybill",
+      "tag": "Generate Eway Bill",
+      "summary": "Generate Eway Bill",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-ewaybill/generate-eway-bill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/initmulti",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/initmulti",
+      "tag": "Initiate Multi Vehicle Movement",
+      "summary": "Initiate Multi Vehicle Movement",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/initiate-multi-vehicle-movement.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/regentripsheet",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/regentripsheet",
+      "tag": "Regenerate Consolidated E-Way Bill - Api",
+      "summary": "Regenerate Consolidated E-Way Bill - Api",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-ewaybill/regenerate-consolidated-e-way-bill-api.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/rejewb",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/rejewb",
+      "tag": "Reject EwayBill",
+      "summary": "Reject EwayBill",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/reject-ewaybill.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/updatetransporter",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/updatetransporter",
+      "tag": "Update Transporter",
+      "summary": "Update Transporter",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-ewaybill/update-transporter.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/updtmulti",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/updtmulti",
+      "tag": "Change Multi Vehicles",
+      "summary": "Change Multi Vehicles",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-ewaybill/change-multi-vehicles.json"
+    },
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/vehewb",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/vehewb",
+      "tag": "Update PART-B/Vehicle Number",
+      "summary": "Update PART-B/Vehicle Number",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-ewaybill/update-part-b-vehicle-number.json"
+    }
+  ]
+}

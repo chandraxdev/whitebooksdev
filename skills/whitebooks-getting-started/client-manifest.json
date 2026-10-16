@@ -1,0 +1,191 @@
+{
+  "skill": "whitebooks-getting-started",
+  "client_version": "1.0.8",
+  "spec_as_of": "2026-10-13",
+  "dependencies": [
+    {
+      "language": "java",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.22.3",
+      "ecosystem": "maven"
+    },
+    {
+      "language": "python",
+      "name": "requests",
+      "version": "2.32.5",
+      "ecosystem": "pip"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "75bac93a79c5fa239b33df95b7b6dcf9501aa2972a02fec91e466bbed9b93ee0",
+      "bytes": 150
+    },
+    {
+      "path": "assets/client/java/test/whitebooks/KitSupport.java",
+      "sha256": "26385eebe82ad82189cb6c82860950a900087f97665b81161f230489e2354e04",
+      "bytes": 3612
+    },
+    {
+      "path": "assets/client/java/test/whitebooks/KitTest.java",
+      "sha256": "8383fd4e26ed41dedd211b8c1c3f19c0d054e8d50bfd1e9cda64e64577efe0db",
+      "bytes": 7228
+    },
+    {
+      "path": "assets/client/java/whitebooks/Config.java",
+      "sha256": "8e957d34befbefcd0fd4fc40a9f3432621268e1417528b7c0828e64926489aa1",
+      "bytes": 6117
+    },
+    {
+      "path": "assets/client/java/whitebooks/Poll.java",
+      "sha256": "51bf501dc984defbcb17939f89aefe6ba0093b7769fb6aee70533cdc40a16227",
+      "bytes": 2941
+    },
+    {
+      "path": "assets/client/java/whitebooks/Reconcile.java",
+      "sha256": "cfce6e3631745c700968e854f4d702dfc5ea85a7f6b72116a297bbb9720892ee",
+      "bytes": 8103
+    },
+    {
+      "path": "assets/client/java/whitebooks/Session.java",
+      "sha256": "d6464da5ead87f6c89d77b9cbd1835ba00cff86f61354e46dca63baf6efaa63d",
+      "bytes": 18924
+    },
+    {
+      "path": "assets/client/java/whitebooks/WhiteBooksException.java",
+      "sha256": "ff197a4e6aa800a3ff9b683b8d1549814a123f302232ef732de23cbfa86b0cad",
+      "bytes": 6448
+    },
+    {
+      "path": "assets/client/python/tests/__init__.py",
+      "sha256": "2ed0104364fbdb1cad2332953517589331a85b7b934461daaa384f155639911e",
+      "bytes": 421
+    },
+    {
+      "path": "assets/client/python/tests/fixtures.py",
+      "sha256": "a479b523080597dafd1dc4737b8493c9f70f134fa7a6c4e6c33a382803dd0b5c",
+      "bytes": 1326
+    },
+    {
+      "path": "assets/client/python/tests/smoke_support.py",
+      "sha256": "7812667b26ff353d8e04490160e3c8cc42acf45ba7a55b671be3be394d63100b",
+      "bytes": 2226
+    },
+    {
+      "path": "assets/client/python/tests/test_errors.py",
+      "sha256": "7923d3666024c30adbdfa6d4921bcc973129d297eb308f8de2b0a9d5a8fa9009",
+      "bytes": 2535
+    },
+    {
+      "path": "assets/client/python/tests/test_session.py",
+      "sha256": "8afe11368425ed61c4cd2545294cf9268a0c448d117b28e667b6442ab4e18f7f",
+      "bytes": 4235
+    },
+    {
+      "path": "assets/client/python/whitebooks/__init__.py",
+      "sha256": "60d5fc6cd165d93ed6927cf77f3a0a143f2cf5a8ded8dc67545ad37446c726f6",
+      "bytes": 447
+    },
+    {
+      "path": "assets/client/python/whitebooks/config.py",
+      "sha256": "f01ef88cbcc83e3773882d6c518deff90221516191e4bf93cca627d8e28eac02",
+      "bytes": 4334
+    },
+    {
+      "path": "assets/client/python/whitebooks/errors.py",
+      "sha256": "cf3a259b4faca791c9067498ea75cb4c145ece11b15bd82997ce463100d27a71",
+      "bytes": 4257
+    },
+    {
+      "path": "assets/client/python/whitebooks/poll.py",
+      "sha256": "fe666fac10cbf29187a2ac1320253a3f7390dd141a4009cdd5e5d41920544808",
+      "bytes": 1876
+    },
+    {
+      "path": "assets/client/python/whitebooks/reconcile.py",
+      "sha256": "58211bbc46880134887c9684cbc1ec0490a262a1ca6c7f6c3ca385d5069bcef9",
+      "bytes": 5479
+    },
+    {
+      "path": "assets/client/python/whitebooks/session.py",
+      "sha256": "e2b6e762af33a0659f116fa3edef4472b2a6e0d386d4ecb1ebedc1854141b360",
+      "bytes": 13514
+    },
+    {
+      "path": "assets/client/typescript/test/errors.test.ts",
+      "sha256": "5c87f2712a152d69d406a7d9d2b69c10c2f43f59e5af45d15a44d9e2a67dff5f",
+      "bytes": 2304
+    },
+    {
+      "path": "assets/client/typescript/test/fixtures.ts",
+      "sha256": "c74eb71e635d1d4e77ac96e67a803823bf1d7df4b0a85fea804fa3565f6bd8b1",
+      "bytes": 1329
+    },
+    {
+      "path": "assets/client/typescript/test/session.test.ts",
+      "sha256": "8ef42bc8a523b575a9f52a0b11f61e28c20b4bc2a263833eea6e039fa40c0768",
+      "bytes": 3521
+    },
+    {
+      "path": "assets/client/typescript/test/support.ts",
+      "sha256": "12844e6df6b82098b72f3149c7e16d807fbd1af4d82d277586fd3c5fa5b8223b",
+      "bytes": 2065
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/config.ts",
+      "sha256": "4bf53003be6ae2b9aa5718b659ebbb73e0fff04fc19f673d00b8d83ceeb33640",
+      "bytes": 4100
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/errors.ts",
+      "sha256": "c1be209e8cd4455dc2119cb081720e4a10b4960f0cf10870aad410365490599d",
+      "bytes": 4551
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/index.ts",
+      "sha256": "037adb08f9db865d2d29d2c644ae91890475e82fee86c755acbaf975aed3a66e",
+      "bytes": 555
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/poll.ts",
+      "sha256": "e76561a80c6b169ab60000aa91fde296f457e14f5053044d638a092ddbfcf4c3",
+      "bytes": 2172
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/reconcile.ts",
+      "sha256": "8e70c3bc1113bf2e1d1b0bce3939ec0b6eb134e8511212c20e2268a8d0e320b0",
+      "bytes": 5957
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/session.ts",
+      "sha256": "3a5745da122180884b79ebd1ff8b2596cf38d36589efac003e384e2cc0efb449",
+      "bytes": 13238
+    },
+    {
+      "path": "references/conformance-vectors.json",
+      "sha256": "87222f1b8392049c6b6d12dedcae1fd2422cb0b86c52f4c5ba6bfec206a1eef2",
+      "bytes": 9072
+    },
+    {
+      "path": "references/discrepancies.md",
+      "sha256": "5bcd6e4b9bd130510f730f67762db6d69ecc1aafa3a7086c1e1c168cb021c252",
+      "bytes": 2602
+    },
+    {
+      "path": "references/errors.md",
+      "sha256": "5519c702d4551aeb47b48836406b066929d590b8d60a16ccc44889b76f892d69",
+      "bytes": 102920
+    },
+    {
+      "path": "references/headers.md",
+      "sha256": "438a80dc57d8572b2f9da37aebb13a3022a3fe939598773abd40e04088922346",
+      "bytes": 1387
+    }
+  ]
+}

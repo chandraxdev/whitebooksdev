@@ -1,0 +1,95 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Cancel E-Way bill",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/canewb",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-canewb-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/canewb",
+      "tag": "Cancel E-Way bill",
+      "summary": "Cancel E-Way bill",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-WayBill Server Type(NIC1/NIC2)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "cancelRsnCode",
+          "ewbNo"
+        ],
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "EwayBill Number"
+          },
+          "cancelRsnCode": {
+            "type": "number",
+            "description": "Reason for cancellation"
+          },
+          "cancelRmrk": {
+            "type": "string",
+            "description": "Remarks"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "cancelRsnCode": 2,
+        "cancelRmrk": "Order Cancelled"
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Initiate Multi Vehicle Movement",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/initmulti",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-initmulti-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/initmulti",
+      "tag": "Initiate Multi Vehicle Movement",
+      "summary": "Initiate Multi Vehicle Movement",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "ewbNo",
+          "fromPlace",
+          "fromState",
+          "reasonCode",
+          "reasonRem",
+          "toPlace",
+          "toState",
+          "totalQuantity",
+          "transMode",
+          "unitCode"
+        ],
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "Ewaybill Number"
+          },
+          "fromPlace": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Place of Consignor"
+          },
+          "fromState": {
+            "maximum": 2,
+            "type": "integer",
+            "description": "State of Consignor"
+          },
+          "toPlace": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Place of Consinee"
+          },
+          "toState": {
+            "maximum": 2,
+            "type": "integer",
+            "description": "State of Consinee"
+          },
+          "reasonCode": {
+            "maxLength": 1,
+            "minLength": 1,
+            "type": "string",
+            "description": "Reason Code"
+          },
+          "reasonRem": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "Remarks"
+          },
+          "totalQuantity": {
+            "type": "integer",
+            "description": "Total Quantity"
+          },
+          "unitCode": {
+            "maxLength": 3,
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "transMode": {
+            "type": "string",
+            "description": "Transport Mode"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "fromPlace": "FRAZER TOWN",
+        "fromState": 29,
+        "toPlace": "Beml Nagar",
+        "toState": 5,
+        "reasonCode": "1",
+        "reasonRem": "Due to Break Down",
+        "totalQuantity": 1,
+        "unitCode": "BOX",
+        "transMode": "1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3212 @@
+{
+  "area": "gst",
+  "spec_as_of": "2026-10-13",
+  "count": 281,
+  "tags": [
+    {
+      "tag": "ALL",
+      "file": "operations-gst/all.json",
+      "count": 13
+    },
+    {
+      "tag": "Authentication",
+      "file": "operations-gst/authentication.json",
+      "count": 5
+    },
+    {
+      "tag": "CMP",
+      "file": "operations-gst/cmp.json",
+      "count": 5
+    },
+    {
+      "tag": "GSTR",
+      "file": "operations-gst/gstr.json",
+      "count": 2
+    },
+    {
+      "tag": "GSTR1",
+      "file": "operations-gst/gstr1.json",
+      "count": 30
+    },
+    {
+      "tag": "GSTR1A",
+      "file": "operations-gst/gstr1a.json",
+      "count": 29
+    },
+    {
+      "tag": "GSTR2A",
+      "file": "operations-gst/gstr2a.json",
+      "count": 12
+    },
+    {
+      "tag": "GSTR2B",
+      "file": "operations-gst/gstr2b.json",
+      "count": 3
+    },
+    {
+      "tag": "GSTR2X",
+      "file": "operations-gst/gstr2x.json",
+      "count": 4
+    },
+    {
+      "tag": "GSTR3B",
+      "file": "operations-gst/gstr3b.json",
+      "count": 15
+    },
+    {
+      "tag": "GSTR4",
+      "file": "operations-gst/gstr4.json",
+      "count": 23
+    },
+    {
+      "tag": "GSTR4A",
+      "file": "operations-gst/gstr4a.json",
+      "count": 5
+    },
+    {
+      "tag": "GSTR4Annual",
+      "file": "operations-gst/gstr4annual.json",
+      "count": 9
+    },
+    {
+      "tag": "GSTR5",
+      "file": "operations-gst/gstr5.json",
+      "count": 21
+    },
+    {
+      "tag": "GSTR6",
+      "file": "operations-gst/gstr6.json",
+      "count": 16
+    },
+    {
+      "tag": "GSTR6A",
+      "file": "operations-gst/gstr6a.json",
+      "count": 4
+    },
+    {
+      "tag": "GSTR7",
+      "file": "operations-gst/gstr7.json",
+      "count": 6
+    },
+    {
+      "tag": "GSTR8",
+      "file": "operations-gst/gstr8.json",
+      "count": 7
+    },
+    {
+      "tag": "GSTR9",
+      "file": "operations-gst/gstr9.json",
+      "count": 8
+    },
+    {
+      "tag": "GSTR9A",
+      "file": "operations-gst/gstr9a.json",
+      "count": 5
+    },
+    {
+      "tag": "GSTR9C",
+      "file": "operations-gst/gstr9c.json",
+      "count": 7
+    },
+    {
+      "tag": "IMS",
+      "file": "operations-gst/ims.json",
+      "count": 8
+    },
+    {
+      "tag": "ITC03",
+      "file": "operations-gst/itc03.json",
+      "count": 7
+    },
+    {
+      "tag": "ITC04",
+      "file": "operations-gst/itc04.json",
+      "count": 6
+    },
+    {
+      "tag": "Ledger",
+      "file": "operations-gst/ledger.json",
+      "count": 11
+    },
+    {
+      "tag": "Notices",
+      "file": "operations-gst/notices.json",
+      "count": 2
+    },
+    {
+      "tag": "Payment",
+      "file": "operations-gst/payment.json",
+      "count": 4
+    },
+    {
+      "tag": "Public",
+      "file": "operations-gst/public.json",
+      "count": 5
+    },
+    {
+      "tag": "SPIKE",
+      "file": "operations-gst/spike.json",
+      "count": 4
+    },
+    {
+      "tag": "e-Invoice",
+      "file": "operations-gst/e-invoice.json",
+      "count": 5
+    }
+  ],
+  "operations": [
+    {
+      "id": "gst:GET:/all/docdwld",
+      "method": "GET",
+      "path": "/all/docdwld",
+      "tag": "ALL",
+      "summary": "Document Download",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/filedet",
+      "method": "GET",
+      "path": "/all/filedet",
+      "tag": "ALL",
+      "summary": "Get File Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/getmasters",
+      "method": "GET",
+      "path": "/all/getmasters",
+      "tag": "ALL",
+      "summary": "Get User Masters",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/getpref",
+      "method": "GET",
+      "path": "/all/getpref",
+      "tag": "ALL",
+      "summary": "Get Preference",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/largefile",
+      "method": "GET",
+      "path": "/all/largefile",
+      "tag": "ALL",
+      "summary": "Get Large File Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/latefee",
+      "method": "GET",
+      "path": "/all/latefee",
+      "tag": "ALL",
+      "summary": "Late Fee",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/latefeebreakup",
+      "method": "GET",
+      "path": "/all/latefeebreakup",
+      "tag": "ALL",
+      "summary": "Get additional late fee breakup",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/newproceedfile",
+      "method": "GET",
+      "path": "/all/newproceedfile",
+      "tag": "ALL",
+      "summary": "New Proceed To File(GSTR1,GSTR5,GSTR6)",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/newretstatus",
+      "method": "GET",
+      "path": "/all/newretstatus",
+      "tag": "ALL",
+      "summary": "Get Return Status",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/all/proceedfile",
+      "method": "GET",
+      "path": "/all/proceedfile",
+      "tag": "ALL",
+      "summary": "Proceed To File",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:GET:/authentication/authtoken",
+      "method": "GET",
+      "path": "/authentication/authtoken",
+      "tag": "Authentication",
+      "summary": "Request for Authorization Token",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/authentication.json"
+    },
+    {
+      "id": "gst:GET:/authentication/logout",
+      "method": "GET",
+      "path": "/authentication/logout",
+      "tag": "Authentication",
+      "summary": "Request for logout",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/authentication.json"
+    },
+    {
+      "id": "gst:GET:/authentication/otpforevc",
+      "method": "GET",
+      "path": "/authentication/otpforevc",
+      "tag": "Authentication",
+      "summary": "Initiate OTP for EVC",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/authentication.json"
+    },
+    {
+      "id": "gst:GET:/authentication/otprequest",
+      "method": "GET",
+      "path": "/authentication/otprequest",
+      "tag": "Authentication",
+      "summary": "Request for OTP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/authentication.json"
+    },
+    {
+      "id": "gst:GET:/authentication/refreshtoken",
+      "method": "GET",
+      "path": "/authentication/refreshtoken",
+      "tag": "Authentication",
+      "summary": "Request for extension of authorization token",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/authentication.json"
+    },
+    {
+      "id": "gst:GET:/cmp/getcmp",
+      "method": "GET",
+      "path": "/cmp/getcmp",
+      "tag": "CMP",
+      "summary": "Get CMP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/cmp.json"
+    },
+    {
+      "id": "gst:GET:/cmp/validateturnover",
+      "method": "GET",
+      "path": "/cmp/validateturnover",
+      "tag": "CMP",
+      "summary": "Get validate turnover for CMP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/cmp.json"
+    },
+    {
+      "id": "gst:GET:/gst/einvoice/filedtl",
+      "method": "GET",
+      "path": "/gst/einvoice/filedtl",
+      "tag": "e-Invoice",
+      "summary": "Get file URL",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/e-invoice.json"
+    },
+    {
+      "id": "gst:GET:/gst/einvoice/hsnsum",
+      "method": "GET",
+      "path": "/gst/einvoice/hsnsum",
+      "tag": "e-Invoice",
+      "summary": "Get E-Invice HSN Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/e-invoice.json"
+    },
+    {
+      "id": "gst:GET:/gst/einvoice/irndtl",
+      "method": "GET",
+      "path": "/gst/einvoice/irndtl",
+      "tag": "e-Invoice",
+      "summary": "Get Json for IRN",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/e-invoice.json"
+    },
+    {
+      "id": "gst:GET:/gst/einvoice/irnjsons",
+      "method": "GET",
+      "path": "/gst/einvoice/irnjsons",
+      "tag": "e-Invoice",
+      "summary": "Get list of IRN Jsons",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/e-invoice.json"
+    },
+    {
+      "id": "gst:GET:/gst/einvoice/irnlist",
+      "method": "GET",
+      "path": "/gst/einvoice/irnlist",
+      "tag": "e-Invoice",
+      "summary": "Get list of IRNs",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/e-invoice.json"
+    },
+    {
+      "id": "gst:GET:/gstr/retstatus",
+      "method": "GET",
+      "path": "/gstr/retstatus",
+      "tag": "GSTR",
+      "summary": "Get Return Status",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr.json"
+    },
+    {
+      "id": "gst:GET:/gstr/rettrack",
+      "method": "GET",
+      "path": "/gstr/rettrack",
+      "tag": "GSTR",
+      "summary": "View and Track Returns",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/at",
+      "method": "GET",
+      "path": "/gstr1/at",
+      "tag": "GSTR1",
+      "summary": "Get AT",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/ata",
+      "method": "GET",
+      "path": "/gstr1/ata",
+      "tag": "GSTR1",
+      "summary": "Get ATA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2b",
+      "method": "GET",
+      "path": "/gstr1/b2b",
+      "tag": "GSTR1",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2ba",
+      "method": "GET",
+      "path": "/gstr1/b2ba",
+      "tag": "GSTR1",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2cl",
+      "method": "GET",
+      "path": "/gstr1/b2cl",
+      "tag": "GSTR1",
+      "summary": "Get B2CL Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2cla",
+      "method": "GET",
+      "path": "/gstr1/b2cla",
+      "tag": "GSTR1",
+      "summary": "Get B2CLA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2cs",
+      "method": "GET",
+      "path": "/gstr1/b2cs",
+      "tag": "GSTR1",
+      "summary": "Get B2CS Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/b2csa",
+      "method": "GET",
+      "path": "/gstr1/b2csa",
+      "tag": "GSTR1",
+      "summary": "Get B2CSA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/cdnr",
+      "method": "GET",
+      "path": "/gstr1/cdnr",
+      "tag": "GSTR1",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/cdnra",
+      "method": "GET",
+      "path": "/gstr1/cdnra",
+      "tag": "GSTR1",
+      "summary": "Get CDNRA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/cdnur",
+      "method": "GET",
+      "path": "/gstr1/cdnur",
+      "tag": "GSTR1",
+      "summary": "API call for getting all Credit/ Debit Notes issued to un-registered persons for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/cdnura",
+      "method": "GET",
+      "path": "/gstr1/cdnura",
+      "tag": "GSTR1",
+      "summary": "API call for getting all amended Credit/ Debit Notes issued to un-registered persons for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/dociss",
+      "method": "GET",
+      "path": "/gstr1/dociss",
+      "tag": "GSTR1",
+      "summary": "Get GSTR1 Document Issued",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/ecom",
+      "method": "GET",
+      "path": "/gstr1/ecom",
+      "tag": "GSTR1",
+      "summary": "Get ECOM Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/ecoma",
+      "method": "GET",
+      "path": "/gstr1/ecoma",
+      "tag": "GSTR1",
+      "summary": "Get ECOMA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/einvoice",
+      "method": "GET",
+      "path": "/gstr1/einvoice",
+      "tag": "GSTR1",
+      "summary": "Get E-Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/exp",
+      "method": "GET",
+      "path": "/gstr1/exp",
+      "tag": "GSTR1",
+      "summary": "Get EXP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/expa",
+      "method": "GET",
+      "path": "/gstr1/expa",
+      "tag": "GSTR1",
+      "summary": "Get EXPA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/hsnsum",
+      "method": "GET",
+      "path": "/gstr1/hsnsum",
+      "tag": "GSTR1",
+      "summary": "Get HSN Summary details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/nil",
+      "method": "GET",
+      "path": "/gstr1/nil",
+      "tag": "GSTR1",
+      "summary": "Get Nil Rated Supplies",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/retsum",
+      "method": "GET",
+      "path": "/gstr1/retsum",
+      "tag": "GSTR1",
+      "summary": "Get GSTR1 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/supeco",
+      "method": "GET",
+      "path": "/gstr1/supeco",
+      "tag": "GSTR1",
+      "summary": "Get Supplier ECO invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/supecoa",
+      "method": "GET",
+      "path": "/gstr1/supecoa",
+      "tag": "GSTR1",
+      "summary": "Get Supplier ECOA invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/txp",
+      "method": "GET",
+      "path": "/gstr1/txp",
+      "tag": "GSTR1",
+      "summary": "Get TXP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/txpa",
+      "method": "GET",
+      "path": "/gstr1/txpa",
+      "tag": "GSTR1",
+      "summary": "Get TXPA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1/validatehsnsum",
+      "method": "GET",
+      "path": "/gstr1/validatehsnsum",
+      "tag": "GSTR1",
+      "summary": "Validate the HSN Summary details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/at",
+      "method": "GET",
+      "path": "/gstr1a/at",
+      "tag": "GSTR1A",
+      "summary": "Get AT",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/ata",
+      "method": "GET",
+      "path": "/gstr1a/ata",
+      "tag": "GSTR1A",
+      "summary": "Get ATA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2b",
+      "method": "GET",
+      "path": "/gstr1a/b2b",
+      "tag": "GSTR1A",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2ba",
+      "method": "GET",
+      "path": "/gstr1a/b2ba",
+      "tag": "GSTR1A",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2cl",
+      "method": "GET",
+      "path": "/gstr1a/b2cl",
+      "tag": "GSTR1A",
+      "summary": "Get B2CL Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2cla",
+      "method": "GET",
+      "path": "/gstr1a/b2cla",
+      "tag": "GSTR1A",
+      "summary": "Get B2CLA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2cs",
+      "method": "GET",
+      "path": "/gstr1a/b2cs",
+      "tag": "GSTR1A",
+      "summary": "Get B2CS Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/b2csa",
+      "method": "GET",
+      "path": "/gstr1a/b2csa",
+      "tag": "GSTR1A",
+      "summary": "Get B2CSA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/cdnr",
+      "method": "GET",
+      "path": "/gstr1a/cdnr",
+      "tag": "GSTR1A",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/cdnra",
+      "method": "GET",
+      "path": "/gstr1a/cdnra",
+      "tag": "GSTR1A",
+      "summary": "Get CDNRA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/cdnur",
+      "method": "GET",
+      "path": "/gstr1a/cdnur",
+      "tag": "GSTR1A",
+      "summary": "API call for getting all Credit/ Debit Notes issued to un-registered persons for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/cdnura",
+      "method": "GET",
+      "path": "/gstr1a/cdnura",
+      "tag": "GSTR1A",
+      "summary": "API call for getting all amended Credit/ Debit Notes issued to un-registered persons for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/dociss",
+      "method": "GET",
+      "path": "/gstr1a/dociss",
+      "tag": "GSTR1A",
+      "summary": "Get GSTR1A Document Issued",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/ecom",
+      "method": "GET",
+      "path": "/gstr1a/ecom",
+      "tag": "GSTR1A",
+      "summary": "Get ECOM Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/ecoma",
+      "method": "GET",
+      "path": "/gstr1a/ecoma",
+      "tag": "GSTR1A",
+      "summary": "Get ECOMA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/exp",
+      "method": "GET",
+      "path": "/gstr1a/exp",
+      "tag": "GSTR1A",
+      "summary": "Get EXP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/expa",
+      "method": "GET",
+      "path": "/gstr1a/expa",
+      "tag": "GSTR1A",
+      "summary": "Get EXPA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/hsnsum",
+      "method": "GET",
+      "path": "/gstr1a/hsnsum",
+      "tag": "GSTR1A",
+      "summary": "Get HSN Summary details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/nil",
+      "method": "GET",
+      "path": "/gstr1a/nil",
+      "tag": "GSTR1A",
+      "summary": "Get Nil Rated Supplies",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/proceedfile",
+      "method": "GET",
+      "path": "/gstr1a/proceedfile",
+      "tag": "GSTR1A",
+      "summary": "Proceed To File",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/retsum",
+      "method": "GET",
+      "path": "/gstr1a/retsum",
+      "tag": "GSTR1A",
+      "summary": "Get GSTR1A Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/supeco",
+      "method": "GET",
+      "path": "/gstr1a/supeco",
+      "tag": "GSTR1A",
+      "summary": "Get Supplier ECO invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/supecoa",
+      "method": "GET",
+      "path": "/gstr1a/supecoa",
+      "tag": "GSTR1A",
+      "summary": "Get Supplier ECOA invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/txp",
+      "method": "GET",
+      "path": "/gstr1a/txp",
+      "tag": "GSTR1A",
+      "summary": "Get TXP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr1a/txpa",
+      "method": "GET",
+      "path": "/gstr1a/txpa",
+      "tag": "GSTR1A",
+      "summary": "Get TXPA",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/amdhist",
+      "method": "GET",
+      "path": "/gstr2a/amdhist",
+      "tag": "GSTR2A",
+      "summary": "Get AMDHIST",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/b2b",
+      "method": "GET",
+      "path": "/gstr2a/b2b",
+      "tag": "GSTR2A",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/b2ba",
+      "method": "GET",
+      "path": "/gstr2a/b2ba",
+      "tag": "GSTR2A",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/cdn",
+      "method": "GET",
+      "path": "/gstr2a/cdn",
+      "tag": "GSTR2A",
+      "summary": "CDN Invoice",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/cdna",
+      "method": "GET",
+      "path": "/gstr2a/cdna",
+      "tag": "GSTR2A",
+      "summary": "Get CDNA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/ecom",
+      "method": "GET",
+      "path": "/gstr2a/ecom",
+      "tag": "GSTR2A",
+      "summary": "Get ECOM Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/ecoma",
+      "method": "GET",
+      "path": "/gstr2a/ecoma",
+      "tag": "GSTR2A",
+      "summary": "Get ECOMA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/impg",
+      "method": "GET",
+      "path": "/gstr2a/impg",
+      "tag": "GSTR2A",
+      "summary": "Get IMPG",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/impgsez",
+      "method": "GET",
+      "path": "/gstr2a/impgsez",
+      "tag": "GSTR2A",
+      "summary": "Get IMPGSEZ",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/isd",
+      "method": "GET",
+      "path": "/gstr2a/isd",
+      "tag": "GSTR2A",
+      "summary": "Get ISD Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/tcs",
+      "method": "GET",
+      "path": "/gstr2a/tcs",
+      "tag": "GSTR2A",
+      "summary": "Get TCS",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2a/tds",
+      "method": "GET",
+      "path": "/gstr2a/tds",
+      "tag": "GSTR2A",
+      "summary": "Get TDS Credit",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2a.json"
+    },
+    {
+      "id": "gst:GET:/gstr2b/all",
+      "method": "GET",
+      "path": "/gstr2b/all",
+      "tag": "GSTR2B",
+      "summary": "Get All Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2b.json"
+    },
+    {
+      "id": "gst:GET:/gstr2b/get2b",
+      "method": "GET",
+      "path": "/gstr2b/get2b",
+      "tag": "GSTR2B",
+      "summary": "Get 2B generate status",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2b.json"
+    },
+    {
+      "id": "gst:GET:/gstr2x/tdstcs",
+      "method": "GET",
+      "path": "/gstr2x/tdstcs",
+      "tag": "GSTR2X",
+      "summary": "Get TDS",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr2x.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/autoliab",
+      "method": "GET",
+      "path": "/gstr3b/autoliab",
+      "tag": "GSTR3B",
+      "summary": "Get GSTR1 auto calculated liability details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/closingbal",
+      "method": "GET",
+      "path": "/gstr3b/closingbal",
+      "tag": "GSTR3B",
+      "summary": "Get ITC Reversal Balance",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/openingbal",
+      "method": "GET",
+      "path": "/gstr3b/openingbal",
+      "tag": "GSTR3B",
+      "summary": "Get Opening Balance For Credit Reversal and Re-claimed Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/rcmclosingbal",
+      "method": "GET",
+      "path": "/gstr3b/rcmclosingbal",
+      "tag": "GSTR3B",
+      "summary": "Get latest closing balance",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/rcmopeningbal",
+      "method": "GET",
+      "path": "/gstr3b/rcmopeningbal",
+      "tag": "GSTR3B",
+      "summary": "Get RCM opening balance",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/retsum",
+      "method": "GET",
+      "path": "/gstr3b/retsum",
+      "tag": "GSTR3B",
+      "summary": "Get GSTR3B Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr3b/syscalcintrst",
+      "method": "GET",
+      "path": "/gstr3b/syscalcintrst",
+      "tag": "GSTR3B",
+      "summary": "Get system calculated interest",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/at",
+      "method": "GET",
+      "path": "/gstr4/at",
+      "tag": "GSTR4",
+      "summary": "Get AT",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/ata",
+      "method": "GET",
+      "path": "/gstr4/ata",
+      "tag": "GSTR4",
+      "summary": "Get Advances Paid Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/b2b",
+      "method": "GET",
+      "path": "/gstr4/b2b",
+      "tag": "GSTR4",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/b2ba",
+      "method": "GET",
+      "path": "/gstr4/b2ba",
+      "tag": "GSTR4",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/b2bur",
+      "method": "GET",
+      "path": "/gstr4/b2bur",
+      "tag": "GSTR4",
+      "summary": "Get B2B Unregistered Invoice",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/b2bura",
+      "method": "GET",
+      "path": "/gstr4/b2bura",
+      "tag": "GSTR4",
+      "summary": "Get B2BUR Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/cdnr",
+      "method": "GET",
+      "path": "/gstr4/cdnr",
+      "tag": "GSTR4",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/cdnra",
+      "method": "GET",
+      "path": "/gstr4/cdnra",
+      "tag": "GSTR4",
+      "summary": "Get CDNR Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/cdnur",
+      "method": "GET",
+      "path": "/gstr4/cdnur",
+      "tag": "GSTR4",
+      "summary": "API call for getting all Credit/ Debit Notes issued to un-registered persons for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/cdnura",
+      "method": "GET",
+      "path": "/gstr4/cdnura",
+      "tag": "GSTR4",
+      "summary": "Get CDNUR Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/imps",
+      "method": "GET",
+      "path": "/gstr4/imps",
+      "tag": "GSTR4",
+      "summary": "Get IMPS",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/impsa",
+      "method": "GET",
+      "path": "/gstr4/impsa",
+      "tag": "GSTR4",
+      "summary": "Get Imports of Services Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/retsum",
+      "method": "GET",
+      "path": "/gstr4/retsum",
+      "tag": "GSTR4",
+      "summary": "Get GSTR1 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/tds",
+      "method": "GET",
+      "path": "/gstr4/tds",
+      "tag": "GSTR4",
+      "summary": "Get TDS",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/txos",
+      "method": "GET",
+      "path": "/gstr4/txos",
+      "tag": "GSTR4",
+      "summary": "API call for getting invoices for Tax on Outward Supplies for a return period.",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/txosa",
+      "method": "GET",
+      "path": "/gstr4/txosa",
+      "tag": "GSTR4",
+      "summary": "Get TXOS Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/txp",
+      "method": "GET",
+      "path": "/gstr4/txp",
+      "tag": "GSTR4",
+      "summary": "Get TXP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4/txpa",
+      "method": "GET",
+      "path": "/gstr4/txpa",
+      "tag": "GSTR4",
+      "summary": "Get Advances Adjusted Amendment",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:GET:/gstr4a/b2b",
+      "method": "GET",
+      "path": "/gstr4a/b2b",
+      "tag": "GSTR4A",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4a.json"
+    },
+    {
+      "id": "gst:GET:/gstr4a/b2ba",
+      "method": "GET",
+      "path": "/gstr4a/b2ba",
+      "tag": "GSTR4A",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4a.json"
+    },
+    {
+      "id": "gst:GET:/gstr4a/cdnr",
+      "method": "GET",
+      "path": "/gstr4a/cdnr",
+      "tag": "GSTR4A",
+      "summary": "CDNR Invoice",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4a.json"
+    },
+    {
+      "id": "gst:GET:/gstr4a/cdnra",
+      "method": "GET",
+      "path": "/gstr4a/cdnra",
+      "tag": "GSTR4A",
+      "summary": "CDNRA Invoice",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4a.json"
+    },
+    {
+      "id": "gst:GET:/gstr4a/tds",
+      "method": "GET",
+      "path": "/gstr4a/tds",
+      "tag": "GSTR4A",
+      "summary": "TDS Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4a.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/autopop",
+      "method": "GET",
+      "path": "/gstr4annual/autopop",
+      "tag": "GSTR4Annual",
+      "summary": "Get autopopulated data for table 4A/4B of GSTR4 Annual form",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/getsum",
+      "method": "GET",
+      "path": "/gstr4annual/getsum",
+      "tag": "GSTR4Annual",
+      "summary": "Get summary Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/tdscmp",
+      "method": "GET",
+      "path": "/gstr4annual/tdscmp",
+      "tag": "GSTR4Annual",
+      "summary": "Get tdscmp Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/txios",
+      "method": "GET",
+      "path": "/gstr4annual/txios",
+      "tag": "GSTR4Annual",
+      "summary": "Get txios Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/validateliability",
+      "method": "GET",
+      "path": "/gstr4annual/validateliability",
+      "tag": "GSTR4Annual",
+      "summary": "Get validate the liability provided in table 6 for GSTR4 Annual form",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr4annual/validateturnover",
+      "method": "GET",
+      "path": "/gstr4annual/validateturnover",
+      "tag": "GSTR4Annual",
+      "summary": "Get validate turnover for GSTR4 Annual form",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2b",
+      "method": "GET",
+      "path": "/gstr5/b2b",
+      "tag": "GSTR5",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2ba",
+      "method": "GET",
+      "path": "/gstr5/b2ba",
+      "tag": "GSTR5",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2cl",
+      "method": "GET",
+      "path": "/gstr5/b2cl",
+      "tag": "GSTR5",
+      "summary": "Get B2CL Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2cla",
+      "method": "GET",
+      "path": "/gstr5/b2cla",
+      "tag": "GSTR5",
+      "summary": "Get B2CLA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2cs",
+      "method": "GET",
+      "path": "/gstr5/b2cs",
+      "tag": "GSTR5",
+      "summary": "Get B2CS Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/b2csa",
+      "method": "GET",
+      "path": "/gstr5/b2csa",
+      "tag": "GSTR5",
+      "summary": "Get B2CSA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/cdn",
+      "method": "GET",
+      "path": "/gstr5/cdn",
+      "tag": "GSTR5",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/cdna",
+      "method": "GET",
+      "path": "/gstr5/cdna",
+      "tag": "GSTR5",
+      "summary": "Get CDNRA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/cdnur",
+      "method": "GET",
+      "path": "/gstr5/cdnur",
+      "tag": "GSTR5",
+      "summary": "Get CDN Unregistered",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/cdnura",
+      "method": "GET",
+      "path": "/gstr5/cdnura",
+      "tag": "GSTR5",
+      "summary": "Get CDNA Unregistered",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/impg",
+      "method": "GET",
+      "path": "/gstr5/impg",
+      "tag": "GSTR5",
+      "summary": "Get IMPG Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/impga",
+      "method": "GET",
+      "path": "/gstr5/impga",
+      "tag": "GSTR5",
+      "summary": "Get IMPGA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/imps",
+      "method": "GET",
+      "path": "/gstr5/imps",
+      "tag": "GSTR5",
+      "summary": "Get IMPS Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/impsa",
+      "method": "GET",
+      "path": "/gstr5/impsa",
+      "tag": "GSTR5",
+      "summary": "Get IMPSA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/retsum",
+      "method": "GET",
+      "path": "/gstr5/retsum",
+      "tag": "GSTR5",
+      "summary": "Get GSTR5 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr5/ttxli",
+      "method": "GET",
+      "path": "/gstr5/ttxli",
+      "tag": "GSTR5",
+      "summary": "Get Tax Liab",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/b2b",
+      "method": "GET",
+      "path": "/gstr6/b2b",
+      "tag": "GSTR6",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/b2ba",
+      "method": "GET",
+      "path": "/gstr6/b2ba",
+      "tag": "GSTR6",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/cdn",
+      "method": "GET",
+      "path": "/gstr6/cdn",
+      "tag": "GSTR6",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/cdna",
+      "method": "GET",
+      "path": "/gstr6/cdna",
+      "tag": "GSTR6",
+      "summary": "Get CDNRA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/isd",
+      "method": "GET",
+      "path": "/gstr6/isd",
+      "tag": "GSTR6",
+      "summary": "Get ISD Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/isda",
+      "method": "GET",
+      "path": "/gstr6/isda",
+      "tag": "GSTR6",
+      "summary": "Get Amendment ISD Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/itc",
+      "method": "GET",
+      "path": "/gstr6/itc",
+      "tag": "GSTR6",
+      "summary": "Get ITC Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/latefee",
+      "method": "GET",
+      "path": "/gstr6/latefee",
+      "tag": "GSTR6",
+      "summary": "Get Late Fee",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6/retsum",
+      "method": "GET",
+      "path": "/gstr6/retsum",
+      "tag": "GSTR6",
+      "summary": "Get GSTR6 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:GET:/gstr6a/b2b",
+      "method": "GET",
+      "path": "/gstr6a/b2b",
+      "tag": "GSTR6A",
+      "summary": "Get B2B Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6a.json"
+    },
+    {
+      "id": "gst:GET:/gstr6a/b2ba",
+      "method": "GET",
+      "path": "/gstr6a/b2ba",
+      "tag": "GSTR6A",
+      "summary": "Get B2BA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6a.json"
+    },
+    {
+      "id": "gst:GET:/gstr6a/cdn",
+      "method": "GET",
+      "path": "/gstr6a/cdn",
+      "tag": "GSTR6A",
+      "summary": "Get CDNR Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6a.json"
+    },
+    {
+      "id": "gst:GET:/gstr6a/cdna",
+      "method": "GET",
+      "path": "/gstr6a/cdna",
+      "tag": "GSTR6A",
+      "summary": "Get CDNRA Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6a.json"
+    },
+    {
+      "id": "gst:GET:/gstr7/retsum",
+      "method": "GET",
+      "path": "/gstr7/retsum",
+      "tag": "GSTR7",
+      "summary": "Get GSTR7 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:GET:/gstr7/tds",
+      "method": "GET",
+      "path": "/gstr7/tds",
+      "tag": "GSTR7",
+      "summary": "Get TDS details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:GET:/gstr7/tdschecksum",
+      "method": "GET",
+      "path": "/gstr7/tdschecksum",
+      "tag": "GSTR7",
+      "summary": "Get TDS Checksum",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:GET:/gstr8/checksum",
+      "method": "GET",
+      "path": "/gstr8/checksum",
+      "tag": "GSTR8",
+      "summary": "Get Checksum",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:GET:/gstr8/eid",
+      "method": "GET",
+      "path": "/gstr8/eid",
+      "tag": "GSTR8",
+      "summary": "Get EID",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:GET:/gstr8/retsum",
+      "method": "GET",
+      "path": "/gstr8/retsum",
+      "tag": "GSTR8",
+      "summary": "Get GSTR8 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:GET:/gstr8/tcs",
+      "method": "GET",
+      "path": "/gstr8/tcs",
+      "tag": "GSTR8",
+      "summary": "Get TCS Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:GET:/gstr9/get8adetails",
+      "method": "GET",
+      "path": "/gstr9/get8adetails",
+      "tag": "GSTR9",
+      "summary": "Get GSTR9 8A Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:GET:/gstr9/getHsndetails",
+      "method": "GET",
+      "path": "/gstr9/getHsndetails",
+      "tag": "GSTR9",
+      "summary": "Get R1R1A HSN Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:GET:/gstr9/getautocal",
+      "method": "GET",
+      "path": "/gstr9/getautocal",
+      "tag": "GSTR9",
+      "summary": "Get GSTR9 Auto Calculated Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:GET:/gstr9/getdet",
+      "method": "GET",
+      "path": "/gstr9/getdet",
+      "tag": "GSTR9",
+      "summary": "Get GSTR9 Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:GET:/gstr9a/getautocal",
+      "method": "GET",
+      "path": "/gstr9a/getautocal",
+      "tag": "GSTR9A",
+      "summary": "Get GSTR9A Auto Calculated Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9a.json"
+    },
+    {
+      "id": "gst:GET:/gstr9a/getdet",
+      "method": "GET",
+      "path": "/gstr9a/getdet",
+      "tag": "GSTR9A",
+      "summary": "Get GSTR9A Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9a.json"
+    },
+    {
+      "id": "gst:GET:/gstr9c/getrecds",
+      "method": "GET",
+      "path": "/gstr9c/getrecds",
+      "tag": "GSTR9C",
+      "summary": "Get 9 Records for GSTR9C",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:GET:/gstr9c/retsum",
+      "method": "GET",
+      "path": "/gstr9c/retsum",
+      "tag": "GSTR9C",
+      "summary": "Get GSTR9C Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:GET:/ims/getfile",
+      "method": "GET",
+      "path": "/ims/getfile",
+      "tag": "IMS",
+      "summary": "Get IMS data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/ims/invoices",
+      "method": "GET",
+      "path": "/ims/invoices",
+      "tag": "IMS",
+      "summary": "Get IMS data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/ims/invoicescount",
+      "method": "GET",
+      "path": "/ims/invoicescount",
+      "tag": "IMS",
+      "summary": "Get IMS Count data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/ims/rejectedInvoices",
+      "method": "GET",
+      "path": "/ims/rejectedInvoices",
+      "tag": "IMS",
+      "summary": "Get Added Back Liability Records",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/ims/status",
+      "method": "GET",
+      "path": "/ims/status",
+      "tag": "IMS",
+      "summary": "Get IMS Status",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/ims/supplierInvoices",
+      "method": "GET",
+      "path": "/ims/supplierInvoices",
+      "tag": "IMS",
+      "summary": "Get Supplier IMS Invoices data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:GET:/itc03/close",
+      "method": "GET",
+      "path": "/itc03/close",
+      "tag": "ITC03",
+      "summary": "Get ITC03 Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:GET:/itc03/getinv",
+      "method": "GET",
+      "path": "/itc03/getinv",
+      "tag": "ITC03",
+      "summary": "Get ITC03 Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:GET:/itc03/retsum",
+      "method": "GET",
+      "path": "/itc03/retsum",
+      "tag": "ITC03",
+      "summary": "Get ITC03 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:GET:/itc04/getinv",
+      "method": "GET",
+      "path": "/itc04/getinv",
+      "tag": "ITC04",
+      "summary": "Get ITC04 Invoices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:GET:/itc04/retsum",
+      "method": "GET",
+      "path": "/itc04/retsum",
+      "tag": "ITC04",
+      "summary": "Get ITC04 Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:GET:/itc04/validateturnover",
+      "method": "GET",
+      "path": "/itc04/validateturnover",
+      "tag": "ITC04",
+      "summary": "Validate TurnOver ITC04 data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/bal",
+      "method": "GET",
+      "path": "/ledgers/bal",
+      "tag": "Ledger",
+      "summary": "Get Cash ITC Balance",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/cashdtl",
+      "method": "GET",
+      "path": "/ledgers/cashdtl",
+      "tag": "Ledger",
+      "summary": "Cash Ledger Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/itc",
+      "method": "GET",
+      "path": "/ledgers/itc",
+      "tag": "Ledger",
+      "summary": "ITC Ledger Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/itcblocktrandetls",
+      "method": "GET",
+      "path": "/ledgers/itcblocktrandetls",
+      "tag": "Ledger",
+      "summary": "Get Block Unblock",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/negliabstmt",
+      "method": "GET",
+      "path": "/ledgers/negliabstmt",
+      "tag": "Ledger",
+      "summary": "Get NegativeLiability Details of GSTR3B",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/rcmldg",
+      "method": "GET",
+      "path": "/ledgers/rcmldg",
+      "tag": "Ledger",
+      "summary": "Get RCM Statement",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/revrclmdtl",
+      "method": "GET",
+      "path": "/ledgers/revrclmdtl",
+      "tag": "Ledger",
+      "summary": "Get Credit Reversal and Re-claimed Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/tax",
+      "method": "GET",
+      "path": "/ledgers/tax",
+      "tag": "Ledger",
+      "summary": "Get Liability Ledger Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/ledgers/taxpayable",
+      "method": "GET",
+      "path": "/ledgers/taxpayable",
+      "tag": "Ledger",
+      "summary": "Get RetLiab Balance",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:GET:/notices/noticedetails",
+      "method": "GET",
+      "path": "/notices/noticedetails",
+      "tag": "Notices",
+      "summary": "Get Notice Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/notices.json"
+    },
+    {
+      "id": "gst:GET:/notices/noticelist",
+      "method": "GET",
+      "path": "/notices/noticelist",
+      "tag": "Notices",
+      "summary": "Get List Of Notices",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/notices.json"
+    },
+    {
+      "id": "gst:GET:/payment/chllnlst",
+      "method": "GET",
+      "path": "/payment/chllnlst",
+      "tag": "Payment",
+      "summary": "Get Challan History",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/payment.json"
+    },
+    {
+      "id": "gst:GET:/payment/chllnsum",
+      "method": "GET",
+      "path": "/payment/chllnsum",
+      "tag": "Payment",
+      "summary": "Get Challan Summary",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/payment.json"
+    },
+    {
+      "id": "gst:GET:/public/pref",
+      "method": "GET",
+      "path": "/public/pref",
+      "tag": "Public",
+      "summary": "Get Preference",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/public.json"
+    },
+    {
+      "id": "gst:GET:/public/rettrack",
+      "method": "GET",
+      "path": "/public/rettrack",
+      "tag": "Public",
+      "summary": "View and Track Returns",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/public.json"
+    },
+    {
+      "id": "gst:GET:/public/search",
+      "method": "GET",
+      "path": "/public/search",
+      "tag": "Public",
+      "summary": "Search Taxpayer",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/public.json"
+    },
+    {
+      "id": "gst:GET:/public/unregistered-applicants",
+      "method": "GET",
+      "path": "/public/unregistered-applicants",
+      "tag": "Public",
+      "summary": "Unregistered Applicants API",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/public.json"
+    },
+    {
+      "id": "gst:GET:/public/unregistered-applicants-validation",
+      "method": "GET",
+      "path": "/public/unregistered-applicants-validation",
+      "tag": "Public",
+      "summary": "Unregistered Applicants Validation",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/public.json"
+    },
+    {
+      "id": "gst:GET:/spike/rtncomplist",
+      "method": "GET",
+      "path": "/spike/rtncomplist",
+      "tag": "SPIKE",
+      "summary": "Get DRC01C/DRC01B Data",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/spike.json"
+    },
+    {
+      "id": "gst:GET:/spike/rtncompsum",
+      "method": "GET",
+      "path": "/spike/rtncompsum",
+      "tag": "SPIKE",
+      "summary": "get mismatch in GSTR1 and GSTR3B",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/spike.json"
+    },
+    {
+      "id": "gst:POST:/all/docupld",
+      "method": "POST",
+      "path": "/all/docupld",
+      "tag": "ALL",
+      "summary": "Document Upload",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:POST:/all/savemasters",
+      "method": "POST",
+      "path": "/all/savemasters",
+      "tag": "ALL",
+      "summary": "Save User Masters",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:POST:/cmp/retevcfile",
+      "method": "POST",
+      "path": "/cmp/retevcfile",
+      "tag": "CMP",
+      "summary": "File CMP data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus"
+      ],
+      "file": "operations-gst/cmp.json"
+    },
+    {
+      "id": "gst:POST:/cmp/retfile",
+      "method": "POST",
+      "path": "/cmp/retfile",
+      "tag": "CMP",
+      "summary": "File CMP data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus"
+      ],
+      "file": "operations-gst/cmp.json"
+    },
+    {
+      "id": "gst:POST:/cmp/savecmp",
+      "method": "POST",
+      "path": "/cmp/savecmp",
+      "tag": "CMP",
+      "summary": "Save CMP",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/cmp/retfile",
+        "gst:POST:/cmp/retevcfile"
+      ],
+      "file": "operations-gst/cmp.json"
+    },
+    {
+      "id": "gst:POST:/gstr1/reset",
+      "method": "POST",
+      "path": "/gstr1/reset",
+      "tag": "GSTR1",
+      "summary": "Reset GSTR1 Data",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:POST:/gstr1/retevcfile",
+      "method": "POST",
+      "path": "/gstr1/retevcfile",
+      "tag": "GSTR1",
+      "summary": "File GSTR1 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr1/retsave"
+      ],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:POST:/gstr1/retfile",
+      "method": "POST",
+      "path": "/gstr1/retfile",
+      "tag": "GSTR1",
+      "summary": "File GSTR1 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr1/retsave"
+      ],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:POST:/gstr1a/reset",
+      "method": "POST",
+      "path": "/gstr1a/reset",
+      "tag": "GSTR1A",
+      "summary": "Reset GSTR1A Data",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:POST:/gstr1a/retevcfile",
+      "method": "POST",
+      "path": "/gstr1a/retevcfile",
+      "tag": "GSTR1A",
+      "summary": "File GSTR1A data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr1a/retsave"
+      ],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:POST:/gstr1a/retfile",
+      "method": "POST",
+      "path": "/gstr1a/retfile",
+      "tag": "GSTR1A",
+      "summary": "File GSTR1A data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr1a/retsave"
+      ],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:POST:/gstr2x/retevcfile",
+      "method": "POST",
+      "path": "/gstr2x/retevcfile",
+      "tag": "GSTR2X",
+      "summary": "File GSTR2X data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr2x/retsave"
+      ],
+      "file": "operations-gst/gstr2x.json"
+    },
+    {
+      "id": "gst:POST:/gstr2x/retfile",
+      "method": "POST",
+      "path": "/gstr2x/retfile",
+      "tag": "GSTR2X",
+      "summary": "File GSTR2X data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr2x/retsave"
+      ],
+      "file": "operations-gst/gstr2x.json"
+    },
+    {
+      "id": "gst:POST:/gstr3b/cmpint",
+      "method": "POST",
+      "path": "/gstr3b/cmpint",
+      "tag": "GSTR3B",
+      "summary": "Recompute System Calulated Interest",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:POST:/gstr3b/retevcfile",
+      "method": "POST",
+      "path": "/gstr3b/retevcfile",
+      "tag": "GSTR3B",
+      "summary": "File GSTR3B data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr3b/retsave"
+      ],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:POST:/gstr3b/retfile",
+      "method": "POST",
+      "path": "/gstr3b/retfile",
+      "tag": "GSTR3B",
+      "summary": "File GSTR3B data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr3b/retsave"
+      ],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:POST:/gstr3b/savercmopnbal",
+      "method": "POST",
+      "path": "/gstr3b/savercmopnbal",
+      "tag": "GSTR3B",
+      "summary": "Submit RCM opening balance",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:POST:/gstr3b/validateautocalculatedata",
+      "method": "POST",
+      "path": "/gstr3b/validateautocalculatedata",
+      "tag": "GSTR3B",
+      "summary": "validate GSTR3B against auto calculated values",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:POST:/gstr4/retevcfile",
+      "method": "POST",
+      "path": "/gstr4/retevcfile",
+      "tag": "GSTR4",
+      "summary": "File GSTR4 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr4/retsave"
+      ],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:POST:/gstr4/retfile",
+      "method": "POST",
+      "path": "/gstr4/retfile",
+      "tag": "GSTR4",
+      "summary": "File GSTR4 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr4/retsave"
+      ],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:POST:/gstr4/retoffset",
+      "method": "POST",
+      "path": "/gstr4/retoffset",
+      "tag": "GSTR4",
+      "summary": "API call for offsetting the liabilities and interest from GSTR4",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:POST:/gstr4/retsubmit",
+      "method": "POST",
+      "path": "/gstr4/retsubmit",
+      "tag": "GSTR4",
+      "summary": "Submit GSTR4 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr4/retsave"
+      ],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:POST:/gstr4annual/retevcfile",
+      "method": "POST",
+      "path": "/gstr4annual/retevcfile",
+      "tag": "GSTR4Annual",
+      "summary": "File GSTR4 Annual data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr4annual/retsave"
+      ],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:POST:/gstr4annual/retfile",
+      "method": "POST",
+      "path": "/gstr4annual/retfile",
+      "tag": "GSTR4Annual",
+      "summary": "File GSTR4Annual data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr4annual/retsave"
+      ],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:POST:/gstr5/retevcfile",
+      "method": "POST",
+      "path": "/gstr5/retevcfile",
+      "tag": "GSTR5",
+      "summary": "File GSTR5 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr5/retsave"
+      ],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:POST:/gstr5/retfile",
+      "method": "POST",
+      "path": "/gstr5/retfile",
+      "tag": "GSTR5",
+      "summary": "File GSTR5",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr5/retsave"
+      ],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:POST:/gstr5/retsubmit",
+      "method": "POST",
+      "path": "/gstr5/retsubmit",
+      "tag": "GSTR5",
+      "summary": "Submit",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr5/retsave"
+      ],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:POST:/gstr6/retcal",
+      "method": "POST",
+      "path": "/gstr6/retcal",
+      "tag": "GSTR6",
+      "summary": "GSTR6 Calculate R6",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:POST:/gstr6/retevcfile",
+      "method": "POST",
+      "path": "/gstr6/retevcfile",
+      "tag": "GSTR6",
+      "summary": "File GSTR6 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:POST:/gstr6/retfile",
+      "method": "POST",
+      "path": "/gstr6/retfile",
+      "tag": "GSTR6",
+      "summary": "File GSTR6 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:POST:/gstr6/retsubmit",
+      "method": "POST",
+      "path": "/gstr6/retsubmit",
+      "tag": "GSTR6",
+      "summary": "Submit GSTR6 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr6/retsave"
+      ],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:POST:/gstr6/savecrossitcdetails",
+      "method": "POST",
+      "path": "/gstr6/savecrossitcdetails",
+      "tag": "GSTR6",
+      "summary": "Save GSTR6 Cross ITC details",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:POST:/gstr7/retevcfile",
+      "method": "POST",
+      "path": "/gstr7/retevcfile",
+      "tag": "GSTR7",
+      "summary": "File GSTR7 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr7/retsave"
+      ],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:POST:/gstr7/retfile",
+      "method": "POST",
+      "path": "/gstr7/retfile",
+      "tag": "GSTR7",
+      "summary": "File GSTR7",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr7/retsave"
+      ],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:POST:/gstr8/retevcfile",
+      "method": "POST",
+      "path": "/gstr8/retevcfile",
+      "tag": "GSTR8",
+      "summary": "File GSTR8 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr8/retsave"
+      ],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:POST:/gstr8/retfile",
+      "method": "POST",
+      "path": "/gstr8/retfile",
+      "tag": "GSTR8",
+      "summary": "File GSTR8 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr8/retsave"
+      ],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:POST:/gstr9/retevcfile",
+      "method": "POST",
+      "path": "/gstr9/retevcfile",
+      "tag": "GSTR9",
+      "summary": "File GSTR9 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9/retsave"
+      ],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:POST:/gstr9/retfile",
+      "method": "POST",
+      "path": "/gstr9/retfile",
+      "tag": "GSTR9",
+      "summary": "File GSTR9",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9/retsave"
+      ],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:POST:/gstr9a/retevcfile",
+      "method": "POST",
+      "path": "/gstr9a/retevcfile",
+      "tag": "GSTR9A",
+      "summary": "File GSTR9A data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9a/retsave"
+      ],
+      "file": "operations-gst/gstr9a.json"
+    },
+    {
+      "id": "gst:POST:/gstr9a/retfile",
+      "method": "POST",
+      "path": "/gstr9a/retfile",
+      "tag": "GSTR9A",
+      "summary": "File GSTR9A",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9a/retsave"
+      ],
+      "file": "operations-gst/gstr9a.json"
+    },
+    {
+      "id": "gst:POST:/gstr9c/retevcfile",
+      "method": "POST",
+      "path": "/gstr9c/retevcfile",
+      "tag": "GSTR9C",
+      "summary": "File GSTR9C data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9c/retsave"
+      ],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:POST:/gstr9c/retfile",
+      "method": "POST",
+      "path": "/gstr9c/retfile",
+      "tag": "GSTR9C",
+      "summary": "File GSTR9C",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/gstr9c/retsave"
+      ],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:POST:/itc03/retevcfile",
+      "method": "POST",
+      "path": "/itc03/retevcfile",
+      "tag": "ITC03",
+      "summary": "File ITC03 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc03/retsave"
+      ],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:POST:/itc03/retfile",
+      "method": "POST",
+      "path": "/itc03/retfile",
+      "tag": "ITC03",
+      "summary": "File ITC03 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc03/retsave"
+      ],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:POST:/itc04/retevcfile",
+      "method": "POST",
+      "path": "/itc04/retevcfile",
+      "tag": "ITC04",
+      "summary": "File ITC04 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc04/retsave"
+      ],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:POST:/itc04/retfile",
+      "method": "POST",
+      "path": "/itc04/retfile",
+      "tag": "ITC04",
+      "summary": "File ITC04 data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc04/retsave"
+      ],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:POST:/ledgers/utlcsh",
+      "method": "POST",
+      "path": "/ledgers/utlcsh",
+      "tag": "Ledger",
+      "summary": "Utilize Cash",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:POST:/ledgers/utlitc",
+      "method": "POST",
+      "path": "/ledgers/utlitc",
+      "tag": "Ledger",
+      "summary": "Utilize ITC",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/ledger.json"
+    },
+    {
+      "id": "gst:POST:/payment/generateChallan",
+      "method": "POST",
+      "path": "/payment/generateChallan",
+      "tag": "Payment",
+      "summary": "Generate Challan",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/payment.json"
+    },
+    {
+      "id": "gst:POST:/payment/validatechlnrsn",
+      "method": "POST",
+      "path": "/payment/validatechlnrsn",
+      "tag": "Payment",
+      "summary": "Validate Challan Reason",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-gst/payment.json"
+    },
+    {
+      "id": "gst:POST:/spike/retfile",
+      "method": "POST",
+      "path": "/spike/retfile",
+      "tag": "SPIKE",
+      "summary": "File SPIKE data",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus"
+      ],
+      "file": "operations-gst/spike.json"
+    },
+    {
+      "id": "gst:PUT:/all/savepref",
+      "method": "PUT",
+      "path": "/all/savepref",
+      "tag": "ALL",
+      "summary": "Save Preference",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/all.json"
+    },
+    {
+      "id": "gst:PUT:/gstr1/retsave",
+      "method": "PUT",
+      "path": "/gstr1/retsave",
+      "tag": "GSTR1",
+      "summary": "Save GSTR1 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr1/retfile",
+        "gst:POST:/gstr1/retevcfile"
+      ],
+      "file": "operations-gst/gstr1.json"
+    },
+    {
+      "id": "gst:PUT:/gstr1a/retsave",
+      "method": "PUT",
+      "path": "/gstr1a/retsave",
+      "tag": "GSTR1A",
+      "summary": "Save GSTR1A data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr1a/retfile",
+        "gst:POST:/gstr1a/retevcfile"
+      ],
+      "file": "operations-gst/gstr1a.json"
+    },
+    {
+      "id": "gst:PUT:/gstr2b/gen2b",
+      "method": "PUT",
+      "path": "/gstr2b/gen2b",
+      "tag": "GSTR2B",
+      "summary": "Generate 2B on demand",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr2b.json"
+    },
+    {
+      "id": "gst:PUT:/gstr2x/retsave",
+      "method": "PUT",
+      "path": "/gstr2x/retsave",
+      "tag": "GSTR2X",
+      "summary": "Save GSTR2X data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr2x/retfile",
+        "gst:POST:/gstr2x/retevcfile"
+      ],
+      "file": "operations-gst/gstr2x.json"
+    },
+    {
+      "id": "gst:PUT:/gstr3b/liabilitybreakup",
+      "method": "PUT",
+      "path": "/gstr3b/liabilitybreakup",
+      "tag": "GSTR3B",
+      "summary": "Save past liability breakup GSTR3B Data",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:PUT:/gstr3b/retoffset",
+      "method": "PUT",
+      "path": "/gstr3b/retoffset",
+      "tag": "GSTR3B",
+      "summary": "Offset Liability GSTR3B Data",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:PUT:/gstr3b/retsave",
+      "method": "PUT",
+      "path": "/gstr3b/retsave",
+      "tag": "GSTR3B",
+      "summary": "Save GSTR3B data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr3b/retfile",
+        "gst:POST:/gstr3b/retevcfile"
+      ],
+      "file": "operations-gst/gstr3b.json"
+    },
+    {
+      "id": "gst:PUT:/gstr4/retsave",
+      "method": "PUT",
+      "path": "/gstr4/retsave",
+      "tag": "GSTR4",
+      "summary": "Save GSTR4 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr4/retsubmit",
+        "gst:POST:/gstr4/retfile",
+        "gst:POST:/gstr4/retevcfile"
+      ],
+      "file": "operations-gst/gstr4.json"
+    },
+    {
+      "id": "gst:PUT:/gstr4annual/retsave",
+      "method": "PUT",
+      "path": "/gstr4annual/retsave",
+      "tag": "GSTR4Annual",
+      "summary": "Save GSTR4Annual data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr4annual/retfile",
+        "gst:POST:/gstr4annual/retevcfile"
+      ],
+      "file": "operations-gst/gstr4annual.json"
+    },
+    {
+      "id": "gst:PUT:/gstr5/retoffset",
+      "method": "PUT",
+      "path": "/gstr5/retoffset",
+      "tag": "GSTR5",
+      "summary": "Offset Liability GSTR5 data",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:PUT:/gstr5/retsave",
+      "method": "PUT",
+      "path": "/gstr5/retsave",
+      "tag": "GSTR5",
+      "summary": "Save GSTR5 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr5/retsubmit",
+        "gst:POST:/gstr5/retfile",
+        "gst:POST:/gstr5/retevcfile"
+      ],
+      "file": "operations-gst/gstr5.json"
+    },
+    {
+      "id": "gst:PUT:/gstr6/retoffsetlatefee",
+      "method": "PUT",
+      "path": "/gstr6/retoffsetlatefee",
+      "tag": "GSTR6",
+      "summary": "Offset Liability GSTR6 Late fee",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:PUT:/gstr6/retsave",
+      "method": "PUT",
+      "path": "/gstr6/retsave",
+      "tag": "GSTR6",
+      "summary": "Save GSTR6 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr6/retsubmit",
+        "gst:POST:/gstr6/retfile",
+        "gst:POST:/gstr6/retevcfile"
+      ],
+      "file": "operations-gst/gstr6.json"
+    },
+    {
+      "id": "gst:PUT:/gstr7/retsave",
+      "method": "PUT",
+      "path": "/gstr7/retsave",
+      "tag": "GSTR7",
+      "summary": "Save GSTR7",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr7/retfile",
+        "gst:POST:/gstr7/retevcfile"
+      ],
+      "file": "operations-gst/gstr7.json"
+    },
+    {
+      "id": "gst:PUT:/gstr8/retsave",
+      "method": "PUT",
+      "path": "/gstr8/retsave",
+      "tag": "GSTR8",
+      "summary": "Save GSTR8 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr8/retfile",
+        "gst:POST:/gstr8/retevcfile"
+      ],
+      "file": "operations-gst/gstr8.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9/create8adetails",
+      "method": "PUT",
+      "path": "/gstr9/create8adetails",
+      "tag": "GSTR9",
+      "summary": "Create 8A Data API",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9/retsave",
+      "method": "PUT",
+      "path": "/gstr9/retsave",
+      "tag": "GSTR9",
+      "summary": "Save GSTR9",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr9/retfile",
+        "gst:POST:/gstr9/retevcfile"
+      ],
+      "file": "operations-gst/gstr9.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9a/retsave",
+      "method": "PUT",
+      "path": "/gstr9a/retsave",
+      "tag": "GSTR9A",
+      "summary": "Save GSTR9A",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr9a/retfile",
+        "gst:POST:/gstr9a/retevcfile"
+      ],
+      "file": "operations-gst/gstr9a.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9c/gencert",
+      "method": "PUT",
+      "path": "/gstr9c/gencert",
+      "tag": "GSTR9C",
+      "summary": "Generate Certificate",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9c/genhash",
+      "method": "PUT",
+      "path": "/gstr9c/genhash",
+      "tag": "GSTR9C",
+      "summary": "Hash Generator",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:PUT:/gstr9c/retsave",
+      "method": "PUT",
+      "path": "/gstr9c/retsave",
+      "tag": "GSTR9C",
+      "summary": "Save GSTR9C",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/gstr9c/retfile",
+        "gst:POST:/gstr9c/retevcfile"
+      ],
+      "file": "operations-gst/gstr9c.json"
+    },
+    {
+      "id": "gst:PUT:/ims/reset",
+      "method": "PUT",
+      "path": "/ims/reset",
+      "tag": "IMS",
+      "summary": "Reset IMS Data",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:PUT:/ims/save",
+      "method": "PUT",
+      "path": "/ims/save",
+      "tag": "IMS",
+      "summary": "Save IMS Data",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-gst/ims.json"
+    },
+    {
+      "id": "gst:PUT:/itc03/retoffset",
+      "method": "PUT",
+      "path": "/itc03/retoffset",
+      "tag": "ITC03",
+      "summary": "Offset Liability ITC03 data",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:PUT:/itc03/retsave",
+      "method": "PUT",
+      "path": "/itc03/retsave",
+      "tag": "ITC03",
+      "summary": "Save ITC03 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/itc03/retfile",
+        "gst:POST:/itc03/retevcfile"
+      ],
+      "file": "operations-gst/itc03.json"
+    },
+    {
+      "id": "gst:PUT:/itc04/retsave",
+      "method": "PUT",
+      "path": "/itc04/retsave",
+      "tag": "ITC04",
+      "summary": "Save ITC04 data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/itc04/retfile",
+        "gst:POST:/itc04/retevcfile"
+      ],
+      "file": "operations-gst/itc04.json"
+    },
+    {
+      "id": "gst:PUT:/spike/spikesave",
+      "method": "PUT",
+      "path": "/spike/spikesave",
+      "tag": "SPIKE",
+      "summary": "Save SPIKE data",
+      "sideEffect": "write",
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      },
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/spike/retfile"
+      ],
+      "file": "operations-gst/spike.json"
+    }
+  ]
+}

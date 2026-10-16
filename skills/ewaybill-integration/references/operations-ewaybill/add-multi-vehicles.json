@@ -1,0 +1,110 @@
+{
+  "area": "ewaybill",
+  "spec_as_of": "2026-10-13",
+  "tag": "Add Multi Vehicles",
+  "count": 1,
+  "operations": [
+    {
+      "id": "ewaybill:POST:/ewaybillapi/v1.03/ewayapi/addmulti",
+      "slug": "ewaybill-ewaybillapi-v1-03-ewayapi-addmulti-post",
+      "api": "ewaybill",
+      "method": "POST",
+      "path": "/ewaybillapi/v1.03/ewayapi/addmulti",
+      "tag": "Add Multi Vehicles",
+      "summary": "Add Multi Vehicles",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "required": [
+          "ewbNo",
+          "groupNo",
+          "quantity",
+          "transDocDate",
+          "transDocNo",
+          "vehicleNo"
+        ],
+        "type": "object",
+        "properties": {
+          "ewbNo": {
+            "type": "number",
+            "description": "Ewaybill Number"
+          },
+          "vehicleNo": {
+            "type": "string",
+            "description": "Vehicle Number"
+          },
+          "groupNo": {
+            "type": "string",
+            "description": "Group Number"
+          },
+          "transDocNo": {
+            "maxLength": 15,
+            "type": "string",
+            "description": "Transport Document Number"
+          },
+          "transDocDate": {
+            "pattern": "[0-3][0-9]/[0-1][0-9]/[2][0][1-2][0-9]",
+            "type": "string",
+            "description": "Transport Document Date"
+          },
+          "quantity": {
+            "type": "integer",
+            "description": "Quantity"
+          }
+        }
+      },
+      "authFlow": "ewb_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "ewbNo": 381009282489,
+        "vehicleNo": "ABC1234",
+        "groupNo": "1",
+        "transDocNo": "12",
+        "transDocDate": "11/12/2024",
+        "quantity": 1
+      }
+    }
+  ]
+}

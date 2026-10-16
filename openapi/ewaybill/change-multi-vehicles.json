@@ -1,0 +1,191 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Way Bill: Change Multi Vehicles",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Way Bill API in the group Change Multi Vehicles, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Change Multi Vehicles"
+    }
+  ],
+  "paths": {
+    "/ewaybillapi/v1.03/ewayapi/updtmulti": {
+      "post": {
+        "operationId": "ewaybill-ewaybillapi-v1-03-ewayapi-updtmulti-post",
+        "summary": "Change Multi Vehicles",
+        "tags": [
+          "Change Multi Vehicles"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "ewbNo",
+                  "fromPlace",
+                  "fromState",
+                  "groupNo",
+                  "newTranNo",
+                  "newVehicleNo",
+                  "oldTranNo",
+                  "oldvehicleNo",
+                  "reasonCode",
+                  "reasonRem"
+                ],
+                "type": "object",
+                "properties": {
+                  "ewbNo": {
+                    "type": "number",
+                    "description": "Ewaybill Number"
+                  },
+                  "groupNo": {
+                    "type": "number",
+                    "description": "Group Number"
+                  },
+                  "oldvehicleNo": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "description": "Old Vehicle Number"
+                  },
+                  "newVehicleNo": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "description": "New Vehicle Number"
+                  },
+                  "oldTranNo": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "description": "Old Tran Number"
+                  },
+                  "newTranNo": {
+                    "maxLength": 15,
+                    "type": "string",
+                    "description": "New Tran Number"
+                  },
+                  "fromPlace": {
+                    "maxLength": 50,
+                    "type": "string",
+                    "description": "Place of Consignor"
+                  },
+                  "fromState": {
+                    "maximum": 2,
+                    "type": "integer",
+                    "description": "State of Consignor"
+                  },
+                  "reasonCode": {
+                    "maxLength": 1,
+                    "minLength": 1,
+                    "type": "string",
+                    "description": "Reason Code"
+                  },
+                  "reasonRem": {
+                    "maxLength": 50,
+                    "type": "string",
+                    "description": "Remarks"
+                  }
+                }
+              },
+              "example": {
+                "ewbNo": 381009282489,
+                "groupNo": 1,
+                "oldvehicleNo": "ABC1234",
+                "newVehicleNo": "ABC4321",
+                "oldTranNo": "sumitra/06/2020",
+                "newTranNo": "sumitra/06/2021",
+                "fromPlace": "FRAZER TOWN",
+                "fromState": 29,
+                "reasonCode": "1",
+                "reasonRem": "Due to Break Down"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "ewb_session"
+      }
+    }
+  }
+}

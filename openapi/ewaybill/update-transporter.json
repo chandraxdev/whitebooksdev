@@ -1,0 +1,139 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Way Bill: Update Transporter",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Way Bill API in the group Update Transporter, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Update Transporter"
+    }
+  ],
+  "paths": {
+    "/ewaybillapi/v1.03/ewayapi/updatetransporter": {
+      "post": {
+        "operationId": "ewaybill-ewaybillapi-v1-03-ewayapi-updatetransporter-post",
+        "summary": "Update Transporter",
+        "tags": [
+          "Update Transporter"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "irp",
+            "in": "query",
+            "required": false,
+            "description": "e-WayBill Server Type(NIC1/NIC2)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ewbNo": {
+                    "type": "number",
+                    "description": "EwayBill Number"
+                  },
+                  "transporterId": {
+                    "type": "string",
+                    "description": "15 Digit Transporter GSTIN/TRANSIN"
+                  }
+                }
+              },
+              "example": {
+                "ewbNo": 381009282489,
+                "transporterId": "05AAACG0904A1ZL"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "ewb_session"
+      }
+    }
+  }
+}

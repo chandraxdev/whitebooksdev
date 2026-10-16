@@ -1,0 +1,5 @@
+{
+  "name": "whitebooks-developer",
+  "version": "1.0.8",
+  "description": "Answer questions about, and build, GST, e-Invoice and e-Way Bill integrations on the WhiteBooks APIs: endpoints, payloads and errors explained, sample requests in any language, and ready-made client code in Java, TypeScript and Python to add to an existing app."
+}

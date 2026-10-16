@@ -1,0 +1,174 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "count": 11,
+  "tags": [
+    {
+      "tag": "Authentication",
+      "file": "operations-einvoice/authentication.json",
+      "count": 1
+    },
+    {
+      "tag": "Cancel IRN",
+      "file": "operations-einvoice/cancel-irn.json",
+      "count": 1
+    },
+    {
+      "tag": "Generate Ewaybill",
+      "file": "operations-einvoice/generate-ewaybill.json",
+      "count": 1
+    },
+    {
+      "tag": "Generate IRN",
+      "file": "operations-einvoice/generate-irn.json",
+      "count": 1
+    },
+    {
+      "tag": "Get B2C QR Code Details",
+      "file": "operations-einvoice/get-b2c-qr-code-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get EInvoice Details",
+      "file": "operations-einvoice/get-einvoice-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Ewaybill Details by IRN",
+      "file": "operations-einvoice/get-ewaybill-details-by-irn.json",
+      "count": 1
+    },
+    {
+      "tag": "Get GSTN Details",
+      "file": "operations-einvoice/get-gstn-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get IRN details by Doc Details",
+      "file": "operations-einvoice/get-irn-details-by-doc-details.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Rejected IRNs",
+      "file": "operations-einvoice/get-rejected-irns.json",
+      "count": 1
+    },
+    {
+      "tag": "Get Sync GSTIN From CP",
+      "file": "operations-einvoice/get-sync-gstin-from-cp.json",
+      "count": 1
+    }
+  ],
+  "operations": [
+    {
+      "id": "einvoice:GET:/einvoice/authenticate",
+      "method": "GET",
+      "path": "/einvoice/authenticate",
+      "tag": "Authentication",
+      "summary": "Authentication Request",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/authentication.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/qrcode",
+      "method": "GET",
+      "path": "/einvoice/qrcode",
+      "tag": "Get B2C QR Code Details",
+      "summary": "Get B2C QR Code Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-b2c-qr-code-details.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/GETEWAYBILLIRN/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/GETEWAYBILLIRN/version/V1_03",
+      "tag": "Get Ewaybill Details by IRN",
+      "summary": "Get Ewaybill Details by IRN",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-ewaybill-details-by-irn.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/GETIRN/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/GETIRN/version/V1_03",
+      "tag": "Get EInvoice Details",
+      "summary": "Get EInvoice Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-einvoice-details.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/GETIRNBYDOCDETAILS/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/GETIRNBYDOCDETAILS/version/V1_03",
+      "tag": "Get IRN details by Doc Details",
+      "summary": "Get IRN details by Doc Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-irn-details-by-doc-details.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/GETREJECTEDIRNS/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/GETREJECTEDIRNS/version/V1_03",
+      "tag": "Get Rejected IRNs",
+      "summary": "Get Rejected IRNs",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-rejected-irns.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/GSTNDETAILS/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/GSTNDETAILS/version/V1_03",
+      "tag": "Get GSTN Details",
+      "summary": "Get GSTN Details",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-gstn-details.json"
+    },
+    {
+      "id": "einvoice:GET:/einvoice/type/SYNC_GSTIN_FROMCP/version/V1_03",
+      "method": "GET",
+      "path": "/einvoice/type/SYNC_GSTIN_FROMCP/version/V1_03",
+      "tag": "Get Sync GSTIN From CP",
+      "summary": "Get Sync GSTIN From CP",
+      "sideEffect": "read",
+      "related": [],
+      "file": "operations-einvoice/get-sync-gstin-from-cp.json"
+    },
+    {
+      "id": "einvoice:POST:/einvoice/type/CANCEL/version/V1_03",
+      "method": "POST",
+      "path": "/einvoice/type/CANCEL/version/V1_03",
+      "tag": "Cancel IRN",
+      "summary": "Cancel IRN",
+      "sideEffect": "irreversible",
+      "related": [],
+      "file": "operations-einvoice/cancel-irn.json"
+    },
+    {
+      "id": "einvoice:POST:/einvoice/type/GENERATE/version/V1_03",
+      "method": "POST",
+      "path": "/einvoice/type/GENERATE/version/V1_03",
+      "tag": "Generate IRN",
+      "summary": "Generate IRN",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-einvoice/generate-irn.json"
+    },
+    {
+      "id": "einvoice:POST:/einvoice/type/GENERATE_EWAYBILL/version/V1_03",
+      "method": "POST",
+      "path": "/einvoice/type/GENERATE_EWAYBILL/version/V1_03",
+      "tag": "Generate Ewaybill",
+      "summary": "Generate Ewaybill",
+      "sideEffect": "write",
+      "related": [],
+      "file": "operations-einvoice/generate-ewaybill.json"
+    }
+  ]
+}

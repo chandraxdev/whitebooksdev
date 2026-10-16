@@ -1,0 +1,616 @@
+{
+  "skill": "ewaybill-integration",
+  "client_version": "1.0.8",
+  "spec_as_of": "2026-10-13",
+  "dependencies": [
+    {
+      "language": "java",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.22.3",
+      "ecosystem": "maven"
+    },
+    {
+      "language": "python",
+      "name": "requests",
+      "version": "2.32.5",
+      "ecosystem": "pip"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "75bac93a79c5fa239b33df95b7b6dcf9501aa2972a02fec91e466bbed9b93ee0",
+      "bytes": 150
+    },
+    {
+      "path": "assets/client/java/test/whitebooks/EwaybillSmokeTest.java",
+      "sha256": "16ff5bdd272d04694968b0e54a34a7294584a70c741bac6969e51cdb3e7f11e6",
+      "bytes": 1298
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillAddMultiVehicles.java",
+      "sha256": "c2d131547684bf2385a12b746a3b2d7dedf66751c3bd4e454a9fa666f46f5a08",
+      "bytes": 3132
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillCancelEWayBill.java",
+      "sha256": "d8869f836b9aa3fdab82e5d278fbb0851665836bbc2ecaecb7a98f64da15260f",
+      "bytes": 3299
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillChangeMultiVehicles.java",
+      "sha256": "ef4f5bb602a0ba109b8595eaead14759bb96d2a020f5cc295a0626463c289075",
+      "bytes": 3151
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillClosureEWayBill.java",
+      "sha256": "eed3d09b439529f6f33e27439e7ba21801cb0cf22c634fff81317f3456710d87",
+      "bytes": 3116
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillExtendValidityOfEWayBill.java",
+      "sha256": "e9d113ebe760c606a21e27ca26c3d14ddb00c90c0fa9373eebbc96278bf74a6d",
+      "bytes": 3212
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGenerateConsolidatedEwaybill.java",
+      "sha256": "ff9cfdce41ff69483b7a603f0976811062dbf580885746a212504f250573a8ca",
+      "bytes": 3281
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGenerateEwayBill.java",
+      "sha256": "b30327befff9563e4e6f2f7245154c2d997e5453c9f04ea4180d64cceb274402",
+      "bytes": 2976
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetConsolidatedEWayBill.java",
+      "sha256": "016b87cefb2d693684c04c4b119ec90f10aadde64256925b40d385dfd0f0a4e7",
+      "bytes": 1916
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetErrorList.java",
+      "sha256": "6faa7fcc5ad7f20d86ab6d2a6048549fc062cc11ac8ce6f5b398baf62129ad76",
+      "bytes": 1633
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwayBillForTransporterByDate.java",
+      "sha256": "4c1c40725f64c7ad3e35e5c39d22b25510556a1f231d626a1e5479bd086ace92",
+      "bytes": 2067
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwayBillsByDate.java",
+      "sha256": "131233f25e74923e9cdf546abf300fdc7076654b2d2c0df866d8199e68cdade8",
+      "bytes": 1960
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwayBillsByParties.java",
+      "sha256": "4cc8dde5c5f47d1d6ab8e73a8243686e0a26d7aef1275275e61b48fb9b3571de",
+      "bytes": 2002
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwayBillsRejectedByOthers.java",
+      "sha256": "7aec0dd556cc116364ef09e73576580dd2d066562ec03b2112c63a1cbc66374a",
+      "bytes": 2035
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwaybillByConsigner.java",
+      "sha256": "b6703f767e01ca8cf12e04e1093b5d723524636622ced1aabef3356e1028e178",
+      "bytes": 2103
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwaybillDetails.java",
+      "sha256": "eed784a7ceb936ac04b69eeab4b513249d8587075c28428f63fba8d7dc554bf2",
+      "bytes": 1868
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwaybillReportByTransporterAssignedDate.java",
+      "sha256": "930ca0316278da9d2c4cb7b15a9d7ff3ef31a5b1ccc55ee59ede88896430f4bc",
+      "bytes": 2259
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwaybillsForTransporterByGstin.java",
+      "sha256": "22997e6fb9167527b8896b9a5a951b8d953bb8d856af1dd2a9739c49d9ed0c01",
+      "bytes": 2185
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetEwaybillsForTransporterByState.java",
+      "sha256": "910181326af1010ff6373fd69cf5f871f8c57596c1301f1af168e4d48d1a78b4",
+      "bytes": 2187
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetGstinDetails.java",
+      "sha256": "3f245275a2a4709f9922e90e8092b55ffa7043f2f8f9d97d73d301e23586d992",
+      "bytes": 1880
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetHsnDetails.java",
+      "sha256": "0ffd708830c460710c8b24d66b2104e49d7f10c5e12674415619ec0412e650dd",
+      "bytes": 1920
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillGetTransinDetails.java",
+      "sha256": "443f383b1742c999db794a94eaf3e0022c4f734ae50df1beb087fda012564c7c",
+      "bytes": 1925
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillInitiateMultiVehicleMovement.java",
+      "sha256": "0f837319a40dd4d271c88cea7fc0fa8ba11d0fc641bf411744b223e09495b789",
+      "bytes": 3189
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillRegenerateConsolidatedEWayBillApi.java",
+      "sha256": "29171608ea28fc1173ae0590deb799cf59f4a242201c72b6297808820ec5af0b",
+      "bytes": 2858
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillRejectEwaybill.java",
+      "sha256": "f09136293395052f66ea120fb13aa8290d1fd2479113e5b8555018eaeed8f04d",
+      "bytes": 3108
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillUpdatePartBVehicleNumber.java",
+      "sha256": "28fbeebf41bf13b64cfaf88db8e8eaaaa2d86db86a7f5fd2fd7481bfc69f601a",
+      "bytes": 2853
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwaybillUpdateTransporter.java",
+      "sha256": "d7daaffdcf8d84e3d60f3ad26602963590955d0b0b8c324aef17efde6bddcfb4",
+      "bytes": 2953
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwbCancelRequest.java",
+      "sha256": "eb485981d3d58cd668e89db763c3ec92bba8ab54906177b075fa8c7d49115390",
+      "bytes": 2123
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwbGenerateRequest.java",
+      "sha256": "a81a0b94b0cd4660289de10dea9f9e3b02f80860061c6f4e0cc67c16e7ba3c9a",
+      "bytes": 4760
+    },
+    {
+      "path": "assets/client/java/whitebooks/EwbPartBRequest.java",
+      "sha256": "aaac8754d6b76bc13b6a73711aa87f2fbe69b34a733746928dae15cc75d73dbf",
+      "bytes": 2386
+    },
+    {
+      "path": "assets/client/python/tests/test_smoke_ewaybill.py",
+      "sha256": "4a41c4c5fe7ef41420c639821edbc19a98aad3758e80e9a86e286acb05838c9e",
+      "bytes": 1016
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/__init__.py",
+      "sha256": "2067cf0eff1fc1fc13062a9b832b19fd96afc231a791019c394f570e598a8aac",
+      "bytes": 449
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/add_multi_vehicles.py",
+      "sha256": "2fe0f7020e70ae74835339f5003695be4f3dde83a6e53855b9446c0e6308f4de",
+      "bytes": 2486
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/cancel_e_way_bill.py",
+      "sha256": "fac0fcd32350d866237437b25f7be334bb4e76cea7967cf009ddda4f0db8598e",
+      "bytes": 2657
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/change_multi_vehicles.py",
+      "sha256": "dfec60f5fa3fe78214fa269900a9fffe34bc0fbac30795e71b3db10280e8f78f",
+      "bytes": 2494
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/closure_e_way_bill.py",
+      "sha256": "a0ca1d299225c045ab99b85f2bdf0c6b33c8efcd91a4d9ea60390b06c070cf09",
+      "bytes": 2476
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/extend_validity_of_e_way_bill.py",
+      "sha256": "d98d201524c750fa65acb195060ff9e7905265d01f70d8cc5b10402675ebfa74",
+      "bytes": 2527
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/generate_consolidated_ewaybill.py",
+      "sha256": "7553785a61734b1fff78ffad1c278851205d25d2da7e3b852d1f1e53bd0c50e1",
+      "bytes": 2558
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/generate_eway_bill.py",
+      "sha256": "b0a67579eb60f85d741718138f9f67b9d2897a47b5a45260ae9781308f0277b6",
+      "bytes": 2355
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_consolidated_e_way_bill.py",
+      "sha256": "ade05fa2a46eb20f3f6a080b3d29feb81f9dfa746f7bf1809ec189915ac94098",
+      "bytes": 1606
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_error_list.py",
+      "sha256": "0a5ded859e1c6e095c0d3cf58358321913fcdf56b020a5e288a1902bfe5f97de",
+      "bytes": 1328
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_eway_bill_for_transporter_by_date.py",
+      "sha256": "bae3d32e88a75d87ecb4b4f966ed2abb85b41792dbc42e6b797d36f84a89be5a",
+      "bytes": 1720
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_eway_bills_by_date.py",
+      "sha256": "83f6085513b7472326b08e790194bf9d0c8ca3f4b8ac7f5413716ad32b1fc985",
+      "bytes": 1654
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_eway_bills_by_parties.py",
+      "sha256": "97788cdfebfed06d29edfeaa348945def74a56e3242e1b54700629e17dcd3ee2",
+      "bytes": 1687
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_eway_bills_rejected_by_others.py",
+      "sha256": "8eaa300a70efb7f4a7cc133354b4af9d0542d230ff080876ed141ae860b03d66",
+      "bytes": 1698
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_ewaybill_by_consigner.py",
+      "sha256": "5b6b07ea72f24604a3f65a0a23cff3aec6f1a1b431e84a39d6c36bdf153fea7b",
+      "bytes": 1807
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_ewaybill_details.py",
+      "sha256": "1f11cc20496c36b9454d1a92bde6411998134c2f15b730de7e8dd2b5edc0003c",
+      "bytes": 1567
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_ewaybill_report_by_transporter_assigned_date.py",
+      "sha256": "206f3ae2e8b4e78af65834bef2ece49553e0546067ca3138f7166015a659939f",
+      "bytes": 1899
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_ewaybills_for_transporter_by_gstin.py",
+      "sha256": "038f32e7cbdf4f5ef0530bcbd8c7f47fe4ee81838fdba93ff1733d504d3c65c4",
+      "bytes": 1853
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_ewaybills_for_transporter_by_state.py",
+      "sha256": "838f4f8cd414f94a8cc4e0ded1a9b157ef85784637d12cd9b2888797de701abb",
+      "bytes": 1855
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_gstin_details.py",
+      "sha256": "09c96a8972df66f4d47b32cdf2f0323731c394621efca64b52aa62db2a89ca19",
+      "bytes": 1588
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_hsn_details.py",
+      "sha256": "e07b39bc58612db7742b1675e16e34239540ec7098f574f5f1a2e571c6232645",
+      "bytes": 1634
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/get_transin_details.py",
+      "sha256": "0efd541b426ba3d9e3d934a5827b749c21115e24705caaaa5943437e7a4a924a",
+      "bytes": 1628
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/initiate_multi_vehicle_movement.py",
+      "sha256": "642bf5e5ad2e42098575d179144f6aed1e12f3c1d731a37ff679e3cfd9410b47",
+      "bytes": 2504
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/models.py",
+      "sha256": "1de9d5593cecef5c267bf07a959fe9adfa84f6033e420599676574aa2e223fee",
+      "bytes": 4073
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/regenerate_consolidated_e_way_bill_api.py",
+      "sha256": "faef254a6ebd815205974c49864f093c178c9e5216530f3a249e12dacac9bc9d",
+      "bytes": 2185
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/reject_ewaybill.py",
+      "sha256": "2f9fc4db31ad8f7580426d9c68c9bcc8688b7abb692d80e5010cd5cb6d9defec",
+      "bytes": 2473
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/update_part_b_vehicle_number.py",
+      "sha256": "4b7e194ed38f788575fef0ad5261eb11f15e74c98ffd30b267ef69e2d1e6719f",
+      "bytes": 2264
+    },
+    {
+      "path": "assets/client/python/whitebooks/ewaybill/update_transporter.py",
+      "sha256": "23b1f950cb2e2e1ebca28739c11994ab6798f5801c2c5de930dc484d2536bdee",
+      "bytes": 2369
+    },
+    {
+      "path": "assets/client/typescript/test/smoke.ewaybill.test.ts",
+      "sha256": "745af9aeef8f37b0b7dc8202f818e896e63524dac3fba687ed8f84fb16d6847a",
+      "bytes": 993
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/add_multi_vehicles.ts",
+      "sha256": "f1e8723b0dbb64113627b9cbd7a60d3fefcb028e075c51f3a921bb3723bd9fe7",
+      "bytes": 2255
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/cancel_e_way_bill.ts",
+      "sha256": "3fc22bfdf9762f3ba892eae088ae2c1da6fb6e5750da8394eb4b6ab4741c6c47",
+      "bytes": 2336
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/change_multi_vehicles.ts",
+      "sha256": "6db16bdccdc771ced07b84d858794b12bf23adc952e3a2af28b6b03547512b9d",
+      "bytes": 2263
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/closure_e_way_bill.ts",
+      "sha256": "ada16d05296652a06798c4b37c5c0ab6db2ab0eca1b18fe1e013f7a901ae57d1",
+      "bytes": 2245
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/extend_validity_of_e_way_bill.ts",
+      "sha256": "ccbd2c54bbe712aacb96d2252b1d572410727f3154d6047d00fe0b6d2938e4a7",
+      "bytes": 2296
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/generate_consolidated_ewaybill.ts",
+      "sha256": "2bbade8da3bf19bd262d622de31252af90c8ec49d8fa00f8bc3380a9e3904ae1",
+      "bytes": 2367
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/generate_eway_bill.ts",
+      "sha256": "7e211615a61a2de663c73bed1cc365479bc3a6556c7a060155ce48d71c4303ea",
+      "bytes": 2127
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_consolidated_e_way_bill.ts",
+      "sha256": "73aba1592b608637e42a7041ee47efbfb9245718dfd7403d0bb4a8db0151076f",
+      "bytes": 1349
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_error_list.ts",
+      "sha256": "134ead10c17e8efa205ffe6b6e7657a4fe22f9ef21f975f7428ddec05c6c13d9",
+      "bytes": 1167
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_eway_bill_for_transporter_by_date.ts",
+      "sha256": "93feb92ad7c41bc69cd9757eb7ffb39894e01e9fa0af41d43c3bba06696b2617",
+      "bytes": 1453
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_eway_bills_by_date.ts",
+      "sha256": "d76cae298a4f37ad65d14448acfccf3bee3090a4a41c53e016fe939e5dad49b3",
+      "bytes": 1395
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_eway_bills_by_parties.ts",
+      "sha256": "728523cdb89eb782f77c6ada8e9a48a09fed90d796c59edbda40211b1b4ab8ac",
+      "bytes": 1422
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_eway_bills_rejected_by_others.ts",
+      "sha256": "42df704dd78a9085646faf8699b65d63483a26c6f362415a16f7d8ed33852e56",
+      "bytes": 1429
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_ewaybill_by_consigner.ts",
+      "sha256": "5ea103d0b1d53e5cecd38cc7a8bd4401fbfd8176e7631b3dc06b1ac41552aa6a",
+      "bytes": 1540
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_ewaybill_details.ts",
+      "sha256": "6c008f27d0b7e87986b8456f87c49727dfd716f5c5ddd552b7ab2d0f4f2823d3",
+      "bytes": 1313
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_ewaybill_report_by_transporter_assigned_date.ts",
+      "sha256": "cf91a00b79bfd45265ea95a5b16b1b22f304b0f049d921df4de361a6b62b2067",
+      "bytes": 1623
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_ewaybills_for_transporter_by_gstin.ts",
+      "sha256": "5d9242c66c460cc17d62322d86752a507569ecea4b4df11426eb37ada20b97c0",
+      "bytes": 1586
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_ewaybills_for_transporter_by_state.ts",
+      "sha256": "2720743513bfc6b254fefaa1fdc73e7df51d86dccf6292796c878f9cf7d55b44",
+      "bytes": 1588
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_gstin_details.ts",
+      "sha256": "55f37f971209aee233e31c101cfff82142a47da2faf650ac8304bddb44bc671a",
+      "bytes": 1330
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_hsn_details.ts",
+      "sha256": "c16927a7f9d1f0e3fa42f4b685a88e8dd7f187a0ffd00c68c6e6284898f1e1eb",
+      "bytes": 1371
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/get_transin_details.ts",
+      "sha256": "ae5b44e26a46bc463a258b777f78316481b6367f56a5781eef911820781e4311",
+      "bytes": 1364
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/index.ts",
+      "sha256": "e82f2d239b3c14a3697b5f6b8a04f4924ce2048b963df4a3d2f9a781c550f773",
+      "bytes": 1698
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/initiate_multi_vehicle_movement.ts",
+      "sha256": "b9697725d7fba7d6a77c79bd00d1115f2bdc5ed8564a0a7dbba5acd73957e855",
+      "bytes": 2273
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/models.ts",
+      "sha256": "bf44f063aacfb0eeedd64c1b0a4ff5b4b3489ddb31052569a058cd84def71493",
+      "bytes": 4248
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/regenerate_consolidated_e_way_bill_api.ts",
+      "sha256": "f4d71ab38da968bff8ab69e8875fb1cf372a62a80a3bb00a8eeb42075538e75a",
+      "bytes": 2052
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/reject_ewaybill.ts",
+      "sha256": "7778c753c2e587c2a07fcff7098988cd6aad845f24a79f800d0d60949a5958fc",
+      "bytes": 2242
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/update_part_b_vehicle_number.ts",
+      "sha256": "94961df2b209432c4f2d5cbc83a4ca48b4bcd3510629eb2e11ff1aac385cdbd4",
+      "bytes": 2001
+    },
+    {
+      "path": "assets/client/typescript/whitebooks/ewaybill/update_transporter.ts",
+      "sha256": "e4a3d1b462e6f1b64dc1d7fb866e076bd25d5ff251d75f6d0bf0c69074f0d115",
+      "bytes": 2082
+    },
+    {
+      "path": "references/discrepancies.md",
+      "sha256": "cadd4eb637c51234bd366c3e682d4b6c1f85ff597eeb43a2c157fb7c07b42aa0",
+      "bytes": 835
+    },
+    {
+      "path": "references/operations-ewaybill.json",
+      "sha256": "6bb5010d4974a2d7afc308b2858ec5590c16a714cdbd7fc1aeaa06d7c59bfb0d",
+      "bytes": 14442
+    },
+    {
+      "path": "references/operations-ewaybill/add-multi-vehicles.json",
+      "sha256": "73be18b422a69d5dc8eb27a5fca4635b6a68420b8bd31c5617e2a594c13262e9",
+      "bytes": 2974
+    },
+    {
+      "path": "references/operations-ewaybill/authentication.json",
+      "sha256": "29969dc9e04a3b8f975180c28e267e65c3702f71aa96426cde5383a0fa2a22c9",
+      "bytes": 2076
+    },
+    {
+      "path": "references/operations-ewaybill/cancel-e-way-bill.json",
+      "sha256": "3e8701718753a2cbc22cbbca93c69320ba03a0fd773948ad8b1f39fa569ffaa6",
+      "bytes": 2519
+    },
+    {
+      "path": "references/operations-ewaybill/change-multi-vehicles.json",
+      "sha256": "52349acb1ca426000589af895727591c8f524a400d3f26033d2e3d1b04d68852",
+      "bytes": 3847
+    },
+    {
+      "path": "references/operations-ewaybill/closure-e-way-bill.json",
+      "sha256": "b4dba381489d22da91554b67eaaa9a44feb3210ab5357e0a107f4c810d5ba9ed",
+      "bytes": 2405
+    },
+    {
+      "path": "references/operations-ewaybill/extend-validity-of-e-way-bill.json",
+      "sha256": "13b9434d5f4eaf0ebd89030b0825e3cf3958ccdf352d2d6bf0df82f84f864ca7",
+      "bytes": 4600
+    },
+    {
+      "path": "references/operations-ewaybill/generate-consolidated-ewaybill.json",
+      "sha256": "bfd03b7ae421f12623373b52fc1afb79f88be2eb5b630a33babd996338a12c99",
+      "bytes": 3648
+    },
+    {
+      "path": "references/operations-ewaybill/generate-eway-bill.json",
+      "sha256": "602f83ccdbeb9cd9538732e133be899654ed4b231e2593523a33b524355de4fd",
+      "bytes": 13586
+    },
+    {
+      "path": "references/operations-ewaybill/get-consolidated-e-way-bill.json",
+      "sha256": "46b9c33dfc69373913d89cd984c98092d9434345b4b1571e2dcbaeaa6cc89813",
+      "bytes": 1948
+    },
+    {
+      "path": "references/operations-ewaybill/get-error-list.json",
+      "sha256": "2c705df496a57d470ff4db72a2ebbcfa606b2c1a51b4371bc937fcbe2d434220",
+      "bytes": 1748
+    },
+    {
+      "path": "references/operations-ewaybill/get-eway-bill-for-transporter-by-date.json",
+      "sha256": "0db05a3d2d22fc5ee3213d31ec4017352943b642252ea4b30a21ae2e7f296d1d",
+      "bytes": 2072
+    },
+    {
+      "path": "references/operations-ewaybill/get-eway-bills-by-date.json",
+      "sha256": "cfc3dff72e2d958589070396ec32035163a1f44c633cd2be8c20992fff729d45",
+      "bytes": 2000
+    },
+    {
+      "path": "references/operations-ewaybill/get-eway-bills-by-parties.json",
+      "sha256": "2f38f2ddb3d14e9525d85d901ae3f84645f17b5df83af9703d66f219630dc34c",
+      "bytes": 2021
+    },
+    {
+      "path": "references/operations-ewaybill/get-eway-bills-rejected-by-others.json",
+      "sha256": "275d2e482ded37270e8ef5a8378aa478a4477f06406fb3bf4f7de0124fa84812",
+      "bytes": 2036
+    },
+    {
+      "path": "references/operations-ewaybill/get-ewaybill-by-consigner.json",
+      "sha256": "65df924cbcb35d91663a4b790d3f63ac2577ad13d91cda7ace3d0642e84c5fd8",
+      "bytes": 2156
+    },
+    {
+      "path": "references/operations-ewaybill/get-ewaybill-details.json",
+      "sha256": "bada6899313fd26f07d6c98b155458e6c93ba033fce4cedb1dac9824ffa9b09b",
+      "bytes": 1893
+    },
+    {
+      "path": "references/operations-ewaybill/get-ewaybill-report-by-transporter-assigned-date.json",
+      "sha256": "650b4245a96dea23bdc7b5a5117cb1b87e04757d6992dade66aa98e99c666fcd",
+      "bytes": 2313
+    },
+    {
+      "path": "references/operations-ewaybill/get-ewaybills-for-transporter-by-gstin.json",
+      "sha256": "d4dbeeacb173848b19777b435c6d4067202dc3ed665b0d275b6933879db33583",
+      "bytes": 2261
+    },
+    {
+      "path": "references/operations-ewaybill/get-ewaybills-for-transporter-by-state.json",
+      "sha256": "6fe3c1fb00cc4309aae8061e738407fe3128aff0481fbc42e75935be3a8ee5a1",
+      "bytes": 2266
+    },
+    {
+      "path": "references/operations-ewaybill/get-gstin-details.json",
+      "sha256": "82517811bc8cae127736922b0a744eb8ed4cba2bf04a6fc62958c4769f3ed1ff",
+      "bytes": 1938
+    },
+    {
+      "path": "references/operations-ewaybill/get-hsn-details.json",
+      "sha256": "de5547e4dbf0899a7d1e2cd4b081e884d0e711e49297ef950269347d0ef9560a",
+      "bytes": 1950
+    },
+    {
+      "path": "references/operations-ewaybill/get-transin-details.json",
+      "sha256": "d9bb56c75a5549e2e9c357e52604bb612a07dda39f5f3bbe5dff0e1ebe29546e",
+      "bytes": 1980
+    },
+    {
+      "path": "references/operations-ewaybill/initiate-multi-vehicle-movement.json",
+      "sha256": "bbbebdef383e934db03966c0334eec562218c1808367f6863a850ec4c536c50f",
+      "bytes": 3793
+    },
+    {
+      "path": "references/operations-ewaybill/regenerate-consolidated-e-way-bill-api.json",
+      "sha256": "9038a71e7ca8df76fa1ff0b0b7026afe065f1d178f55f010bf7e3acb650eb1f2",
+      "bytes": 3648
+    },
+    {
+      "path": "references/operations-ewaybill/reject-ewaybill.json",
+      "sha256": "55beca08a0dfc984ee1fc8e8dcc5075e26118ae6c8e74d3e76261ddf6e2be90b",
+      "bytes": 2030
+    },
+    {
+      "path": "references/operations-ewaybill/update-part-b-vehicle-number.json",
+      "sha256": "1c8d8c6188d800b324b83d0ba66c820615a28903d88336a204ea7b555d3700f8",
+      "bytes": 3708
+    },
+    {
+      "path": "references/operations-ewaybill/update-transporter.json",
+      "sha256": "1c4b69791dec9bc96288958b1ce7e38d27a9eaff366dfc760d6de274f54a0ecc",
+      "bytes": 2350
+    }
+  ]
+}

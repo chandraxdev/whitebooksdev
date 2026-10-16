@@ -1,0 +1,98 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "tag": "Cancel IRN",
+  "count": 1,
+  "operations": [
+    {
+      "id": "einvoice:POST:/einvoice/type/CANCEL/version/V1_03",
+      "slug": "einvoice-einvoice-type-cancel-version-v1-03-post",
+      "api": "einvoice",
+      "method": "POST",
+      "path": "/einvoice/type/CANCEL/version/V1_03",
+      "tag": "Cancel IRN",
+      "summary": "Cancel IRN",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "irp",
+          "in": "query",
+          "required": false,
+          "meaning": "e-Invoice Server Type(NIC1/NIC2),given at the time of e-Invoice generation"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "auth-token",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC session token from authenticate"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "Irn": {
+            "type": "string",
+            "description": "Irn number"
+          },
+          "CnlRsn": {
+            "type": "string",
+            "description": "Cancel Reason Number",
+            "nullable": true
+          },
+          "CnlRem": {
+            "type": "string",
+            "description": "Cancel Reason"
+          }
+        }
+      },
+      "authFlow": "einvoice_session",
+      "sideEffect": "irreversible",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "Irn": "a5c12dca80e743321740b001fd70953e8738d109865d28ba4013750f2046f229",
+        "CnlRsn": "1",
+        "CnlRem": "Wrong entry"
+      }
+    }
+  ]
+}

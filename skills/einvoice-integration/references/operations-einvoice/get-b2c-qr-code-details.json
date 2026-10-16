@@ -1,0 +1,130 @@
+{
+  "area": "einvoice",
+  "spec_as_of": "2026-10-13",
+  "tag": "Get B2C QR Code Details",
+  "count": 1,
+  "operations": [
+    {
+      "id": "einvoice:GET:/einvoice/qrcode",
+      "slug": "einvoice-einvoice-qrcode-get",
+      "api": "einvoice",
+      "method": "GET",
+      "path": "/einvoice/qrcode",
+      "tag": "Get B2C QR Code Details",
+      "summary": "Get B2C QR Code Details",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] NIC e-Invoice / EWB API user"
+        },
+        {
+          "name": "sgstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Seller GSTIN Number"
+        },
+        {
+          "name": "docno",
+          "in": "header",
+          "required": true,
+          "meaning": "Invoice Number"
+        },
+        {
+          "name": "docdate",
+          "in": "header",
+          "required": true,
+          "meaning": "Invoice Date (dd-MM-yyyy)"
+        },
+        {
+          "name": "totinvval",
+          "in": "header",
+          "required": true,
+          "meaning": "Total Invoice Value"
+        },
+        {
+          "name": "upiid",
+          "in": "header",
+          "required": false,
+          "meaning": "UPI Id"
+        },
+        {
+          "name": "bankaccno",
+          "in": "header",
+          "required": true,
+          "meaning": "Seller Account Number"
+        },
+        {
+          "name": "bankifsccode",
+          "in": "header",
+          "required": true,
+          "meaning": "Bank IFSC Code"
+        },
+        {
+          "name": "accountholdername",
+          "in": "header",
+          "required": true,
+          "meaning": "Account Holder Name"
+        },
+        {
+          "name": "igstamount",
+          "in": "header",
+          "required": true,
+          "meaning": "IGST Amount"
+        },
+        {
+          "name": "cgstamount",
+          "in": "header",
+          "required": true,
+          "meaning": "CGST Amount"
+        },
+        {
+          "name": "sgstamount",
+          "in": "header",
+          "required": true,
+          "meaning": "SGST Amount"
+        },
+        {
+          "name": "cessamount",
+          "in": "header",
+          "required": true,
+          "meaning": "CESS Amount"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "none",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    }
+  ]
+}

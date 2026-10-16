@@ -1,0 +1,205 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks e-Invoice: Get B2C QR Code Details",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks e-Invoice API in the group Get B2C QR Code Details, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Get B2C QR Code Details"
+    }
+  ],
+  "paths": {
+    "/einvoice/qrcode": {
+      "get": {
+        "operationId": "einvoice-einvoice-qrcode-get",
+        "summary": "Get B2C QR Code Details",
+        "tags": [
+          "Get B2C QR Code Details"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "username",
+            "in": "header",
+            "required": true,
+            "description": "NIC e-Invoice / EWB API user",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "sgstin",
+            "in": "header",
+            "required": true,
+            "description": "Seller GSTIN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "docno",
+            "in": "header",
+            "required": true,
+            "description": "Invoice Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "docdate",
+            "in": "header",
+            "required": true,
+            "description": "Invoice Date (dd-MM-yyyy)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "totinvval",
+            "in": "header",
+            "required": true,
+            "description": "Total Invoice Value",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "upiid",
+            "in": "header",
+            "required": false,
+            "description": "UPI Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bankaccno",
+            "in": "header",
+            "required": true,
+            "description": "Seller Account Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "bankifsccode",
+            "in": "header",
+            "required": true,
+            "description": "Bank IFSC Code",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountholdername",
+            "in": "header",
+            "required": true,
+            "description": "Account Holder Name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "igstamount",
+            "in": "header",
+            "required": true,
+            "description": "IGST Amount",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cgstamount",
+            "in": "header",
+            "required": true,
+            "description": "CGST Amount",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sgstamount",
+            "in": "header",
+            "required": true,
+            "description": "SGST Amount",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cessamount",
+            "in": "header",
+            "required": true,
+            "description": "CESS Amount",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "none"
+      }
+    }
+  }
+}

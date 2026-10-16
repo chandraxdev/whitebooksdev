@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "whitebooks-developer",
+  "version": "1.0.8",
+  "description": "Answer questions about, and build, GST, e-Invoice and e-Way Bill integrations on the WhiteBooks APIs: endpoints, payloads and errors explained, sample requests in any language, and ready-made client code in Java, TypeScript and Python to add to an existing app.",
+  "author": {
+    "name": "WhiteBooks"
+  },
+  "homepage": "https://whitebooks.in/",
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/whitebooks-getting-started/SKILL.md",
+      "interface": {
+        "displayName": "WhiteBooks Developer",
+        "shortDescription": "GST, e-Invoice, e-Way Bill",
+        "longDescription": "Answer questions about, and build, GST, e-Invoice and e-Way Bill integrations on the WhiteBooks APIs: endpoints, payloads and errors explained, sample requests in any language, and ready-made client code in Java, TypeScript and Python to add to an existing app.",
+        "developerName": "WhiteBooks",
+        "category": "Developer Tools",
+        "capabilities": [],
+        "defaultPrompt": [
+          "What does e-Invoice error 2150 mean and how should my code handle it?",
+          "Show a curl request that generates an e-Way Bill through WhiteBooks",
+          "Add GSTR-1 filing to my existing accounting app using WhiteBooks"
+        ],
+        "websiteURL": "https://whitebooks.in/",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/icon.png"
+      }
+    }
+  }
+}

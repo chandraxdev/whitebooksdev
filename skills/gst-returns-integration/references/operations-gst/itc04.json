@@ -1,0 +1,909 @@
+{
+  "area": "gst",
+  "spec_as_of": "2026-10-13",
+  "tag": "ITC04",
+  "count": 6,
+  "operations": [
+    {
+      "id": "gst:GET:/itc04/getinv",
+      "slug": "gst-itc04-getinv-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/itc04/getinv",
+      "tag": "ITC04",
+      "summary": "Get ITC04 Invoices",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period format MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/itc04/retsum",
+      "slug": "gst-itc04-retsum-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/itc04/retsum",
+      "tag": "ITC04",
+      "summary": "Get ITC04 Summary",
+      "params": [
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period"
+        },
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:GET:/itc04/validateturnover",
+      "slug": "gst-itc04-validateturnover-get",
+      "api": "gst",
+      "method": "GET",
+      "path": "/itc04/validateturnover",
+      "tag": "ITC04",
+      "summary": "Validate TurnOver ITC04 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "query",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "retperiod",
+          "in": "query",
+          "required": true,
+          "meaning": "Return Period (MMYYYY)"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": null,
+      "authFlow": "gst_session",
+      "sideEffect": "read",
+      "related": [],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/itc04/retevcfile",
+      "slug": "gst-itc04-retevcfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/itc04/retevcfile",
+      "tag": "ITC04",
+      "summary": "File ITC04 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "evcotp",
+          "in": "query",
+          "required": true,
+          "meaning": "OTP for EVC"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "string"
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc04/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      }
+    },
+    {
+      "id": "gst:POST:/itc04/retfile",
+      "slug": "gst-itc04-retfile-post",
+      "api": "gst",
+      "method": "POST",
+      "path": "/itc04/retfile",
+      "tag": "ITC04",
+      "summary": "File ITC04 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "pan",
+          "in": "query",
+          "required": true,
+          "meaning": "PAN Number"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "m2j_chksum": {
+            "type": "string",
+            "description": "M2J Checksum"
+          },
+          "table5A_chksum": {
+            "type": "string",
+            "description": "Table 5A Checksum"
+          },
+          "table5B_chksum": {
+            "type": "string",
+            "description": "Table 5B Checksum"
+          },
+          "table5B_no": {
+            "type": "string",
+            "description": "Table 5B Count"
+          },
+          "table5C_chksum": {
+            "type": "string",
+            "description": "Table 5C Checksum"
+          },
+          "table5C_no": {
+            "type": "string",
+            "description": "Table 5C Count"
+          },
+          "m2jNoOfChallanRec": {
+            "type": "string",
+            "description": "M2J Count"
+          },
+          "table5A_no": {
+            "type": "string",
+            "description": "Table 5A Count"
+          },
+          "m2j_ttl_tax": {
+            "type": "string",
+            "description": "M2J Total Tax"
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "irreversible",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:PUT:/itc04/retsave"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "m2j_chksum": "0f93729338a69d5dfe1d242eccab0bcb73a712907380434aad1927d664ce86dc",
+        "table5A_chksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "table5B_chksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "table5B_no": "0",
+        "table5C_chksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "table5C_no": "0",
+        "m2jNoOfChallanRec": "1",
+        "table5A_no": "0",
+        "m2j_ttl_tax": "0.0"
+      }
+    },
+    {
+      "id": "gst:PUT:/itc04/retsave",
+      "slug": "gst-itc04-retsave-put",
+      "api": "gst",
+      "method": "PUT",
+      "path": "/itc04/retsave",
+      "tag": "ITC04",
+      "summary": "Save ITC04 data",
+      "params": [
+        {
+          "name": "email",
+          "in": "query",
+          "required": true,
+          "meaning": "Email registered with WhiteBooks"
+        },
+        {
+          "name": "gstin",
+          "in": "header",
+          "required": true,
+          "meaning": "Taxpayer GSTIN (15 characters)"
+        },
+        {
+          "name": "ret_period",
+          "in": "header",
+          "required": true,
+          "meaning": "Return period MMYYYY"
+        },
+        {
+          "name": "gst_username",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST portal username"
+        },
+        {
+          "name": "state_cd",
+          "in": "header",
+          "required": true,
+          "meaning": "2-digit state code (first 2 characters of the GSTIN)"
+        },
+        {
+          "name": "ip_address",
+          "in": "header",
+          "required": true,
+          "meaning": "Caller's public IP"
+        },
+        {
+          "name": "txn",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] GST session transaction id from otprequest"
+        },
+        {
+          "name": "client_id",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        },
+        {
+          "name": "client_secret",
+          "in": "header",
+          "required": true,
+          "meaning": "[secret] WhiteBooks app credential from the developer portal"
+        }
+      ],
+      "requestSchema": {
+        "type": "object",
+        "properties": {
+          "gstin": {
+            "type": "string",
+            "description": "GSTIN number"
+          },
+          "fp": {
+            "description": "Financial Year",
+            "type": "string"
+          },
+          "m2jw": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "flag": {
+                  "type": "string",
+                  "description": "Action to be taken"
+                },
+                "jw_stcd": {
+                  "type": "string",
+                  "description": "Recipient state code"
+                },
+                "chnum": {
+                  "type": "string",
+                  "description": "ch number"
+                },
+                "chdt": {
+                  "type": "string",
+                  "description": "ch date"
+                },
+                "itms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "goods_ty": {
+                        "type": "string",
+                        "description": "Goods Type"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Goods description"
+                      },
+                      "uqc": {
+                        "type": "string",
+                        "description": "uqc"
+                      },
+                      "qty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "val": {
+                        "type": "number",
+                        "description": "value of goods"
+                      },
+                      "tx_c": {
+                        "type": "number",
+                        "description": "Total CGST Value"
+                      },
+                      "tx_s": {
+                        "type": "number",
+                        "description": "Total SGST Value"
+                      },
+                      "tx_i": {
+                        "type": "number",
+                        "description": "Total IGST Value"
+                      },
+                      "tx_cs": {
+                        "type": "number",
+                        "description": "Total cess Value"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "table5A": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "CTIN number"
+                },
+                "jw_stcd": {
+                  "type": "string",
+                  "description": "Recipient state code"
+                },
+                "flag": {
+                  "type": "string",
+                  "description": "Action to be taken"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "o_chnum": {
+                        "description": "Original Challan No",
+                        "type": "string"
+                      },
+                      "o_chdt": {
+                        "description": "Original Challan Date",
+                        "type": "string"
+                      },
+                      "jw2_chnum": {
+                        "description": "Fresh Challan No",
+                        "type": "string"
+                      },
+                      "jw2_chdt": {
+                        "description": "Fresh Challan Date",
+                        "type": "string"
+                      },
+                      "nat_jw": {
+                        "description": "Nature of Job Done",
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Goods description"
+                      },
+                      "uqc": {
+                        "type": "string",
+                        "description": "uqc"
+                      },
+                      "qty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwqty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwuqc": {
+                        "description": "UQC",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "table5B": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "CTIN number"
+                },
+                "jw_stcd": {
+                  "type": "string",
+                  "description": "Recipient state code"
+                },
+                "flag": {
+                  "type": "string",
+                  "description": "Action to be taken"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "o_chnum": {
+                        "description": "Original Challan No",
+                        "type": "string"
+                      },
+                      "o_chdt": {
+                        "description": "Original Challan Date",
+                        "type": "string"
+                      },
+                      "jw2_chnum": {
+                        "description": "Fresh Challan No",
+                        "type": "string"
+                      },
+                      "jw2_chdt": {
+                        "description": "Fresh Challan Date",
+                        "type": "string"
+                      },
+                      "nat_jw": {
+                        "description": "Nature of Job Done",
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Goods description"
+                      },
+                      "uqc": {
+                        "type": "string",
+                        "description": "uqc"
+                      },
+                      "qty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwqty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwuqc": {
+                        "description": "UQC",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "table5C": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "ctin": {
+                  "type": "string",
+                  "description": "GSTIN number"
+                },
+                "jw_stcd": {
+                  "type": "string",
+                  "description": "Recipient state code"
+                },
+                "flag": {
+                  "type": "string",
+                  "description": "Action to be taken"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "o_chnum": {
+                        "description": "Original Challan No",
+                        "type": "string"
+                      },
+                      "o_chdt": {
+                        "description": "Original Challan Date",
+                        "type": "string"
+                      },
+                      "inum": {
+                        "description": "Fresh Invoice No",
+                        "type": "string"
+                      },
+                      "idt": {
+                        "description": "Fresh Invocie Date",
+                        "type": "string"
+                      },
+                      "nat_jw": {
+                        "description": "Nature of Job Done",
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string",
+                        "description": "Goods description"
+                      },
+                      "uqc": {
+                        "type": "string",
+                        "description": "uqc"
+                      },
+                      "qty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwqty": {
+                        "type": "number",
+                        "description": "Quantity"
+                      },
+                      "lwuqc": {
+                        "description": "UQC",
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "authFlow": "gst_session",
+      "sideEffect": "write",
+      "related": [
+        "gst:GET:/gstr/retstatus",
+        "gst:POST:/itc04/retfile",
+        "gst:POST:/itc04/retevcfile"
+      ],
+      "discrepancies": [],
+      "baseUrls": {
+        "sandbox": "https://apisandbox.whitebooks.in",
+        "production": "https://api.whitebooks.in"
+      },
+      "exampleBody": {
+        "gstin": "12AVVVH1234HA1X",
+        "fp": "032019",
+        "m2jw": [
+          {
+            "flag": "N",
+            "jw_stcd": "18",
+            "chnum": "A4",
+            "chdt": "12-09-2017",
+            "itms": [
+              {
+                "goods_ty": "5a",
+                "desc": "fvsdfag",
+                "uqc": "BKL",
+                "qty": 11,
+                "val": 31231,
+                "tx_c": 0,
+                "tx_s": 0,
+                "tx_i": 12,
+                "tx_cs": 0
+              }
+            ]
+          }
+        ],
+        "table5A": [
+          {
+            "ctin": "12AVVVH1234HA1X",
+            "jw_stcd": "27",
+            "flag": "N",
+            "items": [
+              {
+                "o_chnum": "N1",
+                "o_chdt": "12-07-2017",
+                "jw2_chnum": "12",
+                "jw2_chdt": "12-07-2017",
+                "nat_jw": "afgadf",
+                "desc": "fvsdfag",
+                "uqc": "BKL",
+                "qty": 11,
+                "lwqty": 4,
+                "lwuqc": "BAG"
+              }
+            ]
+          }
+        ],
+        "table5B": [
+          {
+            "ctin": "12AVVVH1234HA1X",
+            "jw_stcd": "27",
+            "flag": "D",
+            "items": [
+              {
+                "o_chnum": "N2",
+                "o_chdt": "12-07-2017",
+                "jw2_chnum": "12",
+                "jw2_chdt": "12-07-2017",
+                "nat_jw": "fgafgdf",
+                "desc": "fvsdfag",
+                "uqc": "BKL",
+                "qty": 11,
+                "lwqty": 4,
+                "lwuqc": "BAG"
+              }
+            ]
+          }
+        ],
+        "table5C": [
+          {
+            "ctin": "12AVVVH1234HA1X",
+            "jw_stcd": "27",
+            "flag": "D",
+            "items": [
+              {
+                "o_chnum": "A4",
+                "o_chdt": "12-07-2017",
+                "inum": "24",
+                "idt": "12-07-2017",
+                "nat_jw": "afsdfd",
+                "desc": "fvsdfag",
+                "uqc": "BKL",
+                "qty": 11,
+                "lwqty": 4,
+                "lwuqc": "BAG"
+              }
+            ]
+          }
+        ]
+      },
+      "async": {
+        "returns": "reference_id",
+        "statusOperationId": "gst:GET:/gstr/retstatus"
+      }
+    }
+  ]
+}

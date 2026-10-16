@@ -1,0 +1,1558 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: GSTR8",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group GSTR8, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "GSTR8"
+    }
+  ],
+  "paths": {
+    "/gstr8/checksum": {
+      "get": {
+        "operationId": "gst-gstr8-checksum-get",
+        "summary": "Get Checksum",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY HH:MM,20-12-2016 11:15",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": false,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/eid": {
+      "get": {
+        "operationId": "gst-gstr8-eid-get",
+        "summary": "Get EID",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY HH:MM,20-12-2016 11:15",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": false,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/retsum": {
+      "get": {
+        "operationId": "gst-gstr8-retsum-get",
+        "summary": "Get GSTR8 Summary",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fnl",
+            "in": "query",
+            "required": true,
+            "description": "flag to indicate that a FINAL get call before filing of return.This will be set to Y when GSTR8 is submitted",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/tcs": {
+      "get": {
+        "operationId": "gst-gstr8-tcs-get",
+        "summary": "Get TCS Invoices",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period format MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromtime",
+            "in": "query",
+            "required": false,
+            "description": "From time format DD-MM-YYYY HH:MM,20-12-2016 09:30",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "rettype",
+            "in": "query",
+            "required": false,
+            "description": "Return Type",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/retevcfile": {
+      "post": {
+        "operationId": "gst-gstr8-retevcfile-post",
+        "summary": "File GSTR8 data",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evcotp",
+            "in": "query",
+            "required": true,
+            "description": "OTP for EVC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/retfile": {
+      "post": {
+        "operationId": "gst-gstr8-retfile-post",
+        "summary": "File GSTR8 data",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "description": "GSTIN of Deductor",
+                    "type": "string"
+                  },
+                  "fp": {
+                    "description": "Return Period",
+                    "type": "string"
+                  },
+                  "dflt_amt": {
+                    "type": "number",
+                    "description": "Default Interest Amount"
+                  },
+                  "chksum": {
+                    "type": "string",
+                    "description": "Checksum Value"
+                  },
+                  "tcs": {
+                    "type": "object",
+                    "properties": {
+                      "gSuppMade": {
+                        "type": "number",
+                        "description": "Gross Supplies Made"
+                      },
+                      "gSuppRtn": {
+                        "type": "number",
+                        "description": "Gross Supplies Returned"
+                      },
+                      "ttl_iamt": {
+                        "type": "number",
+                        "description": "Total IGST"
+                      },
+                      "ttl_camt": {
+                        "type": "number",
+                        "description": "Total CGST"
+                      },
+                      "ttl_samt": {
+                        "type": "number",
+                        "description": "Total SGST"
+                      },
+                      "ttl_amtcol": {
+                        "type": "number",
+                        "description": "Total amount deducted"
+                      },
+                      "no_rec": {
+                        "type": "integer",
+                        "description": "Total Record Count"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum Value"
+                      }
+                    }
+                  },
+                  "tcsa": {
+                    "type": "object",
+                    "properties": {
+                      "gSuppMade": {
+                        "type": "number",
+                        "description": "Gross Supplies Made"
+                      },
+                      "gSuppRtn": {
+                        "type": "number",
+                        "description": "Gross Supplies Returned"
+                      },
+                      "ttl_iamt": {
+                        "type": "number",
+                        "description": "Total IGST"
+                      },
+                      "ttl_camt": {
+                        "type": "number",
+                        "description": "Total IGST"
+                      },
+                      "ttl_samt": {
+                        "type": "number",
+                        "description": "Total IGST"
+                      },
+                      "ttl_amtcol": {
+                        "type": "number",
+                        "description": "Total IGST"
+                      },
+                      "no_rec": {
+                        "type": "integer",
+                        "description": "Total Record Count"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum Value"
+                      }
+                    }
+                  },
+                  "urd": {
+                    "type": "object",
+                    "properties": {
+                      "gSuppMade": {
+                        "type": "number",
+                        "description": "Gross Supplies Made"
+                      },
+                      "gSuppRtn": {
+                        "type": "number",
+                        "description": "Gross Supplies Returned"
+                      },
+                      "ttl_amtcol": {
+                        "type": "number",
+                        "description": "Total amount deducted"
+                      },
+                      "no_rec": {
+                        "type": "integer",
+                        "description": "Total Record Count"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum Value"
+                      }
+                    }
+                  },
+                  "urda": {
+                    "type": "object",
+                    "properties": {
+                      "gSuppMade": {
+                        "type": "number",
+                        "description": "Gross Supplies Made"
+                      },
+                      "gSuppRtn": {
+                        "type": "number",
+                        "description": "Gross Supplies Returned"
+                      },
+                      "ttl_amtcol": {
+                        "type": "number",
+                        "description": "Total amount deducted"
+                      },
+                      "no_rec": {
+                        "type": "integer",
+                        "description": "Total Record Count"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum Value"
+                      }
+                    }
+                  },
+                  "tax_pay": {
+                    "type": "object",
+                    "properties": {
+                      "iamt": {
+                        "type": "object",
+                        "properties": {
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "oth": {
+                            "type": "number",
+                            "description": "other Amount "
+                          },
+                          "tx": {
+                            "type": "number",
+                            "description": "Tax Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "tot": {
+                            "type": "number",
+                            "description": "Total Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "samt": {
+                        "type": "object",
+                        "properties": {
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "oth": {
+                            "type": "number",
+                            "description": "other Amount "
+                          },
+                          "tx": {
+                            "type": "number",
+                            "description": "Tax Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "tot": {
+                            "type": "number",
+                            "description": "Total Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "camt": {
+                        "type": "object",
+                        "properties": {
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "oth": {
+                            "type": "number",
+                            "description": "other Amount "
+                          },
+                          "tx": {
+                            "type": "number",
+                            "description": "Tax Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "tot": {
+                            "type": "number",
+                            "description": "Total Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "liab_id": {
+                        "type": "integer",
+                        "description": "Liability id"
+                      },
+                      "trancd": {
+                        "type": "integer",
+                        "description": "Transaction code"
+                      }
+                    }
+                  },
+                  "offset": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "tran_cd": {
+                          "description": "Transaction code",
+                          "type": "integer"
+                        },
+                        "samt": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "camt": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "iamt": {
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "12AUGGC1893F3DQ",
+                "fp": "112017",
+                "dflt_amt": 0,
+                "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5",
+                "tcs": {
+                  "gSuppMade": 0,
+                  "gSuppRtn": 0,
+                  "ttl_iamt": 0,
+                  "ttl_camt": 0,
+                  "ttl_samt": 0,
+                  "ttl_amtcol": 0,
+                  "no_rec": 0,
+                  "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5"
+                },
+                "tcsa": {
+                  "gSuppMade": 0,
+                  "gSuppRtn": 0,
+                  "ttl_iamt": 0,
+                  "ttl_camt": 0,
+                  "ttl_samt": 0,
+                  "ttl_amtcol": 0,
+                  "no_rec": 0,
+                  "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5"
+                },
+                "urd": {
+                  "gSuppMade": 1000,
+                  "gSuppRtn": 5000,
+                  "ttl_amtcol": -4000,
+                  "no_rec": 1,
+                  "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5"
+                },
+                "urda": {
+                  "gSuppMade": 0,
+                  "gSuppRtn": 0,
+                  "ttl_amtcol": 0,
+                  "no_rec": 0,
+                  "chksum": "e019706b5c029430c81cc4f620c72adf0fc43ceb1805099abe0f1a41a79cfbc5"
+                },
+                "tax_pay": {
+                  "iamt": {
+                    "intr": 0,
+                    "oth": 0,
+                    "tx": 0,
+                    "fee": 0,
+                    "tot": 0,
+                    "pen": 0
+                  },
+                  "samt": {
+                    "intr": 0,
+                    "oth": 0,
+                    "tx": 0,
+                    "fee": 400,
+                    "tot": 1518,
+                    "pen": 0
+                  },
+                  "camt": {
+                    "intr": 0,
+                    "oth": 0,
+                    "tx": 0,
+                    "fee": 0,
+                    "tot": 1518,
+                    "pen": 0
+                  },
+                  "liab_id": 0,
+                  "trancd": 30002
+                },
+                "offset": [
+                  {
+                    "samt": {
+                      "intr": 0,
+                      "tx": 1518,
+                      "fee": 0,
+                      "tot": 1518
+                    },
+                    "camt": {
+                      "intr": 0,
+                      "tx": 1518,
+                      "fee": 0,
+                      "tot": 1518
+                    },
+                    "iamt": {
+                      "intr": 0,
+                      "tx": 1518,
+                      "fee": 0,
+                      "tot": 1518
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr8/retsave": {
+      "put": {
+        "operationId": "gst-gstr8-retsave-put",
+        "summary": "Save GSTR8 data",
+        "tags": [
+          "GSTR8"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "description": "GSTIN of Deductor",
+                    "type": "string"
+                  },
+                  "fp": {
+                    "description": "Return Period",
+                    "type": "string"
+                  },
+                  "tcs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "stin": {
+                          "type": "string",
+                          "description": "GSTIN of Supplier"
+                        },
+                        "supR": {
+                          "type": "number",
+                          "description": "Gross value of supplies made"
+                        },
+                        "retsupR": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned"
+                        },
+                        "supU": {
+                          "type": "number",
+                          "description": "Gross value of supplies made to Unregistered receiver"
+                        },
+                        "retsupU": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned by Unregistered receiver"
+                        },
+                        "amt": {
+                          "type": "number",
+                          "description": "Net amount liable for TCS"
+                        },
+                        "camt": {
+                          "type": "number",
+                          "description": "Central Tax"
+                        },
+                        "samt": {
+                          "type": "number",
+                          "description": "State/UT Tax"
+                        },
+                        "iamt": {
+                          "type": "number",
+                          "description": "Integrated Tax"
+                        },
+                        "flag": {
+                          "type": "string",
+                          "description": "Action to be taken"
+                        }
+                      }
+                    }
+                  },
+                  "tcsa": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ofp": {
+                          "type": "string",
+                          "description": "Original return Period of TCS"
+                        },
+                        "stin": {
+                          "type": "string",
+                          "description": "Revised GSTIN of Supplier"
+                        },
+                        "ostin": {
+                          "type": "string",
+                          "description": "Original GSTIN of Supplier"
+                        },
+                        "supR": {
+                          "type": "number",
+                          "description": "Gross value of supplies made"
+                        },
+                        "retsupR": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned"
+                        },
+                        "supU": {
+                          "type": "number",
+                          "description": "Gross value of supplies made to Unregistered receiver"
+                        },
+                        "retsupU": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned by Unresgistered receiver"
+                        },
+                        "amt": {
+                          "type": "number",
+                          "description": "Net amount liable for TCS"
+                        },
+                        "camt": {
+                          "type": "number",
+                          "description": "Central Tax"
+                        },
+                        "samt": {
+                          "type": "number",
+                          "description": "State/UT Tax"
+                        },
+                        "iamt": {
+                          "type": "number",
+                          "description": "Integrated Tax"
+                        },
+                        "flag": {
+                          "type": "string",
+                          "description": "Action to be taken"
+                        }
+                      }
+                    }
+                  },
+                  "urd": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "eid": {
+                          "type": "string",
+                          "description": "Enrolment ID of Unregistered Supplier"
+                        },
+                        "grsval": {
+                          "type": "number",
+                          "description": "Gross value of supplies made"
+                        },
+                        "supret": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned"
+                        },
+                        "amt": {
+                          "type": "number",
+                          "description": "Net value of supplies"
+                        },
+                        "flag": {
+                          "type": "string",
+                          "description": "Action to be taken"
+                        }
+                      }
+                    }
+                  },
+                  "urda": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "ofp": {
+                          "type": "string",
+                          "description": "Original return Period"
+                        },
+                        "eid": {
+                          "type": "string",
+                          "description": "Revised Enrolment ID of Unregistered Supplier"
+                        },
+                        "oeid": {
+                          "type": "string",
+                          "description": "Original Enrolment ID of Unregistered Supplier"
+                        },
+                        "grsval": {
+                          "type": "number",
+                          "description": "Gross value of supplies made"
+                        },
+                        "supret": {
+                          "type": "number",
+                          "description": "Gross value of supplies returned"
+                        },
+                        "amt": {
+                          "type": "number",
+                          "description": "Net value of supplies"
+                        },
+                        "flag": {
+                          "type": "string",
+                          "description": "Action to be taken"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "12AUGGC1893F3DQ",
+                "fp": "112017",
+                "tcs": [
+                  {
+                    "stin": "05AAFPQ6179B1ZQ",
+                    "supR": 10000,
+                    "retsupR": 0,
+                    "supU": 0,
+                    "retsupU": 0,
+                    "amt": 10000,
+                    "camt": 10000,
+                    "samt": 10000,
+                    "iamt": 0,
+                    "flag": "D"
+                  }
+                ],
+                "tcsa": [
+                  {
+                    "ofp": "112017",
+                    "stin": "05AAFPQ6179B1ZQ",
+                    "ostin": "05AAFPQ6179B1ZQ",
+                    "supR": 50000,
+                    "retsupR": 0,
+                    "supU": 0,
+                    "retsupU": 0,
+                    "amt": 50000,
+                    "camt": 50,
+                    "samt": 0,
+                    "iamt": 0,
+                    "flag": "D"
+                  }
+                ],
+                "urd": [
+                  {
+                    "eid": "072300000026ES1",
+                    "grsval": 0,
+                    "supret": 0,
+                    "amt": 0,
+                    "flag": "A"
+                  }
+                ],
+                "urda": [
+                  {
+                    "ofp": "082017",
+                    "eid": "072300000026ES1",
+                    "oeid": "072300000026ES1",
+                    "grsval": 0,
+                    "supret": 0,
+                    "amt": 0,
+                    "flag": "A"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session",
+        "x-whitebooks-async": {
+          "returns": "reference_id",
+          "statusOperationId": "gst:GET:/gstr/retstatus"
+        }
+      }
+    }
+  }
+}

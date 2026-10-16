@@ -1,0 +1,16 @@
+{
+  "name": "whitebooks",
+  "owner": {
+    "name": "WhiteBooks"
+  },
+  "metadata": {
+    "description": "The WhiteBooks developer plugin for GST returns, e-Invoice and e-Way Bill integrations."
+  },
+  "plugins": [
+    {
+      "name": "whitebooks-developer",
+      "source": "./",
+      "description": "Answer questions about, and build, GST, e-Invoice and e-Way Bill integrations on the WhiteBooks APIs: endpoints, payloads and errors explained, sample requests in any language, and ready-made client code in Java, TypeScript and Python to add to an existing app."
+    }
+  ]
+}

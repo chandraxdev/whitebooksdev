@@ -1,0 +1,46 @@
+# WhiteBooks client 1.0.8 | spec_as_of 2026-10-13 | template python | area core
+# Generated code. Edit freely; "Upgrade the client" shows a diff before changing anything.
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 BVM IT Consulting Services Pvt. Ltd
+# Credentials stay in the environment, never in chat or files; filing and cancelling need explicit confirmation.
+# Dependencies: none.
+
+import os
+import sys
+from typing import Dict, List, Optional
+from urllib.parse import urlsplit
+
+from whitebooks.config import SANDBOX_URL
+
+FILL = {"WB_GST_CLIENT_ID": "x", "WB_GST_CLIENT_SECRET": "x", "WB_EINV_CLIENT_ID": "x", "WB_EINV_CLIENT_SECRET": "x", "WB_EWB_CLIENT_ID": "x", "WB_EWB_CLIENT_SECRET": "x", "WB_EMAIL": "x", "WB_GST_GSTIN": "x", "WB_EINV_GSTIN": "x", "WB_EWB_GSTIN": "x", "WB_IP_ADDRESS": "x", "WB_GST_USERNAME": "x", "WB_EINV_NIC_USERNAME": "x", "WB_EINV_NIC_PASSWORD": "x", "WB_EWB_NIC_USERNAME": "x", "WB_EWB_NIC_PASSWORD": "x"}
+
+
+# Never talk to a live API from a test (fail closed): tests exist only when WB_BASE_URL is unset or an https URL on the sandbox host.
+# Anything else, including a value that does not parse, creates none, and the note names the parsed host, never the raw value.
+def not_sandbox() -> Optional[str]:
+    raw = os.environ.get("WB_BASE_URL", "").strip()
+    if raw == "":
+        return None
+    try:
+        url = urlsplit(raw)
+        host = (url.hostname or "").lower()
+        sandbox = urlsplit(SANDBOX_URL)
+        if url.scheme.lower() == "https" and host != "" and (host, url.port) == ((sandbox.hostname or "").lower(), sandbox.port):
+            return None
+        return host or "unparsable"
+    except ValueError:
+        return "unparsable"
+
+
+REFUSED = not_sandbox()
+if REFUSED is not None:
+    print("WB_BASE_URL is not the sandbox https URL (host: " + REFUSED + "); the smoke tests run only against the sandbox, so none was run.", file=sys.stderr)
+
+
+def have(names: List[str]) -> bool:
+    return REFUSED is None and all(os.environ.get(n, "") != "" for n in names)
+
+
+def env() -> Dict[str, str]:
+    # load_config wants every variable; the ones this smoke run does not use get a placeholder.
+    return {**FILL, **{k: v for k, v in os.environ.items() if v != ""}}

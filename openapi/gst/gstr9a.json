@@ -1,0 +1,2682 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "WhiteBooks GST returns: GSTR9A",
+    "version": "2026-10-13",
+    "description": "Operations of the WhiteBooks GST returns API in the group GSTR9A, as of 2026-10-13. Start on the sandbox; every call needs your own WhiteBooks credentials and a session as the sign-in sequence describes."
+  },
+  "servers": [
+    {
+      "url": "https://apisandbox.whitebooks.in",
+      "description": "Sandbox"
+    },
+    {
+      "url": "https://api.whitebooks.in",
+      "description": "Production"
+    }
+  ],
+  "tags": [
+    {
+      "name": "GSTR9A"
+    }
+  ],
+  "paths": {
+    "/gstr9a/getautocal": {
+      "get": {
+        "operationId": "gst-gstr9a-getautocal-get",
+        "summary": "Get GSTR9A Auto Calculated Details",
+        "tags": [
+          "GSTR9A"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr9a/getdet": {
+      "get": {
+        "operationId": "gst-gstr9a-getdet-get",
+        "summary": "Get GSTR9A Details",
+        "tags": [
+          "GSTR9A"
+        ],
+        "parameters": [
+          {
+            "name": "gstin",
+            "in": "query",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "retperiod",
+            "in": "query",
+            "required": true,
+            "description": "Return Period",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "read",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr9a/retevcfile": {
+      "post": {
+        "operationId": "gst-gstr9a-retevcfile-post",
+        "summary": "File GSTR9A data",
+        "tags": [
+          "GSTR9A"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pan",
+            "in": "query",
+            "required": true,
+            "description": "PAN Number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evcotp",
+            "in": "query",
+            "required": true,
+            "description": "OTP for EVC",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr9a/retfile": {
+      "post": {
+        "operationId": "gst-gstr9a-retfile-post",
+        "summary": "File GSTR9A",
+        "tags": [
+          "GSTR9A"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN"
+                  },
+                  "fp": {
+                    "description": "Financial Year",
+                    "type": "string"
+                  },
+                  "cmp_frmdt": {
+                    "description": "Composition Start data",
+                    "type": "string"
+                  },
+                  "cmp_todt": {
+                    "description": "Composition Start data",
+                    "type": "string"
+                  },
+                  "isnil": {
+                    "description": "Is Nil Filing",
+                    "type": "string"
+                  },
+                  "table5": {
+                    "type": "object",
+                    "properties": {
+                      "gt": {
+                        "type": "number",
+                        "description": "Gross TrunOver"
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "table6": {
+                    "type": "object",
+                    "properties": {
+                      "tx_trnovr": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "rt": {
+                              "type": "number",
+                              "description": "Rate of Tax"
+                            },
+                            "trnovr": {
+                              "type": "number",
+                              "description": "IGST Amount"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "CGST Amount"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "SGST Amount"
+                            }
+                          }
+                        }
+                      },
+                      "exmp": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "IGST Amount"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount"
+                          }
+                        }
+                      },
+                      "tot": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "IGST Amount"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table7": {
+                    "type": "object",
+                    "properties": {
+                      "b2b": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2bur": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "imps": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "tot": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table8": {
+                    "type": "object",
+                    "properties": {
+                      "b2b": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "impg": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "table9": {
+                    "type": "object",
+                    "properties": {
+                      "tx_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount"
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount"
+                          }
+                        }
+                      },
+                      "txpd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount"
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount"
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "table10": {
+                    "type": "object",
+                    "properties": {
+                      "txosa_dn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total Turnover"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2b_dn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "txosa_cn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total Turnover"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2b_cn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total Turnover"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      },
+                      "tot_trnovr": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total Turnover"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table14": {
+                    "type": "object",
+                    "properties": {
+                      "pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          }
+                        }
+                      },
+                      "paid": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "table15": {
+                    "type": "object",
+                    "properties": {
+                      "rfd_clmd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_sanc": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_rejt": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_pend": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "tax_dmnd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "txpd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "dmnd_pend": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "table16": {
+                    "type": "object",
+                    "properties": {
+                      "debit": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "credit": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "chksum": {
+                        "type": "string",
+                        "description": "Checksum"
+                      }
+                    }
+                  },
+                  "tax_pay": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "cgst": {
+                          "description": "Central Tax",
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "sgst": {
+                          "description": "State tax/UT Tax",
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "oth": {
+                              "type": "number",
+                              "description": "other Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            },
+                            "pen": {
+                              "type": "number",
+                              "description": "Penalty Amount "
+                            }
+                          }
+                        },
+                        "liab_id": {
+                          "description": "Liab ID",
+                          "type": "integer"
+                        },
+                        "trancd": {
+                          "description": "Transaction Code",
+                          "type": "integer"
+                        },
+                        "trandate": {
+                          "description": "Transaction Date",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "offset": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "camt": {
+                          "description": "Central Tax",
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "samt": {
+                          "description": "State tax/UT Tax",
+                          "type": "object",
+                          "properties": {
+                            "intr": {
+                              "type": "number",
+                              "description": "Interest Amount "
+                            },
+                            "tx": {
+                              "type": "number",
+                              "description": "Tax Amount "
+                            },
+                            "fee": {
+                              "type": "number",
+                              "description": "Fee Amount "
+                            },
+                            "tot": {
+                              "type": "number",
+                              "description": "Total Amount "
+                            }
+                          }
+                        },
+                        "trancd": {
+                          "description": "Transaction Code",
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "04AJIPA1572EAZK",
+                "fp": "032018",
+                "cmp_frmdt": "12-01-2018",
+                "cmp_todt": "12-01-2018",
+                "isnil": "N",
+                "table5": {
+                  "gt": 1000.12,
+                  "chksum": "ahshsjslslslss"
+                },
+                "table6": {
+                  "tx_trnovr": [
+                    {
+                      "rt": 1,
+                      "trnovr": 20,
+                      "camt": 20,
+                      "samt": 20
+                    }
+                  ],
+                  "exmp": {
+                    "trnovr": 20,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "tot": {
+                    "trnovr": 20,
+                    "camt": 20,
+                    "samt": 20
+                  }
+                },
+                "table7": {
+                  "b2b": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "b2bur": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "imps": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "csamt": 20
+                  },
+                  "tot": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  }
+                },
+                "table8": {
+                  "b2b": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "impg": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "csamt": 20
+                  },
+                  "chksum": "ahshsjslslslss"
+                },
+                "table9": {
+                  "tx_pay": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 20,
+                    "fee": 20
+                  },
+                  "txpd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 20,
+                    "fee": 20
+                  },
+                  "chksum": "ahshsjslslslss"
+                },
+                "table10": {
+                  "txosa_dn": {
+                    "trnovr": 1000,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "b2b_dn": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "txosa_cn": {
+                    "trnovr": 1000,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "b2b_cn": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "chksum": "ahshsjslslslss",
+                  "tot_trnovr": {
+                    "trnovr": 10000,
+                    "camt": 20,
+                    "samt": 20
+                  }
+                },
+                "table14": {
+                  "pay": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0
+                  },
+                  "paid": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0
+                  },
+                  "chksum": "ahshsjslslslss"
+                },
+                "table15": {
+                  "rfd_clmd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_sanc": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_rejt": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_pend": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "tax_dmnd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "txpd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "dmnd_pend": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "chksum": "ahshsjslslslss"
+                },
+                "table16": {
+                  "debit": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "credit": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "chksum": "ahshsjslslslss"
+                },
+                "tax_pay": [
+                  {
+                    "cgst": {
+                      "intr": 0,
+                      "oth": 0,
+                      "tx": 0,
+                      "fee": 0,
+                      "tot": 0,
+                      "pen": 0
+                    },
+                    "sgst": {
+                      "intr": 0,
+                      "oth": 0,
+                      "tx": 0,
+                      "fee": 0,
+                      "tot": 0,
+                      "pen": 0
+                    },
+                    "liab_id": 8855,
+                    "trancd": 30002,
+                    "trandate": "12-02-2018"
+                  }
+                ],
+                "offset": [
+                  {
+                    "camt": {
+                      "intr": 0,
+                      "tx": 0,
+                      "fee": 0,
+                      "tot": 0
+                    },
+                    "samt": {
+                      "intr": 0,
+                      "tx": 0,
+                      "fee": 0,
+                      "tot": 0
+                    },
+                    "trancd": 30002
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "irreversible",
+        "x-whitebooks-auth-flow": "gst_session"
+      }
+    },
+    "/gstr9a/retsave": {
+      "put": {
+        "operationId": "gst-gstr9a-retsave-put",
+        "summary": "Save GSTR9A",
+        "tags": [
+          "GSTR9A"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "description": "Email registered with WhiteBooks",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gstin",
+            "in": "header",
+            "required": true,
+            "description": "Taxpayer GSTIN (15 characters)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ret_period",
+            "in": "header",
+            "required": true,
+            "description": "Return period MMYYYY",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "gst_username",
+            "in": "header",
+            "required": true,
+            "description": "GST portal username",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "state_cd",
+            "in": "header",
+            "required": true,
+            "description": "2-digit state code (first 2 characters of the GSTIN)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ip_address",
+            "in": "header",
+            "required": true,
+            "description": "Caller's public IP",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "txn",
+            "in": "header",
+            "required": true,
+            "description": "GST session transaction id from otprequest",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_id",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          },
+          {
+            "name": "client_secret",
+            "in": "header",
+            "required": true,
+            "description": "WhiteBooks app credential from the developer portal",
+            "schema": {
+              "type": "string",
+              "writeOnly": true
+            },
+            "x-secret": true
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "gstin": {
+                    "type": "string",
+                    "description": "GSTIN"
+                  },
+                  "fp": {
+                    "description": "Financial Year",
+                    "type": "string"
+                  },
+                  "table5": {
+                    "type": "object",
+                    "properties": {
+                      "gt": {
+                        "type": "number",
+                        "description": "Gross TrunOver"
+                      }
+                    }
+                  },
+                  "table6": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "tx_trnovr": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "rt": {
+                              "type": "number",
+                              "description": "Rate of Tax"
+                            },
+                            "trnovr": {
+                              "type": "number",
+                              "description": "IGST Amount"
+                            },
+                            "camt": {
+                              "type": "number",
+                              "description": "CGST Amount"
+                            },
+                            "samt": {
+                              "type": "number",
+                              "description": "SGST Amount"
+                            }
+                          }
+                        }
+                      },
+                      "exmp": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "IGST Amount"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table7": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "b2b": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2bur": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "imps": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table8": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "b2b": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "impg": {
+                        "type": "object",
+                        "properties": {
+                          "txval": {
+                            "type": "number",
+                            "description": "Taxable value of Goods or Service as per invoice"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table9": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "tx_pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount"
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table10": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "txosa_dn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total Turnover"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2b_dn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "txosa_cn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          }
+                        }
+                      },
+                      "b2b_cn": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table14": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "pay": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          }
+                        }
+                      },
+                      "paid": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table15": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "rfd_clmd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_sanc": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_rejt": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "rfd_pend": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "tax_dmnd": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "txpd": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      },
+                      "dmnd_pend": {
+                        "type": "object",
+                        "properties": {
+                          "trnovr": {
+                            "type": "number",
+                            "description": "Total TurnOver"
+                          },
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          },
+                          "intr": {
+                            "type": "number",
+                            "description": "Interest Amount "
+                          },
+                          "fee": {
+                            "type": "number",
+                            "description": "Fee Amount "
+                          },
+                          "pen": {
+                            "type": "number",
+                            "description": "Penalty Amount "
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "table16": {
+                    "type": "object",
+                    "properties": {
+                      "flag": {
+                        "type": "string",
+                        "description": "Flag for identifying Delete"
+                      },
+                      "debit": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      },
+                      "credit": {
+                        "type": "object",
+                        "properties": {
+                          "iamt": {
+                            "type": "number",
+                            "description": "IGST Amount as per invoice"
+                          },
+                          "camt": {
+                            "type": "number",
+                            "description": "CGST Amount as per invoice"
+                          },
+                          "samt": {
+                            "type": "number",
+                            "description": "SGST Amount as per invoice"
+                          },
+                          "csamt": {
+                            "type": "number",
+                            "description": "Cess Amount as per invoice"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "example": {
+                "gstin": "04AJIPA1572EAZK",
+                "fp": "032018",
+                "table5": {
+                  "gt": 1000.12
+                },
+                "table6": {
+                  "flag": "D",
+                  "tx_trnovr": [
+                    {
+                      "rt": 1,
+                      "trnovr": 20,
+                      "camt": 20,
+                      "samt": 20
+                    }
+                  ],
+                  "exmp": {
+                    "trnovr": 20,
+                    "camt": 20,
+                    "samt": 20
+                  }
+                },
+                "table7": {
+                  "flag": "D",
+                  "b2b": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "b2bur": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "imps": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "csamt": 20
+                  }
+                },
+                "table8": {
+                  "flag": "D",
+                  "b2b": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "impg": {
+                    "txval": 10000,
+                    "iamt": 20,
+                    "csamt": 20
+                  }
+                },
+                "table9": {
+                  "flag": "D",
+                  "tx_pay": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 20,
+                    "fee": 20
+                  }
+                },
+                "table10": {
+                  "flag": "D",
+                  "txosa_dn": {
+                    "trnovr": 1000,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "b2b_dn": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "txosa_cn": {
+                    "trnovr": 1000,
+                    "camt": 20,
+                    "samt": 20
+                  },
+                  "b2b_cn": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  }
+                },
+                "table14": {
+                  "flag": "D",
+                  "pay": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0
+                  },
+                  "paid": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0
+                  }
+                },
+                "table15": {
+                  "flag": "D",
+                  "rfd_clmd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_sanc": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_rejt": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "rfd_pend": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "tax_dmnd": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "txpd": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  },
+                  "dmnd_pend": {
+                    "trnovr": 1000,
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20,
+                    "intr": 0,
+                    "fee": 0,
+                    "pen": 0
+                  }
+                },
+                "table16": {
+                  "flag": "D",
+                  "debit": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  },
+                  "credit": {
+                    "iamt": 20,
+                    "camt": 20,
+                    "samt": 20,
+                    "csamt": 20
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The reply. A failure can still come back as HTTP 200: check the error shapes in the WhiteBooks error reference."
+          },
+          "default": {
+            "description": "A failure; the body carries the error code and message."
+          }
+        },
+        "x-whitebooks-side-effect": "write",
+        "x-whitebooks-auth-flow": "gst_session",
+        "x-whitebooks-async": {
+          "returns": "reference_id",
+          "statusOperationId": "gst:GET:/gstr/retstatus"
+        }
+      }
+    }
+  }
+}

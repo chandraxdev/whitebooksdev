@@ -1,0 +1,31 @@
+{
+  "skill": "integration-hardening",
+  "client_version": "1.0.8",
+  "spec_as_of": "2026-10-13",
+  "dependencies": [
+    {
+      "language": "java",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.22.3",
+      "ecosystem": "maven"
+    },
+    {
+      "language": "python",
+      "name": "requests",
+      "version": "2.32.5",
+      "ecosystem": "pip"
+    }
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes": 11357
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "75bac93a79c5fa239b33df95b7b6dcf9501aa2972a02fec91e466bbed9b93ee0",
+      "bytes": 150
+    }
+  ]
+}
